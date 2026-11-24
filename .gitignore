@@ -1,6 +1,7 @@
 # Do not version compiled executables, except the required protoc dependency.
 *.exe
 !抖音回复机器人/**/*.exe
+!拼多多底座文件/**/*.exe
 
 # Do not version compressed archives.
 *.zip

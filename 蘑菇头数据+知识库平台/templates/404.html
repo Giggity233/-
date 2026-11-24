@@ -1,0 +1,19 @@
+{% load static %}
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>这个还没有喵~ · 蘑菇头中控平台</title>
+  <link rel="stylesheet" href="{% static 'css/site.css' %}">
+</head>
+<body class="not-found-page">
+  <main class="not-found-card">
+    <img src="{% static 'images/logo.png' %}" alt="蘑菇头 Logo">
+    <div class="kaomoji">{{ face }}</div>
+    <h1>这个还没有喵~</h1>
+    <p>你访问的页面暂时还在建设中。</p>
+    <a class="btn btn-primary" href="/">回到工作台</a>
+  </main>
+</body>
+</html>

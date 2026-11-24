@@ -1,0 +1,191 @@
+
+[notice] A new release of pip is available: 25.1.1 -> 26.2.2
+[notice] To update, run: python.exe -m pip install --upgrade pip
+191 INFO: PyInstaller: 6.20.0, contrib hooks: 2026.5
+192 INFO: Python: 3.13.5
+236 INFO: Platform: Windows-10-10.0.18363-SP0
+237 INFO: Python environment: C:\Users\Admin\AppData\Local\Programs\Python\Python313-32
+238 INFO: wrote D:\pythonProject\联樽\LianzunServer.spec
+241 INFO: Removing temporary files and cleaning cache in C:\Users\Admin\AppData\Local\pyinstaller
+1552 INFO: Module search paths (PYTHONPATH):
+['D:\\pythonProject\\联樽',
+ 'C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python313-32\\python313.zip',
+ 'C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python313-32\\DLLs',
+ 'C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python313-32\\Lib',
+ 'C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python313-32',
+ 'C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python313-32\\Lib\\site-packages',
+ 'C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python313-32\\Lib\\site-packages\\win32',
+ 'C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python313-32\\Lib\\site-packages\\win32\\lib',
+ 'C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python313-32\\Lib\\site-packages\\Pythonwin',
+ 'D:\\pythonProject\\联樽']
+1898 INFO: Appending 'datas' from .spec
+1905 INFO: checking Analysis
+1905 INFO: Building Analysis because Analysis-00.toc is non existent
+1905 INFO: Looking for Python shared library...
+1905 INFO: Using Python shared library: C:\Users\Admin\AppData\Local\Programs\Python\Python313-32\python313.dll
+1905 INFO: Running Analysis Analysis-00.toc
+1905 INFO: Target bytecode optimization level: 0
+1906 INFO: Initializing module dependency graph...
+1906 INFO: Initializing module graph hook caches...
+1921 INFO: Analyzing modules for base_library.zip ...
+3495 INFO: Processing standard module hook 'hook-encodings.py' from 'C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python313-32\\Lib\\site-packages\\PyInstaller\\hooks'
+5708 INFO: Processing standard module hook 'hook-pickle.py' from 'C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python313-32\\Lib\\site-packages\\PyInstaller\\hooks'
+6810 INFO: Processing standard module hook 'hook-heapq.py' from 'C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python313-32\\Lib\\site-packages\\PyInstaller\\hooks'
+7416 INFO: Caching module dependency graph...
+7459 INFO: Analyzing D:\pythonProject\联樽\run_server.py
+7511 INFO: Processing standard module hook 'hook-django.py' from 'C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python313-32\\Lib\\site-packages\\PyInstaller\\hooks'
+13251 INFO: Django root directory D:\pythonProject\联樽\lianzun
+29394 INFO: Collecting Django migration scripts.
+30074 INFO: Processing standard module hook 'hook-multiprocessing.util.py' from 'C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python313-32\\Lib\\site-packages\\PyInstaller\\hooks'
+30337 INFO: Processing standard module hook 'hook-xml.py' from 'C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python313-32\\Lib\\site-packages\\PyInstaller\\hooks'
+30672 INFO: Processing standard module hook 'hook-_ctypes.py' from 'C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python313-32\\Lib\\site-packages\\PyInstaller\\hooks'
+31167 INFO: Processing pre-safe-import-module hook 'hook-typing_extensions.py' from 'C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python313-32\\Lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+31168 INFO: SetuptoolsInfo: initializing cached setuptools info...
+32235 INFO: Processing standard module hook 'hook-django.db.backends.py' from 'C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python313-32\\Lib\\site-packages\\PyInstaller\\hooks'
+32622 INFO: Processing standard module hook 'hook-platform.py' from 'C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python313-32\\Lib\\site-packages\\PyInstaller\\hooks'
+32841 INFO: Processing standard module hook 'hook-zoneinfo.py' from 'C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python313-32\\Lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+32871 INFO: Processing standard module hook 'hook-sysconfig.py' from 'C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python313-32\\Lib\\site-packages\\PyInstaller\\hooks'
+32994 INFO: Processing standard module hook 'hook-PIL.py' from 'C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python313-32\\Lib\\site-packages\\PyInstaller\\hooks'
+33135 INFO: Processing standard module hook 'hook-PIL.Image.py' from 'C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python313-32\\Lib\\site-packages\\PyInstaller\\hooks'
+33615 INFO: Processing standard module hook 'hook-xml.etree.cElementTree.py' from 'C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python313-32\\Lib\\site-packages\\PyInstaller\\hooks'
+33846 INFO: Processing standard module hook 'hook-PIL.ImageFilter.py' from 'C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python313-32\\Lib\\site-packages\\PyInstaller\\hooks'
+34238 INFO: Processing standard module hook 'hook-django.core.cache.py' from 'C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python313-32\\Lib\\site-packages\\PyInstaller\\hooks'
+34877 INFO: Processing standard module hook 'hook-django.core.management.py' from 'C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python313-32\\Lib\\site-packages\\PyInstaller\\hooks'
+35551 INFO: Processing standard module hook 'hook-difflib.py' from 'C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python313-32\\Lib\\site-packages\\PyInstaller\\hooks'
+37618 INFO: Processing standard module hook 'hook-django.core.mail.py' from 'C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python313-32\\Lib\\site-packages\\PyInstaller\\hooks'
+37686 INFO: Processing standard module hook 'hook-jinja2.py' from 'C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python313-32\\Lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+39006 INFO: Processing standard module hook 'hook-cryptography.py' from 'C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python313-32\\Lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+C:\Users\Admin\AppData\Local\Programs\Python\Python313-32\Lib\site-packages\cryptography\hazmat\backends\openssl\backend.py:8: UserWarning: You are using cryptography on a 32-bit Python on a 64-bit Windows Operating System. Cryptography will be significantly faster if you switch to using a 64-bit Python.
+  from cryptography.hazmat.bindings.openssl import binding
+C:\Users\Admin\AppData\Local\Programs\Python\Python313-32\Lib\site-packages\cryptography\hazmat\backends\openssl\backend.py:8: UserWarning: You are using cryptography on a 32-bit Python on a 64-bit Windows Operating System. Cryptography will be significantly faster if you switch to using a 64-bit Python.
+  from cryptography.hazmat.bindings.openssl import binding
+40347 INFO: hook-cryptography: cryptography does not seem to be using dynamically linked OpenSSL.
+40980 INFO: Analyzing hidden import 'MySQLdb'
+40981 ERROR: Hidden import 'MySQLdb' not found
+40981 INFO: Analyzing hidden import 'django.db.backends.mysql'
+40982 INFO: Analyzing hidden import 'core.admin'
+41455 INFO: Analyzing hidden import 'core.apps'
+41458 INFO: Analyzing hidden import 'core.forms'
+41466 INFO: Analyzing hidden import 'core.migrations'
+41466 INFO: Analyzing hidden import 'core.migrations.0001_initial'
+41475 INFO: Analyzing hidden import 'core.migrations.0002_remove_storeshiftclaim_shop_login_account_and_more'
+41477 INFO: Analyzing hidden import 'core.migrations.0003_alter_user_options_and_more'
+41482 INFO: Analyzing hidden import 'core.migrations.0004_storemetricsnapshot_is_morning_final'
+41483 INFO: Analyzing hidden import 'core.migrations.0005_remove_storemetricsnapshot_is_morning_final'
+41484 INFO: Analyzing hidden import 'core.migrations.0006_alter_user_options'
+41485 INFO: Analyzing hidden import 'core.migrations.0007_pendingtask'
+41487 INFO: Analyzing hidden import 'core.migrations.0008_storeaccount_corresponding_port'
+41488 INFO: Analyzing hidden import 'core.migrations.0009_store_experience_score_and_nullable_metrics'
+41493 INFO: Analyzing hidden import 'core.migrations.0010_shiftdailysummary_metric_display_values_and_more'
+41494 INFO: Analyzing hidden import 'core.migrations.0011_specialist_and_robot_metrics'
+41499 INFO: Analyzing hidden import 'core.migrations.0012_add_new_metrics_to_saved_columns'
+41500 INFO: Analyzing hidden import 'core.migrations.0013_specialist_shift_summary_labels'
+41502 INFO: Analyzing hidden import 'core.migrations.0014_backfill_pdd_timeout_counts'
+41504 INFO: Analyzing hidden import 'core.migrations.0015_backfill_pdd_snapshot_timeout_counts'
+41506 INFO: Analyzing hidden import 'core.migrations.0016_ai_knowledge_base'
+41515 INFO: Analyzing hidden import 'core.migrations.0017_ai_knowledge_inheritance_blocks'
+41522 INFO: Analyzing hidden import 'core.migrations.0018_ai_keyword_answer'
+41523 INFO: Analyzing hidden import 'core.migrations.0019_backfill_specialist_account_ids_from_cookies'
+41526 INFO: Analyzing hidden import 'core.migrations.0020_product_favorite'
+41528 INFO: Analyzing hidden import 'core.migrations.0021_accountpasswordregistration'
+41530 INFO: Analyzing hidden import 'core.migrations.0022_storeaftersalesstrategy'
+41534 INFO: Analyzing hidden import 'core.migrations.0023_accountpasswordregistration_account_type_and_more'
+41535 INFO: Analyzing hidden import 'core.migrations.0024_image_text_registration'
+41536 INFO: Analyzing hidden import 'core.migrations.0025_product_material_inheritance_block'
+41538 INFO: Analyzing hidden import 'core.migrations.0026_customer_allow_product_knowledge_view_and_more'
+41547 INFO: Analyzing hidden import 'core.migrations.0027_product_knowledge_heat_and_delete_permission'
+41549 INFO: Analyzing hidden import 'core.templatetags'
+41549 INFO: Analyzing hidden import 'core.templatetags.metric_display'
+41551 INFO: Analyzing hidden import 'core.tests'
+42007 INFO: Processing standard module hook 'hook-xml.dom.domreg.py' from 'C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python313-32\\Lib\\site-packages\\PyInstaller\\hooks'
+42841 INFO: Analyzing hidden import 'core.urls'
+43121 INFO: Analyzing hidden import 'lianzun.asgi'
+43123 INFO: Analyzing hidden import 'lianzun.settings'
+43128 INFO: Analyzing hidden import 'lianzun.urls'
+43131 INFO: Analyzing hidden import 'waitress.__main__'
+43135 INFO: Processing module hooks (post-graph stage)...
+43700 INFO: Processing standard module hook 'hook-urllib3.py' from 'C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python313-32\\Lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+43832 INFO: Processing pre-safe-import-module hook 'hook-backports.py' from 'C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python313-32\\Lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+43832 INFO: Setuptools: 'backports' appears to be a full setuptools-vendored copy - creating alias to 'setuptools._vendor.backports'!
+43840 INFO: Processing standard module hook 'hook-setuptools.py' from 'C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python313-32\\Lib\\site-packages\\PyInstaller\\hooks'
+43854 INFO: Processing pre-safe-import-module hook 'hook-distutils.py' from 'C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python313-32\\Lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+43896 INFO: Processing pre-safe-import-module hook 'hook-jaraco.py' from 'C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python313-32\\Lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+43896 INFO: Setuptools: 'jaraco' appears to be a full setuptools-vendored copy - creating alias to 'setuptools._vendor.jaraco'!
+43910 INFO: Processing pre-safe-import-module hook 'hook-more_itertools.py' from 'C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python313-32\\Lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+43911 INFO: Setuptools: 'more_itertools' appears to be a setuptools-vendored copy - creating alias to 'setuptools._vendor.more_itertools'!
+44191 INFO: Processing pre-safe-import-module hook 'hook-packaging.py' from 'C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python313-32\\Lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+44400 INFO: Processing standard module hook 'hook-setuptools._vendor.jaraco.text.py' from 'C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python313-32\\Lib\\site-packages\\PyInstaller\\hooks'
+44403 INFO: Processing pre-safe-import-module hook 'hook-importlib_resources.py' from 'C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python313-32\\Lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+44626 INFO: Processing pre-safe-import-module hook 'hook-importlib_metadata.py' from 'C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python313-32\\Lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+44660 INFO: Processing standard module hook 'hook-importlib_metadata.py' from 'C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python313-32\\Lib\\site-packages\\PyInstaller\\hooks'
+44686 INFO: Processing pre-safe-import-module hook 'hook-zipp.py' from 'C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python313-32\\Lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+44979 INFO: Processing pre-safe-import-module hook 'hook-tomli.py' from 'C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python313-32\\Lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+44980 INFO: Setuptools: 'tomli' appears to be a setuptools-vendored copy - creating alias to 'setuptools._vendor.tomli'!
+45615 INFO: Processing pre-safe-import-module hook 'hook-wheel.py' from 'C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python313-32\\Lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+45616 INFO: Setuptools: 'wheel' appears to be a setuptools-vendored copy - creating alias to 'setuptools._vendor.wheel'!
+46195 INFO: Processing standard module hook 'hook-charset_normalizer.py' from 'C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python313-32\\Lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+46565 INFO: Processing standard module hook 'hook-certifi.py' from 'C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python313-32\\Lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+48583 INFO: Processing standard module hook 'hook-django.db.backends.mysql.base.py' from 'C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python313-32\\Lib\\site-packages\\PyInstaller\\hooks'
+48756 INFO: Processing standard module hook 'hook-django.db.backends.oracle.base.py' from 'C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python313-32\\Lib\\site-packages\\PyInstaller\\hooks'
+48933 INFO: Processing standard module hook 'hook-sqlite3.py' from 'C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python313-32\\Lib\\site-packages\\PyInstaller\\hooks'
+49374 WARNING: Hidden import "django.db.backends.__pycache__.base" not found!
+49527 INFO: Processing standard module hook 'hook-selenium.py' from 'C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python313-32\\Lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+51477 INFO: Processing standard module hook 'hook-django.contrib.sessions.py' from 'C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python313-32\\Lib\\site-packages\\PyInstaller\\hooks'
+52225 INFO: Processing standard module hook 'hook-django.template.loaders.py' from 'C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python313-32\\Lib\\site-packages\\PyInstaller\\hooks'
+52954 WARNING: Hidden import "django.contrib.admin.context_processors" not found!
+52954 WARNING: Hidden import "core.apps.CoreConfig" not found!
+52955 WARNING: Hidden import "django.contrib.staticfiles.context_processors" not found!
+52955 WARNING: Hidden import "django.contrib.contenttypes.context_processors" not found!
+52959 WARNING: Hidden import "core.apps.CoreConfig.context_processors" not found!
+52961 WARNING: Hidden import "core.apps.CoreConfig.templatetags" not found!
+52966 WARNING: Hidden import "django.contrib.auth.templatetags" not found!
+52968 WARNING: Hidden import "django.contrib.sessions.context_processors" not found!
+52969 WARNING: Hidden import "django.contrib.sessions.templatetags" not found!
+52969 WARNING: Hidden import "django.contrib.contenttypes.templatetags" not found!
+52969 WARNING: Hidden import "django.contrib.staticfiles.templatetags" not found!
+52972 WARNING: Hidden import "django.contrib.messages.templatetags" not found!
+53345 INFO: Processing standard module hook 'hook-PIL.SpiderImagePlugin.py' from 'C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python313-32\\Lib\\site-packages\\PyInstaller\\hooks'
+53781 INFO: Processing standard module hook 'hook-tzdata.py' from 'C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python313-32\\Lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+54373 WARNING: Hidden import "django.db.backends.oracle.compiler" not found!
+54428 INFO: Performing binary vs. data reclassification (4452 entries)
+54741 INFO: Looking for ctypes DLLs
+54841 INFO: Analyzing run-time hooks ...
+54847 INFO: Including run-time hook 'pyi_rth_inspect.py' from 'C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python313-32\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks'
+54850 INFO: Including run-time hook 'pyi_rth_pkgutil.py' from 'C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python313-32\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks'
+54853 INFO: Including run-time hook 'pyi_rth_multiprocessing.py' from 'C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python313-32\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks'
+54856 INFO: Including run-time hook 'pyi_rth_cryptography_openssl.py' from 'C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python313-32\\Lib\\site-packages\\_pyinstaller_hooks_contrib\\rthooks'
+54857 INFO: Including run-time hook 'pyi_rth_setuptools.py' from 'C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python313-32\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks'
+54858 INFO: Including run-time hook 'pyi_rth_django.py' from 'C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python313-32\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks'
+55006 INFO: Creating base_library.zip...
+55029 INFO: Looking for dynamic libraries
+C:\Users\Admin\AppData\Local\Programs\Python\Python313-32\Lib\site-packages\cryptography\hazmat\backends\openssl\backend.py:8: UserWarning: You are using cryptography on a 32-bit Python on a 64-bit Windows Operating System. Cryptography will be significantly faster if you switch to using a 64-bit Python.
+  from cryptography.hazmat.bindings.openssl import binding
+56100 INFO: Extra DLL search directories (AddDllDirectory): []
+56100 INFO: Extra DLL search directories (PATH): []
+56856 INFO: Warnings written to D:\pythonProject\联樽\build\LianzunServer\warn-LianzunServer.txt
+56998 INFO: Graph cross-reference written to D:\pythonProject\联樽\build\LianzunServer\xref-LianzunServer.html
+57169 INFO: checking PYZ
+57169 INFO: Building PYZ because PYZ-00.toc is non existent
+57169 INFO: Building PYZ (ZlibArchive) D:\pythonProject\联樽\build\LianzunServer\PYZ-00.pyz
+58208 INFO: Building PYZ (ZlibArchive) D:\pythonProject\联樽\build\LianzunServer\PYZ-00.pyz completed successfully.
+58253 INFO: checking PKG
+58253 INFO: Building PKG because PKG-00.toc is non existent
+58253 INFO: Building PKG (CArchive) LianzunServer.pkg
+58274 INFO: Building PKG (CArchive) LianzunServer.pkg completed successfully.
+58275 INFO: Bootloader C:\Users\Admin\AppData\Local\Programs\Python\Python313-32\Lib\site-packages\PyInstaller\bootloader\Windows-32bit-intel\run.exe
+58276 INFO: checking EXE
+58276 INFO: Building EXE because EXE-00.toc is non existent
+58276 INFO: Building EXE from EXE-00.toc
+58276 INFO: Copying bootloader EXE to D:\pythonProject\联樽\build\LianzunServer\LianzunServer.exe
+58279 INFO: Copying icon to EXE
+58282 INFO: Copying 0 resources to EXE
+58282 INFO: Embedding manifest in EXE
+58285 INFO: Appending PKG archive to EXE
+58290 INFO: Fixing EXE headers
+58344 INFO: Building EXE from EXE-00.toc completed successfully.
+58396 INFO: checking COLLECT
+58396 INFO: Building COLLECT because COLLECT-00.toc is non existent
+58396 INFO: Removing dir D:\pythonProject\联樽\dist\LianzunServer
+59657 INFO: Building COLLECT COLLECT-00.toc
+64188 INFO: Building COLLECT COLLECT-00.toc completed successfully.
+64300 INFO: Build complete! The results are available in: D:\pythonProject\联樽\dist

@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block page_title %}售后策略配置{% endblock %}
+{% block content %}
+<div class="page-heading strategy-heading">
+  <div><h1>售后策略配置</h1><p>仅可为已登记 Cookie 的店铺配置策略。先选择客户，再选择该客户下的店铺。</p></div>
+  <form class="strategy-filter" method="get" role="search">
+    <label>客户<select name="customer"><option value="">全部客户</option>{% for customer in filter_customers %}<option value="{{ customer.pk }}" {% if selected_customer_id == customer.pk|stringformat:'s' %}selected{% endif %}>{{ customer.name }}</option>{% endfor %}</select></label>
+    <label>店铺<input name="store" value="{{ store_query }}" placeholder="店铺名称或店铺编号"></label>
+    <button class="btn btn-primary" type="submit">筛选</button><a class="btn btn-secondary" href="{% url 'after_sales_strategy_config' %}">重置</a>
+  </form>
+</div>
+
+{% if can_manage_after_sales_strategy %}<section class="panel strategy-form-panel">
+  <div class="panel-head"><div><h2>{% if editing_strategy %}修改策略：{{ editing_strategy.store.name }}{% else %}新增店铺策略{% endif %}</h2><p>协商方式中，补偿、补发、退款填 0 表示不执行；大于 0 时按配置递进执行。</p></div>{% if editing_strategy %}<a class="btn btn-secondary" href="{% url 'after_sales_strategy_config' %}">取消修改</a>{% endif %}</div>
+  <form method="post" class="strategy-form" data-after-sales-strategy-form data-editing="{{ editing_strategy|yesno:'true,false' }}">
+    {% csrf_token %}
+    {% if editing_strategy %}<input type="hidden" name="editing_id" value="{{ editing_strategy.pk }}"><input type="hidden" name="store_id" value="{{ editing_strategy.store_id }}">{% endif %}
+    <label>客户
+      <select id="strategy-customer" name="customer_id" {% if editing_strategy %}disabled{% endif %} required>
+        <option value="">请选择所属客户</option>
+        {% for customer in editable_customers %}<option value="{{ customer.pk }}" {% if form_customer_id == customer.pk|stringformat:'s' %}selected{% endif %}>{{ customer.name }}</option>{% endfor %}
+      </select>
+    </label>
+    <label>店铺
+      <select id="strategy-store" {% if not editing_strategy %}name="store_id"{% endif %} {% if editing_strategy %}disabled{% endif %} required>
+        <option value="">请先选择客户</option>
+        {% for store in editable_stores %}<option value="{{ store.pk }}" data-customer-id="{{ store.customer_id }}" {% if selected_store_id == store.pk|stringformat:'s' %}selected{% endif %}>{{ store.name }} · {{ store.external_id }}（{{ store.get_platform_display }}）</option>{% endfor %}
+      </select>
+    </label>
+    <label>补偿类型{{ form.compensation_type }}{% for error in form.compensation_type.errors %}<em>{{ error }}</em>{% endfor %}</label>
+    <label>补偿阶数{{ form.compensation_stage_count }}{% for error in form.compensation_stage_count.errors %}<em>{{ error }}</em>{% endfor %}</label>
+    <div class="strategy-negotiation"><strong>协商方式</strong><div><label>补偿{{ form.compensation_count }}</label><label>补发{{ form.replacement_count }}</label><label>退款{{ form.refund_count }}</label></div></div>
+    <label>补偿下限{{ form.compensation_minimum }}<small>元</small>{% for error in form.compensation_minimum.errors %}<em>{{ error }}</em>{% endfor %}</label>
+    <label>补偿上限{{ form.compensation_maximum }}<small>元</small>{% for error in form.compensation_maximum.errors %}<em>{{ error }}</em>{% endfor %}</label>
+    <label>质保时间{{ form.warranty_days }}<small>天</small>{% for error in form.warranty_days.errors %}<em>{{ error }}</em>{% endfor %}</label>
+    <label>第一次补偿{{ form.first_compensation }}<small data-after-sales-unit>%</small>{% for error in form.first_compensation.errors %}<em>{{ error }}</em>{% endfor %}</label>
+    <label data-compensation-stage="2">第二次补偿{{ form.second_compensation }}<small data-after-sales-unit>%</small>{% for error in form.second_compensation.errors %}<em>{{ error }}</em>{% endfor %}</label>
+    <label data-compensation-stage="3">第三次补偿{{ form.third_compensation }}<small data-after-sales-unit>%</small>{% for error in form.third_compensation.errors %}<em>{{ error }}</em>{% endfor %}</label>
+    {% for error in form.non_field_errors %}<p class="strategy-form-error">{{ error }}</p>{% endfor %}
+    <div class="strategy-form-actions"><button class="btn btn-primary" type="submit">{% if editing_strategy %}保存修改{% else %}确认添加{% endif %}</button></div>
+  </form>
+</section>{% endif %}
+
+<section class="panel strategy-list-panel">
+  <div class="panel-head"><div><h2>已配置店铺</h2><p>按店铺单独保存；同一店铺只能有一份策略。</p></div><span class="result-count">共 {{ page_obj.paginator.count }} 条</span></div>
+  <div class="table-wrap wide-table"><table class="strategy-table"><thead><tr><th>店铺名</th><th>补偿类型</th><th>协商方式</th><th>补偿阶数</th><th>补偿下限</th><th>补偿上限</th><th>补偿配置</th><th>质保时间</th><th>设置时间</th><th>所属客户</th><th>操作</th></tr></thead>
+    <tbody>{% for strategy in strategies %}<tr>
+      <td><strong>{{ strategy.store.name }}</strong><small>{{ strategy.store.get_platform_display }} · {{ strategy.store.external_id }}</small></td>
+      <td><span class="account-type {{ strategy.compensation_type }}">{{ strategy.get_compensation_type_display }}</span></td>
+      <td class="strategy-negotiation-summary"><span>补偿：{{ strategy.compensation_count }}</span><span>补发：{{ strategy.replacement_count }}</span><span>退款：{{ strategy.refund_count }}</span></td>
+      <td>{{ strategy.compensation_stage_count }}</td><td>{{ strategy.compensation_minimum }} 元</td><td>{{ strategy.compensation_maximum }} 元</td>
+      <td class="strategy-stages">{% for stage in strategy.stage_data %}<span>第{{ stage.sequence }}次：{{ stage.value }}{{ stage.unit }}</span>{% endfor %}</td>
+      <td>{{ strategy.warranty_days }} 天</td><td>{{ strategy.created_at|date:'Y-m-d H:i' }}</td><td>{{ strategy.store.customer.name|default:'未归属' }}</td>
+      <td>{% if strategy.can_edit %}<div class="strategy-actions"><a class="btn btn-secondary" href="{% url 'after_sales_strategy_config' %}?edit={{ strategy.pk }}">修改</a><form method="post" action="{% url 'after_sales_strategy_delete' strategy.pk %}" onsubmit="return confirm('确认删除“{{ strategy.store.name }}”的售后策略吗？')">{% csrf_token %}<button class="danger-link" type="submit">删除</button></form></div>{% else %}<span class="muted">仅查看</span>{% endif %}</td>
+    </tr>{% empty %}<tr><td class="empty" colspan="11">尚未配置售后策略。</td></tr>{% endfor %}</tbody>
+  </table></div>
+  {% if page_obj.paginator.num_pages > 1 %}<nav class="pagination" aria-label="售后策略分页"><span>共 {{ page_obj.paginator.count }} 条，第 {{ page_obj.number }} / {{ page_obj.paginator.num_pages }} 页</span><div>{% if page_obj.has_previous %}<a class="btn btn-secondary" href="?{% if pagination_query %}{{ pagination_query }}&amp;{% endif %}page={{ page_obj.previous_page_number }}">上一页</a>{% endif %}{% if page_obj.has_next %}<a class="btn btn-secondary" href="?{% if pagination_query %}{{ pagination_query }}&amp;{% endif %}page={{ page_obj.next_page_number }}">下一页</a>{% endif %}</div></nav>{% endif %}
+</section>
+{% endblock %}

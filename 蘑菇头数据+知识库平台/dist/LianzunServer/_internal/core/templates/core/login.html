@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}登录 · 蘑菇头中控平台{% endblock %}
+{% block anonymous_content %}
+<div class="auth-page"><div class="auth-card"><div class="auth-brand"><img src="{% static 'images/logo.png' %}" alt="蘑菇头 Logo"><div><strong>蘑菇头</strong><span>中控平台</span></div></div><h1>欢迎登录</h1><p>统一管理您的电商店铺运营。</p>
+  <form method="post" class="styled-form">{% csrf_token %}
+    {% if form.non_field_errors %}<div class="form-error">{{ form.non_field_errors }}</div>{% endif %}
+    <label>账号{{ form.username }}</label><label>密码{{ form.password }}</label><button class="btn btn-primary btn-wide" type="submit">登录</button>
+  </form><div class="auth-footer">还没有账号？<a href="{% url 'register' %}">立即注册</a></div>
+</div></div>
+{% endblock %}

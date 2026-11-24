@@ -1,0 +1,68 @@
+{
+  "platform": "pdd",
+  "shopname": "CAFELE手机电器官方旗舰店",
+  "shopSN": "910263757",
+  "goods_id": "1008423160093",
+  "goods_name": "ins风热卖适用于小米17全包卡通涂鸦手机壳15PRO红米K90proma防摔",
+  "min_group_price": 36781,
+  "max_group_price": 37551,
+  "sold_quantity": 11,
+  "created_at": 1790064053,
+  "mainimgurls": [
+    "https://img.pddpic.com/open-gw/2026-09-22/b226e1699a18c7d06057b843f9bfbfbd.jpeg",
+    "https://img.pddpic.com/open-gw/2026-09-22/59283333b0a15e9cd7e7ebc7f2dabf1e.jpeg"
+  ],
+  "detailimgurls": [
+    "https://img.pddpic.com/open-gw/2026-09-22/e4f78681da6db9f2390387967eb9a4a9.jpeg",
+    "https://img.pddpic.com/open-gw/2026-09-22/60cfbaf653737fe95b6c30c320f1cdcb.jpeg"
+  ],
+  "skudetails": [
+    {
+      "skuname": "轻奢皮纹【橙色-AI日系小新】品牌热卖%小米17",
+      "sku_id": "1968942785731",
+      "price": 37551,
+      "quantity": 5000
+    },
+    {
+      "skuname": "轻奢皮纹【橙色-AI日系小新】品牌热卖%小米15",
+      "sku_id": "1968942785733",
+      "price": 36781,
+      "quantity": 500
+    }
+  ],
+  "skutypes": [
+    {
+      "skutypename": "款式",
+      "values": [
+        "轻奢皮纹【橙色-AI日系小新】品牌热卖",
+        "轻奢皮纹【黑色-AI日系小新】品牌热卖"
+      ]
+    },
+    {
+      "skutypename": "型号",
+      "values": [
+        "小米17",
+        "小米15",
+        "小米15PRO"
+      ]
+    }
+  ],
+  "values": [
+    {
+      "AttributeName": "品牌",
+      "AttributeValue": "Cafele/卡斐乐"
+    },
+    {
+      "AttributeName": "适用品牌",
+      "AttributeValue": "Xiaomi/小米"
+    },
+    {
+      "AttributeName": "保护套质地",
+      "AttributeValue": "亚克力"
+    },
+    {
+      "AttributeName": "款式",
+      "AttributeValue": "全包式"
+    }
+  ]
+}

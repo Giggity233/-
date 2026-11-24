@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block page_title %}修改图片对应文字{% endblock %}
+{% block content %}
+<div class="page-heading registration-heading"><div><a class="back-link" href="{% url 'image_text_registration' %}">← 返回图片对应文字</a><h1>修改图片对应文字</h1><p>图片链接由外部接口写入；此处仅修改右侧显示的文字。</p></div></div>
+<section class="panel image-text-edit-panel">
+  <div class="image-text-edit-preview"><a href="{{ registration.image_url }}" target="_blank" rel="noopener noreferrer"><img src="{{ registration.image_url }}" alt="图片对应文字"></a><div><strong>图片链接</strong><a class="image-text-url" href="{{ registration.image_url }}" target="_blank" rel="noopener noreferrer">{{ registration.image_url }}</a></div></div>
+  <form method="post" class="styled-form image-text-edit-form">{% csrf_token %}<label>{{ form.content.label }}{{ form.content }}{% for error in form.content.errors %}<em>{{ error }}</em>{% endfor %}</label><div class="registration-form-actions"><button class="btn btn-primary">保存文字</button><a class="btn btn-secondary" href="{% url 'image_text_registration' %}">取消</a></div></form>
+</section>
+{% endblock %}

@@ -1,0 +1,1034 @@
+{% load static %}
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}蘑菇头中控平台{% endblock %}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="{% static 'css/site.css' %}?v=20261118-order-urging-ui">
+</head>
+<body>
+{% if user.is_authenticated %}
+<div class="app-shell">
+  <aside class="sidebar">
+    <a class="brand" href="{% url 'dashboard' %}"><img src="{% static 'images/logo.png' %}" alt="蘑菇头 Logo"><span>蘑菇头<br><small>中控平台</small></span></a>
+    <nav>
+      {% if user.customer_id %}
+      <div class="nav-group client-nav-group"><div class="nav-group-title"><i>▦</i>数据中控</div>
+        <a class="nav-item {% if request.resolver_match.url_name == 'dashboard' %}active{% endif %}" href="{% url 'dashboard' %}">数据看板</a>
+        <a class="nav-item {% if 'store-data' in request.path %}active{% endif %}" href="{% url 'store_data_center' %}">店铺数据中心</a>
+        <a class="nav-item {% if request.resolver_match.url_name == 'account_center' %}active{% endif %}" href="{% url 'account_center' %}">店铺账号管理</a>
+      </div>
+      <details class="nav-group" {% if 'ai-knowledge' in request.path %}open{% endif %}><summary class="nav-group-title"><i>✦</i>AI 知识库</summary>
+        {% if user.customer.allow_store_knowledge_view %}<a class="nav-item {% if '/ai-knowledge/store/' in request.path %}active{% endif %}" href="{% url 'ai_knowledge_list' 'store' %}">店铺知识库</a>{% endif %}
+        {% if user.customer.allow_product_knowledge_view %}<a class="nav-item {% if '/ai-knowledge/product/' in request.path %}active{% endif %}" href="{% url 'ai_knowledge_list' 'product' %}">商品知识库</a>{% endif %}
+        <a class="nav-item {% if '/ai-knowledge/after-sales-strategies/' in request.path %}active{% endif %}" href="{% url 'after_sales_strategy_config' %}">售后策略配置</a>
+      </details>
+      <details class="nav-group" {% if 'after-sales' in request.path %}open{% endif %}><summary class="nav-group-title"><i>◈</i>售后处理中控</summary>
+        <a class="nav-item {% if 'invoices' in request.path %}active{% endif %}" href="{% url 'invoice_center' %}">发票中心</a>
+        <a class="nav-item {% if 'messages' in request.path %}active{% endif %}" href="{% url 'message_center' %}">留言管理</a>
+      </details>
+      {% else %}
+      <details class="nav-group" name="main-menu" {% if 'ai-knowledge' not in request.path and 'account-password-registration' not in request.path and 'after-sales' not in request.path %}open{% endif %}><summary class="nav-group-title"><i>▦</i>数据中控</summary>
+        <a class="nav-item {% if request.resolver_match.url_name == 'dashboard' %}active{% endif %}" href="{% url 'dashboard' %}">工作台</a>
+        <a class="nav-item {% if 'customer' in request.path %}active{% endif %}" href="{% url 'customer_list' %}">客户统计表</a>
+        <a class="nav-item {% if 'cookies' in request.path %}active{% endif %}" href="{% url 'cookie_center' %}">Cookie 状态</a>
+        <a class="nav-item {% if 'unowned' in request.path %}active{% endif %}" href="{% url 'unowned_store_center' %}">无主店铺中心</a>
+        <a class="nav-item {% if 'store-data' in request.path %}active{% endif %}" href="{% url 'store_data_center' %}">店铺数据中心</a>
+        {% if user.is_superuser or perms.core.can_view_customer_performance %}<a class="nav-item {% if 'customer-performance' in request.path %}active{% endif %}" href="{% url 'customer_performance' %}">客服绩效</a>{% endif %}{% if user.is_superuser or perms.core.can_view_customer_performance or perms.core.can_view_own_monthly_replies %}<a class="nav-item {% if 'monthly-replies' in request.path %}active{% endif %}" href="{% url 'monthly_replies' %}">月度回复</a>{% endif %}
+        <a class="nav-item {% if request.resolver_match.url_name == 'account_center' %}active{% endif %}" href="{% url 'account_center' %}">账号管理中心</a>
+        {% if user.is_superuser or user.is_staff %}<a class="nav-item {% if request.resolver_match.url_name == 'client_account_management' %}active{% endif %}" href="{% url 'client_account_management' %}">客户账号管理</a><a class="nav-item {% if 'account-passwords' in request.path %}active{% endif %}" href="{% url 'account_password_center' %}">账号密码管理中心</a>{% endif %}
+        {% if user.is_superuser or user.is_staff or perms.core.can_manage_permissions %}<a class="nav-item {% if 'permissions' in request.path %}active{% endif %}" href="{% url 'permission_center' %}">权限管理中心</a>{% endif %}
+      </details>
+      <details class="nav-group" name="main-menu" {% if 'ai-knowledge' in request.path %}open{% endif %}><summary class="nav-group-title"><i>✦</i>AI 知识库</summary>
+        <a class="nav-item {% if '/ai-knowledge/customer/' in request.path %}active{% endif %}" href="{% url 'ai_knowledge_list' 'customer' %}">客户知识库</a><a class="nav-item {% if '/ai-knowledge/store/' in request.path %}active{% endif %}" href="{% url 'ai_knowledge_list' 'store' %}">店铺知识库</a><a class="nav-item {% if '/ai-knowledge/product/' in request.path %}active{% endif %}" href="{% url 'ai_knowledge_list' 'product' %}">商品知识库</a><a class="nav-item {% if '/ai-knowledge/favorites/' in request.path %}active{% endif %}" href="{% url 'ai_favorite_product_list' %}">收藏的商品</a><a class="nav-item {% if '/ai-knowledge/material/' in request.path %}active{% endif %}" href="{% url 'ai_knowledge_list' 'material' %}">客户素材知识库</a><a class="nav-item {% if '/ai-knowledge/after-sales-strategies/' in request.path %}active{% endif %}" href="{% url 'after_sales_strategy_config' %}">售后策略配置</a>
+      </details>
+      <details class="nav-group" name="main-menu" {% if 'account-password-registration' in request.path or 'image-text-registrations' in request.path or 'remote-registrations' in request.path %}open{% endif %}><summary class="nav-group-title"><i>▤</i>登记表格</summary><a class="nav-item {% if request.resolver_match.url_name == 'account_password_registration' %}active{% endif %}" href="{% url 'account_password_registration' %}">账号密码登记</a><a class="nav-item {% if request.resolver_match.url_name == 'image_text_registration' %}active{% endif %}" href="{% url 'image_text_registration' %}">图片对应文字</a><a class="nav-item {% if request.resolver_match.url_name == 'remote_registration' %}active{% endif %}" href="{% url 'remote_registration' %}">远程登记</a></details>
+      <details class="nav-group" name="main-menu" {% if 'after-sales' in request.path %}open{% endif %}><summary class="nav-group-title"><i>◈</i>售后处理中控</summary><a class="nav-item {% if 'invoices' in request.path %}active{% endif %}" href="{% url 'invoice_center' %}">发票中心</a><a class="nav-item {% if 'messages' in request.path %}active{% endif %}" href="{% url 'message_center' %}">留言管理</a><a class="nav-item {% if request.resolver_match.url_name == 'wechat_pending_group' %}active{% endif %}" href="{% url 'wechat_pending_group' %}">微信群待发送</a></details>
+      {% endif %}
+    </nav>
+    <div class="sidebar-foot"><span class="user-avatar">{{ user.username|slice:':1'|upper }}</span><span><strong>{{ user.username }}</strong><small>{{ user.responsible_name }}</small></span></div>
+  </aside>
+  <main class="main-content">
+    <header class="topbar"><div><span class="topbar-title">{% block page_title %}工作台{% endblock %}</span><span class="topbar-subtitle">电商运营一体化管理</span></div><div class="top-actions"><a href="{% url 'password_change' %}">修改密码</a><form action="{% url 'logout' %}" method="post">{% csrf_token %}<button class="link-button" type="submit">退出登录</button></form></div></header>
+    <section class="page-content">
+      {% if messages %}{% for message in messages %}<div class="flash {{ message.tags }}">{{ message }}</div>{% endfor %}{% endif %}
+      {% block content %}{% endblock %}
+    </section>
+  </main>
+</div>
+{% else %}
+  {% block anonymous_content %}{% endblock %}
+{% endif %}
+<script>
+  (function () {
+    const isModifiedClick = (event) => event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey;
+
+    function syncAfterSalesStrategyForm() {
+      const form = document.querySelector('[data-after-sales-strategy-form]');
+      if (!form) return;
+      const customer = document.getElementById('strategy-customer');
+      const store = document.getElementById('strategy-store');
+      const isEditing = form.dataset.editing === 'true';
+      if (customer && store) {
+        const customerId = customer.value;
+        Array.from(store.options).forEach(function (option) {
+          if (!option.dataset.customerId) return;
+          option.hidden = Boolean(customerId) && option.dataset.customerId !== customerId;
+        });
+        if (!isEditing) {
+          store.disabled = !customerId;
+          if (store.selectedOptions[0] && store.selectedOptions[0].hidden) store.value = '';
+        }
+      }
+      const type = document.getElementById('id_compensation_type');
+      const stageCount = document.getElementById('id_compensation_stage_count');
+      const unit = type && type.value === 'amount' ? '元' : '%';
+      document.querySelectorAll('[data-after-sales-unit]').forEach(function (item) { item.textContent = unit; });
+      const count = Number(stageCount ? stageCount.value : 1);
+      document.querySelectorAll('[data-compensation-stage]').forEach(function (item) {
+        item.hidden = Number(item.dataset.compensationStage) > count;
+      });
+    }
+
+    function replaceMainContent(html, responseUrl, shouldPushHistory, scrollToTop) {
+      const page = new DOMParser().parseFromString(html, 'text/html');
+      const replacement = page.querySelector('.main-content');
+      const current = document.querySelector('.main-content');
+      if (!replacement || !current) return false;
+      current.replaceWith(replacement);
+      const replacementNav = page.querySelector('.sidebar nav');
+      const currentNav = document.querySelector('.sidebar nav');
+      if (replacementNav && currentNav) currentNav.replaceWith(replacementNav);
+      syncAfterSalesStrategyForm();
+      loadInitialJsonPage();
+      document.title = page.title || document.title;
+      if (shouldPushHistory) window.history.pushState({}, '', responseUrl);
+      else window.history.replaceState({}, '', responseUrl);
+      if (scrollToTop) window.scrollTo({ top: 0, behavior: 'smooth' });
+      return true;
+    }
+
+    async function navigate(url, options, shouldPushHistory, scrollToTop) {
+      document.documentElement.classList.add('is-loading');
+      try {
+        const response = await fetch(url, {
+          credentials: 'same-origin',
+          redirect: 'follow',
+          ...options,
+          headers: { 'X-Requested-With': 'XMLHttpRequest', ...(options.headers || {}) },
+        });
+        const html = await response.text();
+        if (!replaceMainContent(html, response.url, shouldPushHistory, scrollToTop)) {
+          window.location.assign(response.url);
+        }
+      } catch (error) {
+        window.location.assign(url);
+      } finally {
+        document.documentElement.classList.remove('is-loading');
+      }
+    }
+
+    let storeDataAbortController;
+
+    function getStoreDataConfig() {
+      const panel = document.getElementById('store-data-panel');
+      const form = document.getElementById('store-data-filter');
+      const body = document.getElementById('store-data-table-body');
+      const columnsNode = document.getElementById('store-data-visible-columns');
+      if (!panel || !form || !body || !columnsNode) return null;
+      try {
+        return {
+          panel,
+          form,
+          body,
+          columns: JSON.parse(columnsNode.textContent),
+          apiUrl: panel.dataset.apiUrl,
+          csrfToken: panel.dataset.csrfToken,
+          canManageAll: panel.dataset.canManageAll === 'true',
+          canManageResponsibility: panel.dataset.canManageResponsibility === 'true',
+        };
+      } catch (error) {
+        return null;
+      }
+    }
+
+    function storeDataElement(name, text, className) {
+      const element = document.createElement(name);
+      if (text !== undefined) element.textContent = text;
+      if (className) element.className = className;
+      return element;
+    }
+
+    function renderStoreDataResponsibles(cell, responsibles) {
+      cell.className = 'responsible-list';
+      if (!responsibles.length) {
+        cell.textContent = '未指定';
+        return;
+      }
+      responsibles.forEach(function (responsible) {
+        const line = storeDataElement('span');
+        line.append(document.createTextNode(responsible.label + '：' + responsible.responsible_name));
+        line.append(storeDataElement('small', responsible.username));
+        cell.append(line);
+      });
+    }
+
+    function appendReleaseAction(cell, row, config) {
+      if (config.canManageAll && !row.responsibles.length) {
+        cell.append(storeDataElement('span', '暂无负责人', 'muted'));
+        return;
+      }
+      const form = document.createElement('form');
+      form.method = 'post';
+      form.action = row.release_url;
+      form.className = 'release-form';
+      form.addEventListener('submit', function (event) {
+        const message = config.canManageAll ? '确认取消所选负责人吗？该席位将回到无主店铺中心。' : '确认取消自己的负责人席位吗？';
+        if (!window.confirm(message)) event.preventDefault();
+      });
+      const csrf = document.createElement('input');
+      csrf.type = 'hidden';
+      csrf.name = 'csrfmiddlewaretoken';
+      csrf.value = config.csrfToken;
+      form.append(csrf);
+      if (config.canManageAll) {
+        const select = document.createElement('select');
+        select.name = 'claim_id';
+        select.setAttribute('aria-label', '选择负责人');
+        row.responsibles.forEach(function (responsible) {
+          const option = document.createElement('option');
+          option.value = responsible.id;
+          option.textContent = responsible.label + '：' + responsible.responsible_name;
+          select.append(option);
+        });
+        form.append(select);
+        form.append(storeDataElement('button', '取消负责人', 'danger-link'));
+      } else {
+        form.append(storeDataElement('button', '取消我的负责人', 'danger-link'));
+      }
+      cell.append(form);
+    }
+
+    function renderStoreDataRows(config, rows) {
+      const fragment = document.createDocumentFragment();
+      if (!rows.length) {
+        const row = document.createElement('tr');
+        const cell = storeDataElement('td', '暂无可查看的店铺数据。', 'empty');
+        cell.colSpan = config.columns.length + 2;
+        row.append(cell);
+        fragment.append(row);
+      }
+      rows.forEach(function (data) {
+        const row = document.createElement('tr');
+        const storeCell = document.createElement('td');
+        storeCell.append(storeDataElement('strong', data.name));
+        storeCell.append(storeDataElement('small', data.external_id + ' · ' + data.platform));
+        row.append(storeCell);
+        config.columns.forEach(function (column) {
+          const cell = document.createElement('td');
+          if (column === 'responsibles') renderStoreDataResponsibles(cell, data.responsibles);
+          else cell.textContent = data.values[column] || '—';
+          row.append(cell);
+        });
+        const actionCell = document.createElement('td');
+        if (config.canManageResponsibility) appendReleaseAction(actionCell, data, config);
+        else actionCell.append(storeDataElement('span', '仅查看', 'muted'));
+        row.append(actionCell);
+        fragment.append(row);
+      });
+      config.body.replaceChildren(fragment);
+    }
+
+    function storeDataUrlWithPage(pageUrl, page) {
+      const url = new URL(pageUrl, window.location.href);
+      url.searchParams.set('page', page);
+      return url;
+    }
+
+    function renderStoreDataPagination(config, pagination, pageUrl) {
+      const current = document.getElementById('store-data-pagination');
+      if (current) current.remove();
+      if (pagination.num_pages <= 1) return;
+      const nav = document.createElement('nav');
+      nav.id = 'store-data-pagination';
+      nav.className = 'pagination';
+      nav.setAttribute('aria-label', '店铺数据分页');
+      nav.append(storeDataElement('span', '共 ' + pagination.count + ' 家店铺，第 ' + pagination.number + ' / ' + pagination.num_pages + ' 页'));
+      const actions = document.createElement('div');
+      function addPageLink(label, page) {
+        const link = storeDataElement('a', label, 'btn btn-secondary');
+        link.href = storeDataUrlWithPage(pageUrl, page).pathname + storeDataUrlWithPage(pageUrl, page).search;
+        link.dataset.storeDataLink = '';
+        actions.append(link);
+      }
+      if (pagination.has_previous) addPageLink('上一页', pagination.previous_page);
+      if (pagination.has_next) addPageLink('下一页', pagination.next_page);
+      nav.append(actions);
+      config.panel.append(nav);
+    }
+
+    function syncStoreDataControls(pageUrl) {
+      const config = getStoreDataConfig();
+      if (!config) return;
+      const url = new URL(pageUrl, window.location.href);
+      Array.from(config.form.elements).forEach(function (field) {
+        if (!field.name || field.type === 'submit') return;
+        field.value = url.searchParams.get(field.name) || '';
+      });
+      const sort = url.searchParams.get('sort') || '';
+      const direction = url.searchParams.get('direction') || '';
+      document.querySelectorAll('[data-store-data-sort]').forEach(function (link) {
+        const linkUrl = new URL(url, window.location.href);
+        linkUrl.searchParams.set('sort', link.dataset.storeDataSort);
+        linkUrl.searchParams.set('direction', link.dataset.storeDataDirection);
+        linkUrl.searchParams.delete('page');
+        link.href = linkUrl.pathname + linkUrl.search;
+        link.classList.toggle('active', sort === link.dataset.storeDataSort && direction === link.dataset.storeDataDirection);
+      });
+      document.querySelectorAll('[data-store-data-sort-toggle]').forEach(function (link) {
+        const linkUrl = new URL(url, window.location.href);
+        const key = link.dataset.storeDataSortToggle;
+        linkUrl.searchParams.set('sort', key);
+        linkUrl.searchParams.set('direction', sort === key && direction === 'asc' ? 'desc' : 'asc');
+        linkUrl.searchParams.delete('page');
+        link.href = linkUrl.pathname + linkUrl.search;
+      });
+    }
+
+    async function loadStoreData(pageUrl, shouldPushHistory, shouldSyncControls) {
+      const config = getStoreDataConfig();
+      if (!config) return false;
+      const displayUrl = new URL(pageUrl, window.location.href);
+      if (displayUrl.origin !== window.location.origin) return false;
+      if (shouldSyncControls) syncStoreDataControls(displayUrl);
+      const apiUrl = new URL(config.apiUrl, displayUrl.origin);
+      apiUrl.search = displayUrl.search;
+      if (storeDataAbortController) storeDataAbortController.abort();
+      const abortController = new AbortController();
+      storeDataAbortController = abortController;
+      document.documentElement.classList.add('is-loading');
+      try {
+        const response = await fetch(apiUrl, {
+          credentials: 'same-origin',
+          headers: { 'Accept': 'application/json', 'X-Requested-With': 'XMLHttpRequest' },
+          signal: abortController.signal,
+        });
+        if (response.redirected) {
+          window.location.assign(response.url);
+          return true;
+        }
+        if (!response.ok) throw new Error('数据请求失败');
+        const payload = await response.json();
+        if (!payload.data) throw new Error((payload.errors || []).join('') || '数据请求失败');
+        renderStoreDataRows(config, payload.data.rows);
+        renderStoreDataPagination(config, payload.data.pagination, displayUrl);
+        syncStoreDataControls(displayUrl);
+        const tableWrap = config.panel.querySelector('.wide-table');
+        if (tableWrap) tableWrap.scrollTop = 0;
+        if (shouldPushHistory) window.history.pushState({}, '', displayUrl.pathname + displayUrl.search);
+        return true;
+      } catch (error) {
+        if (error.name !== 'AbortError') window.location.assign(displayUrl.href);
+        return true;
+      } finally {
+        if (storeDataAbortController === abortController) {
+          document.documentElement.classList.remove('is-loading');
+          storeDataAbortController = null;
+        }
+      }
+    }
+
+    document.addEventListener('click', function (event) {
+      const link = event.target.closest('[data-store-data-link]');
+      if (!link || event.defaultPrevented || isModifiedClick(event) || link.target) return;
+      event.preventDefault();
+      loadStoreData(link.href, true, true);
+    });
+
+    document.addEventListener('submit', function (event) {
+      const form = event.target;
+      if (!(form instanceof HTMLFormElement) || form.id !== 'store-data-filter' || event.defaultPrevented) return;
+      event.preventDefault();
+      const pageUrl = new URL(form.getAttribute('action') || window.location.pathname, window.location.href);
+      pageUrl.search = new URLSearchParams(new FormData(form, event.submitter || undefined)).toString();
+      loadStoreData(pageUrl, true, true);
+    });
+
+    let jsonPageAbortController;
+
+    function getJsonPageConfig() {
+      const panel = document.getElementById('json-page-panel');
+      const form = document.getElementById('json-page-filter');
+      const body = document.getElementById('json-page-body');
+      if (!panel || !form || !body || !panel.dataset.jsonPageType || !panel.dataset.apiUrl) return null;
+      return {
+        panel,
+        form,
+        body,
+        type: panel.dataset.jsonPageType,
+        apiUrl: panel.dataset.apiUrl,
+        csrfToken: panel.dataset.csrfToken || '',
+        scope: panel.dataset.jsonPageScope || '',
+        favoritesOnly: panel.dataset.favoritesOnly === 'true',
+        canDelete: panel.dataset.canDelete === 'true',
+        canManageStatus: panel.dataset.canManageStatus === 'true',
+        canChangeStatus: panel.dataset.canChangeStatus === 'true',
+        canAssign: panel.dataset.canAssign === 'true',
+        loadOnOpen: panel.dataset.loadJsonOnOpen === 'true',
+      };
+    }
+
+    function jsonPostForm(action, csrfToken, className) {
+      const form = document.createElement('form');
+      form.method = 'post';
+      form.action = action;
+      if (className) form.className = className;
+      const csrf = document.createElement('input');
+      csrf.type = 'hidden';
+      csrf.name = 'csrfmiddlewaretoken';
+      csrf.value = csrfToken;
+      form.append(csrf);
+      return form;
+    }
+
+    function renderJsonPageResponsibles(cell, responsibles) {
+      cell.className = 'responsible-list';
+      if (!responsibles.length) {
+        cell.append(storeDataElement('span', '未指定', 'muted'));
+        return;
+      }
+      responsibles.forEach(function (responsible) {
+        const line = storeDataElement('span');
+        line.append(document.createTextNode(responsible.label + '：' + responsible.responsible_name));
+        line.append(storeDataElement('small', responsible.username));
+        cell.append(line);
+      });
+    }
+
+    function renderCookieRows(config, rows) {
+      const fragment = document.createDocumentFragment();
+      const columnCount = config.canDelete || config.canManageStatus ? 8 : 7;
+      if (!rows.length) {
+        const row = document.createElement('tr');
+        const cell = storeDataElement('td', '暂无 Cookie 数据。', 'empty');
+        cell.colSpan = columnCount;
+        row.append(cell);
+        fragment.append(row);
+      }
+      rows.forEach(function (data) {
+        const row = document.createElement('tr');
+        const storeCell = document.createElement('td');
+        storeCell.append(storeDataElement('strong', data.name));
+        storeCell.append(storeDataElement('small', data.external_id));
+        row.append(storeCell);
+        ['platform', 'customer', 'main_category'].forEach(function (key) { row.append(storeDataElement('td', data[key])); });
+        const cookieCell = storeDataElement('td', '双击查看', 'cookie-preview');
+        cookieCell.dataset.cookie = data.cookie;
+        cookieCell.title = '双击查看 Cookie';
+        row.append(cookieCell);
+        row.append(storeDataElement('td', data.cookie_updated_at));
+        const statusCell = document.createElement('td');
+        statusCell.append(storeDataElement('span', data.status_label, 'badge ' + data.status));
+        row.append(statusCell);
+        if (config.canDelete || config.canManageStatus) {
+          const actionCell = document.createElement('td');
+          const actions = storeDataElement('div', undefined, 'cookie-actions');
+          if (config.canManageStatus) {
+            [['valid', '设为有效', 'status-link valid-link'], ['invalid', '设为失效', 'status-link invalid-link']].forEach(function (status) {
+              const form = jsonPostForm(data.status_url, config.csrfToken);
+              const input = document.createElement('input');
+              input.type = 'hidden'; input.name = 'cookie_status'; input.value = status[0];
+              form.append(input);
+              const button = storeDataElement('button', status[1], status[2]);
+              button.type = 'submit'; form.append(button); actions.append(form);
+            });
+          }
+          if (config.canDelete) {
+            const form = jsonPostForm(data.delete_url, config.csrfToken);
+            form.addEventListener('submit', function (event) { if (!window.confirm('确认删除该 Cookie 和关联店铺吗？')) event.preventDefault(); });
+            form.append(storeDataElement('button', '删除', 'danger-link'));
+            actions.append(form);
+          }
+          actionCell.append(actions); row.append(actionCell);
+        }
+        fragment.append(row);
+      });
+      config.body.replaceChildren(fragment);
+    }
+
+    function renderAccountRows(config, rows) {
+      const fragment = document.createDocumentFragment();
+      if (!rows.length) {
+        const row = document.createElement('tr');
+        const cell = storeDataElement('td', '暂无账号信息。', 'empty'); cell.colSpan = 11; row.append(cell); fragment.append(row);
+      }
+      rows.forEach(function (data) {
+        const row = document.createElement('tr');
+        const storeCell = document.createElement('td');
+        storeCell.append(storeDataElement('strong', data.store_name)); storeCell.append(storeDataElement('small', data.store_external_id)); row.append(storeCell);
+        row.append(storeDataElement('td', data.name));
+        const typeCell = document.createElement('td'); typeCell.append(storeDataElement('span', data.account_type_label, 'account-type ' + data.account_type)); row.append(typeCell);
+        row.append(storeDataElement('td', data.login_account));
+        row.append(storeDataElement('td', data.login_password, 'account-password'));
+        ['corresponding_port', 'phone', 'external_id'].forEach(function (key) { row.append(storeDataElement('td', data[key])); });
+        const botStatus = document.createElement('td'); botStatus.append(storeDataElement('span', data.has_bot_account ? '有' : '无', 'badge ' + (data.has_bot_account ? 'valid' : 'disabled'))); row.append(botStatus);
+        const botCell = document.createElement('td'); botCell.append(storeDataElement('span', data.has_bot_account ? data.bot_account_names : '/', data.has_bot_account ? 'account-type bot' : '')); row.append(botCell);
+        const actionCell = document.createElement('td');
+        if (data.can_edit) {
+          const actions = storeDataElement('span', undefined, 'actions');
+          const edit = storeDataElement('a', '编辑'); edit.href = data.edit_url; actions.append(edit);
+          const form = jsonPostForm(data.delete_url, config.csrfToken);
+          form.addEventListener('submit', function (event) { if (!window.confirm('确认删除该账号吗？')) event.preventDefault(); });
+          form.append(storeDataElement('button', '删除', 'danger-link')); actions.append(form); actionCell.append(actions);
+        } else actionCell.append(storeDataElement('span', '无操作权限', 'muted'));
+        row.append(actionCell); fragment.append(row);
+      });
+      config.body.replaceChildren(fragment);
+    }
+
+    function renderAccountPasswordRows(config, rows) {
+      const fragment = document.createDocumentFragment();
+      if (!rows.length) {
+        const row = document.createElement('tr'); const cell = storeDataElement('td', '没有符合条件的账号信息。', 'empty'); cell.colSpan = 12; row.append(cell); fragment.append(row);
+      }
+      rows.forEach(function (data) {
+        const row = document.createElement('tr');
+        const storeCell = document.createElement('td'); storeCell.append(storeDataElement('strong', data.store_name)); storeCell.append(storeDataElement('small', data.store_external_id + ' · ' + data.platform)); row.append(storeCell);
+        row.append(storeDataElement('td', data.customer));
+        const responsibleCell = document.createElement('td'); renderJsonPageResponsibles(responsibleCell, data.responsibles); row.append(responsibleCell);
+        row.append(storeDataElement('td', data.name));
+        const typeCell = document.createElement('td'); typeCell.append(storeDataElement('span', data.account_type_label, 'account-type ' + data.account_type)); row.append(typeCell);
+        row.append(storeDataElement('td', data.login_account, 'account-password'));
+        row.append(storeDataElement('td', data.login_password, 'account-password sensitive-value'));
+        ['corresponding_port', 'phone', 'external_id', 'created_by', 'created_at'].forEach(function (key) { row.append(storeDataElement('td', data[key])); });
+        fragment.append(row);
+      });
+      config.body.replaceChildren(fragment);
+    }
+
+    function renderAccountPasswordRegistrationRows(config, rows) {
+      const fragment = document.createDocumentFragment();
+      if (!rows.length) {
+        const row = document.createElement('tr');
+        const cell = storeDataElement('td', '暂无符合条件的登记记录。', 'empty');
+        cell.colSpan = 14;
+        row.append(cell);
+        fragment.append(row);
+      }
+      rows.forEach(function (data) {
+        const row = document.createElement('tr');
+        ['shop_name', 'platform', 'account_name'].forEach(function (key) {
+          row.append(storeDataElement('td', data[key] || (key === 'platform' ? '拼多多' : '—')));
+        });
+        const typeCell = document.createElement('td');
+        typeCell.append(storeDataElement('span', data.account_type_name || '专员账号', 'account-type ' + (data.account_type || 'specialist')));
+        row.append(typeCell);
+        row.append(storeDataElement('td', data.login_account || '—'));
+        row.append(storeDataElement('td', data.login_password || '—', 'account-password sensitive-value'));
+        ['phone', 'responsible_1', 'responsible_2', 'customer'].forEach(function (key) {
+          row.append(storeDataElement('td', data[key] || '—'));
+        });
+        row.append(storeDataElement('td', data.remarks || '—', 'registration-remarks-cell'));
+        row.append(storeDataElement('td', data.operator_name || '—'));
+        row.append(storeDataElement('td', data.created_at_display || '—'));
+        const actionCell = document.createElement('td');
+        const actions = storeDataElement('div', undefined, 'registration-actions');
+        const edit = storeDataElement('a', '修改', 'btn btn-secondary');
+        edit.href = data.edit_url;
+        actions.append(edit);
+        const form = jsonPostForm(data.delete_url, config.csrfToken);
+        form.addEventListener('submit', function (event) {
+          if (!window.confirm('确认删除这条账号密码登记吗？')) event.preventDefault();
+        });
+        const remove = storeDataElement('button', '删除', 'danger-link');
+        remove.type = 'submit';
+        form.append(remove);
+        actions.append(form);
+        actionCell.append(actions);
+        row.append(actionCell);
+        fragment.append(row);
+      });
+      config.body.replaceChildren(fragment);
+    }
+
+    function afterSalesBadge(statusLabel, status) {
+      return storeDataElement('span', statusLabel, 'badge ' + (status === 'success' ? 'valid' : status === 'failed' ? 'invalid' : 'disabled'));
+    }
+
+    function renderInvoiceRows(config, rows) {
+      const fragment = document.createDocumentFragment();
+      if (!rows.length) { const row = document.createElement('tr'); const cell = storeDataElement('td', '暂无符合条件的发票记录。', 'empty'); cell.colSpan = 13; row.append(cell); fragment.append(row); }
+      rows.forEach(function (data) {
+        const row = document.createElement('tr');
+        const store = document.createElement('td'); store.append(storeDataElement('strong', data.store_name)); store.append(storeDataElement('small', data.store_id)); row.append(store);
+        ['order_no', 'title_type', 'company_subject', 'platform_name', 'invoice_title', 'taxpayer_id', 'product_name', 'quantity', 'amount'].forEach(function (key) { row.append(storeDataElement('td', data[key] || '—')); });
+        const status = document.createElement('td'); status.append(afterSalesBadge(data.status_label, data.status)); row.append(status);
+        row.append(storeDataElement('td', data.created_at));
+        const actions = document.createElement('td'); actions.className = 'invoice-actions';
+        if (data.pdf_url) { const download = storeDataElement('a', '下载 PDF'); download.href = data.pdf_url; download.target = '_blank'; download.rel = 'noopener'; actions.append(download); }
+        const upload = document.createElement('form'); upload.method = 'post'; upload.action = data.upload_url; upload.enctype = 'multipart/form-data';
+        const csrf = document.createElement('input'); csrf.type = 'hidden'; csrf.name = 'csrfmiddlewaretoken'; csrf.value = config.csrfToken;
+        const file = document.createElement('input'); file.type = 'file'; file.name = 'pdf_file'; file.accept = 'application/pdf,.pdf'; file.required = true;
+        upload.append(csrf, file, storeDataElement('button', data.pdf_url ? '替换 PDF' : '上传 PDF', 'btn btn-secondary')); actions.append(upload);
+        if (data.can_retry) { const retry = jsonPostForm(data.retry_url, config.csrfToken); retry.append(storeDataElement('button', '再次上传', 'btn btn-primary')); actions.append(retry); }
+        row.append(actions); fragment.append(row);
+      });
+      config.body.replaceChildren(fragment);
+    }
+
+    function renderMessageRows(config, rows) {
+      const fragment = document.createDocumentFragment();
+      if (!rows.length) { const row = document.createElement('tr'); const cell = storeDataElement('td', '暂无符合条件的留言任务。', 'empty'); cell.colSpan = 8; row.append(cell); fragment.append(row); }
+      rows.forEach(function (data) {
+        const row = document.createElement('tr'); row.append(storeDataElement('td', data.created_at)); row.append(storeDataElement('td', data.customer));
+        const store = document.createElement('td'); store.append(storeDataElement('strong', data.store_name)); store.append(storeDataElement('small', data.store_id)); row.append(store);
+        row.append(storeDataElement('td', data.order_no)); row.append(storeDataElement('td', data.reply_content, 'message-content')); row.append(storeDataElement('td', data.created_by));
+        const status = document.createElement('td');
+        if (config.canChangeStatus) {
+          const form = jsonPostForm(data.status_url, config.csrfToken, 'message-status-form'); const select = document.createElement('select'); select.name = 'status';
+          [['pending', '未处理'], ['success', '成功'], ['failed', '失败']].forEach(function (item) { const option = document.createElement('option'); option.value = item[0]; option.textContent = item[1]; option.selected = data.status === item[0]; select.append(option); });
+          form.append(select, storeDataElement('button', '更新', 'btn btn-secondary')); status.append(form);
+        } else status.append(afterSalesBadge(data.status_label, data.status));
+        row.append(status);
+        const actions = document.createElement('td'); const remove = jsonPostForm(data.delete_url, config.csrfToken); remove.addEventListener('submit', function (event) { if (!window.confirm('确认删除该留言任务吗？')) event.preventDefault(); }); remove.append(storeDataElement('button', '删除', 'danger-link')); actions.append(remove); row.append(actions); fragment.append(row);
+      });
+      config.body.replaceChildren(fragment);
+    }
+
+    function unownedSelect(labelText, name, items, selectedId, valueKey, textBuilder) {
+      const label = storeDataElement('label'); label.append(document.createTextNode(labelText));
+      const select = document.createElement('select'); select.name = name; select.required = true;
+      const empty = document.createElement('option'); empty.value = ''; empty.textContent = name === 'user_id' ? '请选择平台账号' : '请选择客户'; select.append(empty);
+      items.forEach(function (item) {
+        const option = document.createElement('option'); option.value = item[valueKey]; option.textContent = textBuilder(item);
+        if (String(item[valueKey]) === String(selectedId || '')) option.selected = true;
+        select.append(option);
+      });
+      label.append(select); return label;
+    }
+
+    function appendUnownedShift(list, data, shift, claim, config, options) {
+      const shiftName = shift === 'morning' ? '负责人 1' : '负责人 2';
+      const row = storeDataElement('div', undefined, 'shift-row');
+      const details = document.createElement('div'); details.append(storeDataElement('strong', shiftName)); details.append(storeDataElement('small', claim ? '已由 ' + claim.username + ' 领取' : '待领取')); row.append(details);
+      if (claim) {
+        const button = storeDataElement('button', '已领取', 'btn btn-disabled'); button.disabled = true; row.append(button); list.append(row); return;
+      }
+      const assign = config.canAssign;
+      const disclosure = document.createElement('details');
+      disclosure.append(storeDataElement('summary', assign ? '指定' + shiftName : '领取' + shiftName, 'btn btn-primary'));
+      const form = jsonPostForm(assign ? data[shift + '_assign_url'] : data[shift + '_claim_url'], config.csrfToken, 'claim-form');
+      if (assign) {
+        form.append(unownedSelect('负责人', 'user_id', options.active_users, null, 'pk', function (item) { return item.username + ' · ' + item.responsible_name; }));
+        form.append(unownedSelect('所属客户', 'customer_id', options.customers, data.customer_id, 'pk', function (item) { return item.name; }));
+      } else if (!data.customer) {
+        const label = storeDataElement('label'); label.append(document.createTextNode('所属客户'));
+        const input = document.createElement('input'); input.name = 'customer_name'; input.setAttribute('list', 'customer-options'); input.placeholder = '输入名称模糊搜索'; input.required = true; label.append(input); form.append(label);
+      } else form.append(storeDataElement('p', '所属客户：' + data.customer, 'claim-customer'));
+      form.append(storeDataElement('button', assign ? '确认指定' : '确认领取', 'btn btn-primary btn-wide'));
+      disclosure.append(form); row.append(disclosure); list.append(row);
+    }
+
+    function syncUnownedCustomerOptions(customers) {
+      const list = document.getElementById('customer-options'); if (!list) return;
+      const fragment = document.createDocumentFragment();
+      customers.forEach(function (customer) { const option = document.createElement('option'); option.value = customer.name; fragment.append(option); });
+      list.replaceChildren(fragment);
+    }
+
+    function renderUnownedRows(config, rows, options) {
+      syncUnownedCustomerOptions(options.customers);
+      const fragment = document.createDocumentFragment();
+      if (!rows.length) {
+        const empty = storeDataElement('div', undefined, 'empty-state'); empty.append(storeDataElement('h2', '暂无无主店铺')); empty.append(storeDataElement('p', '所有店铺的早班与晚班都已完成认领。')); fragment.append(empty);
+      }
+      rows.forEach(function (data) {
+        const card = storeDataElement('article', undefined, 'store-card');
+        const head = storeDataElement('div', undefined, 'store-card-head'); const title = document.createElement('div'); title.append(storeDataElement('h2', data.name)); title.append(storeDataElement('p', data.platform + ' · ' + data.external_id)); head.append(title); head.append(storeDataElement('span', data.cookie_status_label, 'badge ' + data.cookie_status)); card.append(head);
+        const meta = storeDataElement('div', undefined, 'store-meta'); meta.append(storeDataElement('span', '所属客户：' + (data.customer || '待领取时指定'))); meta.append(storeDataElement('span', '类目：' + data.main_category)); card.append(meta);
+        const shifts = storeDataElement('div', undefined, 'shift-list'); appendUnownedShift(shifts, data, 'morning', data.morning_claim, config, options); appendUnownedShift(shifts, data, 'evening', data.evening_claim, config, options); card.append(shifts);
+        if (config.canDelete) {
+          const actions = storeDataElement('div', undefined, 'actions'); const form = jsonPostForm(data.delete_url, config.csrfToken);
+          form.addEventListener('submit', function (event) { if (!window.confirm('确认删除无主店铺“' + data.name + '”吗？店铺及其关联账号、Cookie、待处理事务都会被删除。')) event.preventDefault(); }); form.append(storeDataElement('button', '删除店铺', 'danger-link')); actions.append(form); card.append(actions);
+        }
+        fragment.append(card);
+      });
+      config.body.replaceChildren(fragment);
+    }
+
+    function setProductFavoriteButton(button, isFavorite) {
+      button.classList.toggle('is-favorite', isFavorite);
+      button.setAttribute('aria-pressed', isFavorite ? 'true' : 'false');
+      button.textContent = isFavorite ? '已收藏' : '收藏';
+    }
+
+    function renderAIKnowledgeRows(config, rows) {
+      const fragment = document.createDocumentFragment();
+      const isProduct = config.scope === 'product';
+      const isMaterial = config.scope === 'material';
+      const columnCount = isProduct ? 5 : 4;
+      if (!rows.length) {
+        const row = document.createElement('tr');
+        const cell = storeDataElement('td', '没有符合条件的数据。', 'empty');
+        cell.colSpan = columnCount; row.append(cell); fragment.append(row);
+      }
+      rows.forEach(function (data) {
+        const row = document.createElement('tr');
+        const itemCell = document.createElement('td');
+        if (isProduct && data.main_image_url) {
+          const imageLink = document.createElement('a'); imageLink.className = 'product-list-image'; imageLink.href = data.main_image_url; imageLink.target = '_blank'; imageLink.rel = 'noopener noreferrer';
+          const image = document.createElement('img'); image.src = data.main_image_url; image.alt = data.display + ' 主图'; imageLink.append(image); itemCell.append(imageLink);
+        }
+        itemCell.append(storeDataElement('strong', data.display)); itemCell.append(storeDataElement('small', data.subtitle)); row.append(itemCell);
+        if (isProduct) {
+          row.append(storeDataElement('td', data.knowledge_heat));
+        }
+        row.append(storeDataElement('td', data.ownership));
+        const permissionCell = document.createElement('td'); permissionCell.append(storeDataElement('span', data.can_edit ? '可维护' : '仅查看', 'badge ' + (data.can_edit ? 'valid' : 'disabled'))); row.append(permissionCell);
+        const actionCell = document.createElement('td');
+        const actions = storeDataElement('div', undefined, 'knowledge-list-actions');
+        if (isProduct) {
+          const favorite = storeDataElement('button', undefined, 'btn btn-secondary product-favorite-button');
+          favorite.type = 'button';
+          favorite.dataset.productFavoriteUrl = data.favorite_url;
+          setProductFavoriteButton(favorite, Boolean(data.is_favorite));
+          actions.append(favorite);
+        }
+        const detail = storeDataElement('a', '维护知识', 'btn btn-secondary'); detail.href = data.detail_url; detail.target = '_blank'; detail.rel = 'noopener noreferrer'; actions.append(detail);
+        if ((isProduct || isMaterial) && data.can_delete) {
+          const form = jsonPostForm(data.delete_url, config.csrfToken);
+          if (isProduct && config.favoritesOnly) {
+            const returnToFavorites = document.createElement('input');
+            returnToFavorites.type = 'hidden';
+            returnToFavorites.name = 'return_to_favorites';
+            returnToFavorites.value = '1';
+            form.append(returnToFavorites);
+          }
+          const message = isProduct
+            ? '确认删除商品“' + data.display + '”及其商品知识内容吗？'
+            : '确认删除客户素材“' + data.display + '”及其全部知识内容吗？已手动标注它的商品将取消该标注。';
+          form.addEventListener('submit', function (event) { if (!window.confirm(message)) event.preventDefault(); });
+          form.append(storeDataElement('button', isProduct ? '删除商品' : '删除素材', 'danger-link')); actions.append(form);
+        }
+        actionCell.append(actions); row.append(actionCell); fragment.append(row);
+      });
+      config.body.replaceChildren(fragment);
+    }
+
+    function renderJsonPage(config, data) {
+      if (config.type === 'cookies') renderCookieRows(config, data.rows);
+      else if (config.type === 'accounts') renderAccountRows(config, data.rows);
+      else if (config.type === 'account-passwords') renderAccountPasswordRows(config, data.rows);
+      else if (config.type === 'account-password-registrations') renderAccountPasswordRegistrationRows(config, data.rows);
+      else if (config.type === 'invoices') renderInvoiceRows(config, data.rows);
+      else if (config.type === 'messages') renderMessageRows(config, data.rows);
+      else if (config.type === 'unowned-stores') renderUnownedRows(config, data.rows, data);
+      else if (config.type === 'ai-knowledge') renderAIKnowledgeRows(config, data.rows);
+    }
+
+    function renderJsonPagePagination(config, pagination, pageUrl) {
+      const current = document.getElementById('json-page-pagination'); if (current) current.remove();
+      const unit = config.type === 'ai-knowledge' ? '个' : '条';
+      const counter = document.getElementById('json-page-result-count'); if (counter) counter.textContent = '共 ' + pagination.count + ' ' + unit;
+      if (pagination.num_pages <= 1) return;
+      const nav = storeDataElement('nav', undefined, 'pagination'); nav.id = 'json-page-pagination'; nav.setAttribute('aria-label', '分页');
+      nav.append(storeDataElement('span', '共 ' + pagination.count + ' ' + unit + '，第 ' + pagination.number + ' / ' + pagination.num_pages + ' 页'));
+      const actions = document.createElement('div');
+      [['上一页', pagination.previous_page, pagination.has_previous], ['下一页', pagination.next_page, pagination.has_next]].forEach(function (item) {
+        if (!item[2]) return;
+        const url = new URL(pageUrl, window.location.href); url.searchParams.set('page', item[1]);
+        const link = storeDataElement('a', item[0], 'btn btn-secondary'); link.href = url.pathname + url.search; link.dataset.jsonPageLink = ''; actions.append(link);
+      });
+      nav.append(actions); config.panel.append(nav);
+    }
+
+    function syncJsonPageFilter(config, pageUrl) {
+      const url = new URL(pageUrl, window.location.href);
+      Array.from(config.form.elements).forEach(function (field) {
+        if (!field.name || field.type === 'submit') return;
+        if (field.type === 'checkbox' || field.type === 'radio') field.checked = url.searchParams.get(field.name) === field.value;
+        else field.value = url.searchParams.get(field.name) || '';
+      });
+    }
+
+    async function loadJsonPage(pageUrl, shouldPushHistory, shouldSyncFilter) {
+      const config = getJsonPageConfig(); if (!config) return false;
+      const displayUrl = new URL(pageUrl, window.location.href); if (displayUrl.origin !== window.location.origin) return false;
+      if (shouldSyncFilter) syncJsonPageFilter(config, displayUrl);
+      const apiUrl = new URL(config.apiUrl, displayUrl.origin); apiUrl.search = displayUrl.search;
+      if (jsonPageAbortController) jsonPageAbortController.abort();
+      const abortController = new AbortController(); jsonPageAbortController = abortController;
+      document.documentElement.classList.add('is-loading');
+      try {
+        const response = await fetch(apiUrl, { credentials: 'same-origin', headers: { 'Accept': 'application/json', 'X-Requested-With': 'XMLHttpRequest' }, signal: abortController.signal });
+        if (response.redirected) { window.location.assign(response.url); return true; }
+        if (!response.ok) throw new Error('数据请求失败');
+        const payload = await response.json(); if (!payload.data) throw new Error('数据请求失败');
+        renderJsonPage(config, payload.data); renderJsonPagePagination(config, payload.data.pagination, displayUrl); syncJsonPageFilter(config, displayUrl);
+        if (shouldPushHistory) window.history.pushState({}, '', displayUrl.pathname + displayUrl.search);
+        return true;
+      } catch (error) {
+        if (error.name !== 'AbortError') window.location.assign(displayUrl.href);
+        return true;
+      } finally {
+        if (jsonPageAbortController === abortController) { document.documentElement.classList.remove('is-loading'); jsonPageAbortController = null; }
+      }
+    }
+
+    function getImageTextRegistrationConfig() {
+      const panel = document.getElementById('image-text-registration-panel');
+      const body = document.getElementById('image-text-registration-list');
+      const counter = document.getElementById('image-text-registration-count');
+      if (!panel || !body || !panel.dataset.apiUrl) return null;
+      return { panel, body, counter, apiUrl: panel.dataset.apiUrl, csrfToken: panel.dataset.csrfToken || '' };
+    }
+
+    function renderImageTextRegistrationPagination(config, pagination) {
+      const current = document.getElementById('image-text-registration-pagination');
+      if (current) current.remove();
+      if (config.counter) config.counter.textContent = '共 ' + pagination.count + ' 条';
+      if (pagination.num_pages <= 1) return;
+      const nav = storeDataElement('nav', undefined, 'pagination');
+      nav.id = 'image-text-registration-pagination';
+      nav.setAttribute('aria-label', '图片对应文字分页');
+      nav.append(storeDataElement('span', '共 ' + pagination.count + ' 条，第 ' + pagination.number + ' / ' + pagination.num_pages + ' 页'));
+      const actions = document.createElement('div');
+      [['上一页', pagination.previous_page, pagination.has_previous], ['下一页', pagination.next_page, pagination.has_next]].forEach(function (item) {
+        if (!item[2]) return;
+        const button = storeDataElement('button', item[0], 'btn btn-secondary');
+        button.type = 'button';
+        button.dataset.imageTextPage = item[1];
+        actions.append(button);
+      });
+      nav.append(actions);
+      config.panel.append(nav);
+    }
+
+    function renderImageTextRegistrationRows(config, rows) {
+      const fragment = document.createDocumentFragment();
+      if (!rows.length) {
+        fragment.append(storeDataElement('p', '暂无图片对应文字。', 'empty'));
+      }
+      rows.forEach(function (data) {
+        const item = storeDataElement('article', undefined, 'image-text-registration-item');
+        const imageLink = storeDataElement('a', undefined, 'image-text-registration-image');
+        imageLink.href = data.image_url;
+        imageLink.target = '_blank';
+        imageLink.rel = 'noopener noreferrer';
+        const image = document.createElement('img');
+        image.src = data.image_url;
+        image.alt = '图片对应文字 #' + data.id;
+        image.loading = 'lazy';
+        imageLink.append(image);
+        item.append(imageLink);
+        const content = storeDataElement('div', undefined, 'image-text-registration-content');
+        content.append(storeDataElement('p', data.content, 'image-text-registration-text'));
+        content.append(storeDataElement('small', '添加时间：' + (data.created_at_display || '—') + '；最后更新：' + (data.updated_at_display || '—')));
+        item.append(content);
+        const actions = storeDataElement('div', undefined, 'registration-actions image-text-registration-actions');
+        const edit = storeDataElement('a', '修改文字', 'btn btn-secondary');
+        edit.href = data.edit_url;
+        actions.append(edit);
+        const form = jsonPostForm(data.delete_url, config.csrfToken);
+        form.addEventListener('submit', function (event) {
+          if (!window.confirm('确认删除这条图片对应文字吗？')) event.preventDefault();
+        });
+        const remove = storeDataElement('button', '删除', 'danger-link');
+        remove.type = 'submit';
+        form.append(remove);
+        actions.append(form);
+        item.append(actions);
+        fragment.append(item);
+      });
+      config.body.replaceChildren(fragment);
+    }
+
+    async function loadImageTextRegistrations(page) {
+      const config = getImageTextRegistrationConfig();
+      if (!config || config.panel.dataset.loading === 'true') return;
+      config.panel.dataset.loading = 'true';
+      try {
+        const apiUrl = new URL(config.apiUrl, window.location.origin);
+        apiUrl.searchParams.set('image_page', page || '1');
+        const response = await fetch(apiUrl, { credentials: 'same-origin', headers: { 'Accept': 'application/json', 'X-Requested-With': 'XMLHttpRequest' } });
+        if (response.redirected) { window.location.assign(response.url); return; }
+        if (!response.ok) throw new Error('图片对应文字加载失败');
+        const payload = await response.json();
+        if (!payload.data) throw new Error('图片对应文字加载失败');
+        renderImageTextRegistrationRows(config, payload.data.rows || []);
+        renderImageTextRegistrationPagination(config, payload.data.pagination);
+      } catch (error) {
+        config.body.replaceChildren(storeDataElement('p', '图片对应文字加载失败，请刷新后重试。', 'empty'));
+        if (config.counter) config.counter.textContent = '加载失败';
+      } finally {
+        config.panel.dataset.loading = 'false';
+      }
+    }
+
+    function loadInitialJsonPage() {
+      const config = getJsonPageConfig();
+      if (config && config.loadOnOpen) loadJsonPage(window.location.href, false, false);
+      loadImageTextRegistrations();
+    }
+
+    document.addEventListener('click', function (event) {
+      const link = event.target.closest('[data-json-page-link]');
+      if (!link || event.defaultPrevented || isModifiedClick(event) || link.target) return;
+      event.preventDefault(); loadJsonPage(link.href, true, true);
+    });
+
+    document.addEventListener('click', function (event) {
+      const button = event.target.closest('[data-image-text-page]');
+      if (!button || event.defaultPrevented) return;
+      event.preventDefault();
+      loadImageTextRegistrations(button.dataset.imageTextPage);
+    });
+
+    document.addEventListener('submit', function (event) {
+      const form = event.target;
+      if (!(form instanceof HTMLFormElement) || !form.hasAttribute('data-json-page-form') || event.defaultPrevented) return;
+      event.preventDefault();
+      const pageUrl = new URL(form.getAttribute('action') || window.location.pathname, window.location.href);
+      pageUrl.search = new URLSearchParams(new FormData(form, event.submitter || undefined)).toString();
+      loadJsonPage(pageUrl, true, true);
+    });
+
+    document.addEventListener('click', function (event) {
+      if (event.defaultPrevented) return;
+      const link = event.target.closest('a[href]');
+      if (!link) return;
+      const href = link.getAttribute('href');
+      if (href === '#' || href === '') {
+        event.preventDefault();
+        return;
+      }
+      if (!link.closest('.app-shell') || isModifiedClick(event) || link.target || link.hasAttribute('download') || href.startsWith('#')) return;
+      const url = new URL(link.href, window.location.href);
+      if (url.origin !== window.location.origin) return;
+      event.preventDefault();
+      navigate(url.href, { method: 'GET' }, true, true);
+    });
+
+    document.addEventListener('submit', function (event) {
+      const form = event.target;
+      if (!(form instanceof HTMLFormElement) || !form.closest('.app-shell') || event.defaultPrevented || form.target) return;
+      // 表单中的 name="action" 会遮蔽 HTMLFormElement.action 属性，必须读取原始属性值。
+      const method = (form.getAttribute('method') || 'GET').toUpperCase();
+      if (!['GET', 'POST'].includes(method)) return;
+      event.preventDefault();
+      const formData = new FormData(form, event.submitter || undefined);
+      const action = new URL(form.getAttribute('action') || window.location.href, window.location.href);
+      if (method === 'GET') {
+        action.search = new URLSearchParams(formData).toString();
+        navigate(action.href, { method: 'GET' }, true, false);
+        return;
+      }
+      navigate(action.href, { method: 'POST', body: formData }, false, false);
+    });
+
+    window.addEventListener('popstate', function () {
+      if (getStoreDataConfig()) {
+        loadStoreData(window.location.href, false, true);
+        return;
+      }
+      if (getJsonPageConfig()) {
+        loadJsonPage(window.location.href, false, true);
+        return;
+      }
+      navigate(window.location.href, { method: 'GET' }, false, true);
+    });
+
+    document.addEventListener('input', function (event) {
+      if (event.target.id !== 'store-search') return;
+      const select = document.getElementById('id_store');
+      const keyword = event.target.value.trim().toLocaleLowerCase();
+      if (!select) return;
+      Array.from(select.options).forEach(function (option) {
+        option.hidden = Boolean(keyword) && !option.text.toLocaleLowerCase().includes(keyword);
+      });
+      if (select.selectedOptions[0] && select.selectedOptions[0].hidden) select.value = '';
+    });
+
+    document.addEventListener('change', function (event) {
+      if (event.target.id === 'strategy-customer' || event.target.id === 'id_compensation_type' || event.target.id === 'id_compensation_stage_count') {
+        syncAfterSalesStrategyForm();
+      }
+    });
+
+    document.addEventListener('dblclick', function (event) {
+      const cell = event.target.closest('.cookie-preview');
+      if (!cell) return;
+      const dialog = document.getElementById('cookie-dialog');
+      const content = document.getElementById('cookie-content');
+      if (dialog && content) {
+        content.textContent = cell.dataset.cookie;
+        dialog.showModal();
+      }
+    });
+
+    document.addEventListener('click', async function (event) {
+      const button = event.target.closest('[data-product-favorite-url]');
+      if (!button || button.disabled) return;
+      event.preventDefault();
+      const panel = document.getElementById('json-page-panel');
+      const csrfToken = panel ? panel.dataset.csrfToken : '';
+      button.disabled = true;
+      try {
+        const response = await fetch(button.dataset.productFavoriteUrl, {
+          method: 'POST',
+          credentials: 'same-origin',
+          headers: { 'Accept': 'application/json', 'X-CSRFToken': csrfToken },
+        });
+        const payload = await response.json();
+        if (!response.ok || !payload.ok) throw new Error('收藏操作失败');
+        setProductFavoriteButton(button, Boolean(payload.favorite));
+      } catch (error) {
+        window.alert('收藏操作失败，请稍后重试。');
+      } finally {
+        button.disabled = false;
+      }
+    });
+
+    document.addEventListener('click', function (event) {
+      const passwordButton = event.target.closest('[data-user-password-id]');
+      if (passwordButton) {
+        const dialog = document.getElementById('user-password-dialog');
+        const userId = document.getElementById('user-password-id');
+        const name = document.getElementById('user-password-name');
+        if (dialog && userId && name) {
+          userId.value = passwordButton.dataset.userPasswordId;
+          name.textContent = passwordButton.dataset.userPasswordName;
+          dialog.showModal();
+        }
+        return;
+      }
+      if (event.target.closest('[data-close-user-password-dialog]')) {
+        const dialog = document.getElementById('user-password-dialog');
+        if (dialog) dialog.close();
+        return;
+      }
+      const deleteButton = event.target.closest('[data-user-delete-url]');
+      if (deleteButton) {
+        const dialog = document.getElementById('user-delete-dialog');
+        const form = document.getElementById('user-delete-form');
+        const name = document.getElementById('user-delete-name');
+        if (dialog && form && name) {
+          form.action = deleteButton.dataset.userDeleteUrl;
+          name.textContent = deleteButton.dataset.userDeleteName;
+          dialog.showModal();
+        }
+        return;
+      }
+      if (event.target.closest('[data-close-user-delete-dialog]')) {
+        const dialog = document.getElementById('user-delete-dialog');
+        if (dialog) dialog.close();
+      }
+    });
+    syncAfterSalesStrategyForm();
+    loadInitialJsonPage();
+  }());
+</script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block page_title %}数据看板{% endblock %}
+{% block content %}
+<div class="welcome"><div><h1>{{ customer.name }}数据看板</h1><p>汇总展示您名下全部店铺的最新经营与待处理数据。</p></div><a class="btn btn-primary" href="{% url 'store_data_center' %}">查看店铺数据中心</a></div>
+<div class="stat-grid client-dashboard-grid">
+  <div class="stat-card"><span>店铺总数</span><strong>{{ store_count }}</strong><i class="blue">店</i></div>
+  <div class="stat-card"><span>账号总数</span><strong>{{ account_count }}</strong><i class="cyan">账</i></div>
+  <div class="stat-card"><span>待处理售后</span><strong>{{ pending_after_sales }}</strong><i class="orange">售</i></div>
+  <div class="stat-card"><span>待处理工单</span><strong>{{ pending_tickets }}</strong><i class="red">工</i></div>
+  <div class="stat-card"><span>今日订单</span><strong>{{ today_order_count }}</strong><i class="blue">单</i></div>
+  <div class="stat-card"><span>今日咨询</span><strong>{{ consultation_count }}</strong><i class="cyan">询</i></div>
+</div>
+<section class="panel">
+  <div class="panel-head"><div><h2>店铺最新数据</h2><p>仅显示当前客户名下店铺；售后、工单均为最新上报的待处理数量。</p></div></div>
+  <div class="table-wrap"><table><thead><tr><th>店铺</th><th>平台</th><th>店铺账号</th><th>待处理售后</th><th>待处理工单</th><th>更新时间</th></tr></thead><tbody>
+    {% for store in recent_stores %}<tr><td><strong>{{ store.name }}</strong><small>{{ store.external_id }}</small></td><td>{{ store.get_platform_display }}</td><td>{{ store.accounts.count }}</td><td>{{ store.metrics.pending_after_sales|default:0 }}</td><td>{{ store.metrics.pending_tickets|default:0 }}</td><td>{% if store.metrics %}{{ store.metrics.data_updated_at|date:'Y-m-d H:i' }}{% else %}暂无上报{% endif %}</td></tr>{% empty %}<tr><td colspan="6" class="empty">暂无店铺数据。</td></tr>{% endfor %}
+  </tbody></table></div>
+</section>
+{% endblock %}

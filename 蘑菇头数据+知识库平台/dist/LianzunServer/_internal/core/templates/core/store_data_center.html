@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% load metric_display %}
+{% block page_title %}店铺数据中心{% endblock %}
+{% block content %}
+<div class="page-heading">
+  <div><h1>店铺数据中心</h1><p>{% if can_view_extra %}展示全部店铺的客观指标；可按当前账号保存显示字段。{% else %}展示你认领店铺的客观指标；负责人 1、负责人 2 看到相同的店铺数据。{% endif %}</p></div>
+  <div class="page-head-actions">
+    <form id="store-data-filter" class="data-filter" method="get" role="search">
+      <label><span>平台</span><select name="platform"><option value="">全部平台</option><option value="pdd" {% if chosen_platform == 'pdd' %}selected{% endif %}>拼多多</option><option value="douyin" {% if chosen_platform == 'douyin' %}selected{% endif %}>抖音</option><option value="jingdong" {% if chosen_platform == 'jingdong' %}selected{% endif %}>京东</option></select></label>
+      <label><span>客户</span><select name="customer"><option value="">全部客户</option>{% for customer in customers %}<option value="{{ customer.pk }}" {% if chosen_customer_id == customer.pk|stringformat:'s' %}selected{% endif %}>{{ customer.name }}</option>{% endfor %}</select></label>
+      <label><span>负责人</span><select name="responsible"><option value="">全部负责人</option>{% for responsible in responsibles %}<option value="{{ responsible.pk }}" {% if chosen_responsible_id == responsible.pk|stringformat:'s' %}selected{% endif %}>{{ responsible.responsible_name }}（{{ responsible.username }}）</option>{% endfor %}</select></label>
+      <label><span>统计日期</span><input type="date" name="date" value="{{ chosen_date }}" title="选择统计日期"></label>
+      <label><span>统计时点</span><select name="hour"><option value="">最新数据</option>{% for hour in hour_choices %}<option value="{{ hour }}" {% if chosen_hour == hour %}selected{% endif %}>{{ hour }} 点</option>{% endfor %}</select></label>
+      <button class="btn btn-primary" type="submit">查询</button><a class="btn btn-secondary filter-reset" data-store-data-link href="{% url 'store_data_center' %}">重置</a>
+    </form>
+    {% if can_view_extra %}
+    <details class="column-picker"><summary class="btn btn-secondary">显示字段</summary><form method="post" action="{% url 'store_data_column_preferences' %}" class="column-picker-menu">{% csrf_token %}<strong>选择当前账号显示的字段</strong><div class="checks">{% for key, label in column_options %}<label><input type="checkbox" name="visible_fields" value="{{ key }}" {% if key in visible_columns %}checked{% endif %}> {{ label }}</label>{% endfor %}</div><div class="form-actions"><button class="btn btn-primary">保存</button><button class="btn btn-secondary" name="reset" value="1">恢复默认</button></div></form></details>
+    {% endif %}
+  </div>
+</div>
+<div class="notice store-data-timeout-notice">拼多多店铺的专员超时数量和机器人超时数量，均由“超时人数 = 总咨询人数 ×（1 − 3 分钟人工回复率）”计算得出，可能会与真实超时数量有出入。数据每日于奇数整点（7:00、9:00、11:00……23:00）定时更新。</div>
+<section id="store-data-panel" class="panel" data-api-url="{% url 'store_data_api' %}" data-csrf-token="{{ csrf_token }}" data-can-manage-all="{{ can_view_extra|yesno:'true,false' }}" data-can-manage-responsibility="{{ can_manage_responsibility|yesno:'true,false' }}"><div class="table-wrap wide-table"><table class="store-data-table"><thead><tr>
+  {% include "core/_sortable_numeric_header.html" with label="店铺" key="store_name" %}
+  {% if 'specialist_reply_count' in visible_columns %}{% include "core/_sortable_numeric_header.html" with label="专员回复数量" key="specialist_reply_count" %}{% endif %}
+  {% if 'three_minute_reply_rate' in visible_columns %}{% include "core/_sortable_numeric_header.html" with label="专员3分钟回复率" key="three_minute_reply_rate" %}{% endif %}
+  {% if 'timeout_count' in visible_columns %}{% include "core/_sortable_numeric_header.html" with label="专员超时数量" key="timeout_count" %}{% endif %}
+  {% if 'average_response_seconds' in visible_columns %}{% include "core/_sortable_numeric_header.html" with label="平均响应" key="average_response_seconds" tooltip="拼多多是昨日平均响应时间，抖音是今日实时平均响应时间" %}{% endif %}
+  {% if 'robot_completed_reply_count' in visible_columns %}{% include "core/_sortable_numeric_header.html" with label="机器人完结回复" key="robot_completed_reply_count" %}{% endif %}
+  {% if 'robot_completed_reply_rate' in visible_columns %}{% include "core/_sortable_numeric_header.html" with label="机器人完结率" key="robot_completed_reply_rate" %}{% endif %}
+  {% if 'robot_transferred_count' in visible_columns %}{% include "core/_sortable_numeric_header.html" with label="机器人转出" key="robot_transferred_count" %}{% endif %}
+  {% if 'robot_timeout_count' in visible_columns %}{% include "core/_sortable_numeric_header.html" with label="机器人超时数量" key="robot_timeout_count" %}{% endif %}
+  {% if 'robot_three_minute_reply_rate' in visible_columns %}{% include "core/_sortable_numeric_header.html" with label="机器人3分钟回复率" key="robot_three_minute_reply_rate" %}{% endif %}
+  {% if 'consultation_count' in visible_columns %}{% include "core/_sortable_numeric_header.html" with label="咨询数" key="consultation_count" %}{% endif %}
+  {% if 'pending_after_sales' in visible_columns %}{% include "core/_sortable_numeric_header.html" with label="今日售后数量" key="pending_after_sales" %}{% endif %}
+  {% if 'pending_tickets' in visible_columns %}{% include "core/_sortable_numeric_header.html" with label="今日工单数量" key="pending_tickets" %}{% endif %}
+  {% if 'customer' in visible_columns %}{% include "core/_sortable_numeric_header.html" with label="所属客户" key="customer" %}{% endif %}
+  {% if 'data_updated_at' in visible_columns %}{% include "core/_sortable_numeric_header.html" with label="更新时间" key="data_updated_at" %}{% endif %}
+  {% if 'main_category' in visible_columns %}{% include "core/_sortable_numeric_header.html" with label="主营类目" key="main_category" %}{% endif %}
+  {% if 'today_order_count' in visible_columns %}{% include "core/_sortable_numeric_header.html" with label="今日订单" key="today_order_count" %}{% endif %}
+  {% if 'responsibles' in visible_columns %}{% include "core/_sortable_numeric_header.html" with label="负责人" key="responsibles" %}{% endif %}
+  {% if 'today_turnover' in visible_columns %}{% include "core/_sortable_numeric_header.html" with label="营业金额" key="today_turnover" %}{% endif %}
+  {% if 'today_ad_spend' in visible_columns %}{% include "core/_sortable_numeric_header.html" with label="广告金额" key="today_ad_spend" %}{% endif %}
+  {% if 'store_experience_score' in visible_columns %}{% include "core/_sortable_numeric_header.html" with label="店铺体验分" key="store_experience_score" %}{% endif %}
+  {% if 'service_experience_score' in visible_columns %}{% include "core/_sortable_numeric_header.html" with label="服务体验分" key="service_experience_score" %}{% endif %}
+  <th>操作</th></tr></thead><tbody id="store-data-table-body">{% for store in stores %}<tr>
+  <td><strong>{{ store.name }}</strong><small>{{ store.external_id }} · {{ store.get_platform_display }}</small></td>
+  {% if 'specialist_reply_count' in visible_columns %}<td>{% metric_value store.display_metric 'specialist_reply_count' %}</td>{% endif %}
+  {% if 'three_minute_reply_rate' in visible_columns %}<td>{% metric_value store.display_metric 'three_minute_reply_rate' '%' %}</td>{% endif %}
+  {% if 'timeout_count' in visible_columns %}<td>{% metric_value store.display_metric 'timeout_count' %}</td>{% endif %}
+  {% if 'average_response_seconds' in visible_columns %}<td>{% metric_value store.display_metric 'average_response_seconds' ' 秒' %}</td>{% endif %}
+  {% if 'robot_completed_reply_count' in visible_columns %}<td>{% metric_value store.display_metric 'robot_completed_reply_count' %}</td>{% endif %}
+  {% if 'robot_completed_reply_rate' in visible_columns %}<td>{% metric_value store.display_metric 'robot_completed_reply_rate' '%' %}</td>{% endif %}
+  {% if 'robot_transferred_count' in visible_columns %}<td>{% metric_value store.display_metric 'robot_transferred_count' %}</td>{% endif %}
+  {% if 'robot_timeout_count' in visible_columns %}<td>{% metric_value store.display_metric 'robot_timeout_count' %}</td>{% endif %}
+  {% if 'robot_three_minute_reply_rate' in visible_columns %}<td>{% metric_value store.display_metric 'robot_three_minute_reply_rate' '%' %}</td>{% endif %}
+  {% if 'consultation_count' in visible_columns %}<td>{% metric_value store.display_metric 'consultation_count' %}</td>{% endif %}
+  {% if 'pending_after_sales' in visible_columns %}<td>{% metric_value store.display_metric 'pending_after_sales' %}</td>{% endif %}
+  {% if 'pending_tickets' in visible_columns %}<td>{% metric_value store.display_metric 'pending_tickets' %}</td>{% endif %}
+  {% if 'customer' in visible_columns %}<td>{{ store.customer.name|default:'待归属' }}</td>{% endif %}
+  {% if 'data_updated_at' in visible_columns %}<td>{% if store.display_metric %}{{ store.display_metric.data_updated_at|date:'Y-m-d H:i' }}{% else %}未上传{% endif %}</td>{% endif %}
+  {% if 'main_category' in visible_columns %}<td>{{ store.main_category|default:'notfind' }}</td>{% endif %}
+  {% if 'today_order_count' in visible_columns %}<td>{% metric_value store.display_metric 'today_order_count' %}</td>{% endif %}
+  {% if 'responsibles' in visible_columns %}<td class="responsible-list">{% for claim in store.responsible_claims %}<span>{% if claim.shift == 'morning' %}负责人 1{% else %}负责人 2{% endif %}：{{ claim.user.responsible_name }}<small>{{ claim.user.username }}</small></span>{% empty %}未指定{% endfor %}</td>{% endif %}
+  {% if 'today_turnover' in visible_columns %}<td>{% metric_value store.display_metric 'today_turnover' ' 元' %}</td>{% endif %}
+  {% if 'today_ad_spend' in visible_columns %}<td>{% metric_value store.display_metric 'today_ad_spend' ' 元' %}</td>{% endif %}
+  {% if 'store_experience_score' in visible_columns %}<td>{% metric_value store.display_metric 'store_experience_score' %}</td>{% endif %}
+  {% if 'service_experience_score' in visible_columns %}<td>{% metric_value store.display_metric 'service_experience_score' %}</td>{% endif %}
+  <td>{% if can_manage_responsibility %}{% if can_view_extra %}{% if store.responsible_claims %}<form method="post" action="{% url 'release_store_responsibility' store.pk %}" class="release-form" onsubmit="return confirm('确认取消所选负责人吗？该席位将回到无主店铺中心。')">{% csrf_token %}<select name="claim_id" aria-label="选择负责人">{% for claim in store.responsible_claims %}<option value="{{ claim.pk }}">{% if claim.shift == 'morning' %}负责人 1{% else %}负责人 2{% endif %}：{{ claim.user.responsible_name }}</option>{% endfor %}</select><button class="danger-link">取消负责人</button></form>{% else %}<span class="muted">暂无负责人</span>{% endif %}{% else %}<form method="post" action="{% url 'release_store_responsibility' store.pk %}" onsubmit="return confirm('确认取消自己的负责人席位吗？')">{% csrf_token %}<button class="danger-link">取消我的负责人</button></form>{% endif %}{% else %}<span class="muted">仅查看</span>{% endif %}</td>
+  </tr>{% empty %}<tr><td colspan="20" class="empty">暂无可查看的店铺数据。</td></tr>{% endfor %}</tbody></table></div>
+{% if page_obj.paginator.num_pages > 1 %}<nav id="store-data-pagination" class="pagination" aria-label="店铺数据分页"><span>共 {{ page_obj.paginator.count }} 家店铺，第 {{ page_obj.number }} / {{ page_obj.paginator.num_pages }} 页</span><div>{% if page_obj.has_previous %}<a class="btn btn-secondary" data-store-data-link href="?{% if pagination_query %}{{ pagination_query }}&{% endif %}page={{ page_obj.previous_page_number }}">上一页</a>{% endif %}{% if page_obj.has_next %}<a class="btn btn-secondary" data-store-data-link href="?{% if pagination_query %}{{ pagination_query }}&{% endif %}page={{ page_obj.next_page_number }}">下一页</a>{% endif %}</div></nav>{% endif %}</section>
+{{ visible_columns|json_script:"store-data-visible-columns" }}
+{% endblock %}

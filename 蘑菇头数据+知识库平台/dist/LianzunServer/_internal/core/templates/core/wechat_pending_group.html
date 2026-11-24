@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block page_title %}微信群待发送{% endblock %}
+{% block content %}
+<div class="page-heading">
+  <div><h1>{{ group.name }}</h1><p>系统会自动创建并保留一个共享待发送队列。外部发送程序读取完成后回传已发送状态，队列会立即清空。</p></div>
+  <a class="btn btn-secondary" href="{% url 'wechat_pending_group' %}">刷新队列</a>
+</div>
+
+<section class="panel">
+  <div class="panel-head"><div><h2>当前待发送信息</h2><p>共 {{ group.message_count }} 条；队列内容以换行分隔。</p></div><span class="result-count">更新时间：{{ group.updated_at_display }}</span></div>
+  <pre class="message-content">{{ group.content|default:'暂无待发送信息。' }}</pre>
+</section>
+
+<section class="panel">
+  <div class="panel-head"><div><h2>接口地址</h2><p>接口供微信发送程序调用，均使用 JSON。</p></div></div>
+  <div class="table-wrap"><table class="registration-table"><thead><tr><th>用途</th><th>方法</th><th>地址</th></tr></thead><tbody><tr><td>追加待发送信息</td><td>POST</td><td><code>/api/v1/wechat-groups/pending/append/</code></td></tr><tr><td>读取全部待发送信息</td><td>GET</td><td><code>/api/v1/wechat-groups/pending/</code></td></tr><tr><td>回传已发送并清空队列</td><td>POST</td><td><code>/api/v1/wechat-groups/pending/sent/</code></td></tr></tbody></table></div>
+</section>
+{% endblock %}

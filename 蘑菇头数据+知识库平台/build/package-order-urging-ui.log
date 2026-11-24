@@ -1,0 +1,9 @@
+Requirement already satisfied: Django<5.3,>=5.2 in c:\users\admin\appdata\local\programs\python\python313-32\lib\site-packages (from -r requirements.txt (line 1)) (5.2.16)
+Requirement already satisfied: PyMySQL>=1.1 in c:\users\admin\appdata\local\programs\python\python313-32\lib\site-packages (from -r requirements.txt (line 2)) (1.2.0)
+Requirement already satisfied: waitress<4.0,>=3.0 in c:\users\admin\appdata\local\programs\python\python313-32\lib\site-packages (from -r requirements.txt (line 3)) (3.0.2)
+Requirement already satisfied: asgiref>=3.8.1 in c:\users\admin\appdata\local\programs\python\python313-32\lib\site-packages (from Django<5.3,>=5.2->-r requirements.txt (line 1)) (3.11.0)
+Requirement already satisfied: sqlparse>=0.3.1 in c:\users\admin\appdata\local\programs\python\python313-32\lib\site-packages (from Django<5.3,>=5.2->-r requirements.txt (line 1)) (0.5.5)
+Requirement already satisfied: tzdata in c:\users\admin\appdata\local\programs\python\python313-32\lib\site-packages (from Django<5.3,>=5.2->-r requirements.txt (line 1)) (2025.3)
+Package created: D:\pythonProject\Áªé×\dist\LianzunServer
+ZIP created: D:\pythonProject\Áªé×\dist\LianzunServer.zip
+Set DJANGO_ALLOWED_HOSTS in server.env, then run LianzunServer.exe.

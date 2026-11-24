@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block page_title %}远程登记{% endblock %}
+{% block content %}
+<div class="page-heading registration-heading">
+  <div><h1>远程登记</h1><p>内部专员客服和管理员均可登记远程连接信息；登记人会自动记录为当前登录账号的负责人姓名。</p></div>
+</div>
+
+<section class="panel registration-add-panel">
+  <div class="panel-head"><div><h2>新增远程登记</h2><p>机器号、远程码和远程密码均为必填。</p></div></div>
+  <form method="post" class="registration-form">
+    {% csrf_token %}
+    {% for field in form %}
+      <label>{{ field.label }}{{ field }}{% for error in field.errors %}<em>{{ error }}</em>{% endfor %}</label>
+    {% endfor %}
+    <div class="registration-form-actions"><button class="btn btn-primary" type="submit">添加登记</button></div>
+  </form>
+</section>
+
+<section class="panel registration-list-panel">
+  <div class="panel-head"><div><h2>远程登记记录</h2><p>按登记时间倒序排列。</p></div><span class="result-count">共 {{ page_obj.paginator.count }} 条</span></div>
+  <div class="table-wrap wide-table">
+    <table class="registration-table">
+      <thead><tr><th>机器号</th><th>远程码</th><th>远程密码</th><th>登记人</th><th>登记时间</th><th>操作</th></tr></thead>
+      <tbody>
+        {% for registration in registrations %}
+        <tr><td>{{ registration.machine_no }}</td><td>{{ registration.remote_code }}</td><td>{{ registration.remote_password }}</td><td>{{ registration.operator_name }}</td><td>{{ registration.created_at|date:'Y-m-d H:i' }}</td><td class="table-actions"><a class="btn btn-secondary" href="{% url 'remote_registration_edit' registration.pk %}">修改</a><form method="post" action="{% url 'remote_registration_delete' registration.pk %}" onsubmit="return confirm('确认删除该远程登记吗？')">{% csrf_token %}<button class="danger-link" type="submit">删除</button></form></td></tr>
+        {% empty %}
+        <tr><td colspan="6" class="empty">暂无远程登记记录。</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {% if page_obj.paginator.num_pages > 1 %}
+  <nav class="pagination"><span>共 {{ page_obj.paginator.count }} 条，第 {{ page_obj.number }} / {{ page_obj.paginator.num_pages }} 页</span><div>{% if page_obj.has_previous %}<a class="btn btn-secondary" href="?{% if pagination_query %}{{ pagination_query }}&{% endif %}page={{ page_obj.previous_page_number }}">上一页</a>{% endif %}{% if page_obj.has_next %}<a class="btn btn-secondary" href="?{% if pagination_query %}{{ pagination_query }}&{% endif %}page={{ page_obj.next_page_number }}">下一页</a>{% endif %}</div></nav>
+  {% endif %}
+</section>
+{% endblock %}

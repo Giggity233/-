@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block page_title %}{{ scope_label }}{% endblock %}
+{% block content %}
+<div class="page-heading knowledge-heading">
+  <div><h1>{{ scope_label }}</h1><p>所有账号都可查看；仅负责该客户或店铺的账号可以维护内容。</p></div>
+  <form id="json-page-filter" data-json-page-form class="knowledge-filter" method="get" action="{% if favorites_only %}{% url 'ai_favorite_product_list' %}{% else %}{% url 'ai_knowledge_list' scope %}{% endif %}" role="search">
+    <label>关键词<input name="keyword" value="{{ keyword }}" placeholder="名称、编号或店铺"></label>
+    {% if scope == 'store' or scope == 'product' %}
+    <label>平台<select name="platform"><option value="">全部平台</option>{% for value,label in platform_options %}<option value="{{ value }}" {% if chosen_platform == value %}selected{% endif %}>{{ label }}</option>{% endfor %}</select></label>
+    {% endif %}
+    {% if scope == 'store' or scope == 'product' or scope == 'material' %}
+    <label>客户<select name="customer"><option value="">全部客户</option>{% for customer in filter_customers %}<option value="{{ customer.pk }}" {% if chosen_customer_id == customer.pk|stringformat:'s' %}selected{% endif %}>{{ customer.name }}</option>{% endfor %}</select></label>
+    {% endif %}
+    {% if scope == 'product' %}
+    <label>店铺<select name="store"><option value="">全部店铺</option>{% for store in filter_stores %}<option value="{{ store.pk }}" {% if chosen_store_id == store.pk|stringformat:'s' %}selected{% endif %}>{{ store.name }} · {{ store.external_id }}</option>{% endfor %}</select></label>
+    {% endif %}
+    {% if can_filter_by_responsible %}
+    <label>负责人<select name="responsible"><option value="">全部负责人</option>{% for responsible in responsibles %}<option value="{{ responsible.pk }}" {% if chosen_responsible_id == responsible.pk|stringformat:'s' %}selected{% endif %}>{{ responsible.responsible_name }}（{{ responsible.username }}）</option>{% endfor %}</select></label>
+    {% endif %}
+    <label class="knowledge-check"><input type="checkbox" name="only_mine" value="1" {% if only_mine %}checked{% endif %}> 只看我维护店铺的知识库</label>
+    <button class="btn btn-primary" type="submit">筛选</button><a class="btn btn-secondary" href="{% if favorites_only %}{% url 'ai_favorite_product_list' %}{% else %}{% url 'ai_knowledge_list' scope %}{% endif %}">重置</a>
+  </form>
+</div>
+
+{% if scope == 'material' and material_customers %}
+<section class="panel knowledge-add-panel">
+  <div class="panel-head"><div><h2>新增客户材质</h2><p>一个商品只能标注一个材质；材质内容会在商品知识汇总时自动带出。</p></div></div>
+  <form class="knowledge-inline-form" method="post" action="{% url 'ai_material_create' %}">{% csrf_token %}
+    <label>客户<select name="customer_id" required><option value="">请选择客户</option>{% for customer in material_customers %}<option value="{{ customer.pk }}">{{ customer.name }}</option>{% endfor %}</select></label>
+    <label>材质名称<input name="name" maxlength="100" placeholder="例如：纯棉" required></label>
+    <button class="btn btn-primary" type="submit">新增材质</button>
+  </form>
+</section>
+{% endif %}
+
+<section id="json-page-panel" class="panel" data-json-page-type="ai-knowledge" data-json-page-scope="{{ scope }}" data-favorites-only="{{ favorites_only|yesno:'true,false' }}" data-api-url="{% if favorites_only %}{% url 'ai_favorite_product_list_api' %}{% else %}{% url 'ai_knowledge_list_api' scope %}{% endif %}" data-csrf-token="{{ csrf_token }}" data-can-delete="{{ can_delete_products|yesno:'true,false' }}">
+  <div class="panel-head"><div><h2>知识库对象</h2><p>点击“维护知识”可设置通用、售前、售后三种特殊提示词、问答对和关键词。</p></div><span id="json-page-result-count" class="result-count">共 {{ page_obj.paginator.count }} 个</span></div>
+  <div class="table-wrap"><table class="knowledge-list-table{% if scope == 'product' %} product-knowledge-list-table{% endif %}"><thead><tr>
+    <th>{% if scope == 'customer' %}客户{% elif scope == 'store' %}店铺{% elif scope == 'product' %}商品{% else %}材质{% endif %}</th>
+    {% if scope == 'product' %}<th>热度</th>{% endif %}
+    <th>归属信息</th><th>维护权限</th><th>操作</th>
+  </tr></thead><tbody id="json-page-body">{% for item in items %}<tr>
+    <td>{% if scope == 'product' and item.ai_main_image_urls %}{% for url in item.ai_main_image_urls %}<a class="product-list-image" href="{{ url }}" target="_blank" rel="noopener noreferrer"><img src="{{ url }}" alt="{{ item.ai_display }} 主图"></a>{% endfor %}{% endif %}<strong>{{ item.ai_display }}</strong><small>{{ item.ai_subtitle }}</small></td>
+    {% if scope == 'product' %}<td>{{ item.knowledge_heat }}</td>{% endif %}
+    <td>{{ item.ai_ownership }}</td>
+    <td>{% if item.ai_can_edit %}<span class="badge valid">可维护</span>{% else %}<span class="badge disabled">仅查看</span>{% endif %}</td>
+    <td><div class="knowledge-list-actions">{% if scope == 'product' %}<button class="btn btn-secondary product-favorite-button{% if item.ai_is_favorite %} is-favorite{% endif %}" type="button" data-product-favorite-url="{% url 'ai_product_favorite_toggle' item.pk %}" aria-pressed="{{ item.ai_is_favorite|yesno:'true,false' }}">{% if item.ai_is_favorite %}已收藏{% else %}收藏{% endif %}</button>{% endif %}<a class="btn btn-secondary" href="{% url 'ai_knowledge_detail' scope item.pk %}" target="_blank" rel="noopener noreferrer">维护知识</a>{% if scope == 'product' and can_delete_products %}<form method="post" action="{% url 'ai_product_delete' item.pk %}" onsubmit="return confirm('确认删除商品“{{ item.ai_display }}”及其商品知识内容吗？')">{% csrf_token %}{% if favorites_only %}<input type="hidden" name="return_to_favorites" value="1">{% endif %}<button class="danger-link" type="submit">删除商品</button></form>{% endif %}{% if scope == 'material' and item.ai_can_edit %}<form method="post" action="{% url 'ai_material_delete' item.pk %}" onsubmit="return confirm('确认删除客户素材“{{ item.ai_display }}”及其全部知识内容吗？已手动标注它的商品将取消该标注。')">{% csrf_token %}<button class="danger-link" type="submit">删除素材</button></form>{% endif %}</div></td>
+  </tr>{% empty %}<tr><td colspan="{% if scope == 'product' %}5{% else %}4{% endif %}" class="empty">没有符合条件的数据。</td></tr>{% endfor %}</tbody></table></div>
+  {% if page_obj.paginator.num_pages > 1 %}<nav id="json-page-pagination" class="pagination" aria-label="知识库分页"><span>共 {{ page_obj.paginator.count }} 个，第 {{ page_obj.number }} / {{ page_obj.paginator.num_pages }} 页</span><div>{% if page_obj.has_previous %}<a class="btn btn-secondary" data-json-page-link href="?{% if pagination_query %}{{ pagination_query }}&{% endif %}page={{ page_obj.previous_page_number }}">上一页</a>{% endif %}{% if page_obj.has_next %}<a class="btn btn-secondary" data-json-page-link href="?{% if pagination_query %}{{ pagination_query }}&{% endif %}page={{ page_obj.next_page_number }}">下一页</a>{% endif %}</div></nav>{% endif %}
+</section>
+{% endblock %}

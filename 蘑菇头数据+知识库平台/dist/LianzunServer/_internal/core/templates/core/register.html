@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}注册 · 蘑菇头中控平台{% endblock %}
+{% block anonymous_content %}
+<div class="auth-page"><div class="auth-card"><div class="auth-brand"><img src="{% static 'images/logo.png' %}" alt="蘑菇头 Logo"><div><strong>蘑菇头</strong><span>中控平台</span></div></div><h1>创建普通账号</h1><p>注册后请完善店铺认领信息。</p>
+  <form method="post" class="styled-form">{% csrf_token %}{% for field in form %}<label>{{ field.label }}{{ field }}{% if field.help_text %}<small>{{ field.help_text|safe }}</small>{% endif %}{% for error in field.errors %}<em>{{ error }}</em>{% endfor %}</label>{% endfor %}<button class="btn btn-primary btn-wide" type="submit">注册并进入平台</button></form>
+  <div class="auth-footer">已有账号？<a href="{% url 'login' %}">去登录</a></div>
+</div></div>
+{% endblock %}

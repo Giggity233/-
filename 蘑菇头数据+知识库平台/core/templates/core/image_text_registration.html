@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block page_title %}图片对应文字{% endblock %}
+{% block content %}
+<div class="page-heading registration-heading"><div><h1>图片对应文字</h1><p>外部接口写入图片链接和对应文字；页面打开后异步加载，避免记录较多时卡顿。</p></div></div>
+<section id="image-text-registration-panel" class="panel image-text-registration-panel" data-api-url="{% url 'image_text_registration_api' %}" data-csrf-token="{{ csrf_token }}">
+  <div class="panel-head"><div><h2>登记记录</h2><p>图片以知识库样式展示在左侧，对应文字显示在右侧；登录用户可修改文字或删除记录。</p></div><span id="image-text-registration-count" class="result-count">加载中…</span></div>
+  <div id="image-text-registration-list" class="image-text-registration-list"><p class="empty">正在加载图片对应文字…</p></div>
+</section>
+{% endblock %}

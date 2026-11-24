@@ -1,0 +1,13 @@
+# Do not version compiled executables, except the required protoc dependency.
+*.exe
+!抖音回复机器人/**/*.exe
+
+# Do not version compressed archives.
+*.zip
+*.rar
+*.7z
+*.tar
+*.gz
+*.bz2
+*.xz
+*.zst

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block page_title %}修改远程登记{% endblock %}
+{% block content %}
+<div class="page-heading registration-heading"><div><h1>修改远程登记</h1><p>保存后，登记人会更新为当前登录账号的负责人姓名。</p></div></div>
+<section class="panel registration-add-panel">
+  <form method="post" class="registration-form">
+    {% csrf_token %}
+    {% for field in form %}
+      <label>{{ field.label }}{{ field }}{% for error in field.errors %}<em>{{ error }}</em>{% endfor %}</label>
+    {% endfor %}
+    <div class="registration-form-actions"><button class="btn btn-primary" type="submit">保存修改</button><a class="btn btn-secondary" href="{% url 'remote_registration' %}">取消</a></div>
+  </form>
+</section>
+{% endblock %}

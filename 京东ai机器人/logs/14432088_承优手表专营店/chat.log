@@ -1,0 +1,1102 @@
+2026-11-16 01:51:04.923 | INFO     | jd_message_listener:listen:148 - 收到信息 | 买家=jd_eHGlDAbGDLEn | 内容=我咨询的标题是啥
+2026-11-16 01:51:07.624 | INFO     | jd_message_listener:listen:148 - 收到信息 | 买家=jd_eHGlDAbGDLEn | 内容=咨询订单号：3679270007760533 商品ID：10148525286879
+2026-11-16 01:51:12.976 | INFO     | jd_chat_history:get_history:283 - 拉取聊天记录 | 买家=jd_eHGlDAbGDLEn | 内容=【客服】：您好，很高兴为您服务，请问有什么可以帮助您？
+【买家】：哈哈
+【买家】：咨询订单号：3679270007760533 商品ID：10148525286879
+【客服】：您好
+【买家】：滴滴
+【客服】：您好
+【买家】：哈哈
+【客服】：您好
+【买家】：哈哈
+【客服】：#E-s21
+【客服】：#E-s21
+【客服】：#E-s28
+【买家】：滴滴
+【客服】：哈哈
+【买家】：我咨询的标题是啥
+2026-11-16 01:51:12.976 | INFO     | jd_message_relay:_chat_history:221 - 聊天记录 | 买家=jd_eHGlDAbGDLEn | 内容=【客服】：您好，很高兴为您服务，请问有什么可以帮助您？
+【买家】：哈哈
+【买家】：咨询订单号：3679270007760533 商品ID：10148525286879
+【客服】：您好
+【买家】：滴滴
+【客服】：您好
+【买家】：哈哈
+【客服】：您好
+【买家】：哈哈
+【客服】：#E-s21
+【客服】：#E-s21
+【客服】：#E-s28
+【买家】：滴滴
+【客服】：哈哈
+【买家】：我咨询的标题是啥
+2026-11-16 01:51:12.976 | INFO     | jd_message_relay:_flush:115 - 8秒拼接消息 | 买家=jd_eHGlDAbGDLEn | 内容=我咨询的标题是啥
+咨询订单号：3679270007760533 商品ID：10148525286879
+2026-11-16 01:53:46.422 | INFO     | jd_message_listener:listen:148 - 收到信息 | 买家=jd_eHGlDAbGDLEn | 内容=我咨询的标题是啥
+2026-11-16 01:53:54.470 | INFO     | jd_chat_history:get_history:283 - 拉取聊天记录 | 买家=jd_eHGlDAbGDLEn | 内容=【买家】：哈哈
+【买家】：咨询订单号：3679270007760533 商品ID：10148525286879
+【客服】：您好
+【买家】：滴滴
+【客服】：您好
+【买家】：哈哈
+【客服】：您好
+【买家】：哈哈
+【客服】：#E-s21
+【客服】：#E-s21
+【客服】：#E-s28
+【买家】：滴滴
+【客服】：哈哈
+【买家】：我咨询的标题是啥
+【买家】：咨询订单号：3679270007760533 商品ID：10148525286879
+2026-11-16 01:53:54.470 | INFO     | jd_message_relay:_chat_history:221 - 聊天记录 | 买家=jd_eHGlDAbGDLEn | 内容=【买家】：哈哈
+【买家】：咨询订单号：3679270007760533 商品ID：10148525286879
+【客服】：您好
+【买家】：滴滴
+【客服】：您好
+【买家】：哈哈
+【客服】：您好
+【买家】：哈哈
+【客服】：#E-s21
+【客服】：#E-s21
+【客服】：#E-s28
+【买家】：滴滴
+【客服】：哈哈
+【买家】：我咨询的标题是啥
+【买家】：咨询订单号：3679270007760533 商品ID：10148525286879
+2026-11-16 01:53:54.470 | INFO     | jd_message_relay:_flush:115 - 8秒拼接消息 | 买家=jd_eHGlDAbGDLEn | 内容=我咨询的标题是啥
+2026-11-16 09:34:33.916 | INFO     | jd_message_listener:listen:148 - 收到信息 | 买家=jd_eHGlDAbGDLEn | 内容=我稳定标题是啥
+2026-11-16 09:34:35.997 | INFO     | jd_message_listener:listen:148 - 收到信息 | 买家=jd_eHGlDAbGDLEn | 内容=咨询订单号：3679270007760533 商品ID：10148525286879
+2026-11-16 09:34:41.965 | INFO     | jd_chat_history:get_history:287 - 拉取聊天记录 | 买家=jd_eHGlDAbGDLEn | 内容=【客服】：您好
+【买家】：滴滴
+【客服】：您好
+【买家】：哈哈
+【客服】：您好
+【买家】：哈哈
+【客服】：#E-s21
+【客服】：#E-s21
+【客服】：#E-s28
+【买家】：滴滴
+【客服】：哈哈
+【买家】：我咨询的标题是啥
+【买家】：咨询订单号：3679270007760533 商品ID：10148525286879
+【买家】：我咨询的标题是啥
+【买家】：我稳定标题是啥
+2026-11-16 09:34:41.965 | INFO     | jd_message_relay:_chat_history:225 - 聊天记录 | 买家=jd_eHGlDAbGDLEn | 内容=【客服】：您好
+【买家】：滴滴
+【客服】：您好
+【买家】：哈哈
+【客服】：您好
+【买家】：哈哈
+【客服】：#E-s21
+【客服】：#E-s21
+【客服】：#E-s28
+【买家】：滴滴
+【客服】：哈哈
+【买家】：我咨询的标题是啥
+【买家】：咨询订单号：3679270007760533 商品ID：10148525286879
+【买家】：我咨询的标题是啥
+【买家】：我稳定标题是啥
+2026-11-16 09:34:41.965 | INFO     | jd_message_relay:_flush:115 - 8秒拼接消息 | 买家=jd_eHGlDAbGDLEn | 内容=我稳定标题是啥
+咨询订单号：3679270007760533 商品ID：10148525286879
+2026-11-16 09:52:12.264 | INFO     | jd_message_listener:listen:148 - 收到信息 | 买家=jd_eHGlDAbGDLEn | 内容=什么时候发货呀
+2026-11-16 09:52:20.314 | INFO     | jd_chat_history:get_history:287 - 拉取聊天记录 | 买家=jd_eHGlDAbGDLEn | 内容=【买家】：哈哈
+【客服】：您好
+【买家】：哈哈
+【客服】：#E-s21
+【客服】：#E-s21
+【客服】：#E-s28
+【买家】：滴滴
+【客服】：哈哈
+【买家】：我咨询的标题是啥
+【买家】：咨询订单号：3679270007760533 商品ID：10148525286879
+【买家】：我咨询的标题是啥
+【买家】：我稳定标题是啥
+【买家】：咨询订单号：3679270007760533 商品ID：10148525286879
+【客服】：#E-s05
+【客服】：1
+2026-11-16 09:52:20.315 | INFO     | jd_message_relay:_chat_history:225 - 聊天记录 | 买家=jd_eHGlDAbGDLEn | 内容=【买家】：哈哈
+【客服】：您好
+【买家】：哈哈
+【客服】：#E-s21
+【客服】：#E-s21
+【客服】：#E-s28
+【买家】：滴滴
+【客服】：哈哈
+【买家】：我咨询的标题是啥
+【买家】：咨询订单号：3679270007760533 商品ID：10148525286879
+【买家】：我咨询的标题是啥
+【买家】：我稳定标题是啥
+【买家】：咨询订单号：3679270007760533 商品ID：10148525286879
+【客服】：#E-s05
+【客服】：1
+2026-11-16 09:52:20.315 | INFO     | jd_message_relay:_flush:115 - 8秒拼接消息 | 买家=jd_eHGlDAbGDLEn | 内容=什么时候发货呀
+2026-11-16 10:02:07.321 | INFO     | jd_message_listener:listen:148 - 收到信息 | 买家=jd_eHGlDAbGDLEn | 内容=什么时候发货呀
+2026-11-16 10:02:09.410 | INFO     | jd_message_listener:listen:148 - 收到信息 | 买家=jd_eHGlDAbGDLEn | 内容=咨询订单号：3679270007760533 商品ID：10148525286879
+2026-11-16 10:02:15.369 | INFO     | jd_chat_history:get_history:287 - 拉取聊天记录 | 买家=jd_eHGlDAbGDLEn | 内容=【买家】：哈哈
+【客服】：#E-s21
+【客服】：#E-s21
+【客服】：#E-s28
+【买家】：滴滴
+【客服】：哈哈
+【买家】：我咨询的标题是啥
+【买家】：咨询订单号：3679270007760533 商品ID：10148525286879
+【买家】：我咨询的标题是啥
+【买家】：我稳定标题是啥
+【买家】：咨询订单号：3679270007760533 商品ID：10148525286879
+【客服】：#E-s05
+【客服】：1
+【买家】：什么时候发货呀
+【客服】：#E-s05
+【客服】：#E-s21
+【买家】：什么时候发货呀
+2026-11-16 10:02:15.369 | INFO     | jd_message_relay:_chat_history:225 - 聊天记录 | 买家=jd_eHGlDAbGDLEn | 内容=【买家】：哈哈
+【客服】：#E-s21
+【客服】：#E-s21
+【客服】：#E-s28
+【买家】：滴滴
+【客服】：哈哈
+【买家】：我咨询的标题是啥
+【买家】：咨询订单号：3679270007760533 商品ID：10148525286879
+【买家】：我咨询的标题是啥
+【买家】：我稳定标题是啥
+【买家】：咨询订单号：3679270007760533 商品ID：10148525286879
+【客服】：#E-s05
+【客服】：1
+【买家】：什么时候发货呀
+【客服】：#E-s05
+【客服】：#E-s21
+【买家】：什么时候发货呀
+2026-11-16 10:02:15.369 | INFO     | jd_message_relay:_flush:115 - 8秒拼接消息 | 买家=jd_eHGlDAbGDLEn | 内容=什么时候发货呀
+咨询订单号：3679270007760533 商品ID：10148525286879
+2026-11-16 10:02:24.447 | INFO     | jd_message_listener:listen:148 - 收到信息 | 买家=jd_eHGlDAbGDLEn | 内容=有没有运费险
+2026-11-16 10:02:32.496 | INFO     | jd_chat_history:get_history:287 - 拉取聊天记录 | 买家=jd_eHGlDAbGDLEn | 内容=【客服】：#E-s21
+【客服】：#E-s21
+【客服】：#E-s28
+【买家】：滴滴
+【客服】：哈哈
+【买家】：我咨询的标题是啥
+【买家】：咨询订单号：3679270007760533 商品ID：10148525286879
+【买家】：我咨询的标题是啥
+【买家】：我稳定标题是啥
+【买家】：咨询订单号：3679270007760533 商品ID：10148525286879
+【客服】：#E-s05
+【客服】：1
+【买家】：什么时候发货呀
+【客服】：#E-s05
+【客服】：#E-s21
+【买家】：什么时候发货呀
+【买家】：咨询订单号：3679270007760533 商品ID：10148525286879
+2026-11-16 10:02:32.496 | INFO     | jd_message_relay:_chat_history:225 - 聊天记录 | 买家=jd_eHGlDAbGDLEn | 内容=【客服】：#E-s21
+【客服】：#E-s21
+【客服】：#E-s28
+【买家】：滴滴
+【客服】：哈哈
+【买家】：我咨询的标题是啥
+【买家】：咨询订单号：3679270007760533 商品ID：10148525286879
+【买家】：我咨询的标题是啥
+【买家】：我稳定标题是啥
+【买家】：咨询订单号：3679270007760533 商品ID：10148525286879
+【客服】：#E-s05
+【客服】：1
+【买家】：什么时候发货呀
+【客服】：#E-s05
+【客服】：#E-s21
+【买家】：什么时候发货呀
+【买家】：咨询订单号：3679270007760533 商品ID：10148525286879
+2026-11-16 10:02:32.496 | INFO     | jd_message_relay:_flush:115 - 8秒拼接消息 | 买家=jd_eHGlDAbGDLEn | 内容=有没有运费险
+2026-11-16 10:02:51.282 | INFO     | jd_reply_handler:reply_for_message:72 - Coze 回复 | 内容=下单后24小时内发货呢，没有云费卜帖哟~[玫瑰]
+2026-11-16 10:02:51.282 | INFO     | jd_message_sender:send_text:83 - 发送文本 | 买家=jd_eHGlDAbGDLEn | 内容=下单后24小时内发货呢，没有云费卜帖哟~[玫瑰]
+2026-11-16 10:03:50.738 | INFO     | jd_message_listener:listen:148 - 收到信息 | 买家=jd_eHGlDAbGDLEn | 内容=#E-s11
+2026-11-16 10:03:58.792 | INFO     | jd_chat_history:get_history:287 - 拉取聊天记录 | 买家=jd_eHGlDAbGDLEn | 内容=【客服】：#E-s28
+【买家】：滴滴
+【客服】：哈哈
+【买家】：我咨询的标题是啥
+【买家】：咨询订单号：3679270007760533 商品ID：10148525286879
+【买家】：我咨询的标题是啥
+【买家】：我稳定标题是啥
+【买家】：咨询订单号：3679270007760533 商品ID：10148525286879
+【客服】：#E-s05
+【客服】：1
+【买家】：什么时候发货呀
+【客服】：#E-s05
+【客服】：#E-s21
+【买家】：什么时候发货呀
+【买家】：咨询订单号：3679270007760533 商品ID：10148525286879
+【买家】：有没有运费险
+【客服】：下单后24小时内发货呢，没有云费卜帖哟~[玫瑰]
+2026-11-16 10:03:58.792 | INFO     | jd_message_relay:_chat_history:225 - 聊天记录 | 买家=jd_eHGlDAbGDLEn | 内容=【客服】：#E-s28
+【买家】：滴滴
+【客服】：哈哈
+【买家】：我咨询的标题是啥
+【买家】：咨询订单号：3679270007760533 商品ID：10148525286879
+【买家】：我咨询的标题是啥
+【买家】：我稳定标题是啥
+【买家】：咨询订单号：3679270007760533 商品ID：10148525286879
+【客服】：#E-s05
+【客服】：1
+【买家】：什么时候发货呀
+【客服】：#E-s05
+【客服】：#E-s21
+【买家】：什么时候发货呀
+【买家】：咨询订单号：3679270007760533 商品ID：10148525286879
+【买家】：有没有运费险
+【客服】：下单后24小时内发货呢，没有云费卜帖哟~[玫瑰]
+2026-11-16 10:03:58.792 | INFO     | jd_message_relay:_flush:115 - 8秒拼接消息 | 买家=jd_eHGlDAbGDLEn | 内容=#E-s11
+2026-11-16 10:04:21.281 | INFO     | jd_reply_handler:reply_for_message:72 - Coze 回复 | 内容=亲亲，这款是酒红色呢[玫瑰]
+2026-11-16 10:04:21.282 | INFO     | jd_message_sender:send_text:83 - 发送文本 | 买家=jd_eHGlDAbGDLEn | 内容=亲亲，这款是酒红色呢[玫瑰]
+2026-11-16 10:23:58.908 | INFO     | jd_message_listener:listen:148 - 收到信息 | 买家=jd_eHGlDAbGDLEn | 内容=#E-s11
+2026-11-16 10:43:57.490 | INFO     | jd_message_listener:listen:150 - 收到信息 | 买家=jd_eHGlDAbGDLEn | 内容=咨询订单号：3679270007760533 商品ID：10148525286879
+2026-11-16 10:44:44.338 | INFO     | jd_message_listener:listen:150 - 收到信息 | 买家=jd_eHGlDAbGDLEn | 内容=https://item.jd.com/10148525286879.html?sdx=ehi-lLxFuZiE6JnJZYtZjsMiuDaZDwIrsmpJta1HYdWDPe_RLJRY4XXipUDmU2-Z
+2026-11-16 10:44:52.392 | INFO     | jd_chat_history:get_history:288 - 拉取聊天记录 | 买家=jd_eHGlDAbGDLEn | 内容=【买家】：咨询订单号：3679270007760533 商品ID：10148525286879
+【客服】：[微笑]
+【客服】：1
+【买家】：什么时候发货呀
+【客服】：[微笑]
+【客服】：[微笑]
+【买家】：什么时候发货呀
+【买家】：咨询订单号：3679270007760533 商品ID：10148525286879
+【买家】：有没有运费险
+【客服】：下单后24小时内发货呢，没有云费卜帖哟~[玫瑰]
+【买家】：[微笑]
+【客服】：亲亲，这款是酒红色呢[玫瑰]
+【客服】：[微笑]
+【买家】：[微笑]
+【买家】：https://item.jd.com/10148525286879.html?sdx=ehi-lLxFuZiE6JnJZYtZjsMiuDaZDwIrsmpJta1HYdWDPe_RLJRY4XXjpUHiVWGT
+【买家】：https://item.jd.com/10148525286879.html?sdx=ehi-lLxFuZiE6JnJZYtZjsMiuDaZDwIrsmpJta1HYdWDPe_RLJRY4XXipUvhU2WU
+【买家】：咨询订单号：3679270007760533 商品ID：10148525286879
+2026-11-16 10:44:52.392 | INFO     | jd_message_relay:_chat_history:228 - 聊天记录 | 买家=jd_eHGlDAbGDLEn | 内容=【买家】：咨询订单号：3679270007760533 商品ID：10148525286879
+【客服】：[微笑]
+【客服】：1
+【买家】：什么时候发货呀
+【客服】：[微笑]
+【客服】：[微笑]
+【买家】：什么时候发货呀
+【买家】：咨询订单号：3679270007760533 商品ID：10148525286879
+【买家】：有没有运费险
+【客服】：下单后24小时内发货呢，没有云费卜帖哟~[玫瑰]
+【买家】：[微笑]
+【客服】：亲亲，这款是酒红色呢[玫瑰]
+【客服】：[微笑]
+【买家】：[微笑]
+【买家】：https://item.jd.com/10148525286879.html?sdx=ehi-lLxFuZiE6JnJZYtZjsMiuDaZDwIrsmpJta1HYdWDPe_RLJRY4XXjpUHiVWGT
+【买家】：https://item.jd.com/10148525286879.html?sdx=ehi-lLxFuZiE6JnJZYtZjsMiuDaZDwIrsmpJta1HYdWDPe_RLJRY4XXipUvhU2WU
+【买家】：咨询订单号：3679270007760533 商品ID：10148525286879
+2026-11-16 10:44:52.392 | INFO     | jd_message_relay:_flush:118 - 8秒拼接消息 | 买家=jd_eHGlDAbGDLEn | 内容=https://item.jd.com/10148525286879.html?sdx=ehi-lLxFuZiE6JnJZYtZjsMiuDaZDwIrsmpJta1HYdWDPe_RLJRY4XXipUDmU2-Z
+2026-11-16 11:47:56.182 | INFO     | jd_message_listener:listen:150 - 收到信息 | 买家=jd_eHGlDAbGDLEn | 内容=https://item.jd.com/10148525286879.html?sdx=ehi-lLxFuZiE6JnJZYtZjsMiuDaZDwIrsmpJta1HYdWDPe_RLJRY7nzlrU_kU26Q
+2026-11-16 11:47:58.260 | INFO     | jd_message_listener:listen:150 - 收到信息 | 买家=jd_eHGlDAbGDLEn | 内容=咨询订单号：3679270007760533 商品ID：10148525286879
+2026-11-16 11:48:04.244 | INFO     | jd_chat_history:get_history:288 - 拉取聊天记录 | 买家=jd_eHGlDAbGDLEn | 内容=【客服】：1
+【买家】：什么时候发货呀
+【客服】：[微笑]
+【客服】：[微笑]
+【买家】：什么时候发货呀
+【买家】：咨询订单号：3679270007760533 商品ID：10148525286879
+【买家】：有没有运费险
+【客服】：下单后24小时内发货呢，没有云费卜帖哟~[玫瑰]
+【买家】：[微笑]
+【客服】：亲亲，这款是酒红色呢[玫瑰]
+【客服】：[微笑]
+【买家】：[微笑]
+【买家】：https://item.jd.com/10148525286879.html?sdx=ehi-lLxFuZiE6JnJZYtZjsMiuDaZDwIrsmpJta1HYdWDPe_RLJRY4XXjpUHiVWGT
+【买家】：https://item.jd.com/10148525286879.html?sdx=ehi-lLxFuZiE6JnJZYtZjsMiuDaZDwIrsmpJta1HYdWDPe_RLJRY4XXipUvhU2WU
+【买家】：咨询订单号：3679270007760533 商品ID：10148525286879
+【买家】：https://item.jd.com/10148525286879.html?sdx=ehi-lLxFuZiE6JnJZYtZjsMiuDaZDwIrsmpJta1HYdWDPe_RLJRY4XXipUDmU2-Z
+【买家】：https://item.jd.com/10148525286879.html?sdx=ehi-lLxFuZiE6JnJZYtZjsMiuDaZDwIrsmpJta1HYdWDPe_RLJRY7nzlrU_kU26Q
+2026-11-16 11:48:04.244 | INFO     | jd_message_relay:_chat_history:228 - 聊天记录 | 买家=jd_eHGlDAbGDLEn | 内容=【客服】：1
+【买家】：什么时候发货呀
+【客服】：[微笑]
+【客服】：[微笑]
+【买家】：什么时候发货呀
+【买家】：咨询订单号：3679270007760533 商品ID：10148525286879
+【买家】：有没有运费险
+【客服】：下单后24小时内发货呢，没有云费卜帖哟~[玫瑰]
+【买家】：[微笑]
+【客服】：亲亲，这款是酒红色呢[玫瑰]
+【客服】：[微笑]
+【买家】：[微笑]
+【买家】：https://item.jd.com/10148525286879.html?sdx=ehi-lLxFuZiE6JnJZYtZjsMiuDaZDwIrsmpJta1HYdWDPe_RLJRY4XXjpUHiVWGT
+【买家】：https://item.jd.com/10148525286879.html?sdx=ehi-lLxFuZiE6JnJZYtZjsMiuDaZDwIrsmpJta1HYdWDPe_RLJRY4XXipUvhU2WU
+【买家】：咨询订单号：3679270007760533 商品ID：10148525286879
+【买家】：https://item.jd.com/10148525286879.html?sdx=ehi-lLxFuZiE6JnJZYtZjsMiuDaZDwIrsmpJta1HYdWDPe_RLJRY4XXipUDmU2-Z
+【买家】：https://item.jd.com/10148525286879.html?sdx=ehi-lLxFuZiE6JnJZYtZjsMiuDaZDwIrsmpJta1HYdWDPe_RLJRY7nzlrU_kU26Q
+2026-11-16 11:48:04.244 | INFO     | jd_message_relay:_flush:118 - 8秒拼接消息 | 买家=jd_eHGlDAbGDLEn | 内容=https://item.jd.com/10148525286879.html?sdx=ehi-lLxFuZiE6JnJZYtZjsMiuDaZDwIrsmpJta1HYdWDPe_RLJRY7nzlrU_kU26Q
+咨询订单号：3679270007760533 商品ID：10148525286879
+2026-11-16 11:48:25.881 | INFO     | jd_reply_handler:reply_for_message:72 - Coze 回复 | 内容=亲亲，这边已经看到您的链接了呢~请问具体想咨询什么问题呀？(˶ᵔ ᵕ ᵔ˶)
+2026-11-16 11:48:25.882 | INFO     | jd_message_sender:send_text:83 - 发送文本 | 买家=jd_eHGlDAbGDLEn | 内容=亲亲，这边已经看到您的链接了呢~请问具体想咨询什么问题呀？(˶ᵔ ᵕ ᵔ˶)
+2026-11-16 11:48:33.748 | INFO     | jd_message_listener:listen:150 - 收到信息 | 买家=jd_eHGlDAbGDLEn | 内容=https://item.jd.com/10148525286879.html?sdx=ehi-lLxFuZiE6JnJZYtZjsMiuDaZDwIrsmpJta1HYdWDPe_RLJRY7nzlrEnmVmWU
+2026-11-16 11:48:41.805 | INFO     | jd_chat_history:get_history:288 - 拉取聊天记录 | 买家=jd_eHGlDAbGDLEn | 内容=【客服】：[微笑]
+【客服】：[微笑]
+【买家】：什么时候发货呀
+【买家】：咨询订单号：3679270007760533 商品ID：10148525286879
+【买家】：有没有运费险
+【客服】：下单后24小时内发货呢，没有云费卜帖哟~[玫瑰]
+【买家】：[微笑]
+【客服】：亲亲，这款是酒红色呢[玫瑰]
+【客服】：[微笑]
+【买家】：[微笑]
+【买家】：https://item.jd.com/10148525286879.html?sdx=ehi-lLxFuZiE6JnJZYtZjsMiuDaZDwIrsmpJta1HYdWDPe_RLJRY4XXjpUHiVWGT
+【买家】：https://item.jd.com/10148525286879.html?sdx=ehi-lLxFuZiE6JnJZYtZjsMiuDaZDwIrsmpJta1HYdWDPe_RLJRY4XXipUvhU2WU
+【买家】：咨询订单号：3679270007760533 商品ID：10148525286879
+【买家】：https://item.jd.com/10148525286879.html?sdx=ehi-lLxFuZiE6JnJZYtZjsMiuDaZDwIrsmpJta1HYdWDPe_RLJRY4XXipUDmU2-Z
+【买家】：https://item.jd.com/10148525286879.html?sdx=ehi-lLxFuZiE6JnJZYtZjsMiuDaZDwIrsmpJta1HYdWDPe_RLJRY7nzlrU_kU26Q
+【买家】：咨询订单号：3679270007760533 商品ID：10148525286879
+【客服】：亲亲，这边已经看到您的链接了呢~请问具体想咨询什么问题呀？(˶ᵔ ᵕ ᵔ˶)
+2026-11-16 11:48:41.805 | INFO     | jd_message_relay:_chat_history:228 - 聊天记录 | 买家=jd_eHGlDAbGDLEn | 内容=【客服】：[微笑]
+【客服】：[微笑]
+【买家】：什么时候发货呀
+【买家】：咨询订单号：3679270007760533 商品ID：10148525286879
+【买家】：有没有运费险
+【客服】：下单后24小时内发货呢，没有云费卜帖哟~[玫瑰]
+【买家】：[微笑]
+【客服】：亲亲，这款是酒红色呢[玫瑰]
+【客服】：[微笑]
+【买家】：[微笑]
+【买家】：https://item.jd.com/10148525286879.html?sdx=ehi-lLxFuZiE6JnJZYtZjsMiuDaZDwIrsmpJta1HYdWDPe_RLJRY4XXjpUHiVWGT
+【买家】：https://item.jd.com/10148525286879.html?sdx=ehi-lLxFuZiE6JnJZYtZjsMiuDaZDwIrsmpJta1HYdWDPe_RLJRY4XXipUvhU2WU
+【买家】：咨询订单号：3679270007760533 商品ID：10148525286879
+【买家】：https://item.jd.com/10148525286879.html?sdx=ehi-lLxFuZiE6JnJZYtZjsMiuDaZDwIrsmpJta1HYdWDPe_RLJRY4XXipUDmU2-Z
+【买家】：https://item.jd.com/10148525286879.html?sdx=ehi-lLxFuZiE6JnJZYtZjsMiuDaZDwIrsmpJta1HYdWDPe_RLJRY7nzlrU_kU26Q
+【买家】：咨询订单号：3679270007760533 商品ID：10148525286879
+【客服】：亲亲，这边已经看到您的链接了呢~请问具体想咨询什么问题呀？(˶ᵔ ᵕ ᵔ˶)
+2026-11-16 11:48:41.805 | INFO     | jd_message_relay:_flush:118 - 8秒拼接消息 | 买家=jd_eHGlDAbGDLEn | 内容=https://item.jd.com/10148525286879.html?sdx=ehi-lLxFuZiE6JnJZYtZjsMiuDaZDwIrsmpJta1HYdWDPe_RLJRY7nzlrEnmVmWU
+2026-11-16 11:48:42.742 | INFO     | jd_reply_handler:reply_for_message:72 - Coze 回复 | 内容=亲亲，您对这个商品有什么问题吗？
+2026-11-16 11:48:42.742 | INFO     | jd_message_sender:send_text:83 - 发送文本 | 买家=jd_eHGlDAbGDLEn | 内容=亲亲，您对这个商品有什么问题吗？
+2026-11-16 11:48:49.574 | INFO     | jd_message_listener:listen:150 - 收到信息 | 买家=jd_eHGlDAbGDLEn | 内容=咨询订单号：3679270007760533 商品ID：10148525286879
+2026-11-16 11:48:57.646 | INFO     | jd_chat_history:get_history:288 - 拉取聊天记录 | 买家=jd_eHGlDAbGDLEn | 内容=【买家】：什么时候发货呀
+【买家】：咨询订单号：3679270007760533 商品ID：10148525286879
+【买家】：有没有运费险
+【客服】：下单后24小时内发货呢，没有云费卜帖哟~[玫瑰]
+【买家】：[微笑]
+【客服】：亲亲，这款是酒红色呢[玫瑰]
+【客服】：[微笑]
+【买家】：[微笑]
+【买家】：https://item.jd.com/10148525286879.html?sdx=ehi-lLxFuZiE6JnJZYtZjsMiuDaZDwIrsmpJta1HYdWDPe_RLJRY4XXjpUHiVWGT
+【买家】：https://item.jd.com/10148525286879.html?sdx=ehi-lLxFuZiE6JnJZYtZjsMiuDaZDwIrsmpJta1HYdWDPe_RLJRY4XXipUvhU2WU
+【买家】：咨询订单号：3679270007760533 商品ID：10148525286879
+【买家】：https://item.jd.com/10148525286879.html?sdx=ehi-lLxFuZiE6JnJZYtZjsMiuDaZDwIrsmpJta1HYdWDPe_RLJRY4XXipUDmU2-Z
+【买家】：https://item.jd.com/10148525286879.html?sdx=ehi-lLxFuZiE6JnJZYtZjsMiuDaZDwIrsmpJta1HYdWDPe_RLJRY7nzlrU_kU26Q
+【买家】：咨询订单号：3679270007760533 商品ID：10148525286879
+【客服】：亲亲，这边已经看到您的链接了呢~请问具体想咨询什么问题呀？(˶ᵔ ᵕ ᵔ˶)
+【买家】：https://item.jd.com/10148525286879.html?sdx=ehi-lLxFuZiE6JnJZYtZjsMiuDaZDwIrsmpJta1HYdWDPe_RLJRY7nzlrEnmVmWU
+【客服】：亲亲，您对这个商品有什么问题吗？
+2026-11-16 11:48:57.647 | INFO     | jd_message_relay:_chat_history:228 - 聊天记录 | 买家=jd_eHGlDAbGDLEn | 内容=【买家】：什么时候发货呀
+【买家】：咨询订单号：3679270007760533 商品ID：10148525286879
+【买家】：有没有运费险
+【客服】：下单后24小时内发货呢，没有云费卜帖哟~[玫瑰]
+【买家】：[微笑]
+【客服】：亲亲，这款是酒红色呢[玫瑰]
+【客服】：[微笑]
+【买家】：[微笑]
+【买家】：https://item.jd.com/10148525286879.html?sdx=ehi-lLxFuZiE6JnJZYtZjsMiuDaZDwIrsmpJta1HYdWDPe_RLJRY4XXjpUHiVWGT
+【买家】：https://item.jd.com/10148525286879.html?sdx=ehi-lLxFuZiE6JnJZYtZjsMiuDaZDwIrsmpJta1HYdWDPe_RLJRY4XXipUvhU2WU
+【买家】：咨询订单号：3679270007760533 商品ID：10148525286879
+【买家】：https://item.jd.com/10148525286879.html?sdx=ehi-lLxFuZiE6JnJZYtZjsMiuDaZDwIrsmpJta1HYdWDPe_RLJRY4XXipUDmU2-Z
+【买家】：https://item.jd.com/10148525286879.html?sdx=ehi-lLxFuZiE6JnJZYtZjsMiuDaZDwIrsmpJta1HYdWDPe_RLJRY7nzlrU_kU26Q
+【买家】：咨询订单号：3679270007760533 商品ID：10148525286879
+【客服】：亲亲，这边已经看到您的链接了呢~请问具体想咨询什么问题呀？(˶ᵔ ᵕ ᵔ˶)
+【买家】：https://item.jd.com/10148525286879.html?sdx=ehi-lLxFuZiE6JnJZYtZjsMiuDaZDwIrsmpJta1HYdWDPe_RLJRY7nzlrEnmVmWU
+【客服】：亲亲，您对这个商品有什么问题吗？
+2026-11-16 11:48:57.647 | INFO     | jd_message_relay:_flush:118 - 8秒拼接消息 | 买家=jd_eHGlDAbGDLEn | 内容=咨询订单号：3679270007760533 商品ID：10148525286879
+2026-11-16 11:48:58.499 | INFO     | jd_reply_handler:reply_for_message:72 - Coze 回复 | 内容=亲亲，您对这个订单有什么问题吗？
+2026-11-16 11:48:58.500 | INFO     | jd_message_sender:send_text:83 - 发送文本 | 买家=jd_eHGlDAbGDLEn | 内容=亲亲，您对这个订单有什么问题吗？
+2026-11-17 13:06:07.634 | INFO     | jd_message_listener:listen:150 - 收到信息 | 买家=jd_eHGlDAbGDLEn | 内容=https://item.jd.com/10148525286879.html?sdx=ehi-lLxFuZiE6JnJZYtZjsMiuDaZDwIrsmpJta1HYdWDPe_RLJRY7nXkrE7kU2SY
+2026-11-17 13:06:15.689 | INFO     | jd_chat_history:get_history:288 - 拉取聊天记录 | 买家=jd_eHGlDAbGDLEn | 内容=【客服】：下单后24小时内发货呢，没有云费卜帖哟~[玫瑰]
+【买家】：[微笑]
+【客服】：亲亲，这款是酒红色呢[玫瑰]
+【客服】：[微笑]
+【买家】：[微笑]
+【买家】：https://item.jd.com/10148525286879.html?sdx=ehi-lLxFuZiE6JnJZYtZjsMiuDaZDwIrsmpJta1HYdWDPe_RLJRY4XXjpUHiVWGT
+【买家】：https://item.jd.com/10148525286879.html?sdx=ehi-lLxFuZiE6JnJZYtZjsMiuDaZDwIrsmpJta1HYdWDPe_RLJRY4XXipUvhU2WU
+【买家】：咨询订单号：3679270007760533 商品ID：10148525286879
+【买家】：https://item.jd.com/10148525286879.html?sdx=ehi-lLxFuZiE6JnJZYtZjsMiuDaZDwIrsmpJta1HYdWDPe_RLJRY4XXipUDmU2-Z
+【买家】：https://item.jd.com/10148525286879.html?sdx=ehi-lLxFuZiE6JnJZYtZjsMiuDaZDwIrsmpJta1HYdWDPe_RLJRY7nzlrU_kU26Q
+【买家】：咨询订单号：3679270007760533 商品ID：10148525286879
+【客服】：亲亲，这边已经看到您的链接了呢~请问具体想咨询什么问题呀？(˶ᵔ ᵕ ᵔ˶)
+【买家】：https://item.jd.com/10148525286879.html?sdx=ehi-lLxFuZiE6JnJZYtZjsMiuDaZDwIrsmpJta1HYdWDPe_RLJRY7nzlrEnmVmWU
+【客服】：亲亲，您对这个商品有什么问题吗？
+【买家】：咨询订单号：3679270007760533 商品ID：10148525286879
+【客服】：亲亲，您对这个订单有什么问题吗？
+2026-11-17 13:06:15.689 | INFO     | jd_message_relay:_chat_history:228 - 聊天记录 | 买家=jd_eHGlDAbGDLEn | 内容=【客服】：下单后24小时内发货呢，没有云费卜帖哟~[玫瑰]
+【买家】：[微笑]
+【客服】：亲亲，这款是酒红色呢[玫瑰]
+【客服】：[微笑]
+【买家】：[微笑]
+【买家】：https://item.jd.com/10148525286879.html?sdx=ehi-lLxFuZiE6JnJZYtZjsMiuDaZDwIrsmpJta1HYdWDPe_RLJRY4XXjpUHiVWGT
+【买家】：https://item.jd.com/10148525286879.html?sdx=ehi-lLxFuZiE6JnJZYtZjsMiuDaZDwIrsmpJta1HYdWDPe_RLJRY4XXipUvhU2WU
+【买家】：咨询订单号：3679270007760533 商品ID：10148525286879
+【买家】：https://item.jd.com/10148525286879.html?sdx=ehi-lLxFuZiE6JnJZYtZjsMiuDaZDwIrsmpJta1HYdWDPe_RLJRY4XXipUDmU2-Z
+【买家】：https://item.jd.com/10148525286879.html?sdx=ehi-lLxFuZiE6JnJZYtZjsMiuDaZDwIrsmpJta1HYdWDPe_RLJRY7nzlrU_kU26Q
+【买家】：咨询订单号：3679270007760533 商品ID：10148525286879
+【客服】：亲亲，这边已经看到您的链接了呢~请问具体想咨询什么问题呀？(˶ᵔ ᵕ ᵔ˶)
+【买家】：https://item.jd.com/10148525286879.html?sdx=ehi-lLxFuZiE6JnJZYtZjsMiuDaZDwIrsmpJta1HYdWDPe_RLJRY7nzlrEnmVmWU
+【客服】：亲亲，您对这个商品有什么问题吗？
+【买家】：咨询订单号：3679270007760533 商品ID：10148525286879
+【客服】：亲亲，您对这个订单有什么问题吗？
+2026-11-17 13:06:15.689 | INFO     | jd_message_relay:_flush:118 - 8秒拼接消息 | 买家=jd_eHGlDAbGDLEn | 内容=https://item.jd.com/10148525286879.html?sdx=ehi-lLxFuZiE6JnJZYtZjsMiuDaZDwIrsmpJta1HYdWDPe_RLJRY7nXkrE7kU2SY
+2026-11-17 13:06:18.123 | INFO     | jd_reply_handler:reply_for_message:72 - Coze 回复 | 内容=亲亲，您对这个商品有什么问题吗？
+2026-11-17 13:06:18.124 | INFO     | jd_message_sender:send_text:83 - 发送文本 | 买家=jd_eHGlDAbGDLEn | 内容=亲亲，您对这个商品有什么问题吗？
+2026-11-17 14:31:29.233 | INFO     | jd_message_listener:listen:150 - 收到信息 | 买家=jd_eHGlDAbGDLEn | 内容=[微笑]
+2026-11-17 14:31:37.293 | INFO     | jd_chat_history:get_history:288 - 拉取聊天记录 | 买家=jd_eHGlDAbGDLEn | 内容=【客服】：[微笑]
+【买家】：[微笑]
+【买家】：https://item.jd.com/10148525286879.html?sdx=ehi-lLxFuZiE6JnJZYtZjsMiuDaZDwIrsmpJta1HYdWDPe_RLJRY4XXjpUHiVWGT
+【买家】：https://item.jd.com/10148525286879.html?sdx=ehi-lLxFuZiE6JnJZYtZjsMiuDaZDwIrsmpJta1HYdWDPe_RLJRY4XXipUvhU2WU
+【买家】：咨询订单号：3679270007760533 商品ID：10148525286879
+【买家】：https://item.jd.com/10148525286879.html?sdx=ehi-lLxFuZiE6JnJZYtZjsMiuDaZDwIrsmpJta1HYdWDPe_RLJRY4XXipUDmU2-Z
+【买家】：https://item.jd.com/10148525286879.html?sdx=ehi-lLxFuZiE6JnJZYtZjsMiuDaZDwIrsmpJta1HYdWDPe_RLJRY7nzlrU_kU26Q
+【买家】：咨询订单号：3679270007760533 商品ID：10148525286879
+【客服】：亲亲，这边已经看到您的链接了呢~请问具体想咨询什么问题呀？(˶ᵔ ᵕ ᵔ˶)
+【买家】：https://item.jd.com/10148525286879.html?sdx=ehi-lLxFuZiE6JnJZYtZjsMiuDaZDwIrsmpJta1HYdWDPe_RLJRY7nzlrEnmVmWU
+【客服】：亲亲，您对这个商品有什么问题吗？
+【买家】：咨询订单号：3679270007760533 商品ID：10148525286879
+【客服】：亲亲，您对这个订单有什么问题吗？
+【买家】：https://item.jd.com/10148525286879.html?sdx=ehi-lLxFuZiE6JnJZYtZjsMiuDaZDwIrsmpJta1HYdWDPe_RLJRY7nXkrE7kU2SY
+【客服】：亲亲，您对这个商品有什么问题吗？
+2026-11-17 14:31:37.293 | INFO     | jd_message_relay:_chat_history:228 - 聊天记录 | 买家=jd_eHGlDAbGDLEn | 内容=【客服】：[微笑]
+【买家】：[微笑]
+【买家】：https://item.jd.com/10148525286879.html?sdx=ehi-lLxFuZiE6JnJZYtZjsMiuDaZDwIrsmpJta1HYdWDPe_RLJRY4XXjpUHiVWGT
+【买家】：https://item.jd.com/10148525286879.html?sdx=ehi-lLxFuZiE6JnJZYtZjsMiuDaZDwIrsmpJta1HYdWDPe_RLJRY4XXipUvhU2WU
+【买家】：咨询订单号：3679270007760533 商品ID：10148525286879
+【买家】：https://item.jd.com/10148525286879.html?sdx=ehi-lLxFuZiE6JnJZYtZjsMiuDaZDwIrsmpJta1HYdWDPe_RLJRY4XXipUDmU2-Z
+【买家】：https://item.jd.com/10148525286879.html?sdx=ehi-lLxFuZiE6JnJZYtZjsMiuDaZDwIrsmpJta1HYdWDPe_RLJRY7nzlrU_kU26Q
+【买家】：咨询订单号：3679270007760533 商品ID：10148525286879
+【客服】：亲亲，这边已经看到您的链接了呢~请问具体想咨询什么问题呀？(˶ᵔ ᵕ ᵔ˶)
+【买家】：https://item.jd.com/10148525286879.html?sdx=ehi-lLxFuZiE6JnJZYtZjsMiuDaZDwIrsmpJta1HYdWDPe_RLJRY7nzlrEnmVmWU
+【客服】：亲亲，您对这个商品有什么问题吗？
+【买家】：咨询订单号：3679270007760533 商品ID：10148525286879
+【客服】：亲亲，您对这个订单有什么问题吗？
+【买家】：https://item.jd.com/10148525286879.html?sdx=ehi-lLxFuZiE6JnJZYtZjsMiuDaZDwIrsmpJta1HYdWDPe_RLJRY7nXkrE7kU2SY
+【客服】：亲亲，您对这个商品有什么问题吗？
+2026-11-17 14:31:37.293 | INFO     | jd_message_relay:_flush:118 - 8秒拼接消息 | 买家=jd_eHGlDAbGDLEn | 内容=[微笑]
+2026-11-17 14:32:02.623 | INFO     | jd_reply_handler:reply_for_message:72 - Coze 回复 | 内容=亲亲，您只发了微笑表情呢~请问有什么可以帮您呀？(˶ᵔ ᵕ ᵔ˶)
+2026-11-17 14:32:02.623 | INFO     | jd_message_sender:send_text:83 - 发送文本 | 买家=jd_eHGlDAbGDLEn | 内容=亲亲，您只发了微笑表情呢~请问有什么可以帮您呀？(˶ᵔ ᵕ ᵔ˶)
+2026-11-17 14:32:14.027 | INFO     | jd_message_listener:listen:150 - 收到信息 | 买家=jd_eHGlDAbGDLEn | 内容=咨询订单号：3679270007760533 商品ID：10148525286879
+2026-11-17 14:32:22.078 | INFO     | jd_chat_history:get_history:288 - 拉取聊天记录 | 买家=jd_eHGlDAbGDLEn | 内容=【买家】：https://item.jd.com/10148525286879.html?sdx=ehi-lLxFuZiE6JnJZYtZjsMiuDaZDwIrsmpJta1HYdWDPe_RLJRY4XXjpUHiVWGT
+【买家】：https://item.jd.com/10148525286879.html?sdx=ehi-lLxFuZiE6JnJZYtZjsMiuDaZDwIrsmpJta1HYdWDPe_RLJRY4XXipUvhU2WU
+【买家】：咨询订单号：3679270007760533 商品ID：10148525286879
+【买家】：https://item.jd.com/10148525286879.html?sdx=ehi-lLxFuZiE6JnJZYtZjsMiuDaZDwIrsmpJta1HYdWDPe_RLJRY4XXipUDmU2-Z
+【买家】：https://item.jd.com/10148525286879.html?sdx=ehi-lLxFuZiE6JnJZYtZjsMiuDaZDwIrsmpJta1HYdWDPe_RLJRY7nzlrU_kU26Q
+【买家】：咨询订单号：3679270007760533 商品ID：10148525286879
+【客服】：亲亲，这边已经看到您的链接了呢~请问具体想咨询什么问题呀？(˶ᵔ ᵕ ᵔ˶)
+【买家】：https://item.jd.com/10148525286879.html?sdx=ehi-lLxFuZiE6JnJZYtZjsMiuDaZDwIrsmpJta1HYdWDPe_RLJRY7nzlrEnmVmWU
+【客服】：亲亲，您对这个商品有什么问题吗？
+【买家】：咨询订单号：3679270007760533 商品ID：10148525286879
+【客服】：亲亲，您对这个订单有什么问题吗？
+【买家】：https://item.jd.com/10148525286879.html?sdx=ehi-lLxFuZiE6JnJZYtZjsMiuDaZDwIrsmpJta1HYdWDPe_RLJRY7nXkrE7kU2SY
+【客服】：亲亲，您对这个商品有什么问题吗？
+【买家】：[微笑]
+【客服】：亲亲，您只发了微笑表情呢~请问有什么可以帮您呀？(˶ᵔ ᵕ ᵔ˶)
+2026-11-17 14:32:22.078 | INFO     | jd_message_relay:_chat_history:228 - 聊天记录 | 买家=jd_eHGlDAbGDLEn | 内容=【买家】：https://item.jd.com/10148525286879.html?sdx=ehi-lLxFuZiE6JnJZYtZjsMiuDaZDwIrsmpJta1HYdWDPe_RLJRY4XXjpUHiVWGT
+【买家】：https://item.jd.com/10148525286879.html?sdx=ehi-lLxFuZiE6JnJZYtZjsMiuDaZDwIrsmpJta1HYdWDPe_RLJRY4XXipUvhU2WU
+【买家】：咨询订单号：3679270007760533 商品ID：10148525286879
+【买家】：https://item.jd.com/10148525286879.html?sdx=ehi-lLxFuZiE6JnJZYtZjsMiuDaZDwIrsmpJta1HYdWDPe_RLJRY4XXipUDmU2-Z
+【买家】：https://item.jd.com/10148525286879.html?sdx=ehi-lLxFuZiE6JnJZYtZjsMiuDaZDwIrsmpJta1HYdWDPe_RLJRY7nzlrU_kU26Q
+【买家】：咨询订单号：3679270007760533 商品ID：10148525286879
+【客服】：亲亲，这边已经看到您的链接了呢~请问具体想咨询什么问题呀？(˶ᵔ ᵕ ᵔ˶)
+【买家】：https://item.jd.com/10148525286879.html?sdx=ehi-lLxFuZiE6JnJZYtZjsMiuDaZDwIrsmpJta1HYdWDPe_RLJRY7nzlrEnmVmWU
+【客服】：亲亲，您对这个商品有什么问题吗？
+【买家】：咨询订单号：3679270007760533 商品ID：10148525286879
+【客服】：亲亲，您对这个订单有什么问题吗？
+【买家】：https://item.jd.com/10148525286879.html?sdx=ehi-lLxFuZiE6JnJZYtZjsMiuDaZDwIrsmpJta1HYdWDPe_RLJRY7nXkrE7kU2SY
+【客服】：亲亲，您对这个商品有什么问题吗？
+【买家】：[微笑]
+【客服】：亲亲，您只发了微笑表情呢~请问有什么可以帮您呀？(˶ᵔ ᵕ ᵔ˶)
+2026-11-17 14:32:22.078 | INFO     | jd_message_relay:_flush:118 - 8秒拼接消息 | 买家=jd_eHGlDAbGDLEn | 内容=咨询订单号：3679270007760533 商品ID：10148525286879
+2026-11-17 14:32:25.207 | INFO     | jd_reply_handler:reply_for_message:72 - Coze 回复 | 内容=亲亲，您对这个订单有什么问题吗？
+2026-11-17 14:32:25.207 | INFO     | jd_message_sender:send_text:83 - 发送文本 | 买家=jd_eHGlDAbGDLEn | 内容=亲亲，您对这个订单有什么问题吗？
+2026-11-17 14:32:35.020 | INFO     | jd_message_listener:listen:150 - 收到信息 | 买家=jd_eHGlDAbGDLEn | 内容=转人工
+2026-11-17 14:32:43.085 | INFO     | jd_chat_history:get_history:288 - 拉取聊天记录 | 买家=jd_eHGlDAbGDLEn | 内容=【买家】：咨询订单号：3679270007760533 商品ID：10148525286879
+【买家】：https://item.jd.com/10148525286879.html?sdx=ehi-lLxFuZiE6JnJZYtZjsMiuDaZDwIrsmpJta1HYdWDPe_RLJRY4XXipUDmU2-Z
+【买家】：https://item.jd.com/10148525286879.html?sdx=ehi-lLxFuZiE6JnJZYtZjsMiuDaZDwIrsmpJta1HYdWDPe_RLJRY7nzlrU_kU26Q
+【买家】：咨询订单号：3679270007760533 商品ID：10148525286879
+【客服】：亲亲，这边已经看到您的链接了呢~请问具体想咨询什么问题呀？(˶ᵔ ᵕ ᵔ˶)
+【买家】：https://item.jd.com/10148525286879.html?sdx=ehi-lLxFuZiE6JnJZYtZjsMiuDaZDwIrsmpJta1HYdWDPe_RLJRY7nzlrEnmVmWU
+【客服】：亲亲，您对这个商品有什么问题吗？
+【买家】：咨询订单号：3679270007760533 商品ID：10148525286879
+【客服】：亲亲，您对这个订单有什么问题吗？
+【买家】：https://item.jd.com/10148525286879.html?sdx=ehi-lLxFuZiE6JnJZYtZjsMiuDaZDwIrsmpJta1HYdWDPe_RLJRY7nXkrE7kU2SY
+【客服】：亲亲，您对这个商品有什么问题吗？
+【买家】：[微笑]
+【客服】：亲亲，您只发了微笑表情呢~请问有什么可以帮您呀？(˶ᵔ ᵕ ᵔ˶)
+【买家】：咨询订单号：3679270007760533 商品ID：10148525286879
+【客服】：亲亲，您对这个订单有什么问题吗？
+2026-11-17 14:32:43.086 | INFO     | jd_message_relay:_chat_history:228 - 聊天记录 | 买家=jd_eHGlDAbGDLEn | 内容=【买家】：咨询订单号：3679270007760533 商品ID：10148525286879
+【买家】：https://item.jd.com/10148525286879.html?sdx=ehi-lLxFuZiE6JnJZYtZjsMiuDaZDwIrsmpJta1HYdWDPe_RLJRY4XXipUDmU2-Z
+【买家】：https://item.jd.com/10148525286879.html?sdx=ehi-lLxFuZiE6JnJZYtZjsMiuDaZDwIrsmpJta1HYdWDPe_RLJRY7nzlrU_kU26Q
+【买家】：咨询订单号：3679270007760533 商品ID：10148525286879
+【客服】：亲亲，这边已经看到您的链接了呢~请问具体想咨询什么问题呀？(˶ᵔ ᵕ ᵔ˶)
+【买家】：https://item.jd.com/10148525286879.html?sdx=ehi-lLxFuZiE6JnJZYtZjsMiuDaZDwIrsmpJta1HYdWDPe_RLJRY7nzlrEnmVmWU
+【客服】：亲亲，您对这个商品有什么问题吗？
+【买家】：咨询订单号：3679270007760533 商品ID：10148525286879
+【客服】：亲亲，您对这个订单有什么问题吗？
+【买家】：https://item.jd.com/10148525286879.html?sdx=ehi-lLxFuZiE6JnJZYtZjsMiuDaZDwIrsmpJta1HYdWDPe_RLJRY7nXkrE7kU2SY
+【客服】：亲亲，您对这个商品有什么问题吗？
+【买家】：[微笑]
+【客服】：亲亲，您只发了微笑表情呢~请问有什么可以帮您呀？(˶ᵔ ᵕ ᵔ˶)
+【买家】：咨询订单号：3679270007760533 商品ID：10148525286879
+【客服】：亲亲，您对这个订单有什么问题吗？
+2026-11-17 14:32:43.086 | INFO     | jd_message_relay:_flush:118 - 8秒拼接消息 | 买家=jd_eHGlDAbGDLEn | 内容=转人工
+2026-11-18 11:05:46.870 | INFO     | jd_message_listener:listen:150 - 收到信息 | 买家=你大爷的天 | 内容=在吗
+2026-11-18 11:05:54.924 | INFO     | jd_chat_history:get_history:288 - 拉取聊天记录 | 买家=你大爷的天 | 内容=【买家】：https://item.jd.com/10089725638287.html?sdx=ehi-lLxFuZiE6JnIaYpbjsMmsziTAAwrsmpJta1HYdWDPe_RLJRY73vlrEDnUGeV
+【客服】：很高兴为您服务，选择这款商品的您超有眼光，请问您要咨询这款产品什么问题呢？
+【买家】：老板娘帮我转下吴吴
+【客服】：1
+【客服】：稍等
+2026-11-18 11:05:54.925 | INFO     | jd_message_relay:_chat_history:228 - 聊天记录 | 买家=你大爷的天 | 内容=【买家】：https://item.jd.com/10089725638287.html?sdx=ehi-lLxFuZiE6JnIaYpbjsMmsziTAAwrsmpJta1HYdWDPe_RLJRY73vlrEDnUGeV
+【客服】：很高兴为您服务，选择这款商品的您超有眼光，请问您要咨询这款产品什么问题呢？
+【买家】：老板娘帮我转下吴吴
+【客服】：1
+【客服】：稍等
+2026-11-18 11:05:54.925 | INFO     | jd_message_relay:_flush:118 - 8秒拼接消息 | 买家=你大爷的天 | 内容=在吗
+2026-11-18 11:06:00.725 | INFO     | jd_message_listener:listen:150 - 收到信息 | 买家=你大爷的天 | 内容=你们这个支持定制是吧？
+2026-11-18 11:06:08.773 | INFO     | jd_chat_history:get_history:288 - 拉取聊天记录 | 买家=你大爷的天 | 内容=【买家】：https://item.jd.com/10089725638287.html?sdx=ehi-lLxFuZiE6JnIaYpbjsMmsziTAAwrsmpJta1HYdWDPe_RLJRY73vlrEDnUGeV
+【客服】：很高兴为您服务，选择这款商品的您超有眼光，请问您要咨询这款产品什么问题呢？
+【买家】：老板娘帮我转下吴吴
+【客服】：1
+【客服】：稍等
+【买家】：在吗
+2026-11-18 11:06:08.773 | INFO     | jd_message_relay:_chat_history:228 - 聊天记录 | 买家=你大爷的天 | 内容=【买家】：https://item.jd.com/10089725638287.html?sdx=ehi-lLxFuZiE6JnIaYpbjsMmsziTAAwrsmpJta1HYdWDPe_RLJRY73vlrEDnUGeV
+【客服】：很高兴为您服务，选择这款商品的您超有眼光，请问您要咨询这款产品什么问题呢？
+【买家】：老板娘帮我转下吴吴
+【客服】：1
+【客服】：稍等
+【买家】：在吗
+2026-11-18 11:06:08.773 | INFO     | jd_message_relay:_flush:118 - 8秒拼接消息 | 买家=你大爷的天 | 内容=你们这个支持定制是吧？
+2026-11-18 11:06:10.929 | INFO     | jd_reply_handler:reply_for_message:72 - Coze 回复 | 内容=在的呢亲亲～有什么可以帮您的呀～[玫瑰]
+2026-11-18 11:06:10.930 | INFO     | jd_message_sender:send_text:83 - 发送文本 | 买家=你大爷的天 | 内容=在的呢亲亲～有什么可以帮您的呀～[玫瑰]
+2026-11-18 11:06:23.567 | INFO     | jd_reply_handler:reply_for_message:72 - Coze 回复 | 内容=亲亲，商品标题写着免费刻字呢，支持定制的呀～(˶ᵔ ᵕ ᵔ˶)🌹
+2026-11-18 11:06:23.567 | INFO     | jd_message_sender:send_text:83 - 发送文本 | 买家=你大爷的天 | 内容=亲亲，商品标题写着免费刻字呢，支持定制的呀～(˶ᵔ ᵕ ᵔ˶)🌹
+2026-11-18 11:07:24.405 | INFO     | jd_message_listener:listen:150 - 收到信息 | 买家=你大爷的天 | 内容=好的  最多支持几个字呢？
+2026-11-18 11:07:32.451 | INFO     | jd_chat_history:get_history:288 - 拉取聊天记录 | 买家=你大爷的天 | 内容=【买家】：https://item.jd.com/10089725638287.html?sdx=ehi-lLxFuZiE6JnIaYpbjsMmsziTAAwrsmpJta1HYdWDPe_RLJRY73vlrEDnUGeV
+【客服】：很高兴为您服务，选择这款商品的您超有眼光，请问您要咨询这款产品什么问题呢？
+【买家】：老板娘帮我转下吴吴
+【客服】：1
+【客服】：稍等
+【买家】：在吗
+【买家】：你们这个支持定制是吧？
+【客服】：在的呢亲亲～有什么可以帮您的呀～[玫瑰]
+【客服】：亲亲，商品标题写着免费刻字呢，支持定制的呀～(˶ᵔ ᵕ ᵔ˶)🌹
+2026-11-18 11:07:32.451 | INFO     | jd_message_relay:_chat_history:228 - 聊天记录 | 买家=你大爷的天 | 内容=【买家】：https://item.jd.com/10089725638287.html?sdx=ehi-lLxFuZiE6JnIaYpbjsMmsziTAAwrsmpJta1HYdWDPe_RLJRY73vlrEDnUGeV
+【客服】：很高兴为您服务，选择这款商品的您超有眼光，请问您要咨询这款产品什么问题呢？
+【买家】：老板娘帮我转下吴吴
+【客服】：1
+【客服】：稍等
+【买家】：在吗
+【买家】：你们这个支持定制是吧？
+【客服】：在的呢亲亲～有什么可以帮您的呀～[玫瑰]
+【客服】：亲亲，商品标题写着免费刻字呢，支持定制的呀～(˶ᵔ ᵕ ᵔ˶)🌹
+2026-11-18 11:07:32.451 | INFO     | jd_message_relay:_flush:118 - 8秒拼接消息 | 买家=你大爷的天 | 内容=好的  最多支持几个字呢？
+2026-11-18 11:07:47.043 | INFO     | jd_reply_handler:reply_for_message:72 - Coze 回复 | 内容=亲亲，具体刻字字数限制呢~[玫瑰] 建议您查看商品详情页说明哦～(˶ᵔ ᵕ ᵔ˶)🌹
+2026-11-18 11:07:47.044 | INFO     | jd_message_sender:send_text:83 - 发送文本 | 买家=你大爷的天 | 内容=亲亲，具体刻字字数限制呢~[玫瑰] 建议您查看商品详情页说明哦～(˶ᵔ ᵕ ᵔ˶)🌹
+2026-11-18 11:08:11.953 | INFO     | jd_message_listener:listen:150 - 收到信息 | 买家=你大爷的天 | 内容=我想刻我的名字可以吗？
+2026-11-18 11:08:20.002 | INFO     | jd_chat_history:get_history:288 - 拉取聊天记录 | 买家=你大爷的天 | 内容=【买家】：https://item.jd.com/10089725638287.html?sdx=ehi-lLxFuZiE6JnIaYpbjsMmsziTAAwrsmpJta1HYdWDPe_RLJRY73vlrEDnUGeV
+【客服】：很高兴为您服务，选择这款商品的您超有眼光，请问您要咨询这款产品什么问题呢？
+【买家】：老板娘帮我转下吴吴
+【客服】：1
+【客服】：稍等
+【买家】：在吗
+【买家】：你们这个支持定制是吧？
+【客服】：在的呢亲亲～有什么可以帮您的呀～[玫瑰]
+【客服】：亲亲，商品标题写着免费刻字呢，支持定制的呀～(˶ᵔ ᵕ ᵔ˶)🌹
+【买家】：好的  最多支持几个字呢？
+【客服】：亲亲，具体刻字字数限制呢~[玫瑰] 建议您查看商品详情页说明哦～(˶ᵔ ᵕ ᵔ˶)🌹
+2026-11-18 11:08:20.002 | INFO     | jd_message_relay:_chat_history:228 - 聊天记录 | 买家=你大爷的天 | 内容=【买家】：https://item.jd.com/10089725638287.html?sdx=ehi-lLxFuZiE6JnIaYpbjsMmsziTAAwrsmpJta1HYdWDPe_RLJRY73vlrEDnUGeV
+【客服】：很高兴为您服务，选择这款商品的您超有眼光，请问您要咨询这款产品什么问题呢？
+【买家】：老板娘帮我转下吴吴
+【客服】：1
+【客服】：稍等
+【买家】：在吗
+【买家】：你们这个支持定制是吧？
+【客服】：在的呢亲亲～有什么可以帮您的呀～[玫瑰]
+【客服】：亲亲，商品标题写着免费刻字呢，支持定制的呀～(˶ᵔ ᵕ ᵔ˶)🌹
+【买家】：好的  最多支持几个字呢？
+【客服】：亲亲，具体刻字字数限制呢~[玫瑰] 建议您查看商品详情页说明哦～(˶ᵔ ᵕ ᵔ˶)🌹
+2026-11-18 11:08:20.002 | INFO     | jd_message_relay:_flush:118 - 8秒拼接消息 | 买家=你大爷的天 | 内容=我想刻我的名字可以吗？
+2026-11-18 11:08:35.304 | INFO     | jd_reply_handler:reply_for_message:72 - Coze 回复 | 内容=亲亲，具体刻字字数限制建议您查看商品详情页说明哦～[玫瑰]
+2026-11-18 11:08:35.305 | INFO     | jd_message_sender:send_text:83 - 发送文本 | 买家=你大爷的天 | 内容=亲亲，具体刻字字数限制建议您查看商品详情页说明哦～[玫瑰]
+2026-11-18 11:09:14.559 | INFO     | jd_message_listener:listen:150 - 收到信息 | 买家=你大爷的天 | 内容=一般多久可以发出呢
+2026-11-18 11:09:22.606 | INFO     | jd_chat_history:get_history:288 - 拉取聊天记录 | 买家=你大爷的天 | 内容=【买家】：https://item.jd.com/10089725638287.html?sdx=ehi-lLxFuZiE6JnIaYpbjsMmsziTAAwrsmpJta1HYdWDPe_RLJRY73vlrEDnUGeV
+【客服】：很高兴为您服务，选择这款商品的您超有眼光，请问您要咨询这款产品什么问题呢？
+【买家】：老板娘帮我转下吴吴
+【客服】：1
+【客服】：稍等
+【买家】：在吗
+【买家】：你们这个支持定制是吧？
+【客服】：在的呢亲亲～有什么可以帮您的呀～[玫瑰]
+【客服】：亲亲，商品标题写着免费刻字呢，支持定制的呀～(˶ᵔ ᵕ ᵔ˶)🌹
+【买家】：好的  最多支持几个字呢？
+【客服】：亲亲，具体刻字字数限制呢~[玫瑰] 建议您查看商品详情页说明哦～(˶ᵔ ᵕ ᵔ˶)🌹
+【买家】：我想刻我的名字可以吗？
+【客服】：亲亲，具体刻字字数限制建议您查看商品详情页说明哦～[玫瑰]
+2026-11-18 11:09:22.607 | INFO     | jd_message_relay:_chat_history:228 - 聊天记录 | 买家=你大爷的天 | 内容=【买家】：https://item.jd.com/10089725638287.html?sdx=ehi-lLxFuZiE6JnIaYpbjsMmsziTAAwrsmpJta1HYdWDPe_RLJRY73vlrEDnUGeV
+【客服】：很高兴为您服务，选择这款商品的您超有眼光，请问您要咨询这款产品什么问题呢？
+【买家】：老板娘帮我转下吴吴
+【客服】：1
+【客服】：稍等
+【买家】：在吗
+【买家】：你们这个支持定制是吧？
+【客服】：在的呢亲亲～有什么可以帮您的呀～[玫瑰]
+【客服】：亲亲，商品标题写着免费刻字呢，支持定制的呀～(˶ᵔ ᵕ ᵔ˶)🌹
+【买家】：好的  最多支持几个字呢？
+【客服】：亲亲，具体刻字字数限制呢~[玫瑰] 建议您查看商品详情页说明哦～(˶ᵔ ᵕ ᵔ˶)🌹
+【买家】：我想刻我的名字可以吗？
+【客服】：亲亲，具体刻字字数限制建议您查看商品详情页说明哦～[玫瑰]
+2026-11-18 11:09:22.607 | INFO     | jd_message_relay:_flush:118 - 8秒拼接消息 | 买家=你大爷的天 | 内容=一般多久可以发出呢
+2026-11-18 11:09:41.746 | INFO     | jd_reply_handler:reply_for_message:72 - Coze 回复 | 内容=亲亲，一般订单付款后48小时内就会安排发货的呢~ 请您耐心等待哟 [玫瑰]
+2026-11-18 11:09:41.747 | INFO     | jd_message_sender:send_text:83 - 发送文本 | 买家=你大爷的天 | 内容=亲亲，一般订单付款后48小时内就会安排发货的呢~ 请您耐心等待哟 [玫瑰]
+2026-11-18 11:41:37.101 | INFO     | jd_message_listener:listen:150 - 收到信息 | 买家=jd_eHGlDAbGDLEn | 内容=表扣在哪
+2026-11-18 11:41:45.156 | INFO     | jd_chat_history:get_history:288 - 拉取聊天记录 | 买家=jd_eHGlDAbGDLEn | 内容=【买家】：咨询订单号：3679270007760533 商品ID：10148525286879
+【客服】：亲亲，这边已经看到您的链接了呢~请问具体想咨询什么问题呀？(˶ᵔ ᵕ ᵔ˶)
+【买家】：https://item.jd.com/10148525286879.html?sdx=ehi-lLxFuZiE6JnJZYtZjsMiuDaZDwIrsmpJta1HYdWDPe_RLJRY7nzlrEnmVmWU
+【客服】：亲亲，您对这个商品有什么问题吗？
+【买家】：咨询订单号：3679270007760533 商品ID：10148525286879
+【客服】：亲亲，您对这个订单有什么问题吗？
+【买家】：https://item.jd.com/10148525286879.html?sdx=ehi-lLxFuZiE6JnJZYtZjsMiuDaZDwIrsmpJta1HYdWDPe_RLJRY7nXkrE7kU2SY
+【客服】：亲亲，您对这个商品有什么问题吗？
+【买家】：[微笑]
+【客服】：亲亲，您只发了微笑表情呢~请问有什么可以帮您呀？(˶ᵔ ᵕ ᵔ˶)
+【买家】：咨询订单号：3679270007760533 商品ID：10148525286879
+【客服】：亲亲，您对这个订单有什么问题吗？
+【买家】：转人工
+【客服】：[微笑]
+【买家】：表扣在哪
+【客服】：1
+【客服】：1
+2026-11-18 11:41:45.156 | INFO     | jd_message_relay:_chat_history:228 - 聊天记录 | 买家=jd_eHGlDAbGDLEn | 内容=【买家】：咨询订单号：3679270007760533 商品ID：10148525286879
+【客服】：亲亲，这边已经看到您的链接了呢~请问具体想咨询什么问题呀？(˶ᵔ ᵕ ᵔ˶)
+【买家】：https://item.jd.com/10148525286879.html?sdx=ehi-lLxFuZiE6JnJZYtZjsMiuDaZDwIrsmpJta1HYdWDPe_RLJRY7nzlrEnmVmWU
+【客服】：亲亲，您对这个商品有什么问题吗？
+【买家】：咨询订单号：3679270007760533 商品ID：10148525286879
+【客服】：亲亲，您对这个订单有什么问题吗？
+【买家】：https://item.jd.com/10148525286879.html?sdx=ehi-lLxFuZiE6JnJZYtZjsMiuDaZDwIrsmpJta1HYdWDPe_RLJRY7nXkrE7kU2SY
+【客服】：亲亲，您对这个商品有什么问题吗？
+【买家】：[微笑]
+【客服】：亲亲，您只发了微笑表情呢~请问有什么可以帮您呀？(˶ᵔ ᵕ ᵔ˶)
+【买家】：咨询订单号：3679270007760533 商品ID：10148525286879
+【客服】：亲亲，您对这个订单有什么问题吗？
+【买家】：转人工
+【客服】：[微笑]
+【买家】：表扣在哪
+【客服】：1
+【客服】：1
+2026-11-18 11:41:45.156 | INFO     | jd_message_relay:_flush:118 - 8秒拼接消息 | 买家=jd_eHGlDAbGDLEn | 内容=表扣在哪
+2026-11-18 11:44:30.169 | INFO     | jd_message_listener:listen:150 - 收到信息 | 买家=jd_eHGlDAbGDLEn | 内容=表扣在哪
+2026-11-18 11:44:38.218 | INFO     | jd_chat_history:get_history:288 - 拉取聊天记录 | 买家=jd_eHGlDAbGDLEn | 内容=【客服】：亲亲，这边已经看到您的链接了呢~请问具体想咨询什么问题呀？(˶ᵔ ᵕ ᵔ˶)
+【买家】：https://item.jd.com/10148525286879.html?sdx=ehi-lLxFuZiE6JnJZYtZjsMiuDaZDwIrsmpJta1HYdWDPe_RLJRY7nzlrEnmVmWU
+【客服】：亲亲，您对这个商品有什么问题吗？
+【买家】：咨询订单号：3679270007760533 商品ID：10148525286879
+【客服】：亲亲，您对这个订单有什么问题吗？
+【买家】：https://item.jd.com/10148525286879.html?sdx=ehi-lLxFuZiE6JnJZYtZjsMiuDaZDwIrsmpJta1HYdWDPe_RLJRY7nXkrE7kU2SY
+【客服】：亲亲，您对这个商品有什么问题吗？
+【买家】：[微笑]
+【客服】：亲亲，您只发了微笑表情呢~请问有什么可以帮您呀？(˶ᵔ ᵕ ᵔ˶)
+【买家】：咨询订单号：3679270007760533 商品ID：10148525286879
+【客服】：亲亲，您对这个订单有什么问题吗？
+【买家】：转人工
+【客服】：[微笑]
+【买家】：表扣在哪
+【客服】：1
+【客服】：1
+【买家】：表扣在哪
+2026-11-18 11:44:38.218 | INFO     | jd_message_relay:_chat_history:228 - 聊天记录 | 买家=jd_eHGlDAbGDLEn | 内容=【客服】：亲亲，这边已经看到您的链接了呢~请问具体想咨询什么问题呀？(˶ᵔ ᵕ ᵔ˶)
+【买家】：https://item.jd.com/10148525286879.html?sdx=ehi-lLxFuZiE6JnJZYtZjsMiuDaZDwIrsmpJta1HYdWDPe_RLJRY7nzlrEnmVmWU
+【客服】：亲亲，您对这个商品有什么问题吗？
+【买家】：咨询订单号：3679270007760533 商品ID：10148525286879
+【客服】：亲亲，您对这个订单有什么问题吗？
+【买家】：https://item.jd.com/10148525286879.html?sdx=ehi-lLxFuZiE6JnJZYtZjsMiuDaZDwIrsmpJta1HYdWDPe_RLJRY7nXkrE7kU2SY
+【客服】：亲亲，您对这个商品有什么问题吗？
+【买家】：[微笑]
+【客服】：亲亲，您只发了微笑表情呢~请问有什么可以帮您呀？(˶ᵔ ᵕ ᵔ˶)
+【买家】：咨询订单号：3679270007760533 商品ID：10148525286879
+【客服】：亲亲，您对这个订单有什么问题吗？
+【买家】：转人工
+【客服】：[微笑]
+【买家】：表扣在哪
+【客服】：1
+【客服】：1
+【买家】：表扣在哪
+2026-11-18 11:44:38.218 | INFO     | jd_message_relay:_flush:118 - 8秒拼接消息 | 买家=jd_eHGlDAbGDLEn | 内容=表扣在哪
+2026-11-18 11:44:47.246 | INFO     | jd_reply_handler:reply_for_message:72 - Coze 回复 | 内容=[图片]::::https://img20.360buyimg.com/imgzone/jfs/t1/575078/36/9713/54368/6afd1d3bF8a8002e0/00833b228c2ba252.png?1794973039461
+2026-11-18 11:44:47.347 | INFO     | jd_message_sender:send_image:121 - 发送图片 | 买家=jd_eHGlDAbGDLEn | 地址=https://img20.360buyimg.com/imgzone/jfs/t1/575078/36/9713/54368/6afd1d3bF8a8002e0/00833b228c2ba252.png?1794973039461
+2026-11-18 11:47:28.584 | INFO     | jd_message_listener:listen:150 - 收到信息 | 买家=你大爷的天 | 内容=你好
+2026-11-18 11:47:36.692 | INFO     | jd_chat_history:get_history:288 - 拉取聊天记录 | 买家=你大爷的天 | 内容=【买家】：https://item.jd.com/10089725638287.html?sdx=ehi-lLxFuZiE6JnIaYpbjsMmsziTAAwrsmpJta1HYdWDPe_RLJRY73vlrEDnUGeV
+【客服】：很高兴为您服务，选择这款商品的您超有眼光，请问您要咨询这款产品什么问题呢？
+【买家】：老板娘帮我转下吴吴
+【客服】：1
+【客服】：稍等
+【买家】：在吗
+【买家】：你们这个支持定制是吧？
+【客服】：在的呢亲亲～有什么可以帮您的呀～[玫瑰]
+【客服】：亲亲，商品标题写着免费刻字呢，支持定制的呀～(˶ᵔ ᵕ ᵔ˶)🌹
+【买家】：好的  最多支持几个字呢？
+【客服】：亲亲，具体刻字字数限制呢~[玫瑰] 建议您查看商品详情页说明哦～(˶ᵔ ᵕ ᵔ˶)🌹
+【买家】：我想刻我的名字可以吗？
+【客服】：亲亲，具体刻字字数限制建议您查看商品详情页说明哦～[玫瑰]
+【买家】：一般多久可以发出呢
+【客服】：亲亲，一般订单付款后48小时内就会安排发货的呢~ 请您耐心等待哟 [玫瑰]
+2026-11-18 11:47:36.692 | INFO     | jd_message_relay:_chat_history:228 - 聊天记录 | 买家=你大爷的天 | 内容=【买家】：https://item.jd.com/10089725638287.html?sdx=ehi-lLxFuZiE6JnIaYpbjsMmsziTAAwrsmpJta1HYdWDPe_RLJRY73vlrEDnUGeV
+【客服】：很高兴为您服务，选择这款商品的您超有眼光，请问您要咨询这款产品什么问题呢？
+【买家】：老板娘帮我转下吴吴
+【客服】：1
+【客服】：稍等
+【买家】：在吗
+【买家】：你们这个支持定制是吧？
+【客服】：在的呢亲亲～有什么可以帮您的呀～[玫瑰]
+【客服】：亲亲，商品标题写着免费刻字呢，支持定制的呀～(˶ᵔ ᵕ ᵔ˶)🌹
+【买家】：好的  最多支持几个字呢？
+【客服】：亲亲，具体刻字字数限制呢~[玫瑰] 建议您查看商品详情页说明哦～(˶ᵔ ᵕ ᵔ˶)🌹
+【买家】：我想刻我的名字可以吗？
+【客服】：亲亲，具体刻字字数限制建议您查看商品详情页说明哦～[玫瑰]
+【买家】：一般多久可以发出呢
+【客服】：亲亲，一般订单付款后48小时内就会安排发货的呢~ 请您耐心等待哟 [玫瑰]
+2026-11-18 11:47:36.692 | INFO     | jd_message_relay:_flush:118 - 8秒拼接消息 | 买家=你大爷的天 | 内容=你好
+2026-11-18 11:47:52.054 | INFO     | jd_reply_handler:reply_for_message:72 - Coze 回复 | 内容=可以的呀亲亲，表扣处激光刻字支持5个字符及其以内呢，不论是中文、英文或者是字母都可以刻哟～(˶ᵔ ᵕ ᵔ˶)
+2026-11-18 11:47:52.054 | INFO     | jd_message_sender:send_text:83 - 发送文本 | 买家=你大爷的天 | 内容=可以的呀亲亲，表扣处激光刻字支持5个字符及其以内呢，不论是中文、英文或者是字母都可以刻哟～(˶ᵔ ᵕ ᵔ˶)
+2026-11-18 11:48:25.109 | INFO     | jd_message_listener:listen:150 - 收到信息 | 买家=你大爷的天 | 内容=张三❤️李四这样可以吗？
+2026-11-18 11:48:33.160 | INFO     | jd_chat_history:get_history:288 - 拉取聊天记录 | 买家=你大爷的天 | 内容=【买家】：https://item.jd.com/10089725638287.html?sdx=ehi-lLxFuZiE6JnIaYpbjsMmsziTAAwrsmpJta1HYdWDPe_RLJRY73vlrEDnUGeV
+【客服】：很高兴为您服务，选择这款商品的您超有眼光，请问您要咨询这款产品什么问题呢？
+【买家】：老板娘帮我转下吴吴
+【客服】：1
+【客服】：稍等
+【买家】：在吗
+【买家】：你们这个支持定制是吧？
+【客服】：在的呢亲亲～有什么可以帮您的呀～[玫瑰]
+【客服】：亲亲，商品标题写着免费刻字呢，支持定制的呀～(˶ᵔ ᵕ ᵔ˶)🌹
+【买家】：好的  最多支持几个字呢？
+【客服】：亲亲，具体刻字字数限制呢~[玫瑰] 建议您查看商品详情页说明哦～(˶ᵔ ᵕ ᵔ˶)🌹
+【买家】：我想刻我的名字可以吗？
+【客服】：亲亲，具体刻字字数限制建议您查看商品详情页说明哦～[玫瑰]
+【买家】：一般多久可以发出呢
+【客服】：亲亲，一般订单付款后48小时内就会安排发货的呢~ 请您耐心等待哟 [玫瑰]
+【买家】：你好
+【客服】：可以的呀亲亲，表扣处激光刻字支持5个字符及其以内呢，不论是中文、英文或者是字母都可以刻哟～(˶ᵔ ᵕ ᵔ˶)
+2026-11-18 11:48:33.160 | INFO     | jd_message_relay:_chat_history:228 - 聊天记录 | 买家=你大爷的天 | 内容=【买家】：https://item.jd.com/10089725638287.html?sdx=ehi-lLxFuZiE6JnIaYpbjsMmsziTAAwrsmpJta1HYdWDPe_RLJRY73vlrEDnUGeV
+【客服】：很高兴为您服务，选择这款商品的您超有眼光，请问您要咨询这款产品什么问题呢？
+【买家】：老板娘帮我转下吴吴
+【客服】：1
+【客服】：稍等
+【买家】：在吗
+【买家】：你们这个支持定制是吧？
+【客服】：在的呢亲亲～有什么可以帮您的呀～[玫瑰]
+【客服】：亲亲，商品标题写着免费刻字呢，支持定制的呀～(˶ᵔ ᵕ ᵔ˶)🌹
+【买家】：好的  最多支持几个字呢？
+【客服】：亲亲，具体刻字字数限制呢~[玫瑰] 建议您查看商品详情页说明哦～(˶ᵔ ᵕ ᵔ˶)🌹
+【买家】：我想刻我的名字可以吗？
+【客服】：亲亲，具体刻字字数限制建议您查看商品详情页说明哦～[玫瑰]
+【买家】：一般多久可以发出呢
+【客服】：亲亲，一般订单付款后48小时内就会安排发货的呢~ 请您耐心等待哟 [玫瑰]
+【买家】：你好
+【客服】：可以的呀亲亲，表扣处激光刻字支持5个字符及其以内呢，不论是中文、英文或者是字母都可以刻哟～(˶ᵔ ᵕ ᵔ˶)
+2026-11-18 11:48:33.160 | INFO     | jd_message_relay:_flush:118 - 8秒拼接消息 | 买家=你大爷的天 | 内容=张三❤️李四这样可以吗？
+2026-11-18 11:48:48.009 | INFO     | jd_reply_handler:reply_for_message:72 - Coze 回复 | 内容=可以的呀亲亲～表扣处支持5个字符以内刻字呢，中英文都可以哟～(˶ᵔ ᵕ ᵔ˶)
+2026-11-18 11:48:48.009 | INFO     | jd_message_sender:send_text:83 - 发送文本 | 买家=你大爷的天 | 内容=可以的呀亲亲～表扣处支持5个字符以内刻字呢，中英文都可以哟～(˶ᵔ ᵕ ᵔ˶)
+2026-11-18 11:49:09.186 | INFO     | jd_message_listener:listen:150 - 收到信息 | 买家=你大爷的天 | 内容=表扣是手表的哪个位置呢？
+2026-11-18 11:49:17.236 | INFO     | jd_chat_history:get_history:288 - 拉取聊天记录 | 买家=你大爷的天 | 内容=【买家】：老板娘帮我转下吴吴
+【客服】：1
+【客服】：稍等
+【买家】：在吗
+【买家】：你们这个支持定制是吧？
+【客服】：在的呢亲亲～有什么可以帮您的呀～[玫瑰]
+【客服】：亲亲，商品标题写着免费刻字呢，支持定制的呀～(˶ᵔ ᵕ ᵔ˶)🌹
+【买家】：好的  最多支持几个字呢？
+【客服】：亲亲，具体刻字字数限制呢~[玫瑰] 建议您查看商品详情页说明哦～(˶ᵔ ᵕ ᵔ˶)🌹
+【买家】：我想刻我的名字可以吗？
+【客服】：亲亲，具体刻字字数限制建议您查看商品详情页说明哦～[玫瑰]
+【买家】：一般多久可以发出呢
+【客服】：亲亲，一般订单付款后48小时内就会安排发货的呢~ 请您耐心等待哟 [玫瑰]
+【买家】：你好
+【客服】：可以的呀亲亲，表扣处激光刻字支持5个字符及其以内呢，不论是中文、英文或者是字母都可以刻哟～(˶ᵔ ᵕ ᵔ˶)
+【买家】：张三❤️李四这样可以吗？
+【客服】：可以的呀亲亲～表扣处支持5个字符以内刻字呢，中英文都可以哟～(˶ᵔ ᵕ ᵔ˶)
+2026-11-18 11:49:17.236 | INFO     | jd_message_relay:_chat_history:228 - 聊天记录 | 买家=你大爷的天 | 内容=【买家】：老板娘帮我转下吴吴
+【客服】：1
+【客服】：稍等
+【买家】：在吗
+【买家】：你们这个支持定制是吧？
+【客服】：在的呢亲亲～有什么可以帮您的呀～[玫瑰]
+【客服】：亲亲，商品标题写着免费刻字呢，支持定制的呀～(˶ᵔ ᵕ ᵔ˶)🌹
+【买家】：好的  最多支持几个字呢？
+【客服】：亲亲，具体刻字字数限制呢~[玫瑰] 建议您查看商品详情页说明哦～(˶ᵔ ᵕ ᵔ˶)🌹
+【买家】：我想刻我的名字可以吗？
+【客服】：亲亲，具体刻字字数限制建议您查看商品详情页说明哦～[玫瑰]
+【买家】：一般多久可以发出呢
+【客服】：亲亲，一般订单付款后48小时内就会安排发货的呢~ 请您耐心等待哟 [玫瑰]
+【买家】：你好
+【客服】：可以的呀亲亲，表扣处激光刻字支持5个字符及其以内呢，不论是中文、英文或者是字母都可以刻哟～(˶ᵔ ᵕ ᵔ˶)
+【买家】：张三❤️李四这样可以吗？
+【客服】：可以的呀亲亲～表扣处支持5个字符以内刻字呢，中英文都可以哟～(˶ᵔ ᵕ ᵔ˶)
+2026-11-18 11:49:17.236 | INFO     | jd_message_relay:_flush:118 - 8秒拼接消息 | 买家=你大爷的天 | 内容=表扣是手表的哪个位置呢？
+2026-11-18 11:49:20.400 | INFO     | jd_reply_handler:reply_for_message:72 - Coze 回复 | 内容=[图片]::::https://img20.360buyimg.com/imgzone/jfs/t1/575078/36/9713/54368/6afd1d3bF8a8002e0/00833b228c2ba252.png?1794973039461
+2026-11-18 11:49:20.470 | INFO     | jd_message_sender:send_image:121 - 发送图片 | 买家=你大爷的天 | 地址=https://img20.360buyimg.com/imgzone/jfs/t1/575078/36/9713/54368/6afd1d3bF8a8002e0/00833b228c2ba252.png?1794973039461
+2026-11-18 11:49:42.898 | INFO     | jd_message_listener:listen:150 - 收到信息 | 买家=你大爷的天 | 内容=知道了 谢谢
+2026-11-18 11:49:50.944 | INFO     | jd_chat_history:get_history:288 - 拉取聊天记录 | 买家=你大爷的天 | 内容=【客服】：1
+【客服】：稍等
+【买家】：在吗
+【买家】：你们这个支持定制是吧？
+【客服】：在的呢亲亲～有什么可以帮您的呀～[玫瑰]
+【客服】：亲亲，商品标题写着免费刻字呢，支持定制的呀～(˶ᵔ ᵕ ᵔ˶)🌹
+【买家】：好的  最多支持几个字呢？
+【客服】：亲亲，具体刻字字数限制呢~[玫瑰] 建议您查看商品详情页说明哦～(˶ᵔ ᵕ ᵔ˶)🌹
+【买家】：我想刻我的名字可以吗？
+【客服】：亲亲，具体刻字字数限制建议您查看商品详情页说明哦～[玫瑰]
+【买家】：一般多久可以发出呢
+【客服】：亲亲，一般订单付款后48小时内就会安排发货的呢~ 请您耐心等待哟 [玫瑰]
+【买家】：你好
+【客服】：可以的呀亲亲，表扣处激光刻字支持5个字符及其以内呢，不论是中文、英文或者是字母都可以刻哟～(˶ᵔ ᵕ ᵔ˶)
+【买家】：张三❤️李四这样可以吗？
+【客服】：可以的呀亲亲～表扣处支持5个字符以内刻字呢，中英文都可以哟～(˶ᵔ ᵕ ᵔ˶)
+【买家】：表扣是手表的哪个位置呢？
+【客服】：[图片]https://img20.360buyimg.com/imgzone/jfs/t1/575078/36/9713/54368/6afd1d3bF8a8002e0/00833b228c2ba252.png?1794973039461
+2026-11-18 11:49:50.945 | INFO     | jd_message_relay:_chat_history:228 - 聊天记录 | 买家=你大爷的天 | 内容=【客服】：1
+【客服】：稍等
+【买家】：在吗
+【买家】：你们这个支持定制是吧？
+【客服】：在的呢亲亲～有什么可以帮您的呀～[玫瑰]
+【客服】：亲亲，商品标题写着免费刻字呢，支持定制的呀～(˶ᵔ ᵕ ᵔ˶)🌹
+【买家】：好的  最多支持几个字呢？
+【客服】：亲亲，具体刻字字数限制呢~[玫瑰] 建议您查看商品详情页说明哦～(˶ᵔ ᵕ ᵔ˶)🌹
+【买家】：我想刻我的名字可以吗？
+【客服】：亲亲，具体刻字字数限制建议您查看商品详情页说明哦～[玫瑰]
+【买家】：一般多久可以发出呢
+【客服】：亲亲，一般订单付款后48小时内就会安排发货的呢~ 请您耐心等待哟 [玫瑰]
+【买家】：你好
+【客服】：可以的呀亲亲，表扣处激光刻字支持5个字符及其以内呢，不论是中文、英文或者是字母都可以刻哟～(˶ᵔ ᵕ ᵔ˶)
+【买家】：张三❤️李四这样可以吗？
+【客服】：可以的呀亲亲～表扣处支持5个字符以内刻字呢，中英文都可以哟～(˶ᵔ ᵕ ᵔ˶)
+【买家】：表扣是手表的哪个位置呢？
+【客服】：[图片]https://img20.360buyimg.com/imgzone/jfs/t1/575078/36/9713/54368/6afd1d3bF8a8002e0/00833b228c2ba252.png?1794973039461
+2026-11-18 11:49:50.945 | INFO     | jd_message_relay:_flush:118 - 8秒拼接消息 | 买家=你大爷的天 | 内容=知道了 谢谢
+2026-11-18 11:49:58.609 | INFO     | jd_message_listener:listen:150 - 收到信息 | 买家=你大爷的天 | 内容=我现在拍什么时候可以发货呢？
+2026-11-18 11:50:05.076 | INFO     | jd_reply_handler:reply_for_message:72 - Coze 回复 | 内容=嗯嗯～不客气呢，祝您购物愉快呀～(˶ᵔ ᵕ ᵔ˶)🌹
+2026-11-18 11:50:05.077 | INFO     | jd_message_sender:send_text:83 - 发送文本 | 买家=你大爷的天 | 内容=嗯嗯～不客气呢，祝您购物愉快呀～(˶ᵔ ᵕ ᵔ˶)🌹
+2026-11-18 11:50:06.656 | INFO     | jd_chat_history:get_history:288 - 拉取聊天记录 | 买家=你大爷的天 | 内容=【客服】：稍等
+【买家】：在吗
+【买家】：你们这个支持定制是吧？
+【客服】：在的呢亲亲～有什么可以帮您的呀～[玫瑰]
+【客服】：亲亲，商品标题写着免费刻字呢，支持定制的呀～(˶ᵔ ᵕ ᵔ˶)🌹
+【买家】：好的  最多支持几个字呢？
+【客服】：亲亲，具体刻字字数限制呢~[玫瑰] 建议您查看商品详情页说明哦～(˶ᵔ ᵕ ᵔ˶)🌹
+【买家】：我想刻我的名字可以吗？
+【客服】：亲亲，具体刻字字数限制建议您查看商品详情页说明哦～[玫瑰]
+【买家】：一般多久可以发出呢
+【客服】：亲亲，一般订单付款后48小时内就会安排发货的呢~ 请您耐心等待哟 [玫瑰]
+【买家】：你好
+【客服】：可以的呀亲亲，表扣处激光刻字支持5个字符及其以内呢，不论是中文、英文或者是字母都可以刻哟～(˶ᵔ ᵕ ᵔ˶)
+【买家】：张三❤️李四这样可以吗？
+【客服】：可以的呀亲亲～表扣处支持5个字符以内刻字呢，中英文都可以哟～(˶ᵔ ᵕ ᵔ˶)
+【买家】：表扣是手表的哪个位置呢？
+【客服】：[图片]https://img20.360buyimg.com/imgzone/jfs/t1/575078/36/9713/54368/6afd1d3bF8a8002e0/00833b228c2ba252.png?1794973039461
+【买家】：知道了 谢谢
+2026-11-18 11:50:06.656 | INFO     | jd_message_relay:_chat_history:228 - 聊天记录 | 买家=你大爷的天 | 内容=【客服】：稍等
+【买家】：在吗
+【买家】：你们这个支持定制是吧？
+【客服】：在的呢亲亲～有什么可以帮您的呀～[玫瑰]
+【客服】：亲亲，商品标题写着免费刻字呢，支持定制的呀～(˶ᵔ ᵕ ᵔ˶)🌹
+【买家】：好的  最多支持几个字呢？
+【客服】：亲亲，具体刻字字数限制呢~[玫瑰] 建议您查看商品详情页说明哦～(˶ᵔ ᵕ ᵔ˶)🌹
+【买家】：我想刻我的名字可以吗？
+【客服】：亲亲，具体刻字字数限制建议您查看商品详情页说明哦～[玫瑰]
+【买家】：一般多久可以发出呢
+【客服】：亲亲，一般订单付款后48小时内就会安排发货的呢~ 请您耐心等待哟 [玫瑰]
+【买家】：你好
+【客服】：可以的呀亲亲，表扣处激光刻字支持5个字符及其以内呢，不论是中文、英文或者是字母都可以刻哟～(˶ᵔ ᵕ ᵔ˶)
+【买家】：张三❤️李四这样可以吗？
+【客服】：可以的呀亲亲～表扣处支持5个字符以内刻字呢，中英文都可以哟～(˶ᵔ ᵕ ᵔ˶)
+【买家】：表扣是手表的哪个位置呢？
+【客服】：[图片]https://img20.360buyimg.com/imgzone/jfs/t1/575078/36/9713/54368/6afd1d3bF8a8002e0/00833b228c2ba252.png?1794973039461
+【买家】：知道了 谢谢
+2026-11-18 11:50:06.656 | INFO     | jd_message_relay:_flush:118 - 8秒拼接消息 | 买家=你大爷的天 | 内容=我现在拍什么时候可以发货呢？
+2026-11-18 11:50:21.546 | INFO     | jd_reply_handler:reply_for_message:72 - Coze 回复 | 内容=亲亲，默认圆通快递呢～上午下单一般下午就发啦，最迟次日也能发出哟(˶ᵔ ᵕ ᵔ˶)
+2026-11-18 11:50:21.547 | INFO     | jd_message_sender:send_text:83 - 发送文本 | 买家=你大爷的天 | 内容=亲亲，默认圆通快递呢～上午下单一般下午就发啦，最迟次日也能发出哟(˶ᵔ ᵕ ᵔ˶)
+2026-11-18 11:50:46.393 | INFO     | jd_message_listener:listen:150 - 收到信息 | 买家=你大爷的天 | 内容=谢谢
+2026-11-18 11:50:54.440 | INFO     | jd_chat_history:get_history:288 - 拉取聊天记录 | 买家=你大爷的天 | 内容=【客服】：在的呢亲亲～有什么可以帮您的呀～[玫瑰]
+【客服】：亲亲，商品标题写着免费刻字呢，支持定制的呀～(˶ᵔ ᵕ ᵔ˶)🌹
+【买家】：好的  最多支持几个字呢？
+【客服】：亲亲，具体刻字字数限制呢~[玫瑰] 建议您查看商品详情页说明哦～(˶ᵔ ᵕ ᵔ˶)🌹
+【买家】：我想刻我的名字可以吗？
+【客服】：亲亲，具体刻字字数限制建议您查看商品详情页说明哦～[玫瑰]
+【买家】：一般多久可以发出呢
+【客服】：亲亲，一般订单付款后48小时内就会安排发货的呢~ 请您耐心等待哟 [玫瑰]
+【买家】：你好
+【客服】：可以的呀亲亲，表扣处激光刻字支持5个字符及其以内呢，不论是中文、英文或者是字母都可以刻哟～(˶ᵔ ᵕ ᵔ˶)
+【买家】：张三❤️李四这样可以吗？
+【客服】：可以的呀亲亲～表扣处支持5个字符以内刻字呢，中英文都可以哟～(˶ᵔ ᵕ ᵔ˶)
+【买家】：表扣是手表的哪个位置呢？
+【客服】：[图片]https://img20.360buyimg.com/imgzone/jfs/t1/575078/36/9713/54368/6afd1d3bF8a8002e0/00833b228c2ba252.png?1794973039461
+【买家】：知道了 谢谢
+【买家】：我现在拍什么时候可以发货呢？
+【客服】：嗯嗯～不客气呢，祝您购物愉快呀～(˶ᵔ ᵕ ᵔ˶)🌹
+【客服】：亲亲，默认圆通快递呢～上午下单一般下午就发啦，最迟次日也能发出哟(˶ᵔ ᵕ ᵔ˶)
+2026-11-18 11:50:54.440 | INFO     | jd_message_relay:_chat_history:228 - 聊天记录 | 买家=你大爷的天 | 内容=【客服】：在的呢亲亲～有什么可以帮您的呀～[玫瑰]
+【客服】：亲亲，商品标题写着免费刻字呢，支持定制的呀～(˶ᵔ ᵕ ᵔ˶)🌹
+【买家】：好的  最多支持几个字呢？
+【客服】：亲亲，具体刻字字数限制呢~[玫瑰] 建议您查看商品详情页说明哦～(˶ᵔ ᵕ ᵔ˶)🌹
+【买家】：我想刻我的名字可以吗？
+【客服】：亲亲，具体刻字字数限制建议您查看商品详情页说明哦～[玫瑰]
+【买家】：一般多久可以发出呢
+【客服】：亲亲，一般订单付款后48小时内就会安排发货的呢~ 请您耐心等待哟 [玫瑰]
+【买家】：你好
+【客服】：可以的呀亲亲，表扣处激光刻字支持5个字符及其以内呢，不论是中文、英文或者是字母都可以刻哟～(˶ᵔ ᵕ ᵔ˶)
+【买家】：张三❤️李四这样可以吗？
+【客服】：可以的呀亲亲～表扣处支持5个字符以内刻字呢，中英文都可以哟～(˶ᵔ ᵕ ᵔ˶)
+【买家】：表扣是手表的哪个位置呢？
+【客服】：[图片]https://img20.360buyimg.com/imgzone/jfs/t1/575078/36/9713/54368/6afd1d3bF8a8002e0/00833b228c2ba252.png?1794973039461
+【买家】：知道了 谢谢
+【买家】：我现在拍什么时候可以发货呢？
+【客服】：嗯嗯～不客气呢，祝您购物愉快呀～(˶ᵔ ᵕ ᵔ˶)🌹
+【客服】：亲亲，默认圆通快递呢～上午下单一般下午就发啦，最迟次日也能发出哟(˶ᵔ ᵕ ᵔ˶)
+2026-11-18 11:50:54.441 | INFO     | jd_message_relay:_flush:118 - 8秒拼接消息 | 买家=你大爷的天 | 内容=谢谢
+2026-11-18 11:51:08.226 | INFO     | jd_reply_handler:reply_for_message:72 - Coze 回复 | 内容=嗯呢～祝您购物愉快呀～(˶ᵔ ᵕ ᵔ˶)
+2026-11-18 11:51:08.226 | INFO     | jd_message_sender:send_text:83 - 发送文本 | 买家=你大爷的天 | 内容=嗯呢～祝您购物愉快呀～(˶ᵔ ᵕ ᵔ˶)
+2026-11-18 12:09:55.170 | INFO     | jd_message_listener:listen:150 - 收到信息 | 买家=jd_bpnaEZDjOBLt | 内容=你们家的手表可以刻字对吧？
+2026-11-18 12:10:03.225 | INFO     | jd_chat_history:get_history:288 - 拉取聊天记录 | 买家=jd_bpnaEZDjOBLt | 内容=【买家】：在吗？
+【客服】：您好[微笑] 请问有什么可以帮到您
+【买家】：帮我转下吴吴哈 老板娘
+【买家】：在吗
+【客服】：1
+2026-11-18 12:10:03.225 | INFO     | jd_message_relay:_chat_history:228 - 聊天记录 | 买家=jd_bpnaEZDjOBLt | 内容=【买家】：在吗？
+【客服】：您好[微笑] 请问有什么可以帮到您
+【买家】：帮我转下吴吴哈 老板娘
+【买家】：在吗
+【客服】：1
+2026-11-18 12:10:03.225 | INFO     | jd_message_relay:_flush:118 - 8秒拼接消息 | 买家=jd_bpnaEZDjOBLt | 内容=你们家的手表可以刻字对吧？
+2026-11-18 12:10:18.101 | INFO     | jd_reply_handler:reply_for_message:72 - Coze 回复 | 内容=是的呢，表扣处支持激光刻字哟～5个字符以内都可以呢(˶ᵔ ᵕ ᵔ˶)
+2026-11-18 12:10:18.102 | INFO     | jd_message_sender:send_text:83 - 发送文本 | 买家=jd_bpnaEZDjOBLt | 内容=是的呢，表扣处支持激光刻字哟～5个字符以内都可以呢(˶ᵔ ᵕ ᵔ˶)
+2026-11-18 12:14:20.835 | INFO     | jd_message_listener:listen:150 - 收到信息 | 买家=jd_bpnaEZDjOBLt | 内容=我要刻13💗一世
+2026-11-18 12:14:24.727 | INFO     | jd_message_listener:listen:150 - 收到信息 | 买家=jd_bpnaEZDjOBLt | 内容=可以吗？
+2026-11-18 12:14:28.888 | INFO     | jd_chat_history:get_history:288 - 拉取聊天记录 | 买家=jd_bpnaEZDjOBLt | 内容=【买家】：在吗？
+【客服】：您好[微笑] 请问有什么可以帮到您
+【买家】：帮我转下吴吴哈 老板娘
+【买家】：在吗
+【客服】：1
+【买家】：你们家的手表可以刻字对吧？
+【客服】：是的呢，表扣处支持激光刻字哟～5个字符以内都可以呢(˶ᵔ ᵕ ᵔ˶)
+【买家】：我要刻13💗一世
+2026-11-18 12:14:28.888 | INFO     | jd_message_relay:_chat_history:228 - 聊天记录 | 买家=jd_bpnaEZDjOBLt | 内容=【买家】：在吗？
+【客服】：您好[微笑] 请问有什么可以帮到您
+【买家】：帮我转下吴吴哈 老板娘
+【买家】：在吗
+【客服】：1
+【买家】：你们家的手表可以刻字对吧？
+【客服】：是的呢，表扣处支持激光刻字哟～5个字符以内都可以呢(˶ᵔ ᵕ ᵔ˶)
+【买家】：我要刻13💗一世
+2026-11-18 12:14:28.888 | INFO     | jd_message_relay:_flush:118 - 8秒拼接消息 | 买家=jd_bpnaEZDjOBLt | 内容=我要刻13💗一世
+可以吗？
+2026-11-18 12:14:43.360 | INFO     | jd_reply_handler:reply_for_message:72 - Coze 回复 | 内容=亲亲，字数有点多呢~表扣处激光刻字支持5个字符及其以内哟，13💗一世超过限制啦(˶ᵔ ᵕ ᵔ˶)
+2026-11-18 12:14:43.360 | INFO     | jd_message_sender:send_text:83 - 发送文本 | 买家=jd_bpnaEZDjOBLt | 内容=亲亲，字数有点多呢~表扣处激光刻字支持5个字符及其以内哟，13💗一世超过限制啦(˶ᵔ ᵕ ᵔ˶)
+2026-11-18 12:15:55.032 | INFO     | jd_message_listener:listen:150 - 收到信息 | 买家=jd_bpnaEZDjOBLt | 内容=13💗一世
+2026-11-18 12:16:03.083 | INFO     | jd_chat_history:get_history:288 - 拉取聊天记录 | 买家=jd_bpnaEZDjOBLt | 内容=【买家】：在吗？
+【客服】：您好[微笑] 请问有什么可以帮到您
+【买家】：帮我转下吴吴哈 老板娘
+【买家】：在吗
+【客服】：1
+【买家】：你们家的手表可以刻字对吧？
+【客服】：是的呢，表扣处支持激光刻字哟～5个字符以内都可以呢(˶ᵔ ᵕ ᵔ˶)
+【买家】：我要刻13💗一世
+【买家】：可以吗？
+【客服】：亲亲，字数有点多呢~表扣处激光刻字支持5个字符及其以内哟，13💗一世超过限制啦(˶ᵔ ᵕ ᵔ˶)
+2026-11-18 12:16:03.083 | INFO     | jd_message_relay:_chat_history:228 - 聊天记录 | 买家=jd_bpnaEZDjOBLt | 内容=【买家】：在吗？
+【客服】：您好[微笑] 请问有什么可以帮到您
+【买家】：帮我转下吴吴哈 老板娘
+【买家】：在吗
+【客服】：1
+【买家】：你们家的手表可以刻字对吧？
+【客服】：是的呢，表扣处支持激光刻字哟～5个字符以内都可以呢(˶ᵔ ᵕ ᵔ˶)
+【买家】：我要刻13💗一世
+【买家】：可以吗？
+【客服】：亲亲，字数有点多呢~表扣处激光刻字支持5个字符及其以内哟，13💗一世超过限制啦(˶ᵔ ᵕ ᵔ˶)
+2026-11-18 12:16:03.083 | INFO     | jd_message_relay:_flush:118 - 8秒拼接消息 | 买家=jd_bpnaEZDjOBLt | 内容=13💗一世
+2026-11-18 12:16:12.991 | INFO     | jd_message_listener:listen:150 - 收到信息 | 买家=jd_bpnaEZDjOBLt | 内容=没有超过五个字符吧
+2026-11-18 12:16:17.980 | INFO     | jd_reply_handler:reply_for_message:72 - Coze 回复 | 内容=哎呀亲亲，字符数超了呢(˶ᵔ ᵕ ᵔ˶)~建议精简一下呀，5个以内都行哟～
+2026-11-18 12:16:17.981 | INFO     | jd_message_sender:send_text:83 - 发送文本 | 买家=jd_bpnaEZDjOBLt | 内容=哎呀亲亲，字符数超了呢(˶ᵔ ᵕ ᵔ˶)~建议精简一下呀，5个以内都行哟～
+2026-11-18 12:16:21.039 | INFO     | jd_chat_history:get_history:288 - 拉取聊天记录 | 买家=jd_bpnaEZDjOBLt | 内容=【买家】：在吗？
+【客服】：您好[微笑] 请问有什么可以帮到您
+【买家】：帮我转下吴吴哈 老板娘
+【买家】：在吗
+【客服】：1
+【买家】：你们家的手表可以刻字对吧？
+【客服】：是的呢，表扣处支持激光刻字哟～5个字符以内都可以呢(˶ᵔ ᵕ ᵔ˶)
+【买家】：我要刻13💗一世
+【买家】：可以吗？
+【客服】：亲亲，字数有点多呢~表扣处激光刻字支持5个字符及其以内哟，13💗一世超过限制啦(˶ᵔ ᵕ ᵔ˶)
+【买家】：13💗一世
+2026-11-18 12:16:21.039 | INFO     | jd_message_relay:_chat_history:228 - 聊天记录 | 买家=jd_bpnaEZDjOBLt | 内容=【买家】：在吗？
+【客服】：您好[微笑] 请问有什么可以帮到您
+【买家】：帮我转下吴吴哈 老板娘
+【买家】：在吗
+【客服】：1
+【买家】：你们家的手表可以刻字对吧？
+【客服】：是的呢，表扣处支持激光刻字哟～5个字符以内都可以呢(˶ᵔ ᵕ ᵔ˶)
+【买家】：我要刻13💗一世
+【买家】：可以吗？
+【客服】：亲亲，字数有点多呢~表扣处激光刻字支持5个字符及其以内哟，13💗一世超过限制啦(˶ᵔ ᵕ ᵔ˶)
+【买家】：13💗一世
+2026-11-18 12:16:21.039 | INFO     | jd_message_relay:_flush:118 - 8秒拼接消息 | 买家=jd_bpnaEZDjOBLt | 内容=没有超过五个字符吧
+2026-11-18 12:16:36.629 | INFO     | jd_reply_handler:reply_for_message:72 - Coze 回复 | 内容=是的呢亲亲，5个字符以内都可以刻哟～(˶ᵔ ᵕ ᵔ˶)
+2026-11-18 12:16:36.630 | INFO     | jd_message_sender:send_text:83 - 发送文本 | 买家=jd_bpnaEZDjOBLt | 内容=是的呢亲亲，5个字符以内都可以刻哟～(˶ᵔ ᵕ ᵔ˶)
+2026-11-18 12:17:29.261 | INFO     | jd_message_listener:listen:150 - 收到信息 | 买家=jd_bpnaEZDjOBLt | 内容=我就要刻这个
+2026-11-18 12:17:37.311 | INFO     | jd_chat_history:get_history:288 - 拉取聊天记录 | 买家=jd_bpnaEZDjOBLt | 内容=【买家】：在吗？
+【客服】：您好[微笑] 请问有什么可以帮到您
+【买家】：帮我转下吴吴哈 老板娘
+【买家】：在吗
+【客服】：1
+【买家】：你们家的手表可以刻字对吧？
+【客服】：是的呢，表扣处支持激光刻字哟～5个字符以内都可以呢(˶ᵔ ᵕ ᵔ˶)
+【买家】：我要刻13💗一世
+【买家】：可以吗？
+【客服】：亲亲，字数有点多呢~表扣处激光刻字支持5个字符及其以内哟，13💗一世超过限制啦(˶ᵔ ᵕ ᵔ˶)
+【买家】：13💗一世
+【买家】：没有超过五个字符吧
+【客服】：哎呀亲亲，字符数超了呢(˶ᵔ ᵕ ᵔ˶)~建议精简一下呀，5个以内都行哟～
+【客服】：是的呢亲亲，5个字符以内都可以刻哟～(˶ᵔ ᵕ ᵔ˶)
+2026-11-18 12:17:37.312 | INFO     | jd_message_relay:_chat_history:228 - 聊天记录 | 买家=jd_bpnaEZDjOBLt | 内容=【买家】：在吗？
+【客服】：您好[微笑] 请问有什么可以帮到您
+【买家】：帮我转下吴吴哈 老板娘
+【买家】：在吗
+【客服】：1
+【买家】：你们家的手表可以刻字对吧？
+【客服】：是的呢，表扣处支持激光刻字哟～5个字符以内都可以呢(˶ᵔ ᵕ ᵔ˶)
+【买家】：我要刻13💗一世
+【买家】：可以吗？
+【客服】：亲亲，字数有点多呢~表扣处激光刻字支持5个字符及其以内哟，13💗一世超过限制啦(˶ᵔ ᵕ ᵔ˶)
+【买家】：13💗一世
+【买家】：没有超过五个字符吧
+【客服】：哎呀亲亲，字符数超了呢(˶ᵔ ᵕ ᵔ˶)~建议精简一下呀，5个以内都行哟～
+【客服】：是的呢亲亲，5个字符以内都可以刻哟～(˶ᵔ ᵕ ᵔ˶)
+2026-11-18 12:17:37.312 | INFO     | jd_message_relay:_flush:118 - 8秒拼接消息 | 买家=jd_bpnaEZDjOBLt | 内容=我就要刻这个
+2026-11-18 12:17:52.176 | INFO     | jd_reply_handler:reply_for_message:72 - Coze 回复 | 内容=亲亲，字符数确实超了呢(˶ᵔ ᵕ ᵔ˶)~建议精简一下呀
+2026-11-18 12:17:52.176 | INFO     | jd_message_sender:send_text:83 - 发送文本 | 买家=jd_bpnaEZDjOBLt | 内容=亲亲，字符数确实超了呢(˶ᵔ ᵕ ᵔ˶)~建议精简一下呀
+2026-11-18 12:18:08.473 | INFO     | jd_message_listener:listen:150 - 收到信息 | 买家=jd_bpnaEZDjOBLt | 内容=13💗一世
+2026-11-18 12:18:16.526 | INFO     | jd_chat_history:get_history:288 - 拉取聊天记录 | 买家=jd_bpnaEZDjOBLt | 内容=【买家】：在吗？
+【客服】：您好[微笑] 请问有什么可以帮到您
+【买家】：帮我转下吴吴哈 老板娘
+【买家】：在吗
+【客服】：1
+【买家】：你们家的手表可以刻字对吧？
+【客服】：是的呢，表扣处支持激光刻字哟～5个字符以内都可以呢(˶ᵔ ᵕ ᵔ˶)
+【买家】：我要刻13💗一世
+【买家】：可以吗？
+【客服】：亲亲，字数有点多呢~表扣处激光刻字支持5个字符及其以内哟，13💗一世超过限制啦(˶ᵔ ᵕ ᵔ˶)
+【买家】：13💗一世
+【买家】：没有超过五个字符吧
+【客服】：哎呀亲亲，字符数超了呢(˶ᵔ ᵕ ᵔ˶)~建议精简一下呀，5个以内都行哟～
+【客服】：是的呢亲亲，5个字符以内都可以刻哟～(˶ᵔ ᵕ ᵔ˶)
+【买家】：我就要刻这个
+【客服】：亲亲，字符数确实超了呢(˶ᵔ ᵕ ᵔ˶)~建议精简一下呀
+2026-11-18 12:18:16.526 | INFO     | jd_message_relay:_chat_history:228 - 聊天记录 | 买家=jd_bpnaEZDjOBLt | 内容=【买家】：在吗？
+【客服】：您好[微笑] 请问有什么可以帮到您
+【买家】：帮我转下吴吴哈 老板娘
+【买家】：在吗
+【客服】：1
+【买家】：你们家的手表可以刻字对吧？
+【客服】：是的呢，表扣处支持激光刻字哟～5个字符以内都可以呢(˶ᵔ ᵕ ᵔ˶)
+【买家】：我要刻13💗一世
+【买家】：可以吗？
+【客服】：亲亲，字数有点多呢~表扣处激光刻字支持5个字符及其以内哟，13💗一世超过限制啦(˶ᵔ ᵕ ᵔ˶)
+【买家】：13💗一世
+【买家】：没有超过五个字符吧
+【客服】：哎呀亲亲，字符数超了呢(˶ᵔ ᵕ ᵔ˶)~建议精简一下呀，5个以内都行哟～
+【客服】：是的呢亲亲，5个字符以内都可以刻哟～(˶ᵔ ᵕ ᵔ˶)
+【买家】：我就要刻这个
+【客服】：亲亲，字符数确实超了呢(˶ᵔ ᵕ ᵔ˶)~建议精简一下呀
+2026-11-18 12:18:16.526 | INFO     | jd_message_relay:_flush:118 - 8秒拼接消息 | 买家=jd_bpnaEZDjOBLt | 内容=13💗一世
+2026-11-18 12:18:32.200 | INFO     | jd_reply_handler:reply_for_message:72 - Coze 回复 | 内容=亲亲，字符数确实超了呢(˶ᵔ ᵕ ᵔ˶)~要不精简下呀
+2026-11-18 12:18:32.200 | INFO     | jd_message_sender:send_text:83 - 发送文本 | 买家=jd_bpnaEZDjOBLt | 内容=亲亲，字符数确实超了呢(˶ᵔ ᵕ ᵔ˶)~要不精简下呀

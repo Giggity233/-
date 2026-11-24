@@ -1,0 +1,793 @@
+2026-11-16 01:51:12.977 | ERROR    | jd_reply_handler:reply_for_message:61 - Coze 调用或解析失败 | 原因=未设置 Coze Token：请写入 data/COZE_TOKEN.txt
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 1012, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 1041, in _bootstrap_inner
+    self.run()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 992, in run
+    self._target(*self._args, **self._kwargs)
+  File "D:\pythonProject\京东机器人\jd_control_panel.py", line 272, in runner
+    result = asyncio.run(
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\runners.py", line 194, in run
+    return runner.run(main)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 707, in run_until_complete
+    self.run_forever()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 678, in run_forever
+    self._run_once()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 2033, in _run_once
+    handle._run()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\events.py", line 89, in _run
+    self._context.run(self._callback, *self._args)
+  File "D:\pythonProject\京东机器人\jd_message_relay.py", line 118, in _flush
+    result = await self.reply_handler(payload)
+  File "D:\pythonProject\京东机器人\jd_reply_handler.py", line 87, in handler
+    return await reply_for_message(payload, workflow_id=workflow_id, client=client, log=log)
+> File "D:\pythonProject\京东机器人\jd_reply_handler.py", line 56, in reply_for_message
+    raw_response = await asyncio.to_thread(coze_client.chat, payload, workflow_id)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\threads.py", line 25, in to_thread
+    return await loop.run_in_executor(None, func_call)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\concurrent\futures\thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "D:\pythonProject\京东机器人\jd_coze_api.py", line 73, in chat
+    token = self.token_getter()
+  File "D:\pythonProject\京东机器人\jd_coze_api.py", line 42, in get_coze_token
+    raise CozeApiError("未设置 Coze Token：请写入 data/COZE_TOKEN.txt")
+jd_coze_api.CozeApiError: 未设置 Coze Token：请写入 data/COZE_TOKEN.txt
+2026-11-16 01:54:03.635 | ERROR    | jd_reply_handler:reply_for_message:61 - Coze 调用或解析失败 | 原因=Coze 返回不是 JSON
+Traceback (most recent call last):
+  File "D:\pythonProject\京东机器人\jd_reply_handler.py", line 37, in _coze_output
+    body = json.loads(raw_response)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\json\__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\json\decoder.py", line 345, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\json\decoder.py", line 363, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 1012, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 1041, in _bootstrap_inner
+    self.run()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 992, in run
+    self._target(*self._args, **self._kwargs)
+  File "D:\pythonProject\京东机器人\jd_control_panel.py", line 272, in runner
+    result = asyncio.run(
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\runners.py", line 194, in run
+    return runner.run(main)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 707, in run_until_complete
+    self.run_forever()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 678, in run_forever
+    self._run_once()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 2033, in _run_once
+    handle._run()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\events.py", line 89, in _run
+    self._context.run(self._callback, *self._args)
+  File "D:\pythonProject\京东机器人\jd_message_relay.py", line 118, in _flush
+    result = await self.reply_handler(payload)
+  File "D:\pythonProject\京东机器人\jd_reply_handler.py", line 87, in handler
+    return await reply_for_message(payload, workflow_id=workflow_id, client=client, log=log)
+> File "D:\pythonProject\京东机器人\jd_reply_handler.py", line 57, in reply_for_message
+    output = _coze_output(raw_response)
+  File "D:\pythonProject\京东机器人\jd_reply_handler.py", line 39, in _coze_output
+    raise ValueError("Coze 返回不是 JSON") from error
+ValueError: Coze 返回不是 JSON
+2026-11-16 04:14:25.627 | ERROR    | jd_cookie_runner:run_forever:104 - 连接断开，将重连 | 原因=http://dongdong.jd.com/workbench/websocket isn't a valid URI: scheme isn't ws or wss | 5.0 秒后重连
+Traceback (most recent call last):
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 543, in __await_impl__
+    await self.connection.handshake(
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 114, in handshake
+    raise self.protocol.handshake_exc
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\client.py", line 325, in parse
+    self.process_response(response)
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\client.py", line 142, in process_response
+    raise InvalidStatus(response)
+websockets.exceptions.InvalidStatus: server rejected WebSocket connection: HTTP 301
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 1012, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 1041, in _bootstrap_inner
+    self.run()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 992, in run
+    self._target(*self._args, **self._kwargs)
+  File "D:\pythonProject\京东机器人\jd_control_panel.py", line 273, in runner
+    result = asyncio.run(
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\runners.py", line 194, in run
+    return runner.run(main)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 707, in run_until_complete
+    self.run_forever()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 678, in run_forever
+    self._run_once()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 2033, in _run_once
+    handle._run()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\events.py", line 89, in _run
+    self._context.run(self._callback, *self._args)
+> File "D:\pythonProject\京东机器人\jd_cookie_runner.py", line 88, in run_forever
+    stopped = await self._run_connection(stop_event)
+  File "D:\pythonProject\京东机器人\jd_cookie_runner.py", line 128, in _run_connection
+    async with websockets.connect(
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 587, in __aenter__
+    return await self
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 559, in __await_impl__
+    uri_or_exc = self.process_redirect(exc)
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 494, in process_redirect
+    new_ws_uri = parse_uri(new_uri)
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\uri.py", line 77, in parse_uri
+    raise InvalidURI(uri, "scheme isn't ws or wss")
+websockets.exceptions.InvalidURI: http://dongdong.jd.com/workbench/websocket isn't a valid URI: scheme isn't ws or wss
+2026-11-16 04:14:30.934 | ERROR    | jd_cookie_runner:run_forever:104 - 连接断开，将重连 | 原因=http://dongdong.jd.com/workbench/websocket isn't a valid URI: scheme isn't ws or wss | 5.0 秒后重连
+Traceback (most recent call last):
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 543, in __await_impl__
+    await self.connection.handshake(
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 114, in handshake
+    raise self.protocol.handshake_exc
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\client.py", line 325, in parse
+    self.process_response(response)
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\client.py", line 142, in process_response
+    raise InvalidStatus(response)
+websockets.exceptions.InvalidStatus: server rejected WebSocket connection: HTTP 301
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 1012, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 1041, in _bootstrap_inner
+    self.run()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 992, in run
+    self._target(*self._args, **self._kwargs)
+  File "D:\pythonProject\京东机器人\jd_control_panel.py", line 273, in runner
+    result = asyncio.run(
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\runners.py", line 194, in run
+    return runner.run(main)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 707, in run_until_complete
+    self.run_forever()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 678, in run_forever
+    self._run_once()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 2033, in _run_once
+    handle._run()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\events.py", line 89, in _run
+    self._context.run(self._callback, *self._args)
+> File "D:\pythonProject\京东机器人\jd_cookie_runner.py", line 88, in run_forever
+    stopped = await self._run_connection(stop_event)
+  File "D:\pythonProject\京东机器人\jd_cookie_runner.py", line 128, in _run_connection
+    async with websockets.connect(
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 587, in __aenter__
+    return await self
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 559, in __await_impl__
+    uri_or_exc = self.process_redirect(exc)
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 494, in process_redirect
+    new_ws_uri = parse_uri(new_uri)
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\uri.py", line 77, in parse_uri
+    raise InvalidURI(uri, "scheme isn't ws or wss")
+websockets.exceptions.InvalidURI: http://dongdong.jd.com/workbench/websocket isn't a valid URI: scheme isn't ws or wss
+2026-11-16 04:14:36.227 | ERROR    | jd_cookie_runner:run_forever:104 - 连接断开，将重连 | 原因=http://dongdong.jd.com/workbench/websocket isn't a valid URI: scheme isn't ws or wss | 5.0 秒后重连
+Traceback (most recent call last):
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 543, in __await_impl__
+    await self.connection.handshake(
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 114, in handshake
+    raise self.protocol.handshake_exc
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\client.py", line 325, in parse
+    self.process_response(response)
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\client.py", line 142, in process_response
+    raise InvalidStatus(response)
+websockets.exceptions.InvalidStatus: server rejected WebSocket connection: HTTP 301
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 1012, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 1041, in _bootstrap_inner
+    self.run()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 992, in run
+    self._target(*self._args, **self._kwargs)
+  File "D:\pythonProject\京东机器人\jd_control_panel.py", line 273, in runner
+    result = asyncio.run(
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\runners.py", line 194, in run
+    return runner.run(main)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 707, in run_until_complete
+    self.run_forever()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 678, in run_forever
+    self._run_once()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 2033, in _run_once
+    handle._run()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\events.py", line 89, in _run
+    self._context.run(self._callback, *self._args)
+> File "D:\pythonProject\京东机器人\jd_cookie_runner.py", line 88, in run_forever
+    stopped = await self._run_connection(stop_event)
+  File "D:\pythonProject\京东机器人\jd_cookie_runner.py", line 128, in _run_connection
+    async with websockets.connect(
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 587, in __aenter__
+    return await self
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 559, in __await_impl__
+    uri_or_exc = self.process_redirect(exc)
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 494, in process_redirect
+    new_ws_uri = parse_uri(new_uri)
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\uri.py", line 77, in parse_uri
+    raise InvalidURI(uri, "scheme isn't ws or wss")
+websockets.exceptions.InvalidURI: http://dongdong.jd.com/workbench/websocket isn't a valid URI: scheme isn't ws or wss
+2026-11-16 09:35:04.659 | ERROR    | jd_reply_handler:reply_for_message:61 - Coze 调用或解析失败 | 原因=Coze 返回不是 JSON
+Traceback (most recent call last):
+  File "D:\pythonProject\京东机器人\jd_reply_handler.py", line 37, in _coze_output
+    body = json.loads(raw_response)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\json\__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\json\decoder.py", line 345, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\json\decoder.py", line 363, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 1012, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 1041, in _bootstrap_inner
+    self.run()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 992, in run
+    self._target(*self._args, **self._kwargs)
+  File "D:\pythonProject\京东机器人\jd_control_panel.py", line 273, in runner
+    result = asyncio.run(
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\runners.py", line 194, in run
+    return runner.run(main)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 707, in run_until_complete
+    self.run_forever()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 678, in run_forever
+    self._run_once()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 2033, in _run_once
+    handle._run()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\events.py", line 89, in _run
+    self._context.run(self._callback, *self._args)
+  File "D:\pythonProject\京东机器人\jd_message_relay.py", line 118, in _flush
+    result = await self.reply_handler(payload)
+  File "D:\pythonProject\京东机器人\jd_reply_handler.py", line 87, in handler
+    return await reply_for_message(payload, workflow_id=workflow_id, client=client, log=log)
+> File "D:\pythonProject\京东机器人\jd_reply_handler.py", line 57, in reply_for_message
+    output = _coze_output(raw_response)
+  File "D:\pythonProject\京东机器人\jd_reply_handler.py", line 39, in _coze_output
+    raise ValueError("Coze 返回不是 JSON") from error
+ValueError: Coze 返回不是 JSON
+2026-11-16 09:52:42.043 | ERROR    | jd_reply_handler:reply_for_message:61 - Coze 调用或解析失败 | 原因=Coze 返回不是 JSON
+Traceback (most recent call last):
+  File "D:\pythonProject\京东机器人\jd_reply_handler.py", line 37, in _coze_output
+    body = json.loads(raw_response)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\json\__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\json\decoder.py", line 345, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\json\decoder.py", line 363, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 1012, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 1041, in _bootstrap_inner
+    self.run()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 992, in run
+    self._target(*self._args, **self._kwargs)
+  File "D:\pythonProject\京东机器人\jd_control_panel.py", line 273, in runner
+    result = asyncio.run(
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\runners.py", line 194, in run
+    return runner.run(main)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 707, in run_until_complete
+    self.run_forever()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 678, in run_forever
+    self._run_once()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 2033, in _run_once
+    handle._run()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\events.py", line 89, in _run
+    self._context.run(self._callback, *self._args)
+  File "D:\pythonProject\京东机器人\jd_message_relay.py", line 118, in _flush
+    result = await self.reply_handler(payload)
+  File "D:\pythonProject\京东机器人\jd_reply_handler.py", line 87, in handler
+    return await reply_for_message(payload, workflow_id=workflow_id, client=client, log=log)
+> File "D:\pythonProject\京东机器人\jd_reply_handler.py", line 57, in reply_for_message
+    output = _coze_output(raw_response)
+  File "D:\pythonProject\京东机器人\jd_reply_handler.py", line 39, in _coze_output
+    raise ValueError("Coze 返回不是 JSON") from error
+ValueError: Coze 返回不是 JSON
+2026-11-16 10:23:29.132 | ERROR    | jd_cookie_runner:run_forever:104 - 连接断开，将重连 | 原因=http://dongdong.jd.com/workbench/websocket isn't a valid URI: scheme isn't ws or wss | 5.0 秒后重连
+Traceback (most recent call last):
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 543, in __await_impl__
+    await self.connection.handshake(
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 114, in handshake
+    raise self.protocol.handshake_exc
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\client.py", line 325, in parse
+    self.process_response(response)
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\client.py", line 142, in process_response
+    raise InvalidStatus(response)
+websockets.exceptions.InvalidStatus: server rejected WebSocket connection: HTTP 301
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 1012, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 1041, in _bootstrap_inner
+    self.run()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 992, in run
+    self._target(*self._args, **self._kwargs)
+  File "D:\pythonProject\京东机器人\jd_control_panel.py", line 273, in runner
+    result = asyncio.run(
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\runners.py", line 194, in run
+    return runner.run(main)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 707, in run_until_complete
+    self.run_forever()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 678, in run_forever
+    self._run_once()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 2033, in _run_once
+    handle._run()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\events.py", line 89, in _run
+    self._context.run(self._callback, *self._args)
+> File "D:\pythonProject\京东机器人\jd_cookie_runner.py", line 88, in run_forever
+    stopped = await self._run_connection(stop_event)
+  File "D:\pythonProject\京东机器人\jd_cookie_runner.py", line 128, in _run_connection
+    async with websockets.connect(
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 587, in __aenter__
+    return await self
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 559, in __await_impl__
+    uri_or_exc = self.process_redirect(exc)
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 494, in process_redirect
+    new_ws_uri = parse_uri(new_uri)
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\uri.py", line 77, in parse_uri
+    raise InvalidURI(uri, "scheme isn't ws or wss")
+websockets.exceptions.InvalidURI: http://dongdong.jd.com/workbench/websocket isn't a valid URI: scheme isn't ws or wss
+2026-11-16 10:23:32.133 | ERROR    | jd_cookie_runner:run_forever:104 - 连接断开，将重连 | 原因=http://dongdong.jd.com/workbench/websocket isn't a valid URI: scheme isn't ws or wss | 5.0 秒后重连
+Traceback (most recent call last):
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 543, in __await_impl__
+    await self.connection.handshake(
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 114, in handshake
+    raise self.protocol.handshake_exc
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\client.py", line 325, in parse
+    self.process_response(response)
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\client.py", line 142, in process_response
+    raise InvalidStatus(response)
+websockets.exceptions.InvalidStatus: server rejected WebSocket connection: HTTP 301
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 1012, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 1041, in _bootstrap_inner
+    self.run()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 992, in run
+    self._target(*self._args, **self._kwargs)
+  File "D:\pythonProject\京东机器人\jd_control_panel.py", line 273, in runner
+    result = asyncio.run(
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\runners.py", line 194, in run
+    return runner.run(main)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 707, in run_until_complete
+    self.run_forever()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 678, in run_forever
+    self._run_once()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 2033, in _run_once
+    handle._run()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\events.py", line 89, in _run
+    self._context.run(self._callback, *self._args)
+> File "D:\pythonProject\京东机器人\jd_cookie_runner.py", line 88, in run_forever
+    stopped = await self._run_connection(stop_event)
+  File "D:\pythonProject\京东机器人\jd_cookie_runner.py", line 128, in _run_connection
+    async with websockets.connect(
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 587, in __aenter__
+    return await self
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 559, in __await_impl__
+    uri_or_exc = self.process_redirect(exc)
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 494, in process_redirect
+    new_ws_uri = parse_uri(new_uri)
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\uri.py", line 77, in parse_uri
+    raise InvalidURI(uri, "scheme isn't ws or wss")
+websockets.exceptions.InvalidURI: http://dongdong.jd.com/workbench/websocket isn't a valid URI: scheme isn't ws or wss
+2026-11-16 10:44:16.694 | ERROR    | jd_cookie_runner:run_forever:104 - 连接断开，将重连 | 原因=http://dongdong.jd.com/workbench/websocket isn't a valid URI: scheme isn't ws or wss | 5.0 秒后重连
+Traceback (most recent call last):
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 543, in __await_impl__
+    await self.connection.handshake(
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 114, in handshake
+    raise self.protocol.handshake_exc
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\client.py", line 325, in parse
+    self.process_response(response)
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\client.py", line 142, in process_response
+    raise InvalidStatus(response)
+websockets.exceptions.InvalidStatus: server rejected WebSocket connection: HTTP 301
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 1012, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 1041, in _bootstrap_inner
+    self.run()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 992, in run
+    self._target(*self._args, **self._kwargs)
+  File "D:\pythonProject\京东机器人\jd_control_panel.py", line 273, in runner
+    result = asyncio.run(
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\runners.py", line 194, in run
+    return runner.run(main)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 707, in run_until_complete
+    self.run_forever()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 678, in run_forever
+    self._run_once()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 2033, in _run_once
+    handle._run()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\events.py", line 89, in _run
+    self._context.run(self._callback, *self._args)
+> File "D:\pythonProject\京东机器人\jd_cookie_runner.py", line 88, in run_forever
+    stopped = await self._run_connection(stop_event)
+  File "D:\pythonProject\京东机器人\jd_cookie_runner.py", line 128, in _run_connection
+    async with websockets.connect(
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 587, in __aenter__
+    return await self
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 559, in __await_impl__
+    uri_or_exc = self.process_redirect(exc)
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 494, in process_redirect
+    new_ws_uri = parse_uri(new_uri)
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\uri.py", line 77, in parse_uri
+    raise InvalidURI(uri, "scheme isn't ws or wss")
+websockets.exceptions.InvalidURI: http://dongdong.jd.com/workbench/websocket isn't a valid URI: scheme isn't ws or wss
+2026-11-16 10:44:22.174 | ERROR    | jd_cookie_runner:run_forever:104 - 连接断开，将重连 | 原因=http://dongdong.jd.com/workbench/websocket isn't a valid URI: scheme isn't ws or wss | 5.0 秒后重连
+Traceback (most recent call last):
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 543, in __await_impl__
+    await self.connection.handshake(
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 114, in handshake
+    raise self.protocol.handshake_exc
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\client.py", line 325, in parse
+    self.process_response(response)
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\client.py", line 142, in process_response
+    raise InvalidStatus(response)
+websockets.exceptions.InvalidStatus: server rejected WebSocket connection: HTTP 301
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 1012, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 1041, in _bootstrap_inner
+    self.run()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 992, in run
+    self._target(*self._args, **self._kwargs)
+  File "D:\pythonProject\京东机器人\jd_control_panel.py", line 273, in runner
+    result = asyncio.run(
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\runners.py", line 194, in run
+    return runner.run(main)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 707, in run_until_complete
+    self.run_forever()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 678, in run_forever
+    self._run_once()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 2033, in _run_once
+    handle._run()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\events.py", line 89, in _run
+    self._context.run(self._callback, *self._args)
+> File "D:\pythonProject\京东机器人\jd_cookie_runner.py", line 88, in run_forever
+    stopped = await self._run_connection(stop_event)
+  File "D:\pythonProject\京东机器人\jd_cookie_runner.py", line 128, in _run_connection
+    async with websockets.connect(
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 587, in __aenter__
+    return await self
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 559, in __await_impl__
+    uri_or_exc = self.process_redirect(exc)
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 494, in process_redirect
+    new_ws_uri = parse_uri(new_uri)
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\uri.py", line 77, in parse_uri
+    raise InvalidURI(uri, "scheme isn't ws or wss")
+websockets.exceptions.InvalidURI: http://dongdong.jd.com/workbench/websocket isn't a valid URI: scheme isn't ws or wss
+2026-11-16 10:44:27.472 | ERROR    | jd_cookie_runner:run_forever:104 - 连接断开，将重连 | 原因=http://dongdong.jd.com/workbench/websocket isn't a valid URI: scheme isn't ws or wss | 5.0 秒后重连
+Traceback (most recent call last):
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 543, in __await_impl__
+    await self.connection.handshake(
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 114, in handshake
+    raise self.protocol.handshake_exc
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\client.py", line 325, in parse
+    self.process_response(response)
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\client.py", line 142, in process_response
+    raise InvalidStatus(response)
+websockets.exceptions.InvalidStatus: server rejected WebSocket connection: HTTP 301
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 1012, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 1041, in _bootstrap_inner
+    self.run()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 992, in run
+    self._target(*self._args, **self._kwargs)
+  File "D:\pythonProject\京东机器人\jd_control_panel.py", line 273, in runner
+    result = asyncio.run(
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\runners.py", line 194, in run
+    return runner.run(main)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 707, in run_until_complete
+    self.run_forever()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 678, in run_forever
+    self._run_once()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 2033, in _run_once
+    handle._run()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\events.py", line 89, in _run
+    self._context.run(self._callback, *self._args)
+> File "D:\pythonProject\京东机器人\jd_cookie_runner.py", line 88, in run_forever
+    stopped = await self._run_connection(stop_event)
+  File "D:\pythonProject\京东机器人\jd_cookie_runner.py", line 128, in _run_connection
+    async with websockets.connect(
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 587, in __aenter__
+    return await self
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 559, in __await_impl__
+    uri_or_exc = self.process_redirect(exc)
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 494, in process_redirect
+    new_ws_uri = parse_uri(new_uri)
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\uri.py", line 77, in parse_uri
+    raise InvalidURI(uri, "scheme isn't ws or wss")
+websockets.exceptions.InvalidURI: http://dongdong.jd.com/workbench/websocket isn't a valid URI: scheme isn't ws or wss
+2026-11-16 10:44:32.955 | ERROR    | jd_cookie_runner:run_forever:104 - 连接断开，将重连 | 原因=http://dongdong.jd.com/workbench/websocket isn't a valid URI: scheme isn't ws or wss | 5.0 秒后重连
+Traceback (most recent call last):
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 543, in __await_impl__
+    await self.connection.handshake(
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 114, in handshake
+    raise self.protocol.handshake_exc
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\client.py", line 325, in parse
+    self.process_response(response)
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\client.py", line 142, in process_response
+    raise InvalidStatus(response)
+websockets.exceptions.InvalidStatus: server rejected WebSocket connection: HTTP 301
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 1012, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 1041, in _bootstrap_inner
+    self.run()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 992, in run
+    self._target(*self._args, **self._kwargs)
+  File "D:\pythonProject\京东机器人\jd_control_panel.py", line 273, in runner
+    result = asyncio.run(
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\runners.py", line 194, in run
+    return runner.run(main)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 707, in run_until_complete
+    self.run_forever()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 678, in run_forever
+    self._run_once()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 2033, in _run_once
+    handle._run()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\events.py", line 89, in _run
+    self._context.run(self._callback, *self._args)
+> File "D:\pythonProject\京东机器人\jd_cookie_runner.py", line 88, in run_forever
+    stopped = await self._run_connection(stop_event)
+  File "D:\pythonProject\京东机器人\jd_cookie_runner.py", line 128, in _run_connection
+    async with websockets.connect(
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 587, in __aenter__
+    return await self
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 559, in __await_impl__
+    uri_or_exc = self.process_redirect(exc)
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 494, in process_redirect
+    new_ws_uri = parse_uri(new_uri)
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\uri.py", line 77, in parse_uri
+    raise InvalidURI(uri, "scheme isn't ws or wss")
+websockets.exceptions.InvalidURI: http://dongdong.jd.com/workbench/websocket isn't a valid URI: scheme isn't ws or wss
+2026-11-17 14:30:49.459 | ERROR    | jd_cookie_runner:run_forever:104 - 连接断开，将重连 | 原因=http://dongdong.jd.com/workbench/websocket isn't a valid URI: scheme isn't ws or wss | 5.0 秒后重连
+Traceback (most recent call last):
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 543, in __await_impl__
+    await self.connection.handshake(
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 114, in handshake
+    raise self.protocol.handshake_exc
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\client.py", line 325, in parse
+    self.process_response(response)
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\client.py", line 142, in process_response
+    raise InvalidStatus(response)
+websockets.exceptions.InvalidStatus: server rejected WebSocket connection: HTTP 301
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 1012, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 1041, in _bootstrap_inner
+    self.run()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 992, in run
+    self._target(*self._args, **self._kwargs)
+  File "D:\pythonProject\京东机器人\jd_control_panel.py", line 273, in runner
+    result = asyncio.run(
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\runners.py", line 194, in run
+    return runner.run(main)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 707, in run_until_complete
+    self.run_forever()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 678, in run_forever
+    self._run_once()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 2033, in _run_once
+    handle._run()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\events.py", line 89, in _run
+    self._context.run(self._callback, *self._args)
+> File "D:\pythonProject\京东机器人\jd_cookie_runner.py", line 88, in run_forever
+    stopped = await self._run_connection(stop_event)
+  File "D:\pythonProject\京东机器人\jd_cookie_runner.py", line 128, in _run_connection
+    async with websockets.connect(
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 587, in __aenter__
+    return await self
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 559, in __await_impl__
+    uri_or_exc = self.process_redirect(exc)
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 494, in process_redirect
+    new_ws_uri = parse_uri(new_uri)
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\uri.py", line 77, in parse_uri
+    raise InvalidURI(uri, "scheme isn't ws or wss")
+websockets.exceptions.InvalidURI: http://dongdong.jd.com/workbench/websocket isn't a valid URI: scheme isn't ws or wss
+2026-11-17 14:30:54.763 | ERROR    | jd_cookie_runner:run_forever:104 - 连接断开，将重连 | 原因=http://dongdong.jd.com/workbench/websocket isn't a valid URI: scheme isn't ws or wss | 5.0 秒后重连
+Traceback (most recent call last):
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 543, in __await_impl__
+    await self.connection.handshake(
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 114, in handshake
+    raise self.protocol.handshake_exc
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\client.py", line 325, in parse
+    self.process_response(response)
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\client.py", line 142, in process_response
+    raise InvalidStatus(response)
+websockets.exceptions.InvalidStatus: server rejected WebSocket connection: HTTP 301
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 1012, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 1041, in _bootstrap_inner
+    self.run()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 992, in run
+    self._target(*self._args, **self._kwargs)
+  File "D:\pythonProject\京东机器人\jd_control_panel.py", line 273, in runner
+    result = asyncio.run(
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\runners.py", line 194, in run
+    return runner.run(main)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 707, in run_until_complete
+    self.run_forever()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 678, in run_forever
+    self._run_once()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 2033, in _run_once
+    handle._run()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\events.py", line 89, in _run
+    self._context.run(self._callback, *self._args)
+> File "D:\pythonProject\京东机器人\jd_cookie_runner.py", line 88, in run_forever
+    stopped = await self._run_connection(stop_event)
+  File "D:\pythonProject\京东机器人\jd_cookie_runner.py", line 128, in _run_connection
+    async with websockets.connect(
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 587, in __aenter__
+    return await self
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 559, in __await_impl__
+    uri_or_exc = self.process_redirect(exc)
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 494, in process_redirect
+    new_ws_uri = parse_uri(new_uri)
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\uri.py", line 77, in parse_uri
+    raise InvalidURI(uri, "scheme isn't ws or wss")
+websockets.exceptions.InvalidURI: http://dongdong.jd.com/workbench/websocket isn't a valid URI: scheme isn't ws or wss
+2026-11-17 14:31:00.050 | ERROR    | jd_cookie_runner:run_forever:104 - 连接断开，将重连 | 原因=http://dongdong.jd.com/workbench/websocket isn't a valid URI: scheme isn't ws or wss | 5.0 秒后重连
+Traceback (most recent call last):
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 543, in __await_impl__
+    await self.connection.handshake(
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 114, in handshake
+    raise self.protocol.handshake_exc
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\client.py", line 325, in parse
+    self.process_response(response)
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\client.py", line 142, in process_response
+    raise InvalidStatus(response)
+websockets.exceptions.InvalidStatus: server rejected WebSocket connection: HTTP 301
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 1012, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 1041, in _bootstrap_inner
+    self.run()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 992, in run
+    self._target(*self._args, **self._kwargs)
+  File "D:\pythonProject\京东机器人\jd_control_panel.py", line 273, in runner
+    result = asyncio.run(
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\runners.py", line 194, in run
+    return runner.run(main)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 707, in run_until_complete
+    self.run_forever()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 678, in run_forever
+    self._run_once()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 2033, in _run_once
+    handle._run()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\events.py", line 89, in _run
+    self._context.run(self._callback, *self._args)
+> File "D:\pythonProject\京东机器人\jd_cookie_runner.py", line 88, in run_forever
+    stopped = await self._run_connection(stop_event)
+  File "D:\pythonProject\京东机器人\jd_cookie_runner.py", line 128, in _run_connection
+    async with websockets.connect(
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 587, in __aenter__
+    return await self
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 559, in __await_impl__
+    uri_or_exc = self.process_redirect(exc)
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 494, in process_redirect
+    new_ws_uri = parse_uri(new_uri)
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\uri.py", line 77, in parse_uri
+    raise InvalidURI(uri, "scheme isn't ws or wss")
+websockets.exceptions.InvalidURI: http://dongdong.jd.com/workbench/websocket isn't a valid URI: scheme isn't ws or wss
+2026-11-18 11:41:17.733 | ERROR    | jd_cookie_runner:run_forever:104 - 连接断开，将重连 | 原因=http://dongdong.jd.com/workbench/websocket isn't a valid URI: scheme isn't ws or wss | 5.0 秒后重连
+Traceback (most recent call last):
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 543, in __await_impl__
+    await self.connection.handshake(
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 114, in handshake
+    raise self.protocol.handshake_exc
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\client.py", line 325, in parse
+    self.process_response(response)
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\client.py", line 142, in process_response
+    raise InvalidStatus(response)
+websockets.exceptions.InvalidStatus: server rejected WebSocket connection: HTTP 301
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 1012, in _bootstrap
+    self._bootstrap_inner()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 1041, in _bootstrap_inner
+    self.run()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 992, in run
+    self._target(*self._args, **self._kwargs)
+  File "D:\pythonProject\京东机器人\jd_control_panel.py", line 273, in runner
+    result = asyncio.run(
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\runners.py", line 194, in run
+    return runner.run(main)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 707, in run_until_complete
+    self.run_forever()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 678, in run_forever
+    self._run_once()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 2033, in _run_once
+    handle._run()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\events.py", line 89, in _run
+    self._context.run(self._callback, *self._args)
+> File "D:\pythonProject\京东机器人\jd_cookie_runner.py", line 88, in run_forever
+    stopped = await self._run_connection(stop_event)
+  File "D:\pythonProject\京东机器人\jd_cookie_runner.py", line 128, in _run_connection
+    async with websockets.connect(
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 587, in __aenter__
+    return await self
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 559, in __await_impl__
+    uri_or_exc = self.process_redirect(exc)
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 494, in process_redirect
+    new_ws_uri = parse_uri(new_uri)
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\uri.py", line 77, in parse_uri
+    raise InvalidURI(uri, "scheme isn't ws or wss")
+websockets.exceptions.InvalidURI: http://dongdong.jd.com/workbench/websocket isn't a valid URI: scheme isn't ws or wss

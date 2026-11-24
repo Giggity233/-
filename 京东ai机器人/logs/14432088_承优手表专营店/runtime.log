@@ -1,0 +1,1989 @@
+2026-11-16 01:50:44.235 | INFO     | jd_cookie_runner:_run_connection:116 - 签到成功，准备建立 WebSocket 连接
+2026-11-16 01:50:44.441 | INFO     | jd_cookie_runner:_run_connection:140 - WebSocket 已连接，开始鉴权
+2026-11-16 01:50:44.535 | INFO     | jd_cookie_runner:_run_connection:162 - 连接鉴权完成，机器人运行中
+2026-11-16 01:51:12.977 | ERROR    | jd_reply_handler:reply_for_message:61 - Coze 调用或解析失败 | 原因=未设置 Coze Token：请写入 data/COZE_TOKEN.txt
+Traceback (most recent call last):
+
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 1012, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x00000000017E3E20>
+    └ <Thread(jd-robot-14432088, started daemon 3372)>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 1041, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x00000000017E3BA0>
+    └ <Thread(jd-robot-14432088, started daemon 3372)>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 992, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(jd-robot-14432088, started daemon 3372)>
+    │    │        │    └ ()
+    │    │        └ <Thread(jd-robot-14432088, started daemon 3372)>
+    │    └ <function JdRobotControlApp._start_shop.<locals>.runner at 0x0000000004639BC0>
+    └ <Thread(jd-robot-14432088, started daemon 3372)>
+
+  File "D:\pythonProject\京东机器人\jd_control_panel.py", line 272, in runner
+    result = asyncio.run(
+             │       └ <function run at 0x0000000003589DA0>
+             └ <module 'asyncio' from 'C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python311-32\\Lib\\asyncio\\__init__.py'>
+
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\runners.py", line 194, in run
+    return runner.run(main)
+           │      │   └ <coroutine object JdCookieRunner.run_forever at 0x0000000004648040>
+           │      └ <function Runner.run at 0x0000000003648680>
+           └ <asyncio.runners.Runner object at 0x00000000045DEE40>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           │    │     │                  └ <Task pending name='Task-1' coro=<JdCookieRunner.run_forever() running at D:\pythonProject\京东机器人\jd_cookie_runner.py:84> wait...
+           │    │     └ <function BaseEventLoop.run_until_complete at 0x0000000003646160>
+           │    └ <ProactorEventLoop running=True closed=False debug=False>
+           └ <asyncio.runners.Runner object at 0x00000000045DEE40>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 707, in run_until_complete
+    self.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x00000000036460C0>
+    └ <ProactorEventLoop running=True closed=False debug=False>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 678, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x0000000003647EC0>
+    └ <ProactorEventLoop running=True closed=False debug=False>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 2033, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x00000000031568E0>
+    └ <Handle Task.task_wakeup()>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\events.py", line 89, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle Task.task_wakeup()>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle Task.task_wakeup()>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle Task.task_wakeup()>
+
+  File "D:\pythonProject\京东机器人\jd_message_relay.py", line 118, in _flush
+    result = await self.reply_handler(payload)
+                   │    │             └ {'aid': 'XwapgFw4', 'buyer_name': 'jd_eHGlDAbGDLEn', 'chathistory': '【客服】：您好，很高兴为您服务，请问有什么可以帮助您？\n【买家】：哈哈\n【买家】：咨询订单号：3679270...
+                   │    └ <function build_reply_handler.<locals>.handler at 0x000000000463AE80>
+                   └ <jd_message_relay.JdMessageRelay object at 0x000000000464FCB0>
+
+  File "D:\pythonProject\京东机器人\jd_reply_handler.py", line 87, in handler
+    return await reply_for_message(payload, workflow_id=workflow_id, client=client, log=log)
+                 │                 │                    │                   │           └ <loguru.logger handlers=[(id=0, level=10, sink=<stderr>), (id=1, level=20, sink='D:\pythonProject\京东机器人\logs\14432088_承优手表专营店...
+                 │                 │                    │                   └ None
+                 │                 │                    └ '7706814583034134562'
+                 │                 └ {'aid': 'XwapgFw4', 'buyer_name': 'jd_eHGlDAbGDLEn', 'chathistory': '【客服】：您好，很高兴为您服务，请问有什么可以帮助您？\n【买家】：哈哈\n【买家】：咨询订单号：3679270...
+                 └ <function reply_for_message at 0x0000000004516AC0>
+
+> File "D:\pythonProject\京东机器人\jd_reply_handler.py", line 56, in reply_for_message
+    raw_response = await asyncio.to_thread(coze_client.chat, payload, workflow_id)
+                         │       │         │           │     │        └ '7706814583034134562'
+                         │       │         │           │     └ {'aid': 'XwapgFw4', 'buyer_name': 'jd_eHGlDAbGDLEn', 'chathistory': '【客服】：您好，很高兴为您服务，请问有什么可以帮助您？\n【买家】：哈哈\n【买家】：咨询订单号：3679270...
+                         │       │         │           └ <function CozeWorkflowClient.chat at 0x00000000045168E0>
+                         │       │         └ <jd_coze_api.CozeWorkflowClient object at 0x000000000D2202F0>
+                         │       └ <function to_thread at 0x0000000003658180>
+                         └ <module 'asyncio' from 'C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python311-32\\Lib\\asyncio\\__init__.py'>
+
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\threads.py", line 25, in to_thread
+    return await loop.run_in_executor(None, func_call)
+                 │    │                     └ functools.partial(<built-in method run of _contextvars.Context object at 0x000000000D205D00>, <bound method CozeWorkflowClien...
+                 │    └ <function BaseEventLoop.run_in_executor at 0x0000000003646A20>
+                 └ <ProactorEventLoop running=True closed=False debug=False>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\concurrent\futures\thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+             │        │            └ None
+             │        └ None
+             └ None
+
+  File "D:\pythonProject\京东机器人\jd_coze_api.py", line 73, in chat
+    token = self.token_getter()
+            │    └ <function get_coze_token at 0x0000000004516660>
+            └ <jd_coze_api.CozeWorkflowClient object at 0x000000000D2202F0>
+
+  File "D:\pythonProject\京东机器人\jd_coze_api.py", line 42, in get_coze_token
+    raise CozeApiError("未设置 Coze Token：请写入 data/COZE_TOKEN.txt")
+          └ <class 'jd_coze_api.CozeApiError'>
+
+jd_coze_api.CozeApiError: 未设置 Coze Token：请写入 data/COZE_TOKEN.txt
+2026-11-16 01:51:13.009 | WARNING  | jd_human_transfer:transfer_to_human:68 - 转人工失败，将重试 | 买家=jd_eHGlDAbGDLEn | 第1次 | 5 秒后重试 | 原因=没有可用人工账号 ID
+2026-11-16 01:51:18.031 | WARNING  | jd_human_transfer:transfer_to_human:68 - 转人工失败，将重试 | 买家=jd_eHGlDAbGDLEn | 第2次 | 10 秒后重试 | 原因=没有可用人工账号 ID
+2026-11-16 01:53:36.211 | INFO     | jd_cookie_runner:_run_connection:116 - 签到成功，准备建立 WebSocket 连接
+2026-11-16 01:53:36.374 | INFO     | jd_cookie_runner:_run_connection:140 - WebSocket 已连接，开始鉴权
+2026-11-16 01:53:36.469 | INFO     | jd_cookie_runner:_run_connection:162 - 连接鉴权完成，机器人运行中
+2026-11-16 01:54:03.635 | ERROR    | jd_reply_handler:reply_for_message:61 - Coze 调用或解析失败 | 原因=Coze 返回不是 JSON
+Traceback (most recent call last):
+
+  File "D:\pythonProject\京东机器人\jd_reply_handler.py", line 37, in _coze_output
+    body = json.loads(raw_response)
+           │    │     └ '售后聊天过长@@@@转人工'
+           │    └ <function loads at 0x00000000037E45E0>
+           └ <module 'json' from 'C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python311-32\\Lib\\json\\__init__.py'>
+
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\json\__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           │                │      └ '售后聊天过长@@@@转人工'
+           │                └ <function JSONDecoder.decode at 0x00000000037D3EC0>
+           └ <json.decoder.JSONDecoder object at 0x00000000032EF620>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\json\decoder.py", line 345, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               │    │          │      │  └ '售后聊天过长@@@@转人工'
+               │    │          │      └ <built-in method match of re.Pattern object at 0x000000000379ADC0>
+               │    │          └ '售后聊天过长@@@@转人工'
+               │    └ <function JSONDecoder.raw_decode at 0x00000000037D3F60>
+               └ <json.decoder.JSONDecoder object at 0x00000000032EF620>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\json\decoder.py", line 363, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+          │                                  └ '售后聊天过长@@@@转人工'
+          └ <class 'json.decoder.JSONDecodeError'>
+
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 1012, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x00000000018E3E20>
+    └ <Thread(jd-robot-14432088, started daemon 14812)>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 1041, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x00000000018E3BA0>
+    └ <Thread(jd-robot-14432088, started daemon 14812)>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 992, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(jd-robot-14432088, started daemon 14812)>
+    │    │        │    └ ()
+    │    │        └ <Thread(jd-robot-14432088, started daemon 14812)>
+    │    └ <function JdRobotControlApp._start_shop.<locals>.runner at 0x0000000004649BC0>
+    └ <Thread(jd-robot-14432088, started daemon 14812)>
+
+  File "D:\pythonProject\京东机器人\jd_control_panel.py", line 272, in runner
+    result = asyncio.run(
+             │       └ <function run at 0x0000000003279DA0>
+             └ <module 'asyncio' from 'C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python311-32\\Lib\\asyncio\\__init__.py'>
+
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\runners.py", line 194, in run
+    return runner.run(main)
+           │      │   └ <coroutine object JdCookieRunner.run_forever at 0x0000000004658040>
+           │      └ <function Runner.run at 0x0000000003338680>
+           └ <asyncio.runners.Runner object at 0x00000000045EEE40>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           │    │     │                  └ <Task pending name='Task-1' coro=<JdCookieRunner.run_forever() running at D:\pythonProject\京东机器人\jd_cookie_runner.py:84> wait...
+           │    │     └ <function BaseEventLoop.run_until_complete at 0x0000000003336160>
+           │    └ <ProactorEventLoop running=True closed=False debug=False>
+           └ <asyncio.runners.Runner object at 0x00000000045EEE40>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 707, in run_until_complete
+    self.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x00000000033360C0>
+    └ <ProactorEventLoop running=True closed=False debug=False>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 678, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x0000000003337EC0>
+    └ <ProactorEventLoop running=True closed=False debug=False>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 2033, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x00000000032468E0>
+    └ <Handle Task.task_wakeup()>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\events.py", line 89, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle Task.task_wakeup()>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle Task.task_wakeup()>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle Task.task_wakeup()>
+
+  File "D:\pythonProject\京东机器人\jd_message_relay.py", line 118, in _flush
+    result = await self.reply_handler(payload)
+                   │    │             └ {'aid': '4VzyHDlL', 'buyer_name': 'jd_eHGlDAbGDLEn', 'chathistory': '【买家】：哈哈\n【买家】：咨询订单号：3679270007760533 商品ID：10148525286879...
+                   │    └ <function build_reply_handler.<locals>.handler at 0x000000000464AE80>
+                   └ <jd_message_relay.JdMessageRelay object at 0x000000000465FCB0>
+
+  File "D:\pythonProject\京东机器人\jd_reply_handler.py", line 87, in handler
+    return await reply_for_message(payload, workflow_id=workflow_id, client=client, log=log)
+                 │                 │                    │                   │           └ <loguru.logger handlers=[(id=0, level=10, sink=<stderr>), (id=1, level=20, sink='D:\pythonProject\京东机器人\logs\14432088_承优手表专营店...
+                 │                 │                    │                   └ None
+                 │                 │                    └ '7706814583034134562'
+                 │                 └ {'aid': '4VzyHDlL', 'buyer_name': 'jd_eHGlDAbGDLEn', 'chathistory': '【买家】：哈哈\n【买家】：咨询订单号：3679270007760533 商品ID：10148525286879...
+                 └ <function reply_for_message at 0x0000000004546AC0>
+
+> File "D:\pythonProject\京东机器人\jd_reply_handler.py", line 57, in reply_for_message
+    output = _coze_output(raw_response)
+             │            └ '售后聊天过长@@@@转人工'
+             └ <function _coze_output at 0x00000000045462A0>
+
+  File "D:\pythonProject\京东机器人\jd_reply_handler.py", line 39, in _coze_output
+    raise ValueError("Coze 返回不是 JSON") from error
+
+ValueError: Coze 返回不是 JSON
+2026-11-16 01:54:03.666 | WARNING  | jd_human_transfer:transfer_to_human:68 - 转人工失败，将重试 | 买家=jd_eHGlDAbGDLEn | 第1次 | 5 秒后重试 | 原因=没有可用人工账号 ID
+2026-11-16 01:54:08.689 | WARNING  | jd_human_transfer:transfer_to_human:68 - 转人工失败，将重试 | 买家=jd_eHGlDAbGDLEn | 第2次 | 10 秒后重试 | 原因=没有可用人工账号 ID
+2026-11-16 01:54:18.713 | WARNING  | jd_human_transfer:transfer_to_human:68 - 转人工失败，将重试 | 买家=jd_eHGlDAbGDLEn | 第3次 | 20 秒后重试 | 原因=没有可用人工账号 ID
+2026-11-16 02:27:26.985 | INFO     | jd_cookie_runner:_run_connection:116 - 签到成功，准备建立 WebSocket 连接
+2026-11-16 02:27:27.148 | INFO     | jd_cookie_runner:_run_connection:140 - WebSocket 已连接，开始鉴权
+2026-11-16 02:27:27.260 | INFO     | jd_human_transfer:log_transfer_account_names:91 - 可转接人工账号 | 当前客服=吴吴_客服 | 账号名称=未配置
+2026-11-16 02:27:27.260 | INFO     | jd_cookie_runner:_run_connection:163 - 连接鉴权完成，机器人运行中
+2026-11-16 04:14:25.460 | INFO     | jd_cookie_runner:_run_connection:120 - 签到成功，准备建立 WebSocket 连接
+2026-11-16 04:14:25.627 | ERROR    | jd_cookie_runner:run_forever:104 - 连接断开，将重连 | 原因=http://dongdong.jd.com/workbench/websocket isn't a valid URI: scheme isn't ws or wss | 5.0 秒后重连
+Traceback (most recent call last):
+
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 543, in __await_impl__
+    await self.connection.handshake(
+          │    │          └ <function ClientConnection.handshake at 0x000000000D2668E0>
+          │    └ <websockets.asyncio.client.ClientConnection object at 0x000000000D1FA510>
+          └ <websockets.asyncio.client.connect object at 0x00000000045E3CB0>
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 114, in handshake
+    raise self.protocol.handshake_exc
+          │    │        └ InvalidStatus(Response(status_code=301, reason_phrase='Moved Permanently', headers=Headers([('Date', 'Sun, 15 Nov 2026 20:14:...
+          │    └ <websockets.client.ClientProtocol object at 0x000000000D1FA120>
+          └ <websockets.asyncio.client.ClientConnection object at 0x000000000D1FA510>
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\client.py", line 325, in parse
+    self.process_response(response)
+    │    │                └ Response(status_code=301, reason_phrase='Moved Permanently', headers=Headers([('Date', 'Sun, 15 Nov 2026 20:14:25 GMT'), ('Co...
+    │    └ <function ClientProtocol.process_response at 0x000000000D24A980>
+    └ <websockets.client.ClientProtocol object at 0x000000000D1FA120>
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\client.py", line 142, in process_response
+    raise InvalidStatus(response)
+          │             └ Response(status_code=301, reason_phrase='Moved Permanently', headers=Headers([('Date', 'Sun, 15 Nov 2026 20:14:25 GMT'), ('Co...
+          └ <class 'websockets.exceptions.InvalidStatus'>
+
+websockets.exceptions.InvalidStatus: server rejected WebSocket connection: HTTP 301
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 1012, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x00000000018B3E20>
+    └ <Thread(jd-robot-14432088, started daemon 26388)>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 1041, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x00000000018B3BA0>
+    └ <Thread(jd-robot-14432088, started daemon 26388)>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 992, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(jd-robot-14432088, started daemon 26388)>
+    │    │        │    └ ()
+    │    │        └ <Thread(jd-robot-14432088, started daemon 26388)>
+    │    └ <function JdRobotControlApp._start_shop.<locals>.runner at 0x000000000463E700>
+    └ <Thread(jd-robot-14432088, started daemon 26388)>
+
+  File "D:\pythonProject\京东机器人\jd_control_panel.py", line 273, in runner
+    result = asyncio.run(
+             │       └ <function run at 0x0000000003649DA0>
+             └ <module 'asyncio' from 'C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python311-32\\Lib\\asyncio\\__init__.py'>
+
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\runners.py", line 194, in run
+    return runner.run(main)
+           │      │   └ <coroutine object JdCookieRunner.run_forever at 0x0000000004648040>
+           │      └ <function Runner.run at 0x0000000003708680>
+           └ <asyncio.runners.Runner object at 0x0000000003C07230>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           │    │     │                  └ <Task pending name='Task-1' coro=<JdCookieRunner.run_forever() running at D:\pythonProject\京东机器人\jd_cookie_runner.py:104> cb=...
+           │    │     └ <function BaseEventLoop.run_until_complete at 0x0000000003706160>
+           │    └ <ProactorEventLoop running=True closed=False debug=False>
+           └ <asyncio.runners.Runner object at 0x0000000003C07230>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 707, in run_until_complete
+    self.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x00000000037060C0>
+    └ <ProactorEventLoop running=True closed=False debug=False>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 678, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x0000000003707EC0>
+    └ <ProactorEventLoop running=True closed=False debug=False>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 2033, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x00000000032168E0>
+    └ <Handle Task.task_wakeup()>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\events.py", line 89, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle Task.task_wakeup()>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle Task.task_wakeup()>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle Task.task_wakeup()>
+
+> File "D:\pythonProject\京东机器人\jd_cookie_runner.py", line 88, in run_forever
+    stopped = await self._run_connection(stop_event)
+                    │    │               └ <threading.Event at 0x4641220: unset>
+                    │    └ <function JdCookieRunner._run_connection at 0x0000000004565760>
+                    └ <jd_cookie_runner.JdCookieRunner object at 0x00000000045E2CF0>
+
+  File "D:\pythonProject\京东机器人\jd_cookie_runner.py", line 128, in _run_connection
+    async with websockets.connect(
+               └ <module 'websockets' from 'D:\\pythonProject\\testenv\\Lib\\site-packages\\websockets\\__init__.py'>
+
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 587, in __aenter__
+    return await self
+                 └ <websockets.asyncio.client.connect object at 0x00000000045E3CB0>
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 559, in __await_impl__
+    uri_or_exc = self.process_redirect(exc)
+                 │    └ <function connect.process_redirect at 0x000000000D266CA0>
+                 └ <websockets.asyncio.client.connect object at 0x00000000045E3CB0>
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 494, in process_redirect
+    new_ws_uri = parse_uri(new_uri)
+                 │         └ 'http://dongdong.jd.com/workbench/websocket'
+                 └ <function parse_uri at 0x000000000D249C60>
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\uri.py", line 77, in parse_uri
+    raise InvalidURI(uri, "scheme isn't ws or wss")
+          │          └ 'http://dongdong.jd.com/workbench/websocket'
+          └ <class 'websockets.exceptions.InvalidURI'>
+
+websockets.exceptions.InvalidURI: http://dongdong.jd.com/workbench/websocket isn't a valid URI: scheme isn't ws or wss
+2026-11-16 04:14:30.797 | INFO     | jd_cookie_runner:_run_connection:120 - 签到成功，准备建立 WebSocket 连接
+2026-11-16 04:14:30.934 | ERROR    | jd_cookie_runner:run_forever:104 - 连接断开，将重连 | 原因=http://dongdong.jd.com/workbench/websocket isn't a valid URI: scheme isn't ws or wss | 5.0 秒后重连
+Traceback (most recent call last):
+
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 543, in __await_impl__
+    await self.connection.handshake(
+          │    │          └ <function ClientConnection.handshake at 0x000000000D2668E0>
+          │    └ <websockets.asyncio.client.ClientConnection object at 0x000000000D258A50>
+          └ <websockets.asyncio.client.connect object at 0x000000000D258190>
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 114, in handshake
+    raise self.protocol.handshake_exc
+          │    │        └ InvalidStatus(Response(status_code=301, reason_phrase='Moved Permanently', headers=Headers([('Date', 'Sun, 15 Nov 2026 20:14:...
+          │    └ <websockets.client.ClientProtocol object at 0x000000000D258910>
+          └ <websockets.asyncio.client.ClientConnection object at 0x000000000D258A50>
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\client.py", line 325, in parse
+    self.process_response(response)
+    │    │                └ Response(status_code=301, reason_phrase='Moved Permanently', headers=Headers([('Date', 'Sun, 15 Nov 2026 20:14:31 GMT'), ('Co...
+    │    └ <function ClientProtocol.process_response at 0x000000000D24A980>
+    └ <websockets.client.ClientProtocol object at 0x000000000D258910>
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\client.py", line 142, in process_response
+    raise InvalidStatus(response)
+          │             └ Response(status_code=301, reason_phrase='Moved Permanently', headers=Headers([('Date', 'Sun, 15 Nov 2026 20:14:31 GMT'), ('Co...
+          └ <class 'websockets.exceptions.InvalidStatus'>
+
+websockets.exceptions.InvalidStatus: server rejected WebSocket connection: HTTP 301
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 1012, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x00000000018B3E20>
+    └ <Thread(jd-robot-14432088, started daemon 26388)>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 1041, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x00000000018B3BA0>
+    └ <Thread(jd-robot-14432088, started daemon 26388)>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 992, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(jd-robot-14432088, started daemon 26388)>
+    │    │        │    └ ()
+    │    │        └ <Thread(jd-robot-14432088, started daemon 26388)>
+    │    └ <function JdRobotControlApp._start_shop.<locals>.runner at 0x000000000463E700>
+    └ <Thread(jd-robot-14432088, started daemon 26388)>
+
+  File "D:\pythonProject\京东机器人\jd_control_panel.py", line 273, in runner
+    result = asyncio.run(
+             │       └ <function run at 0x0000000003649DA0>
+             └ <module 'asyncio' from 'C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python311-32\\Lib\\asyncio\\__init__.py'>
+
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\runners.py", line 194, in run
+    return runner.run(main)
+           │      │   └ <coroutine object JdCookieRunner.run_forever at 0x0000000004648040>
+           │      └ <function Runner.run at 0x0000000003708680>
+           └ <asyncio.runners.Runner object at 0x0000000003C07230>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           │    │     │                  └ <Task pending name='Task-1' coro=<JdCookieRunner.run_forever() running at D:\pythonProject\京东机器人\jd_cookie_runner.py:104> cb=...
+           │    │     └ <function BaseEventLoop.run_until_complete at 0x0000000003706160>
+           │    └ <ProactorEventLoop running=True closed=False debug=False>
+           └ <asyncio.runners.Runner object at 0x0000000003C07230>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 707, in run_until_complete
+    self.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x00000000037060C0>
+    └ <ProactorEventLoop running=True closed=False debug=False>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 678, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x0000000003707EC0>
+    └ <ProactorEventLoop running=True closed=False debug=False>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 2033, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x00000000032168E0>
+    └ <Handle Task.task_wakeup()>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\events.py", line 89, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle Task.task_wakeup()>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle Task.task_wakeup()>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle Task.task_wakeup()>
+
+> File "D:\pythonProject\京东机器人\jd_cookie_runner.py", line 88, in run_forever
+    stopped = await self._run_connection(stop_event)
+                    │    │               └ <threading.Event at 0x4641220: unset>
+                    │    └ <function JdCookieRunner._run_connection at 0x0000000004565760>
+                    └ <jd_cookie_runner.JdCookieRunner object at 0x00000000045E2CF0>
+
+  File "D:\pythonProject\京东机器人\jd_cookie_runner.py", line 128, in _run_connection
+    async with websockets.connect(
+               └ <module 'websockets' from 'D:\\pythonProject\\testenv\\Lib\\site-packages\\websockets\\__init__.py'>
+
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 587, in __aenter__
+    return await self
+                 └ <websockets.asyncio.client.connect object at 0x000000000D258190>
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 559, in __await_impl__
+    uri_or_exc = self.process_redirect(exc)
+                 │    └ <function connect.process_redirect at 0x000000000D266CA0>
+                 └ <websockets.asyncio.client.connect object at 0x000000000D258190>
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 494, in process_redirect
+    new_ws_uri = parse_uri(new_uri)
+                 │         └ 'http://dongdong.jd.com/workbench/websocket'
+                 └ <function parse_uri at 0x000000000D249C60>
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\uri.py", line 77, in parse_uri
+    raise InvalidURI(uri, "scheme isn't ws or wss")
+          │          └ 'http://dongdong.jd.com/workbench/websocket'
+          └ <class 'websockets.exceptions.InvalidURI'>
+
+websockets.exceptions.InvalidURI: http://dongdong.jd.com/workbench/websocket isn't a valid URI: scheme isn't ws or wss
+2026-11-16 04:14:36.080 | INFO     | jd_cookie_runner:_run_connection:120 - 签到成功，准备建立 WebSocket 连接
+2026-11-16 04:14:36.227 | ERROR    | jd_cookie_runner:run_forever:104 - 连接断开，将重连 | 原因=http://dongdong.jd.com/workbench/websocket isn't a valid URI: scheme isn't ws or wss | 5.0 秒后重连
+Traceback (most recent call last):
+
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 543, in __await_impl__
+    await self.connection.handshake(
+          │    │          └ <function ClientConnection.handshake at 0x000000000D2668E0>
+          │    └ <websockets.asyncio.client.ClientConnection object at 0x000000000D259950>
+          └ <websockets.asyncio.client.connect object at 0x000000000D258690>
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 114, in handshake
+    raise self.protocol.handshake_exc
+          │    │        └ InvalidStatus(Response(status_code=301, reason_phrase='Moved Permanently', headers=Headers([('Date', 'Sun, 15 Nov 2026 20:14:...
+          │    └ <websockets.client.ClientProtocol object at 0x000000000D259450>
+          └ <websockets.asyncio.client.ClientConnection object at 0x000000000D259950>
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\client.py", line 325, in parse
+    self.process_response(response)
+    │    │                └ Response(status_code=301, reason_phrase='Moved Permanently', headers=Headers([('Date', 'Sun, 15 Nov 2026 20:14:36 GMT'), ('Co...
+    │    └ <function ClientProtocol.process_response at 0x000000000D24A980>
+    └ <websockets.client.ClientProtocol object at 0x000000000D259450>
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\client.py", line 142, in process_response
+    raise InvalidStatus(response)
+          │             └ Response(status_code=301, reason_phrase='Moved Permanently', headers=Headers([('Date', 'Sun, 15 Nov 2026 20:14:36 GMT'), ('Co...
+          └ <class 'websockets.exceptions.InvalidStatus'>
+
+websockets.exceptions.InvalidStatus: server rejected WebSocket connection: HTTP 301
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 1012, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x00000000018B3E20>
+    └ <Thread(jd-robot-14432088, started daemon 26388)>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 1041, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x00000000018B3BA0>
+    └ <Thread(jd-robot-14432088, started daemon 26388)>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 992, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(jd-robot-14432088, started daemon 26388)>
+    │    │        │    └ ()
+    │    │        └ <Thread(jd-robot-14432088, started daemon 26388)>
+    │    └ <function JdRobotControlApp._start_shop.<locals>.runner at 0x000000000463E700>
+    └ <Thread(jd-robot-14432088, started daemon 26388)>
+
+  File "D:\pythonProject\京东机器人\jd_control_panel.py", line 273, in runner
+    result = asyncio.run(
+             │       └ <function run at 0x0000000003649DA0>
+             └ <module 'asyncio' from 'C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python311-32\\Lib\\asyncio\\__init__.py'>
+
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\runners.py", line 194, in run
+    return runner.run(main)
+           │      │   └ <coroutine object JdCookieRunner.run_forever at 0x0000000004648040>
+           │      └ <function Runner.run at 0x0000000003708680>
+           └ <asyncio.runners.Runner object at 0x0000000003C07230>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           │    │     │                  └ <Task pending name='Task-1' coro=<JdCookieRunner.run_forever() running at D:\pythonProject\京东机器人\jd_cookie_runner.py:104> cb=...
+           │    │     └ <function BaseEventLoop.run_until_complete at 0x0000000003706160>
+           │    └ <ProactorEventLoop running=True closed=False debug=False>
+           └ <asyncio.runners.Runner object at 0x0000000003C07230>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 707, in run_until_complete
+    self.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x00000000037060C0>
+    └ <ProactorEventLoop running=True closed=False debug=False>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 678, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x0000000003707EC0>
+    └ <ProactorEventLoop running=True closed=False debug=False>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 2033, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x00000000032168E0>
+    └ <Handle Task.task_wakeup()>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\events.py", line 89, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle Task.task_wakeup()>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle Task.task_wakeup()>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle Task.task_wakeup()>
+
+> File "D:\pythonProject\京东机器人\jd_cookie_runner.py", line 88, in run_forever
+    stopped = await self._run_connection(stop_event)
+                    │    │               └ <threading.Event at 0x4641220: unset>
+                    │    └ <function JdCookieRunner._run_connection at 0x0000000004565760>
+                    └ <jd_cookie_runner.JdCookieRunner object at 0x00000000045E2CF0>
+
+  File "D:\pythonProject\京东机器人\jd_cookie_runner.py", line 128, in _run_connection
+    async with websockets.connect(
+               └ <module 'websockets' from 'D:\\pythonProject\\testenv\\Lib\\site-packages\\websockets\\__init__.py'>
+
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 587, in __aenter__
+    return await self
+                 └ <websockets.asyncio.client.connect object at 0x000000000D258690>
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 559, in __await_impl__
+    uri_or_exc = self.process_redirect(exc)
+                 │    └ <function connect.process_redirect at 0x000000000D266CA0>
+                 └ <websockets.asyncio.client.connect object at 0x000000000D258690>
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 494, in process_redirect
+    new_ws_uri = parse_uri(new_uri)
+                 │         └ 'http://dongdong.jd.com/workbench/websocket'
+                 └ <function parse_uri at 0x000000000D249C60>
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\uri.py", line 77, in parse_uri
+    raise InvalidURI(uri, "scheme isn't ws or wss")
+          │          └ 'http://dongdong.jd.com/workbench/websocket'
+          └ <class 'websockets.exceptions.InvalidURI'>
+
+websockets.exceptions.InvalidURI: http://dongdong.jd.com/workbench/websocket isn't a valid URI: scheme isn't ws or wss
+2026-11-16 04:14:55.669 | INFO     | jd_cookie_runner:_run_connection:120 - 签到成功，准备建立 WebSocket 连接
+2026-11-16 04:14:55.820 | INFO     | jd_cookie_runner:_run_connection:144 - WebSocket 已连接，开始鉴权
+2026-11-16 04:14:55.921 | INFO     | jd_human_transfer:log_transfer_account_names:84 - 可转接人工账号 | 当前客服=吴吴_客服 | 账号名称=吴吴吴_小圣 | 账号ID=吴吴吴_小圣
+2026-11-16 04:14:55.921 | INFO     | jd_cookie_runner:_run_connection:169 - 连接鉴权完成，机器人运行中
+2026-11-16 09:34:03.189 | INFO     | jd_cookie_runner:_run_connection:120 - 签到成功，准备建立 WebSocket 连接
+2026-11-16 09:34:03.354 | INFO     | jd_cookie_runner:_run_connection:144 - WebSocket 已连接，开始鉴权
+2026-11-16 09:34:03.448 | INFO     | jd_human_transfer:log_transfer_account_names:84 - 可转接人工账号 | 当前客服=吴吴_客服 | 账号名称=吴吴吴_小圣 | 账号ID=吴吴吴_小圣
+2026-11-16 09:34:03.448 | INFO     | jd_cookie_runner:_run_connection:169 - 连接鉴权完成，机器人运行中
+2026-11-16 09:35:04.659 | ERROR    | jd_reply_handler:reply_for_message:61 - Coze 调用或解析失败 | 原因=Coze 返回不是 JSON
+Traceback (most recent call last):
+
+  File "D:\pythonProject\京东机器人\jd_reply_handler.py", line 37, in _coze_output
+    body = json.loads(raw_response)
+           │    │     └ '售后ai回复@@@@亲亲，这款是柏达茄心之所向手表女表酒红色呢[玫瑰]'
+           │    └ <function loads at 0x00000000037145E0>
+           └ <module 'json' from 'C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python311-32\\Lib\\json\\__init__.py'>
+
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\json\__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           │                │      └ '售后ai回复@@@@亲亲，这款是柏达茄心之所向手表女表酒红色呢[玫瑰]'
+           │                └ <function JSONDecoder.decode at 0x0000000003703EC0>
+           └ <json.decoder.JSONDecoder object at 0x000000000360F620>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\json\decoder.py", line 345, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               │    │          │      │  └ '售后ai回复@@@@亲亲，这款是柏达茄心之所向手表女表酒红色呢[玫瑰]'
+               │    │          │      └ <built-in method match of re.Pattern object at 0x00000000036CADC0>
+               │    │          └ '售后ai回复@@@@亲亲，这款是柏达茄心之所向手表女表酒红色呢[玫瑰]'
+               │    └ <function JSONDecoder.raw_decode at 0x0000000003703F60>
+               └ <json.decoder.JSONDecoder object at 0x000000000360F620>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\json\decoder.py", line 363, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+          │                                  └ '售后ai回复@@@@亲亲，这款是柏达茄心之所向手表女表酒红色呢[玫瑰]'
+          └ <class 'json.decoder.JSONDecodeError'>
+
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 1012, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x0000000001803E20>
+    └ <Thread(jd-robot-14432088, started daemon 17980)>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 1041, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x0000000001803BA0>
+    └ <Thread(jd-robot-14432088, started daemon 17980)>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 992, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(jd-robot-14432088, started daemon 17980)>
+    │    │        │    └ ()
+    │    │        └ <Thread(jd-robot-14432088, started daemon 17980)>
+    │    └ <function JdRobotControlApp._start_shop.<locals>.runner at 0x000000000463E700>
+    └ <Thread(jd-robot-14432088, started daemon 17980)>
+
+  File "D:\pythonProject\京东机器人\jd_control_panel.py", line 273, in runner
+    result = asyncio.run(
+             │       └ <function run at 0x0000000003599DA0>
+             └ <module 'asyncio' from 'C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python311-32\\Lib\\asyncio\\__init__.py'>
+
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\runners.py", line 194, in run
+    return runner.run(main)
+           │      │   └ <coroutine object JdCookieRunner.run_forever at 0x0000000004648040>
+           │      └ <function Runner.run at 0x0000000003658680>
+           └ <asyncio.runners.Runner object at 0x0000000003C07230>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           │    │     │                  └ <Task pending name='Task-1' coro=<JdCookieRunner.run_forever() running at D:\pythonProject\京东机器人\jd_cookie_runner.py:88> wait...
+           │    │     └ <function BaseEventLoop.run_until_complete at 0x0000000003656160>
+           │    └ <ProactorEventLoop running=True closed=False debug=False>
+           └ <asyncio.runners.Runner object at 0x0000000003C07230>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 707, in run_until_complete
+    self.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x00000000036560C0>
+    └ <ProactorEventLoop running=True closed=False debug=False>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 678, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x0000000003657EC0>
+    └ <ProactorEventLoop running=True closed=False debug=False>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 2033, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x00000000031668E0>
+    └ <Handle Task.task_wakeup()>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\events.py", line 89, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle Task.task_wakeup()>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle Task.task_wakeup()>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle Task.task_wakeup()>
+
+  File "D:\pythonProject\京东机器人\jd_message_relay.py", line 118, in _flush
+    result = await self.reply_handler(payload)
+                   │    │             └ {'aid': 'T41kYYfV', 'buyer_name': 'jd_eHGlDAbGDLEn', 'chathistory': '【客服】：您好\n【买家】：滴滴\n【客服】：您好\n【买家】：哈哈\n【客服】：您好\n【买家】：哈哈\n【客...
+                   │    └ <function build_reply_handler.<locals>.handler at 0x000000000463EFC0>
+                   └ <jd_message_relay.JdMessageRelay object at 0x000000001285B620>
+
+  File "D:\pythonProject\京东机器人\jd_reply_handler.py", line 87, in handler
+    return await reply_for_message(payload, workflow_id=workflow_id, client=client, log=log)
+                 │                 │                    │                   │           └ <loguru.logger handlers=[(id=1, level=20, sink=<stderr>), (id=2, level=20, sink='D:\pythonProject\京东机器人\logs\14432088_承优手表专营店...
+                 │                 │                    │                   └ None
+                 │                 │                    └ '7706814583034134562'
+                 │                 └ {'aid': 'T41kYYfV', 'buyer_name': 'jd_eHGlDAbGDLEn', 'chathistory': '【客服】：您好\n【买家】：滴滴\n【客服】：您好\n【买家】：哈哈\n【客服】：您好\n【买家】：哈哈\n【客...
+                 └ <function reply_for_message at 0x0000000004516700>
+
+> File "D:\pythonProject\京东机器人\jd_reply_handler.py", line 57, in reply_for_message
+    output = _coze_output(raw_response)
+             │            └ '售后ai回复@@@@亲亲，这款是柏达茄心之所向手表女表酒红色呢[玫瑰]'
+             └ <function _coze_output at 0x0000000004515EE0>
+
+  File "D:\pythonProject\京东机器人\jd_reply_handler.py", line 39, in _coze_output
+    raise ValueError("Coze 返回不是 JSON") from error
+
+ValueError: Coze 返回不是 JSON
+2026-11-16 09:35:05.022 | INFO     | jd_human_transfer:transfer_to_human:58 - 转人工成功 | 买家=jd_eHGlDAbGDLEn | 目标人工=吴吴吴_小圣 | 原因=Coze 调用或返回异常
+2026-11-16 09:51:35.649 | INFO     | jd_cookie_runner:_run_connection:120 - 签到成功，准备建立 WebSocket 连接
+2026-11-16 09:51:35.810 | INFO     | jd_cookie_runner:_run_connection:144 - WebSocket 已连接，开始鉴权
+2026-11-16 09:51:35.909 | INFO     | jd_human_transfer:log_transfer_account_names:84 - 可转接人工账号 | 当前客服=吴吴_客服 | 账号名称=吴吴吴_小圣 | 账号ID=吴吴吴_小圣
+2026-11-16 09:51:35.909 | INFO     | jd_cookie_runner:_run_connection:169 - 连接鉴权完成，机器人运行中
+2026-11-16 09:52:42.043 | ERROR    | jd_reply_handler:reply_for_message:61 - Coze 调用或解析失败 | 原因=Coze 返回不是 JSON
+Traceback (most recent call last):
+
+  File "D:\pythonProject\京东机器人\jd_reply_handler.py", line 37, in _coze_output
+    body = json.loads(raw_response)
+           │    │     └ '售后ai回复@@@@亲亲，下单后24小时内发货呢~[玫瑰]'
+           │    └ <function loads at 0x00000000037145E0>
+           └ <module 'json' from 'C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python311-32\\Lib\\json\\__init__.py'>
+
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\json\__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           │                │      └ '售后ai回复@@@@亲亲，下单后24小时内发货呢~[玫瑰]'
+           │                └ <function JSONDecoder.decode at 0x0000000003703EC0>
+           └ <json.decoder.JSONDecoder object at 0x00000000031FF620>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\json\decoder.py", line 345, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               │    │          │      │  └ '售后ai回复@@@@亲亲，下单后24小时内发货呢~[玫瑰]'
+               │    │          │      └ <built-in method match of re.Pattern object at 0x00000000036CADC0>
+               │    │          └ '售后ai回复@@@@亲亲，下单后24小时内发货呢~[玫瑰]'
+               │    └ <function JSONDecoder.raw_decode at 0x0000000003703F60>
+               └ <json.decoder.JSONDecoder object at 0x00000000031FF620>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\json\decoder.py", line 363, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+          │                                  └ '售后ai回复@@@@亲亲，下单后24小时内发货呢~[玫瑰]'
+          └ <class 'json.decoder.JSONDecodeError'>
+
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 1012, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x00000000017D3E20>
+    └ <Thread(jd-robot-14432088, started daemon 29440)>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 1041, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x00000000017D3BA0>
+    └ <Thread(jd-robot-14432088, started daemon 29440)>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 992, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(jd-robot-14432088, started daemon 29440)>
+    │    │        │    └ ()
+    │    │        └ <Thread(jd-robot-14432088, started daemon 29440)>
+    │    └ <function JdRobotControlApp._start_shop.<locals>.runner at 0x000000000463E700>
+    └ <Thread(jd-robot-14432088, started daemon 29440)>
+
+  File "D:\pythonProject\京东机器人\jd_control_panel.py", line 273, in runner
+    result = asyncio.run(
+             │       └ <function run at 0x0000000003189DA0>
+             └ <module 'asyncio' from 'C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python311-32\\Lib\\asyncio\\__init__.py'>
+
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\runners.py", line 194, in run
+    return runner.run(main)
+           │      │   └ <coroutine object JdCookieRunner.run_forever at 0x0000000004648040>
+           │      └ <function Runner.run at 0x0000000003248680>
+           └ <asyncio.runners.Runner object at 0x0000000003C07230>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           │    │     │                  └ <Task pending name='Task-1' coro=<JdCookieRunner.run_forever() running at D:\pythonProject\京东机器人\jd_cookie_runner.py:88> wait...
+           │    │     └ <function BaseEventLoop.run_until_complete at 0x0000000003246160>
+           │    └ <ProactorEventLoop running=True closed=False debug=False>
+           └ <asyncio.runners.Runner object at 0x0000000003C07230>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 707, in run_until_complete
+    self.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x00000000032460C0>
+    └ <ProactorEventLoop running=True closed=False debug=False>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 678, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x0000000003247EC0>
+    └ <ProactorEventLoop running=True closed=False debug=False>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 2033, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x00000000031568E0>
+    └ <Handle Task.task_wakeup()>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\events.py", line 89, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle Task.task_wakeup()>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle Task.task_wakeup()>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle Task.task_wakeup()>
+
+  File "D:\pythonProject\京东机器人\jd_message_relay.py", line 118, in _flush
+    result = await self.reply_handler(payload)
+                   │    │             └ {'aid': 'xmXceb2m', 'buyer_name': 'jd_eHGlDAbGDLEn', 'chathistory': '【买家】：哈哈\n【客服】：您好\n【买家】：哈哈\n【客服】：#E-s21\n【客服】：#E-s21\n【客服...
+                   │    └ <function build_reply_handler.<locals>.handler at 0x000000000463EFC0>
+                   └ <jd_message_relay.JdMessageRelay object at 0x000000000D1EB620>
+
+  File "D:\pythonProject\京东机器人\jd_reply_handler.py", line 87, in handler
+    return await reply_for_message(payload, workflow_id=workflow_id, client=client, log=log)
+                 │                 │                    │                   │           └ <loguru.logger handlers=[(id=1, level=20, sink=<stderr>), (id=2, level=20, sink='D:\pythonProject\京东机器人\logs\14432088_承优手表专营店...
+                 │                 │                    │                   └ None
+                 │                 │                    └ '7706814583034134562'
+                 │                 └ {'aid': 'xmXceb2m', 'buyer_name': 'jd_eHGlDAbGDLEn', 'chathistory': '【买家】：哈哈\n【客服】：您好\n【买家】：哈哈\n【客服】：#E-s21\n【客服】：#E-s21\n【客服...
+                 └ <function reply_for_message at 0x0000000004516700>
+
+> File "D:\pythonProject\京东机器人\jd_reply_handler.py", line 57, in reply_for_message
+    output = _coze_output(raw_response)
+             │            └ '售后ai回复@@@@亲亲，下单后24小时内发货呢~[玫瑰]'
+             └ <function _coze_output at 0x0000000004515EE0>
+
+  File "D:\pythonProject\京东机器人\jd_reply_handler.py", line 39, in _coze_output
+    raise ValueError("Coze 返回不是 JSON") from error
+
+ValueError: Coze 返回不是 JSON
+2026-11-16 09:52:42.225 | INFO     | jd_human_transfer:transfer_to_human:58 - 转人工成功 | 买家=jd_eHGlDAbGDLEn | 目标人工=吴吴吴_小圣 | 原因=Coze 调用或返回异常
+2026-11-16 10:01:55.369 | INFO     | jd_cookie_runner:_run_connection:120 - 签到成功，准备建立 WebSocket 连接
+2026-11-16 10:01:55.526 | INFO     | jd_cookie_runner:_run_connection:144 - WebSocket 已连接，开始鉴权
+2026-11-16 10:01:55.623 | INFO     | jd_human_transfer:log_transfer_account_names:84 - 可转接人工账号 | 当前客服=吴吴_客服 | 账号名称=吴吴吴_小圣 | 账号ID=吴吴吴_小圣
+2026-11-16 10:01:55.623 | INFO     | jd_cookie_runner:_run_connection:169 - 连接鉴权完成，机器人运行中
+2026-11-16 10:23:28.986 | INFO     | jd_cookie_runner:_run_connection:120 - 签到成功，准备建立 WebSocket 连接
+2026-11-16 10:23:29.132 | ERROR    | jd_cookie_runner:run_forever:104 - 连接断开，将重连 | 原因=http://dongdong.jd.com/workbench/websocket isn't a valid URI: scheme isn't ws or wss | 5.0 秒后重连
+Traceback (most recent call last):
+
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 543, in __await_impl__
+    await self.connection.handshake(
+          │    │          └ <function ClientConnection.handshake at 0x0000000014FEE840>
+          │    └ <websockets.asyncio.client.ClientConnection object at 0x0000000014F6E510>
+          └ <websockets.asyncio.client.connect object at 0x00000000045E3CB0>
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 114, in handshake
+    raise self.protocol.handshake_exc
+          │    │        └ InvalidStatus(Response(status_code=301, reason_phrase='Moved Permanently', headers=Headers([('Date', 'Mon, 16 Nov 2026 02:23:...
+          │    └ <websockets.client.ClientProtocol object at 0x0000000014F6E120>
+          └ <websockets.asyncio.client.ClientConnection object at 0x0000000014F6E510>
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\client.py", line 325, in parse
+    self.process_response(response)
+    │    │                └ Response(status_code=301, reason_phrase='Moved Permanently', headers=Headers([('Date', 'Mon, 16 Nov 2026 02:23:30 GMT'), ('Co...
+    │    └ <function ClientProtocol.process_response at 0x0000000014FDA8E0>
+    └ <websockets.client.ClientProtocol object at 0x0000000014F6E120>
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\client.py", line 142, in process_response
+    raise InvalidStatus(response)
+          │             └ Response(status_code=301, reason_phrase='Moved Permanently', headers=Headers([('Date', 'Mon, 16 Nov 2026 02:23:30 GMT'), ('Co...
+          └ <class 'websockets.exceptions.InvalidStatus'>
+
+websockets.exceptions.InvalidStatus: server rejected WebSocket connection: HTTP 301
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 1012, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x0000000001853E20>
+    └ <Thread(jd-robot-14432088, started daemon 30636)>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 1041, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x0000000001853BA0>
+    └ <Thread(jd-robot-14432088, started daemon 30636)>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 992, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(jd-robot-14432088, started daemon 30636)>
+    │    │        │    └ ()
+    │    │        └ <Thread(jd-robot-14432088, started daemon 30636)>
+    │    └ <function JdRobotControlApp._start_shop.<locals>.runner at 0x000000000463E660>
+    └ <Thread(jd-robot-14432088, started daemon 30636)>
+
+  File "D:\pythonProject\京东机器人\jd_control_panel.py", line 273, in runner
+    result = asyncio.run(
+             │       └ <function run at 0x00000000031E9DA0>
+             └ <module 'asyncio' from 'C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python311-32\\Lib\\asyncio\\__init__.py'>
+
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\runners.py", line 194, in run
+    return runner.run(main)
+           │      │   └ <coroutine object JdCookieRunner.run_forever at 0x0000000004648040>
+           │      └ <function Runner.run at 0x00000000032A8680>
+           └ <asyncio.runners.Runner object at 0x0000000003C03230>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           │    │     │                  └ <Task pending name='Task-1' coro=<JdCookieRunner.run_forever() running at D:\pythonProject\京东机器人\jd_cookie_runner.py:104> cb=...
+           │    │     └ <function BaseEventLoop.run_until_complete at 0x00000000032A6160>
+           │    └ <ProactorEventLoop running=True closed=False debug=False>
+           └ <asyncio.runners.Runner object at 0x0000000003C03230>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 707, in run_until_complete
+    self.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x00000000032A60C0>
+    └ <ProactorEventLoop running=True closed=False debug=False>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 678, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x00000000032A7EC0>
+    └ <ProactorEventLoop running=True closed=False debug=False>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 2033, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x00000000031B68E0>
+    └ <Handle Task.task_wakeup()>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\events.py", line 89, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle Task.task_wakeup()>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle Task.task_wakeup()>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle Task.task_wakeup()>
+
+> File "D:\pythonProject\京东机器人\jd_cookie_runner.py", line 88, in run_forever
+    stopped = await self._run_connection(stop_event)
+                    │    │               └ <threading.Event at 0x4641220: unset>
+                    │    └ <function JdCookieRunner._run_connection at 0x00000000045656C0>
+                    └ <jd_cookie_runner.JdCookieRunner object at 0x00000000045E2CF0>
+
+  File "D:\pythonProject\京东机器人\jd_cookie_runner.py", line 128, in _run_connection
+    async with websockets.connect(
+               └ <module 'websockets' from 'D:\\pythonProject\\testenv\\Lib\\site-packages\\websockets\\__init__.py'>
+
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 587, in __aenter__
+    return await self
+                 └ <websockets.asyncio.client.connect object at 0x00000000045E3CB0>
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 559, in __await_impl__
+    uri_or_exc = self.process_redirect(exc)
+                 │    └ <function connect.process_redirect at 0x0000000014FEEC00>
+                 └ <websockets.asyncio.client.connect object at 0x00000000045E3CB0>
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 494, in process_redirect
+    new_ws_uri = parse_uri(new_uri)
+                 │         └ 'http://dongdong.jd.com/workbench/websocket'
+                 └ <function parse_uri at 0x0000000014FD9BC0>
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\uri.py", line 77, in parse_uri
+    raise InvalidURI(uri, "scheme isn't ws or wss")
+          │          └ 'http://dongdong.jd.com/workbench/websocket'
+          └ <class 'websockets.exceptions.InvalidURI'>
+
+websockets.exceptions.InvalidURI: http://dongdong.jd.com/workbench/websocket isn't a valid URI: scheme isn't ws or wss
+2026-11-16 10:23:31.985 | INFO     | jd_cookie_runner:_run_connection:120 - 签到成功，准备建立 WebSocket 连接
+2026-11-16 10:23:32.133 | ERROR    | jd_cookie_runner:run_forever:104 - 连接断开，将重连 | 原因=http://dongdong.jd.com/workbench/websocket isn't a valid URI: scheme isn't ws or wss | 5.0 秒后重连
+Traceback (most recent call last):
+
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 543, in __await_impl__
+    await self.connection.handshake(
+          │    │          └ <function ClientConnection.handshake at 0x0000000014FEE840>
+          │    └ <websockets.asyncio.client.ClientConnection object at 0x0000000014FE5310>
+          └ <websockets.asyncio.client.connect object at 0x0000000014FE4B90>
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 114, in handshake
+    raise self.protocol.handshake_exc
+          │    │        └ InvalidStatus(Response(status_code=301, reason_phrase='Moved Permanently', headers=Headers([('Date', 'Mon, 16 Nov 2026 02:23:...
+          │    └ <websockets.client.ClientProtocol object at 0x0000000014FE4E10>
+          └ <websockets.asyncio.client.ClientConnection object at 0x0000000014FE5310>
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\client.py", line 325, in parse
+    self.process_response(response)
+    │    │                └ Response(status_code=301, reason_phrase='Moved Permanently', headers=Headers([('Date', 'Mon, 16 Nov 2026 02:23:33 GMT'), ('Co...
+    │    └ <function ClientProtocol.process_response at 0x0000000014FDA8E0>
+    └ <websockets.client.ClientProtocol object at 0x0000000014FE4E10>
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\client.py", line 142, in process_response
+    raise InvalidStatus(response)
+          │             └ Response(status_code=301, reason_phrase='Moved Permanently', headers=Headers([('Date', 'Mon, 16 Nov 2026 02:23:33 GMT'), ('Co...
+          └ <class 'websockets.exceptions.InvalidStatus'>
+
+websockets.exceptions.InvalidStatus: server rejected WebSocket connection: HTTP 301
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 1012, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x0000000001853E20>
+    └ <Thread(jd-robot-14432088, started daemon 29740)>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 1041, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x0000000001853BA0>
+    └ <Thread(jd-robot-14432088, started daemon 29740)>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 992, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(jd-robot-14432088, started daemon 29740)>
+    │    │        │    └ ()
+    │    │        └ <Thread(jd-robot-14432088, started daemon 29740)>
+    │    └ <function JdRobotControlApp._start_shop.<locals>.runner at 0x000000000463E980>
+    └ <Thread(jd-robot-14432088, started daemon 29740)>
+
+  File "D:\pythonProject\京东机器人\jd_control_panel.py", line 273, in runner
+    result = asyncio.run(
+             │       └ <function run at 0x00000000031E9DA0>
+             └ <module 'asyncio' from 'C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python311-32\\Lib\\asyncio\\__init__.py'>
+
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\runners.py", line 194, in run
+    return runner.run(main)
+           │      │   └ <coroutine object JdCookieRunner.run_forever at 0x000000000464B540>
+           │      └ <function Runner.run at 0x00000000032A8680>
+           └ <asyncio.runners.Runner object at 0x0000000014FE47D0>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           │    │     │                  └ <Task pending name='Task-4' coro=<JdCookieRunner.run_forever() running at D:\pythonProject\京东机器人\jd_cookie_runner.py:104> cb=...
+           │    │     └ <function BaseEventLoop.run_until_complete at 0x00000000032A6160>
+           │    └ <ProactorEventLoop running=True closed=False debug=False>
+           └ <asyncio.runners.Runner object at 0x0000000014FE47D0>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 707, in run_until_complete
+    self.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x00000000032A60C0>
+    └ <ProactorEventLoop running=True closed=False debug=False>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 678, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x00000000032A7EC0>
+    └ <ProactorEventLoop running=True closed=False debug=False>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 2033, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x00000000031B68E0>
+    └ <Handle Task.task_wakeup()>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\events.py", line 89, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle Task.task_wakeup()>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle Task.task_wakeup()>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle Task.task_wakeup()>
+
+> File "D:\pythonProject\京东机器人\jd_cookie_runner.py", line 88, in run_forever
+    stopped = await self._run_connection(stop_event)
+                    │    │               └ <threading.Event at 0x460ebe0: unset>
+                    │    └ <function JdCookieRunner._run_connection at 0x00000000045656C0>
+                    └ <jd_cookie_runner.JdCookieRunner object at 0x0000000014FE4050>
+
+  File "D:\pythonProject\京东机器人\jd_cookie_runner.py", line 128, in _run_connection
+    async with websockets.connect(
+               └ <module 'websockets' from 'D:\\pythonProject\\testenv\\Lib\\site-packages\\websockets\\__init__.py'>
+
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 587, in __aenter__
+    return await self
+                 └ <websockets.asyncio.client.connect object at 0x0000000014FE4B90>
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 559, in __await_impl__
+    uri_or_exc = self.process_redirect(exc)
+                 │    └ <function connect.process_redirect at 0x0000000014FEEC00>
+                 └ <websockets.asyncio.client.connect object at 0x0000000014FE4B90>
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 494, in process_redirect
+    new_ws_uri = parse_uri(new_uri)
+                 │         └ 'http://dongdong.jd.com/workbench/websocket'
+                 └ <function parse_uri at 0x0000000014FD9BC0>
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\uri.py", line 77, in parse_uri
+    raise InvalidURI(uri, "scheme isn't ws or wss")
+          │          └ 'http://dongdong.jd.com/workbench/websocket'
+          └ <class 'websockets.exceptions.InvalidURI'>
+
+websockets.exceptions.InvalidURI: http://dongdong.jd.com/workbench/websocket isn't a valid URI: scheme isn't ws or wss
+2026-11-16 10:23:37.466 | INFO     | jd_cookie_runner:_run_connection:120 - 签到成功，准备建立 WebSocket 连接
+2026-11-16 10:23:37.618 | INFO     | jd_cookie_runner:_run_connection:144 - WebSocket 已连接，开始鉴权
+2026-11-16 10:23:37.720 | INFO     | jd_human_transfer:log_transfer_account_names:84 - 可转接人工账号 | 当前客服=吴吴_客服 | 账号名称=吴吴吴_小圣 | 账号ID=吴吴吴_小圣
+2026-11-16 10:23:37.721 | INFO     | jd_cookie_runner:_run_connection:169 - 连接鉴权完成，机器人运行中
+2026-11-16 10:43:54.870 | INFO     | jd_cookie_runner:_run_connection:120 - 签到成功，准备建立 WebSocket 连接
+2026-11-16 10:43:55.038 | INFO     | jd_cookie_runner:_run_connection:144 - WebSocket 已连接，开始鉴权
+2026-11-16 10:43:55.138 | INFO     | jd_human_transfer:log_transfer_account_names:84 - 可转接人工账号 | 当前客服=吴吴_客服 | 账号名称=吴吴吴_小圣 | 账号ID=吴吴吴_小圣
+2026-11-16 10:43:55.139 | INFO     | jd_cookie_runner:_run_connection:169 - 连接鉴权完成，机器人运行中
+2026-11-16 10:44:16.550 | INFO     | jd_cookie_runner:_run_connection:120 - 签到成功，准备建立 WebSocket 连接
+2026-11-16 10:44:16.694 | ERROR    | jd_cookie_runner:run_forever:104 - 连接断开，将重连 | 原因=http://dongdong.jd.com/workbench/websocket isn't a valid URI: scheme isn't ws or wss | 5.0 秒后重连
+Traceback (most recent call last):
+
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 543, in __await_impl__
+    await self.connection.handshake(
+          │    │          └ <function ClientConnection.handshake at 0x000000000879EA20>
+          │    └ <websockets.asyncio.client.ClientConnection object at 0x000000000871E510>
+          └ <websockets.asyncio.client.connect object at 0x00000000045E3CB0>
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 114, in handshake
+    raise self.protocol.handshake_exc
+          │    │        └ InvalidStatus(Response(status_code=301, reason_phrase='Moved Permanently', headers=Headers([('Date', 'Mon, 16 Nov 2026 02:44:...
+          │    └ <websockets.client.ClientProtocol object at 0x000000000871E120>
+          └ <websockets.asyncio.client.ClientConnection object at 0x000000000871E510>
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\client.py", line 325, in parse
+    self.process_response(response)
+    │    │                └ Response(status_code=301, reason_phrase='Moved Permanently', headers=Headers([('Date', 'Mon, 16 Nov 2026 02:44:17 GMT'), ('Co...
+    │    └ <function ClientProtocol.process_response at 0x0000000008786AC0>
+    └ <websockets.client.ClientProtocol object at 0x000000000871E120>
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\client.py", line 142, in process_response
+    raise InvalidStatus(response)
+          │             └ Response(status_code=301, reason_phrase='Moved Permanently', headers=Headers([('Date', 'Mon, 16 Nov 2026 02:44:17 GMT'), ('Co...
+          └ <class 'websockets.exceptions.InvalidStatus'>
+
+websockets.exceptions.InvalidStatus: server rejected WebSocket connection: HTTP 301
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 1012, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x00000000018D3E20>
+    └ <Thread(jd-robot-14432088, started daemon 22748)>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 1041, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x00000000018D3BA0>
+    └ <Thread(jd-robot-14432088, started daemon 22748)>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 992, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(jd-robot-14432088, started daemon 22748)>
+    │    │        │    └ ()
+    │    │        └ <Thread(jd-robot-14432088, started daemon 22748)>
+    │    └ <function JdRobotControlApp._start_shop.<locals>.runner at 0x0000000004642840>
+    └ <Thread(jd-robot-14432088, started daemon 22748)>
+
+  File "D:\pythonProject\京东机器人\jd_control_panel.py", line 273, in runner
+    result = asyncio.run(
+             │       └ <function run at 0x0000000003669DA0>
+             └ <module 'asyncio' from 'C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python311-32\\Lib\\asyncio\\__init__.py'>
+
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\runners.py", line 194, in run
+    return runner.run(main)
+           │      │   └ <coroutine object JdCookieRunner.run_forever at 0x000000000464C240>
+           │      └ <function Runner.run at 0x0000000003728680>
+           └ <asyncio.runners.Runner object at 0x0000000003C23230>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           │    │     │                  └ <Task pending name='Task-1' coro=<JdCookieRunner.run_forever() running at D:\pythonProject\京东机器人\jd_cookie_runner.py:104> cb=...
+           │    │     └ <function BaseEventLoop.run_until_complete at 0x0000000003726160>
+           │    └ <ProactorEventLoop running=True closed=False debug=False>
+           └ <asyncio.runners.Runner object at 0x0000000003C23230>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 707, in run_until_complete
+    self.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x00000000037260C0>
+    └ <ProactorEventLoop running=True closed=False debug=False>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 678, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x0000000003727EC0>
+    └ <ProactorEventLoop running=True closed=False debug=False>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 2033, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x00000000032368E0>
+    └ <Handle Task.task_wakeup()>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\events.py", line 89, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle Task.task_wakeup()>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle Task.task_wakeup()>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle Task.task_wakeup()>
+
+> File "D:\pythonProject\京东机器人\jd_cookie_runner.py", line 88, in run_forever
+    stopped = await self._run_connection(stop_event)
+                    │    │               └ <threading.Event at 0x4629350: unset>
+                    │    └ <function JdCookieRunner._run_connection at 0x0000000004565800>
+                    └ <jd_cookie_runner.JdCookieRunner object at 0x00000000045E2CF0>
+
+  File "D:\pythonProject\京东机器人\jd_cookie_runner.py", line 128, in _run_connection
+    async with websockets.connect(
+               └ <module 'websockets' from 'D:\\pythonProject\\testenv\\Lib\\site-packages\\websockets\\__init__.py'>
+
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 587, in __aenter__
+    return await self
+                 └ <websockets.asyncio.client.connect object at 0x00000000045E3CB0>
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 559, in __await_impl__
+    uri_or_exc = self.process_redirect(exc)
+                 │    └ <function connect.process_redirect at 0x000000000879EDE0>
+                 └ <websockets.asyncio.client.connect object at 0x00000000045E3CB0>
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 494, in process_redirect
+    new_ws_uri = parse_uri(new_uri)
+                 │         └ 'http://dongdong.jd.com/workbench/websocket'
+                 └ <function parse_uri at 0x0000000008785DA0>
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\uri.py", line 77, in parse_uri
+    raise InvalidURI(uri, "scheme isn't ws or wss")
+          │          └ 'http://dongdong.jd.com/workbench/websocket'
+          └ <class 'websockets.exceptions.InvalidURI'>
+
+websockets.exceptions.InvalidURI: http://dongdong.jd.com/workbench/websocket isn't a valid URI: scheme isn't ws or wss
+2026-11-16 10:44:22.030 | INFO     | jd_cookie_runner:_run_connection:120 - 签到成功，准备建立 WebSocket 连接
+2026-11-16 10:44:22.174 | ERROR    | jd_cookie_runner:run_forever:104 - 连接断开，将重连 | 原因=http://dongdong.jd.com/workbench/websocket isn't a valid URI: scheme isn't ws or wss | 5.0 秒后重连
+Traceback (most recent call last):
+
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 543, in __await_impl__
+    await self.connection.handshake(
+          │    │          └ <function ClientConnection.handshake at 0x000000000879EA20>
+          │    └ <websockets.asyncio.client.ClientConnection object at 0x0000000008794F50>
+          └ <websockets.asyncio.client.connect object at 0x0000000008794190>
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 114, in handshake
+    raise self.protocol.handshake_exc
+          │    │        └ InvalidStatus(Response(status_code=301, reason_phrase='Moved Permanently', headers=Headers([('Date', 'Mon, 16 Nov 2026 02:44:...
+          │    └ <websockets.client.ClientProtocol object at 0x0000000008794B90>
+          └ <websockets.asyncio.client.ClientConnection object at 0x0000000008794F50>
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\client.py", line 325, in parse
+    self.process_response(response)
+    │    │                └ Response(status_code=301, reason_phrase='Moved Permanently', headers=Headers([('Date', 'Mon, 16 Nov 2026 02:44:23 GMT'), ('Co...
+    │    └ <function ClientProtocol.process_response at 0x0000000008786AC0>
+    └ <websockets.client.ClientProtocol object at 0x0000000008794B90>
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\client.py", line 142, in process_response
+    raise InvalidStatus(response)
+          │             └ Response(status_code=301, reason_phrase='Moved Permanently', headers=Headers([('Date', 'Mon, 16 Nov 2026 02:44:23 GMT'), ('Co...
+          └ <class 'websockets.exceptions.InvalidStatus'>
+
+websockets.exceptions.InvalidStatus: server rejected WebSocket connection: HTTP 301
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 1012, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x00000000018D3E20>
+    └ <Thread(jd-robot-14432088, started daemon 22748)>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 1041, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x00000000018D3BA0>
+    └ <Thread(jd-robot-14432088, started daemon 22748)>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 992, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(jd-robot-14432088, started daemon 22748)>
+    │    │        │    └ ()
+    │    │        └ <Thread(jd-robot-14432088, started daemon 22748)>
+    │    └ <function JdRobotControlApp._start_shop.<locals>.runner at 0x0000000004642840>
+    └ <Thread(jd-robot-14432088, started daemon 22748)>
+
+  File "D:\pythonProject\京东机器人\jd_control_panel.py", line 273, in runner
+    result = asyncio.run(
+             │       └ <function run at 0x0000000003669DA0>
+             └ <module 'asyncio' from 'C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python311-32\\Lib\\asyncio\\__init__.py'>
+
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\runners.py", line 194, in run
+    return runner.run(main)
+           │      │   └ <coroutine object JdCookieRunner.run_forever at 0x000000000464C240>
+           │      └ <function Runner.run at 0x0000000003728680>
+           └ <asyncio.runners.Runner object at 0x0000000003C23230>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           │    │     │                  └ <Task pending name='Task-1' coro=<JdCookieRunner.run_forever() running at D:\pythonProject\京东机器人\jd_cookie_runner.py:104> cb=...
+           │    │     └ <function BaseEventLoop.run_until_complete at 0x0000000003726160>
+           │    └ <ProactorEventLoop running=True closed=False debug=False>
+           └ <asyncio.runners.Runner object at 0x0000000003C23230>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 707, in run_until_complete
+    self.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x00000000037260C0>
+    └ <ProactorEventLoop running=True closed=False debug=False>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 678, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x0000000003727EC0>
+    └ <ProactorEventLoop running=True closed=False debug=False>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 2033, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x00000000032368E0>
+    └ <Handle Task.task_wakeup()>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\events.py", line 89, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle Task.task_wakeup()>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle Task.task_wakeup()>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle Task.task_wakeup()>
+
+> File "D:\pythonProject\京东机器人\jd_cookie_runner.py", line 88, in run_forever
+    stopped = await self._run_connection(stop_event)
+                    │    │               └ <threading.Event at 0x4629350: unset>
+                    │    └ <function JdCookieRunner._run_connection at 0x0000000004565800>
+                    └ <jd_cookie_runner.JdCookieRunner object at 0x00000000045E2CF0>
+
+  File "D:\pythonProject\京东机器人\jd_cookie_runner.py", line 128, in _run_connection
+    async with websockets.connect(
+               └ <module 'websockets' from 'D:\\pythonProject\\testenv\\Lib\\site-packages\\websockets\\__init__.py'>
+
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 587, in __aenter__
+    return await self
+                 └ <websockets.asyncio.client.connect object at 0x0000000008794190>
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 559, in __await_impl__
+    uri_or_exc = self.process_redirect(exc)
+                 │    └ <function connect.process_redirect at 0x000000000879EDE0>
+                 └ <websockets.asyncio.client.connect object at 0x0000000008794190>
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 494, in process_redirect
+    new_ws_uri = parse_uri(new_uri)
+                 │         └ 'http://dongdong.jd.com/workbench/websocket'
+                 └ <function parse_uri at 0x0000000008785DA0>
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\uri.py", line 77, in parse_uri
+    raise InvalidURI(uri, "scheme isn't ws or wss")
+          │          └ 'http://dongdong.jd.com/workbench/websocket'
+          └ <class 'websockets.exceptions.InvalidURI'>
+
+websockets.exceptions.InvalidURI: http://dongdong.jd.com/workbench/websocket isn't a valid URI: scheme isn't ws or wss
+2026-11-16 10:44:27.335 | INFO     | jd_cookie_runner:_run_connection:120 - 签到成功，准备建立 WebSocket 连接
+2026-11-16 10:44:27.472 | ERROR    | jd_cookie_runner:run_forever:104 - 连接断开，将重连 | 原因=http://dongdong.jd.com/workbench/websocket isn't a valid URI: scheme isn't ws or wss | 5.0 秒后重连
+Traceback (most recent call last):
+
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 543, in __await_impl__
+    await self.connection.handshake(
+          │    │          └ <function ClientConnection.handshake at 0x000000000879EA20>
+          │    └ <websockets.asyncio.client.ClientConnection object at 0x0000000008795E50>
+          └ <websockets.asyncio.client.connect object at 0x00000000087947D0>
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 114, in handshake
+    raise self.protocol.handshake_exc
+          │    │        └ InvalidStatus(Response(status_code=301, reason_phrase='Moved Permanently', headers=Headers([('Date', 'Mon, 16 Nov 2026 02:44:...
+          │    └ <websockets.client.ClientProtocol object at 0x0000000008795950>
+          └ <websockets.asyncio.client.ClientConnection object at 0x0000000008795E50>
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\client.py", line 325, in parse
+    self.process_response(response)
+    │    │                └ Response(status_code=301, reason_phrase='Moved Permanently', headers=Headers([('Date', 'Mon, 16 Nov 2026 02:44:28 GMT'), ('Co...
+    │    └ <function ClientProtocol.process_response at 0x0000000008786AC0>
+    └ <websockets.client.ClientProtocol object at 0x0000000008795950>
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\client.py", line 142, in process_response
+    raise InvalidStatus(response)
+          │             └ Response(status_code=301, reason_phrase='Moved Permanently', headers=Headers([('Date', 'Mon, 16 Nov 2026 02:44:28 GMT'), ('Co...
+          └ <class 'websockets.exceptions.InvalidStatus'>
+
+websockets.exceptions.InvalidStatus: server rejected WebSocket connection: HTTP 301
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 1012, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x00000000018D3E20>
+    └ <Thread(jd-robot-14432088, started daemon 22748)>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 1041, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x00000000018D3BA0>
+    └ <Thread(jd-robot-14432088, started daemon 22748)>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 992, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(jd-robot-14432088, started daemon 22748)>
+    │    │        │    └ ()
+    │    │        └ <Thread(jd-robot-14432088, started daemon 22748)>
+    │    └ <function JdRobotControlApp._start_shop.<locals>.runner at 0x0000000004642840>
+    └ <Thread(jd-robot-14432088, started daemon 22748)>
+
+  File "D:\pythonProject\京东机器人\jd_control_panel.py", line 273, in runner
+    result = asyncio.run(
+             │       └ <function run at 0x0000000003669DA0>
+             └ <module 'asyncio' from 'C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python311-32\\Lib\\asyncio\\__init__.py'>
+
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\runners.py", line 194, in run
+    return runner.run(main)
+           │      │   └ <coroutine object JdCookieRunner.run_forever at 0x000000000464C240>
+           │      └ <function Runner.run at 0x0000000003728680>
+           └ <asyncio.runners.Runner object at 0x0000000003C23230>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           │    │     │                  └ <Task pending name='Task-1' coro=<JdCookieRunner.run_forever() running at D:\pythonProject\京东机器人\jd_cookie_runner.py:104> cb=...
+           │    │     └ <function BaseEventLoop.run_until_complete at 0x0000000003726160>
+           │    └ <ProactorEventLoop running=True closed=False debug=False>
+           └ <asyncio.runners.Runner object at 0x0000000003C23230>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 707, in run_until_complete
+    self.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x00000000037260C0>
+    └ <ProactorEventLoop running=True closed=False debug=False>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 678, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x0000000003727EC0>
+    └ <ProactorEventLoop running=True closed=False debug=False>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 2033, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x00000000032368E0>
+    └ <Handle Task.task_wakeup()>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\events.py", line 89, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle Task.task_wakeup()>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle Task.task_wakeup()>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle Task.task_wakeup()>
+
+> File "D:\pythonProject\京东机器人\jd_cookie_runner.py", line 88, in run_forever
+    stopped = await self._run_connection(stop_event)
+                    │    │               └ <threading.Event at 0x4629350: unset>
+                    │    └ <function JdCookieRunner._run_connection at 0x0000000004565800>
+                    └ <jd_cookie_runner.JdCookieRunner object at 0x00000000045E2CF0>
+
+  File "D:\pythonProject\京东机器人\jd_cookie_runner.py", line 128, in _run_connection
+    async with websockets.connect(
+               └ <module 'websockets' from 'D:\\pythonProject\\testenv\\Lib\\site-packages\\websockets\\__init__.py'>
+
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 587, in __aenter__
+    return await self
+                 └ <websockets.asyncio.client.connect object at 0x00000000087947D0>
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 559, in __await_impl__
+    uri_or_exc = self.process_redirect(exc)
+                 │    └ <function connect.process_redirect at 0x000000000879EDE0>
+                 └ <websockets.asyncio.client.connect object at 0x00000000087947D0>
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 494, in process_redirect
+    new_ws_uri = parse_uri(new_uri)
+                 │         └ 'http://dongdong.jd.com/workbench/websocket'
+                 └ <function parse_uri at 0x0000000008785DA0>
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\uri.py", line 77, in parse_uri
+    raise InvalidURI(uri, "scheme isn't ws or wss")
+          │          └ 'http://dongdong.jd.com/workbench/websocket'
+          └ <class 'websockets.exceptions.InvalidURI'>
+
+websockets.exceptions.InvalidURI: http://dongdong.jd.com/workbench/websocket isn't a valid URI: scheme isn't ws or wss
+2026-11-16 10:44:32.818 | INFO     | jd_cookie_runner:_run_connection:120 - 签到成功，准备建立 WebSocket 连接
+2026-11-16 10:44:32.955 | ERROR    | jd_cookie_runner:run_forever:104 - 连接断开，将重连 | 原因=http://dongdong.jd.com/workbench/websocket isn't a valid URI: scheme isn't ws or wss | 5.0 秒后重连
+Traceback (most recent call last):
+
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 543, in __await_impl__
+    await self.connection.handshake(
+          │    │          └ <function ClientConnection.handshake at 0x000000000879EA20>
+          │    └ <websockets.asyncio.client.ClientConnection object at 0x000000000875A9E0>
+          └ <websockets.asyncio.client.connect object at 0x000000000875A3F0>
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 114, in handshake
+    raise self.protocol.handshake_exc
+          │    │        └ InvalidStatus(Response(status_code=301, reason_phrase='Moved Permanently', headers=Headers([('Date', 'Mon, 16 Nov 2026 02:44:...
+          │    └ <websockets.client.ClientProtocol object at 0x000000000875A650>
+          └ <websockets.asyncio.client.ClientConnection object at 0x000000000875A9E0>
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\client.py", line 325, in parse
+    self.process_response(response)
+    │    │                └ Response(status_code=301, reason_phrase='Moved Permanently', headers=Headers([('Date', 'Mon, 16 Nov 2026 02:44:34 GMT'), ('Co...
+    │    └ <function ClientProtocol.process_response at 0x0000000008786AC0>
+    └ <websockets.client.ClientProtocol object at 0x000000000875A650>
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\client.py", line 142, in process_response
+    raise InvalidStatus(response)
+          │             └ Response(status_code=301, reason_phrase='Moved Permanently', headers=Headers([('Date', 'Mon, 16 Nov 2026 02:44:34 GMT'), ('Co...
+          └ <class 'websockets.exceptions.InvalidStatus'>
+
+websockets.exceptions.InvalidStatus: server rejected WebSocket connection: HTTP 301
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 1012, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x00000000018D3E20>
+    └ <Thread(jd-robot-14432088, started daemon 22748)>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 1041, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x00000000018D3BA0>
+    └ <Thread(jd-robot-14432088, started daemon 22748)>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 992, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(jd-robot-14432088, started daemon 22748)>
+    │    │        │    └ ()
+    │    │        └ <Thread(jd-robot-14432088, started daemon 22748)>
+    │    └ <function JdRobotControlApp._start_shop.<locals>.runner at 0x0000000004642840>
+    └ <Thread(jd-robot-14432088, started daemon 22748)>
+
+  File "D:\pythonProject\京东机器人\jd_control_panel.py", line 273, in runner
+    result = asyncio.run(
+             │       └ <function run at 0x0000000003669DA0>
+             └ <module 'asyncio' from 'C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python311-32\\Lib\\asyncio\\__init__.py'>
+
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\runners.py", line 194, in run
+    return runner.run(main)
+           │      │   └ <coroutine object JdCookieRunner.run_forever at 0x000000000464C240>
+           │      └ <function Runner.run at 0x0000000003728680>
+           └ <asyncio.runners.Runner object at 0x0000000003C23230>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           │    │     │                  └ <Task pending name='Task-1' coro=<JdCookieRunner.run_forever() running at D:\pythonProject\京东机器人\jd_cookie_runner.py:104> cb=...
+           │    │     └ <function BaseEventLoop.run_until_complete at 0x0000000003726160>
+           │    └ <ProactorEventLoop running=True closed=False debug=False>
+           └ <asyncio.runners.Runner object at 0x0000000003C23230>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 707, in run_until_complete
+    self.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x00000000037260C0>
+    └ <ProactorEventLoop running=True closed=False debug=False>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 678, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x0000000003727EC0>
+    └ <ProactorEventLoop running=True closed=False debug=False>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 2033, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x00000000032368E0>
+    └ <Handle Task.task_wakeup()>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\events.py", line 89, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle Task.task_wakeup()>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle Task.task_wakeup()>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle Task.task_wakeup()>
+
+> File "D:\pythonProject\京东机器人\jd_cookie_runner.py", line 88, in run_forever
+    stopped = await self._run_connection(stop_event)
+                    │    │               └ <threading.Event at 0x4629350: unset>
+                    │    └ <function JdCookieRunner._run_connection at 0x0000000004565800>
+                    └ <jd_cookie_runner.JdCookieRunner object at 0x00000000045E2CF0>
+
+  File "D:\pythonProject\京东机器人\jd_cookie_runner.py", line 128, in _run_connection
+    async with websockets.connect(
+               └ <module 'websockets' from 'D:\\pythonProject\\testenv\\Lib\\site-packages\\websockets\\__init__.py'>
+
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 587, in __aenter__
+    return await self
+                 └ <websockets.asyncio.client.connect object at 0x000000000875A3F0>
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 559, in __await_impl__
+    uri_or_exc = self.process_redirect(exc)
+                 │    └ <function connect.process_redirect at 0x000000000879EDE0>
+                 └ <websockets.asyncio.client.connect object at 0x000000000875A3F0>
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 494, in process_redirect
+    new_ws_uri = parse_uri(new_uri)
+                 │         └ 'http://dongdong.jd.com/workbench/websocket'
+                 └ <function parse_uri at 0x0000000008785DA0>
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\uri.py", line 77, in parse_uri
+    raise InvalidURI(uri, "scheme isn't ws or wss")
+          │          └ 'http://dongdong.jd.com/workbench/websocket'
+          └ <class 'websockets.exceptions.InvalidURI'>
+
+websockets.exceptions.InvalidURI: http://dongdong.jd.com/workbench/websocket isn't a valid URI: scheme isn't ws or wss
+2026-11-16 10:44:35.592 | INFO     | jd_cookie_runner:_run_connection:120 - 签到成功，准备建立 WebSocket 连接
+2026-11-16 10:44:35.742 | INFO     | jd_cookie_runner:_run_connection:144 - WebSocket 已连接，开始鉴权
+2026-11-16 10:44:35.841 | INFO     | jd_human_transfer:log_transfer_account_names:84 - 可转接人工账号 | 当前客服=吴吴_客服 | 账号名称=吴吴吴_小圣 | 账号ID=吴吴吴_小圣
+2026-11-16 10:44:35.841 | INFO     | jd_cookie_runner:_run_connection:169 - 连接鉴权完成，机器人运行中
+2026-11-16 11:47:25.223 | INFO     | jd_cookie_runner:_run_connection:120 - 签到成功，准备建立 WebSocket 连接
+2026-11-16 11:47:25.412 | INFO     | jd_cookie_runner:_run_connection:144 - WebSocket 已连接，开始鉴权
+2026-11-16 11:47:25.522 | INFO     | jd_human_transfer:log_transfer_account_names:84 - 可转接人工账号 | 当前客服=吴吴_客服 | 账号名称=吴吴吴_小圣 | 账号ID=吴吴吴_小圣
+2026-11-16 11:47:25.523 | INFO     | jd_cookie_runner:_run_connection:169 - 连接鉴权完成，机器人运行中
+2026-11-17 13:05:52.463 | INFO     | jd_cookie_runner:_run_connection:120 - 签到成功，准备建立 WebSocket 连接
+2026-11-17 13:05:52.641 | INFO     | jd_cookie_runner:_run_connection:144 - WebSocket 已连接，开始鉴权
+2026-11-17 13:05:52.735 | INFO     | jd_human_transfer:log_transfer_account_names:84 - 可转接人工账号 | 当前客服=吴吴_客服 | 账号名称=吴吴吴_小圣 | 账号ID=吴吴吴_小圣
+2026-11-17 13:05:52.735 | INFO     | jd_cookie_runner:_run_connection:169 - 连接鉴权完成，机器人运行中
+2026-11-17 14:24:34.555 | INFO     | jd_cookie_runner:_run_connection:120 - 签到成功，准备建立 WebSocket 连接
+2026-11-17 14:24:34.734 | INFO     | jd_cookie_runner:_run_connection:144 - WebSocket 已连接，开始鉴权
+2026-11-17 14:24:34.840 | INFO     | jd_human_transfer:log_transfer_account_names:84 - 可转接人工账号 | 当前客服=吴吴_客服 | 账号名称=吴吴吴_小圣 | 账号ID=吴吴吴_小圣
+2026-11-17 14:24:34.840 | INFO     | jd_cookie_runner:_run_connection:169 - 连接鉴权完成，机器人运行中
+2026-11-17 14:30:49.308 | INFO     | jd_cookie_runner:_run_connection:120 - 签到成功，准备建立 WebSocket 连接
+2026-11-17 14:30:49.459 | ERROR    | jd_cookie_runner:run_forever:104 - 连接断开，将重连 | 原因=http://dongdong.jd.com/workbench/websocket isn't a valid URI: scheme isn't ws or wss | 5.0 秒后重连
+Traceback (most recent call last):
+
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 543, in __await_impl__
+    await self.connection.handshake(
+          │    │          └ <function ClientConnection.handshake at 0x0000000008796A20>
+          │    └ <websockets.asyncio.client.ClientConnection object at 0x000000000871E510>
+          └ <websockets.asyncio.client.connect object at 0x00000000045E3CB0>
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 114, in handshake
+    raise self.protocol.handshake_exc
+          │    │        └ InvalidStatus(Response(status_code=301, reason_phrase='Moved Permanently', headers=Headers([('Date', 'Tue, 17 Nov 2026 06:30:...
+          │    └ <websockets.client.ClientProtocol object at 0x000000000871E120>
+          └ <websockets.asyncio.client.ClientConnection object at 0x000000000871E510>
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\client.py", line 325, in parse
+    self.process_response(response)
+    │    │                └ Response(status_code=301, reason_phrase='Moved Permanently', headers=Headers([('Date', 'Tue, 17 Nov 2026 06:30:49 GMT'), ('Co...
+    │    └ <function ClientProtocol.process_response at 0x000000000877AAC0>
+    └ <websockets.client.ClientProtocol object at 0x000000000871E120>
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\client.py", line 142, in process_response
+    raise InvalidStatus(response)
+          │             └ Response(status_code=301, reason_phrase='Moved Permanently', headers=Headers([('Date', 'Tue, 17 Nov 2026 06:30:49 GMT'), ('Co...
+          └ <class 'websockets.exceptions.InvalidStatus'>
+
+websockets.exceptions.InvalidStatus: server rejected WebSocket connection: HTTP 301
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 1012, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x00000000017B3E20>
+    └ <Thread(jd-robot-14432088, started daemon 29972)>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 1041, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x00000000017B3BA0>
+    └ <Thread(jd-robot-14432088, started daemon 29972)>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 992, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(jd-robot-14432088, started daemon 29972)>
+    │    │        │    └ ()
+    │    │        └ <Thread(jd-robot-14432088, started daemon 29972)>
+    │    └ <function JdRobotControlApp._start_shop.<locals>.runner at 0x0000000004642840>
+    └ <Thread(jd-robot-14432088, started daemon 29972)>
+
+  File "D:\pythonProject\京东机器人\jd_control_panel.py", line 273, in runner
+    result = asyncio.run(
+             │       └ <function run at 0x0000000003589DA0>
+             └ <module 'asyncio' from 'C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python311-32\\Lib\\asyncio\\__init__.py'>
+
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\runners.py", line 194, in run
+    return runner.run(main)
+           │      │   └ <coroutine object JdCookieRunner.run_forever at 0x000000000464C240>
+           │      └ <function Runner.run at 0x0000000003648680>
+           └ <asyncio.runners.Runner object at 0x0000000003C07230>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           │    │     │                  └ <Task pending name='Task-1' coro=<JdCookieRunner.run_forever() running at D:\pythonProject\京东机器人\jd_cookie_runner.py:104> cb=...
+           │    │     └ <function BaseEventLoop.run_until_complete at 0x0000000003646160>
+           │    └ <ProactorEventLoop running=True closed=False debug=False>
+           └ <asyncio.runners.Runner object at 0x0000000003C07230>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 707, in run_until_complete
+    self.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x00000000036460C0>
+    └ <ProactorEventLoop running=True closed=False debug=False>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 678, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x0000000003647EC0>
+    └ <ProactorEventLoop running=True closed=False debug=False>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 2033, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x00000000031568E0>
+    └ <Handle Task.task_wakeup()>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\events.py", line 89, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle Task.task_wakeup()>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle Task.task_wakeup()>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle Task.task_wakeup()>
+
+> File "D:\pythonProject\京东机器人\jd_cookie_runner.py", line 88, in run_forever
+    stopped = await self._run_connection(stop_event)
+                    │    │               └ <threading.Event at 0x4629350: unset>
+                    │    └ <function JdCookieRunner._run_connection at 0x0000000004565800>
+                    └ <jd_cookie_runner.JdCookieRunner object at 0x00000000045E2CF0>
+
+  File "D:\pythonProject\京东机器人\jd_cookie_runner.py", line 128, in _run_connection
+    async with websockets.connect(
+               └ <module 'websockets' from 'D:\\pythonProject\\testenv\\Lib\\site-packages\\websockets\\__init__.py'>
+
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 587, in __aenter__
+    return await self
+                 └ <websockets.asyncio.client.connect object at 0x00000000045E3CB0>
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 559, in __await_impl__
+    uri_or_exc = self.process_redirect(exc)
+                 │    └ <function connect.process_redirect at 0x0000000008796DE0>
+                 └ <websockets.asyncio.client.connect object at 0x00000000045E3CB0>
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 494, in process_redirect
+    new_ws_uri = parse_uri(new_uri)
+                 │         └ 'http://dongdong.jd.com/workbench/websocket'
+                 └ <function parse_uri at 0x0000000008779DA0>
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\uri.py", line 77, in parse_uri
+    raise InvalidURI(uri, "scheme isn't ws or wss")
+          │          └ 'http://dongdong.jd.com/workbench/websocket'
+          └ <class 'websockets.exceptions.InvalidURI'>
+
+websockets.exceptions.InvalidURI: http://dongdong.jd.com/workbench/websocket isn't a valid URI: scheme isn't ws or wss
+2026-11-17 14:30:54.623 | INFO     | jd_cookie_runner:_run_connection:120 - 签到成功，准备建立 WebSocket 连接
+2026-11-17 14:30:54.763 | ERROR    | jd_cookie_runner:run_forever:104 - 连接断开，将重连 | 原因=http://dongdong.jd.com/workbench/websocket isn't a valid URI: scheme isn't ws or wss | 5.0 秒后重连
+Traceback (most recent call last):
+
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 543, in __await_impl__
+    await self.connection.handshake(
+          │    │          └ <function ClientConnection.handshake at 0x0000000008796A20>
+          │    └ <websockets.asyncio.client.ClientConnection object at 0x0000000008788A50>
+          └ <websockets.asyncio.client.connect object at 0x0000000008788190>
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 114, in handshake
+    raise self.protocol.handshake_exc
+          │    │        └ InvalidStatus(Response(status_code=301, reason_phrase='Moved Permanently', headers=Headers([('Date', 'Tue, 17 Nov 2026 06:30:...
+          │    └ <websockets.client.ClientProtocol object at 0x0000000008788910>
+          └ <websockets.asyncio.client.ClientConnection object at 0x0000000008788A50>
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\client.py", line 325, in parse
+    self.process_response(response)
+    │    │                └ Response(status_code=301, reason_phrase='Moved Permanently', headers=Headers([('Date', 'Tue, 17 Nov 2026 06:30:54 GMT'), ('Co...
+    │    └ <function ClientProtocol.process_response at 0x000000000877AAC0>
+    └ <websockets.client.ClientProtocol object at 0x0000000008788910>
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\client.py", line 142, in process_response
+    raise InvalidStatus(response)
+          │             └ Response(status_code=301, reason_phrase='Moved Permanently', headers=Headers([('Date', 'Tue, 17 Nov 2026 06:30:54 GMT'), ('Co...
+          └ <class 'websockets.exceptions.InvalidStatus'>
+
+websockets.exceptions.InvalidStatus: server rejected WebSocket connection: HTTP 301
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 1012, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x00000000017B3E20>
+    └ <Thread(jd-robot-14432088, started daemon 29972)>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 1041, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x00000000017B3BA0>
+    └ <Thread(jd-robot-14432088, started daemon 29972)>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 992, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(jd-robot-14432088, started daemon 29972)>
+    │    │        │    └ ()
+    │    │        └ <Thread(jd-robot-14432088, started daemon 29972)>
+    │    └ <function JdRobotControlApp._start_shop.<locals>.runner at 0x0000000004642840>
+    └ <Thread(jd-robot-14432088, started daemon 29972)>
+
+  File "D:\pythonProject\京东机器人\jd_control_panel.py", line 273, in runner
+    result = asyncio.run(
+             │       └ <function run at 0x0000000003589DA0>
+             └ <module 'asyncio' from 'C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python311-32\\Lib\\asyncio\\__init__.py'>
+
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\runners.py", line 194, in run
+    return runner.run(main)
+           │      │   └ <coroutine object JdCookieRunner.run_forever at 0x000000000464C240>
+           │      └ <function Runner.run at 0x0000000003648680>
+           └ <asyncio.runners.Runner object at 0x0000000003C07230>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           │    │     │                  └ <Task pending name='Task-1' coro=<JdCookieRunner.run_forever() running at D:\pythonProject\京东机器人\jd_cookie_runner.py:104> cb=...
+           │    │     └ <function BaseEventLoop.run_until_complete at 0x0000000003646160>
+           │    └ <ProactorEventLoop running=True closed=False debug=False>
+           └ <asyncio.runners.Runner object at 0x0000000003C07230>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 707, in run_until_complete
+    self.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x00000000036460C0>
+    └ <ProactorEventLoop running=True closed=False debug=False>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 678, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x0000000003647EC0>
+    └ <ProactorEventLoop running=True closed=False debug=False>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 2033, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x00000000031568E0>
+    └ <Handle Task.task_wakeup()>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\events.py", line 89, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle Task.task_wakeup()>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle Task.task_wakeup()>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle Task.task_wakeup()>
+
+> File "D:\pythonProject\京东机器人\jd_cookie_runner.py", line 88, in run_forever
+    stopped = await self._run_connection(stop_event)
+                    │    │               └ <threading.Event at 0x4629350: unset>
+                    │    └ <function JdCookieRunner._run_connection at 0x0000000004565800>
+                    └ <jd_cookie_runner.JdCookieRunner object at 0x00000000045E2CF0>
+
+  File "D:\pythonProject\京东机器人\jd_cookie_runner.py", line 128, in _run_connection
+    async with websockets.connect(
+               └ <module 'websockets' from 'D:\\pythonProject\\testenv\\Lib\\site-packages\\websockets\\__init__.py'>
+
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 587, in __aenter__
+    return await self
+                 └ <websockets.asyncio.client.connect object at 0x0000000008788190>
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 559, in __await_impl__
+    uri_or_exc = self.process_redirect(exc)
+                 │    └ <function connect.process_redirect at 0x0000000008796DE0>
+                 └ <websockets.asyncio.client.connect object at 0x0000000008788190>
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 494, in process_redirect
+    new_ws_uri = parse_uri(new_uri)
+                 │         └ 'http://dongdong.jd.com/workbench/websocket'
+                 └ <function parse_uri at 0x0000000008779DA0>
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\uri.py", line 77, in parse_uri
+    raise InvalidURI(uri, "scheme isn't ws or wss")
+          │          └ 'http://dongdong.jd.com/workbench/websocket'
+          └ <class 'websockets.exceptions.InvalidURI'>
+
+websockets.exceptions.InvalidURI: http://dongdong.jd.com/workbench/websocket isn't a valid URI: scheme isn't ws or wss
+2026-11-17 14:30:59.910 | INFO     | jd_cookie_runner:_run_connection:120 - 签到成功，准备建立 WebSocket 连接
+2026-11-17 14:31:00.050 | ERROR    | jd_cookie_runner:run_forever:104 - 连接断开，将重连 | 原因=http://dongdong.jd.com/workbench/websocket isn't a valid URI: scheme isn't ws or wss | 5.0 秒后重连
+Traceback (most recent call last):
+
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 543, in __await_impl__
+    await self.connection.handshake(
+          │    │          └ <function ClientConnection.handshake at 0x0000000008796A20>
+          │    └ <websockets.asyncio.client.ClientConnection object at 0x0000000008789950>
+          └ <websockets.asyncio.client.connect object at 0x0000000008788690>
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 114, in handshake
+    raise self.protocol.handshake_exc
+          │    │        └ InvalidStatus(Response(status_code=301, reason_phrase='Moved Permanently', headers=Headers([('Date', 'Tue, 17 Nov 2026 06:31:...
+          │    └ <websockets.client.ClientProtocol object at 0x0000000008789450>
+          └ <websockets.asyncio.client.ClientConnection object at 0x0000000008789950>
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\client.py", line 325, in parse
+    self.process_response(response)
+    │    │                └ Response(status_code=301, reason_phrase='Moved Permanently', headers=Headers([('Date', 'Tue, 17 Nov 2026 06:31:00 GMT'), ('Co...
+    │    └ <function ClientProtocol.process_response at 0x000000000877AAC0>
+    └ <websockets.client.ClientProtocol object at 0x0000000008789450>
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\client.py", line 142, in process_response
+    raise InvalidStatus(response)
+          │             └ Response(status_code=301, reason_phrase='Moved Permanently', headers=Headers([('Date', 'Tue, 17 Nov 2026 06:31:00 GMT'), ('Co...
+          └ <class 'websockets.exceptions.InvalidStatus'>
+
+websockets.exceptions.InvalidStatus: server rejected WebSocket connection: HTTP 301
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 1012, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x00000000017B3E20>
+    └ <Thread(jd-robot-14432088, started daemon 29972)>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 1041, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x00000000017B3BA0>
+    └ <Thread(jd-robot-14432088, started daemon 29972)>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 992, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(jd-robot-14432088, started daemon 29972)>
+    │    │        │    └ ()
+    │    │        └ <Thread(jd-robot-14432088, started daemon 29972)>
+    │    └ <function JdRobotControlApp._start_shop.<locals>.runner at 0x0000000004642840>
+    └ <Thread(jd-robot-14432088, started daemon 29972)>
+
+  File "D:\pythonProject\京东机器人\jd_control_panel.py", line 273, in runner
+    result = asyncio.run(
+             │       └ <function run at 0x0000000003589DA0>
+             └ <module 'asyncio' from 'C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python311-32\\Lib\\asyncio\\__init__.py'>
+
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\runners.py", line 194, in run
+    return runner.run(main)
+           │      │   └ <coroutine object JdCookieRunner.run_forever at 0x000000000464C240>
+           │      └ <function Runner.run at 0x0000000003648680>
+           └ <asyncio.runners.Runner object at 0x0000000003C07230>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           │    │     │                  └ <Task pending name='Task-1' coro=<JdCookieRunner.run_forever() running at D:\pythonProject\京东机器人\jd_cookie_runner.py:104> cb=...
+           │    │     └ <function BaseEventLoop.run_until_complete at 0x0000000003646160>
+           │    └ <ProactorEventLoop running=True closed=False debug=False>
+           └ <asyncio.runners.Runner object at 0x0000000003C07230>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 707, in run_until_complete
+    self.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x00000000036460C0>
+    └ <ProactorEventLoop running=True closed=False debug=False>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 678, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x0000000003647EC0>
+    └ <ProactorEventLoop running=True closed=False debug=False>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 2033, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x00000000031568E0>
+    └ <Handle Task.task_wakeup()>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\events.py", line 89, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle Task.task_wakeup()>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle Task.task_wakeup()>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle Task.task_wakeup()>
+
+> File "D:\pythonProject\京东机器人\jd_cookie_runner.py", line 88, in run_forever
+    stopped = await self._run_connection(stop_event)
+                    │    │               └ <threading.Event at 0x4629350: unset>
+                    │    └ <function JdCookieRunner._run_connection at 0x0000000004565800>
+                    └ <jd_cookie_runner.JdCookieRunner object at 0x00000000045E2CF0>
+
+  File "D:\pythonProject\京东机器人\jd_cookie_runner.py", line 128, in _run_connection
+    async with websockets.connect(
+               └ <module 'websockets' from 'D:\\pythonProject\\testenv\\Lib\\site-packages\\websockets\\__init__.py'>
+
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 587, in __aenter__
+    return await self
+                 └ <websockets.asyncio.client.connect object at 0x0000000008788690>
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 559, in __await_impl__
+    uri_or_exc = self.process_redirect(exc)
+                 │    └ <function connect.process_redirect at 0x0000000008796DE0>
+                 └ <websockets.asyncio.client.connect object at 0x0000000008788690>
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 494, in process_redirect
+    new_ws_uri = parse_uri(new_uri)
+                 │         └ 'http://dongdong.jd.com/workbench/websocket'
+                 └ <function parse_uri at 0x0000000008779DA0>
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\uri.py", line 77, in parse_uri
+    raise InvalidURI(uri, "scheme isn't ws or wss")
+          │          └ 'http://dongdong.jd.com/workbench/websocket'
+          └ <class 'websockets.exceptions.InvalidURI'>
+
+websockets.exceptions.InvalidURI: http://dongdong.jd.com/workbench/websocket isn't a valid URI: scheme isn't ws or wss
+2026-11-17 14:31:02.610 | INFO     | jd_cookie_runner:_run_connection:120 - 签到成功，准备建立 WebSocket 连接
+2026-11-17 14:31:02.759 | INFO     | jd_cookie_runner:_run_connection:144 - WebSocket 已连接，开始鉴权
+2026-11-17 14:31:02.862 | INFO     | jd_human_transfer:log_transfer_account_names:84 - 可转接人工账号 | 当前客服=吴吴_客服 | 账号名称=吴吴吴_小圣 | 账号ID=吴吴吴_小圣
+2026-11-17 14:31:02.862 | INFO     | jd_cookie_runner:_run_connection:169 - 连接鉴权完成，机器人运行中
+2026-11-17 14:32:58.414 | INFO     | jd_reply_handler:reply_for_message:70 - Coze 回复包含人工，转人工
+2026-11-17 14:32:58.551 | INFO     | jd_human_transfer:transfer_to_human:58 - 转人工成功 | 买家=jd_eHGlDAbGDLEn | 目标人工=吴吴吴_小圣 | 原因=Coze 回复包含人工
+2026-11-18 11:05:25.326 | INFO     | jd_cookie_runner:_run_connection:120 - 签到成功，准备建立 WebSocket 连接
+2026-11-18 11:05:25.503 | INFO     | jd_cookie_runner:_run_connection:144 - WebSocket 已连接，开始鉴权
+2026-11-18 11:05:25.605 | INFO     | jd_human_transfer:log_transfer_account_names:84 - 可转接人工账号 | 当前客服=吴吴_客服 | 账号名称=吴吴吴_小圣 | 账号ID=吴吴吴_小圣
+2026-11-18 11:05:25.605 | INFO     | jd_cookie_runner:_run_connection:169 - 连接鉴权完成，机器人运行中
+2026-11-18 11:38:48.105 | INFO     | jd_cookie_runner:_run_connection:120 - 签到成功，准备建立 WebSocket 连接
+2026-11-18 11:38:48.265 | INFO     | jd_cookie_runner:_run_connection:144 - WebSocket 已连接，开始鉴权
+2026-11-18 11:38:48.353 | INFO     | jd_human_transfer:log_transfer_account_names:84 - 可转接人工账号 | 当前客服=吴吴_客服 | 账号名称=吴吴吴_小圣 | 账号ID=吴吴吴_小圣
+2026-11-18 11:38:48.353 | INFO     | jd_cookie_runner:_run_connection:169 - 连接鉴权完成，机器人运行中
+2026-11-18 11:41:17.598 | INFO     | jd_cookie_runner:_run_connection:120 - 签到成功，准备建立 WebSocket 连接
+2026-11-18 11:41:17.733 | ERROR    | jd_cookie_runner:run_forever:104 - 连接断开，将重连 | 原因=http://dongdong.jd.com/workbench/websocket isn't a valid URI: scheme isn't ws or wss | 5.0 秒后重连
+Traceback (most recent call last):
+
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 543, in __await_impl__
+    await self.connection.handshake(
+          │    │          └ <function ClientConnection.handshake at 0x0000000008796A20>
+          │    └ <websockets.asyncio.client.ClientConnection object at 0x0000000008789A90>
+          └ <websockets.asyncio.client.connect object at 0x0000000008788E10>
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 114, in handshake
+    raise self.protocol.handshake_exc
+          │    │        └ InvalidStatus(Response(status_code=301, reason_phrase='Moved Permanently', headers=Headers([('Date', 'Wed, 18 Nov 2026 03:41:...
+          │    └ <websockets.client.ClientProtocol object at 0x0000000008789950>
+          └ <websockets.asyncio.client.ClientConnection object at 0x0000000008789A90>
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\client.py", line 325, in parse
+    self.process_response(response)
+    │    │                └ Response(status_code=301, reason_phrase='Moved Permanently', headers=Headers([('Date', 'Wed, 18 Nov 2026 03:41:18 GMT'), ('Co...
+    │    └ <function ClientProtocol.process_response at 0x000000000877AAC0>
+    └ <websockets.client.ClientProtocol object at 0x0000000008789950>
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\client.py", line 142, in process_response
+    raise InvalidStatus(response)
+          │             └ Response(status_code=301, reason_phrase='Moved Permanently', headers=Headers([('Date', 'Wed, 18 Nov 2026 03:41:18 GMT'), ('Co...
+          └ <class 'websockets.exceptions.InvalidStatus'>
+
+websockets.exceptions.InvalidStatus: server rejected WebSocket connection: HTTP 301
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 1012, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x0000000001853E20>
+    └ <Thread(jd-robot-14432088, started daemon 45832)>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 1041, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x0000000001853BA0>
+    └ <Thread(jd-robot-14432088, started daemon 45832)>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\threading.py", line 992, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(jd-robot-14432088, started daemon 45832)>
+    │    │        │    └ ()
+    │    │        └ <Thread(jd-robot-14432088, started daemon 45832)>
+    │    └ <function JdRobotControlApp._start_shop.<locals>.runner at 0x00000000046434C0>
+    └ <Thread(jd-robot-14432088, started daemon 45832)>
+
+  File "D:\pythonProject\京东机器人\jd_control_panel.py", line 273, in runner
+    result = asyncio.run(
+             │       └ <function run at 0x00000000035E9DA0>
+             └ <module 'asyncio' from 'C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python311-32\\Lib\\asyncio\\__init__.py'>
+
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\runners.py", line 194, in run
+    return runner.run(main)
+           │      │   └ <coroutine object JdCookieRunner.run_forever at 0x000000000464C240>
+           │      └ <function Runner.run at 0x00000000036A8680>
+           └ <asyncio.runners.Runner object at 0x00000000087887D0>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           │    │     │                  └ <Task pending name='Task-4' coro=<JdCookieRunner.run_forever() running at D:\pythonProject\京东机器人\jd_cookie_runner.py:104> cb=...
+           │    │     └ <function BaseEventLoop.run_until_complete at 0x00000000036A6160>
+           │    └ <ProactorEventLoop running=True closed=False debug=False>
+           └ <asyncio.runners.Runner object at 0x00000000087887D0>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 707, in run_until_complete
+    self.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x00000000036A60C0>
+    └ <ProactorEventLoop running=True closed=False debug=False>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 678, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x00000000036A7EC0>
+    └ <ProactorEventLoop running=True closed=False debug=False>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\base_events.py", line 2033, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x00000000031B68E0>
+    └ <Handle Task.task_wakeup()>
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311-32\Lib\asyncio\events.py", line 89, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle Task.task_wakeup()>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle Task.task_wakeup()>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle Task.task_wakeup()>
+
+> File "D:\pythonProject\京东机器人\jd_cookie_runner.py", line 88, in run_forever
+    stopped = await self._run_connection(stop_event)
+                    │    │               └ <threading.Event at 0x460ecf0: unset>
+                    │    └ <function JdCookieRunner._run_connection at 0x0000000004565800>
+                    └ <jd_cookie_runner.JdCookieRunner object at 0x0000000008788550>
+
+  File "D:\pythonProject\京东机器人\jd_cookie_runner.py", line 128, in _run_connection
+    async with websockets.connect(
+               └ <module 'websockets' from 'D:\\pythonProject\\testenv\\Lib\\site-packages\\websockets\\__init__.py'>
+
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 587, in __aenter__
+    return await self
+                 └ <websockets.asyncio.client.connect object at 0x0000000008788E10>
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 559, in __await_impl__
+    uri_or_exc = self.process_redirect(exc)
+                 │    └ <function connect.process_redirect at 0x0000000008796DE0>
+                 └ <websockets.asyncio.client.connect object at 0x0000000008788E10>
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\asyncio\client.py", line 494, in process_redirect
+    new_ws_uri = parse_uri(new_uri)
+                 │         └ 'http://dongdong.jd.com/workbench/websocket'
+                 └ <function parse_uri at 0x0000000008779DA0>
+  File "D:\pythonProject\testenv\Lib\site-packages\websockets\uri.py", line 77, in parse_uri
+    raise InvalidURI(uri, "scheme isn't ws or wss")
+          │          └ 'http://dongdong.jd.com/workbench/websocket'
+          └ <class 'websockets.exceptions.InvalidURI'>
+
+websockets.exceptions.InvalidURI: http://dongdong.jd.com/workbench/websocket isn't a valid URI: scheme isn't ws or wss
+2026-11-18 11:41:22.909 | INFO     | jd_cookie_runner:_run_connection:120 - 签到成功，准备建立 WebSocket 连接
+2026-11-18 11:41:23.064 | INFO     | jd_cookie_runner:_run_connection:144 - WebSocket 已连接，开始鉴权
+2026-11-18 11:41:23.171 | INFO     | jd_human_transfer:log_transfer_account_names:84 - 可转接人工账号 | 当前客服=吴吴_客服 | 账号名称=吴吴吴_小圣 | 账号ID=吴吴吴_小圣
+2026-11-18 11:41:23.172 | INFO     | jd_cookie_runner:_run_connection:169 - 连接鉴权完成，机器人运行中
+2026-11-18 11:41:55.986 | INFO     | jd_reply_handler:reply_for_message:70 - Coze 回复包含人工，转人工
+2026-11-18 11:41:56.057 | WARNING  | jd_human_transfer:transfer_to_human:67 - 转人工失败，将重试 | 买家=jd_eHGlDAbGDLEn | 第1次 | 5 秒后重试 | 原因=京东转接接口未成功
+2026-11-18 11:42:01.123 | WARNING  | jd_human_transfer:transfer_to_human:67 - 转人工失败，将重试 | 买家=jd_eHGlDAbGDLEn | 第2次 | 10 秒后重试 | 原因=京东转接接口未成功
+2026-11-18 11:44:21.407 | INFO     | jd_cookie_runner:_run_connection:120 - 签到成功，准备建立 WebSocket 连接
+2026-11-18 11:44:21.548 | INFO     | jd_cookie_runner:_run_connection:144 - WebSocket 已连接，开始鉴权
+2026-11-18 11:44:21.641 | INFO     | jd_human_transfer:log_transfer_account_names:84 - 可转接人工账号 | 当前客服=吴吴_客服 | 账号名称=吴吴吴_小圣 | 账号ID=吴吴吴_小圣
+2026-11-18 11:44:21.641 | INFO     | jd_cookie_runner:_run_connection:169 - 连接鉴权完成，机器人运行中
+2026-11-18 12:07:52.172 | INFO     | jd_cookie_runner:_run_connection:120 - 签到成功，准备建立 WebSocket 连接
+2026-11-18 12:07:52.343 | INFO     | jd_cookie_runner:_run_connection:144 - WebSocket 已连接，开始鉴权
+2026-11-18 12:07:52.442 | INFO     | jd_human_transfer:log_transfer_account_names:84 - 可转接人工账号 | 当前客服=吴吴_客服 | 账号名称=吴吴吴_小圣 | 账号ID=吴吴吴_小圣
+2026-11-18 12:07:52.442 | INFO     | jd_cookie_runner:_run_connection:169 - 连接鉴权完成，机器人运行中

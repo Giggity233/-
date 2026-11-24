@@ -1,0 +1,156 @@
+{
+    "group1": [
+        {
+            "shop_name": "萌熊诺娃美妆",
+            "shop_id": 582453883,
+            "main_category": "美容个护",
+            "username": "渣渣辉11358",
+            "password": "Zzh.123456",
+            "now_time": "2026-10-23 23:28:43",
+            "port": 9224
+        },
+        {
+            "shop_name": "霞格格美妆",
+            "shop_id": 272817515,
+            "main_category": "美容个护",
+            "username": "渣渣辉553158",
+            "password": "Zzh.123456",
+            "now_time": "2026-10-23 23:28:43",
+            "port": 9225
+        },
+        {
+            "shop_name": "真茉美妆",
+            "shop_id": 795069473,
+            "main_category": "美容个护",
+            "username": "渣渣辉115815",
+            "password": "Zzh.123456",
+            "now_time": "2026-10-23 23:28:44",
+            "port": 9226
+        },
+        {
+            "shop_name": "魅美人美甲店",
+            "shop_id": 751717666,
+            "main_category": "美容个护",
+            "username": "渣渣辉115811",
+            "password": "Zzh.123456",
+            "now_time": "2026-10-23 23:28:44",
+            "port": 9227
+        },
+        {
+            "shop_name": "言美人美妆",
+            "shop_id": 474832040,
+            "main_category": "美容个护",
+            "username": "渣渣辉11800119",
+            "password": "Zzh.123456",
+            "now_time": "2026-10-23 23:28:45",
+            "port": 9228
+        },
+        {
+            "shop_name": "郢屿美妆进口专营店",
+            "shop_id": 712214550,
+            "main_category": "海淘进口",
+            "username": "渣渣辉1100118",
+            "password": "Zzh.123456",
+            "now_time": "2026-10-23 23:28:45",
+            "port": 9229
+        },
+        {
+            "shop_name": "VRZ美妆",
+            "shop_id": 104230221,
+            "main_category": "美容个护",
+            "username": "渣渣辉118001115",
+            "password": "Zzh.123456",
+            "now_time": "2026-10-23 23:28:46",
+            "port": 9230
+        }
+    ],
+    "group2": [
+        {
+            "shop_name": "DOOXY母婴用品旗舰店",
+            "shop_id": 926405575,
+            "main_category": "母婴玩具",
+            "username": "dooxy旗舰店小多",
+            "password": "Dooxy123456",
+            "now_time": "2026-10-27 15:49:42",
+            "port": 8224
+        }
+    ],
+    "group3": [
+        {
+            "shop_name": "义乌创创日用品厂",
+            "shop_id": 505826257,
+            "main_category": "家居生活",
+            "username": "联樽外包创创客服2",
+            "password": "Yk19137659327",
+            "now_time": "2026-10-08 18:43:45",
+            "port": 7224
+        },
+        {
+            "shop_name": "义乌创泽日用品厂",
+            "shop_id": 721966892,
+            "main_category": "家居生活",
+            "username": "联樽外包创泽客服2",
+            "password": "Yk19137659327",
+            "now_time": "2026-10-08 18:43:46",
+            "port": 7225
+        }
+    ],
+    "group4": [
+        {
+            "shop_name": "盛昌挂钩",
+            "shop_id": 841269591,
+            "main_category": "家居生活",
+            "username": "盛昌挂钩13",
+            "password": "Haoji123456",
+            "now_time": "2026-11-18 14:39:25",
+            "port": 6224
+        },
+        {
+            "shop_name": "依昊轩家居官方旗舰店",
+            "shop_id": 229853922,
+            "main_category": "家居生活",
+            "username": "依昊轩家居旗舰店2",
+            "password": "Haoji123456",
+            "now_time": "2026-11-18 14:39:25",
+            "port": 6225
+        },
+        {
+            "shop_name": "昊吉家居官方旗舰店",
+            "shop_id": 445957042,
+            "main_category": "家居生活",
+            "username": "昊吉家居官方旗舰店2",
+            "password": "Haoji123456",
+            "now_time": "2026-11-18 14:39:26",
+            "port": 6226
+        },
+        {
+            "shop_name": "平安粘贴挂钩",
+            "shop_id": 545150919,
+            "main_category": "家居生活",
+            "username": "平安粘贴挂钩2",
+            "password": "Haoji123456",
+            "now_time": "2026-11-18 14:39:27",
+            "port": 6227
+        },
+        {
+            "shop_name": "昊宜茗杯官方旗舰店",
+            "shop_id": 831697456,
+            "main_category": "家居生活",
+            "username": "昊宜茗杯旗舰店",
+            "password": "Haoji123456",
+            "now_time": "2026-11-18 14:39:27",
+            "port": 6228
+        }
+    ],
+    "group5": [
+        {
+            "shop_name": "云窗备考铺",
+            "shop_id": 840820290,
+            "main_category": "数码电器",
+            "username": "15224740638",
+            "password": "NSDSB123456@a",
+            "now_time": "2026-11-18 16:29:04",
+            "port": 5234
+        }
+    ]
+}

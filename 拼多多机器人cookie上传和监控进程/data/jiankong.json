@@ -1,0 +1,6 @@
+{
+  "sleep_time": 600,
+  "transfer_timeout": 3600,
+  "changshu": 30,
+  "fallback_timeout": 90
+}

@@ -1,0 +1,7 @@
+{
+  "name": "douyin-buyer-ws-listener",
+  "private": true,
+  "dependencies": {
+    "protobufjs": "^7.5.4"
+  }
+}

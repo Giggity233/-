@@ -1,0 +1,215 @@
+{
+  "captured_at": "2026-10-26 13:58:02",
+  "template_name": "【卡片】",
+  "parsed_msg": {
+    "content": 50002,
+    "message_type": 50002,
+    "uid": "AQC_w0X3L8qy9M4sgyFU5rhjECX69Vv362a-WoFvwa_vPUvy-g4yTwIiv496xq-7oduS_0XiklyPUrpQ0_bs2sXc",
+    "mall_id": "266072853",
+    "role": "买家信息",
+    "conversation_short_id": {
+      "low": -1509817082,
+      "high": 1772610766,
+      "unsigned": false
+    },
+    "sub_conversation_short_id": {
+      "low": 427951396,
+      "high": 1792993352,
+      "unsigned": false
+    },
+    "talk_id": "7700847809213367588"
+  },
+  "buyer_message": {
+    "headers": {},
+    "cmd": 500,
+    "sequence_id": {
+      "low": 0,
+      "high": 0,
+      "unsigned": false
+    },
+    "status_code": 0,
+    "error_desc": "",
+    "inbox_type": 3,
+    "body": {
+      "has_new_message_notify": {
+        "conversation_type": 11,
+        "notify_type": 1,
+        "message": {
+          "ext": {
+            "s:modify_pic_notice_tag": "1",
+            "channel": "huawei_1128_64",
+            "shark_product_id": "",
+            "fromSource": "3",
+            "p:open_countdown": "true",
+            "track_info": "{\"message_client_id\":\"cd8fcf47-cbb3-4ab3-8651-08611dcbe222\",\"timestamp_offset\":\"1792908888414\",\"send_time\":\"84470502\",\"paas_start_time\":\"84470502\",\"paas_end_time\":\"84470513\",\"duration_paas_create_sub_conv\":\"0\",\"send_server_time\":84470519}",
+            "sender_app_version": "400601",
+            "s:direct_call_rpc": "true",
+            "uaid": "1128",
+            "version_code": "40.6.0",
+            "s:is_stranger": "false",
+            "a:smp_token_fetch": "0",
+            "host_app_id": "1128",
+            "shark_check_operation": "",
+            "encode_shop_id": "BztpsYYD",
+            "src_id": "2",
+            "src": "dy",
+            "shark_order_id": "",
+            "message_logid": "021792993358982fdbddc020024080c0000000000000033c9968e",
+            "sender_app_id": "1128",
+            "s:notice_type": "wuwenan",
+            "s:need_bcp": "1",
+            "user_agent": "",
+            "attention": "true",
+            "iid": "955939301662954",
+            "store_id": "",
+            "platform": "0",
+            "s:sender_notice_text": "",
+            "s:sender_biz_role": "Buyer",
+            "sender_role": "1",
+            "device_platform": "android",
+            "avatar_uri": "https://p3-pigeon-sign.ecombdimg.com/aweme-avatar/tos-cn-i-0813_okeewAGnKENGshgeDAAG3AEoBBGSbphAS7I7B4~tplv-jxcbcipi3j-image-limit.image?lk3s=c879ea0d&x-expires=1798177359&x-signature=y2SK3RDmUNt4sWA3o330e%2BVHhO0%3D",
+            "s:raw_shark_info": "{\"conv_invalid\":\"1\",\"from\":\"sentry_standard\",\"notice_type\":\"wuwenan\",\"text\":\"\",\"type\":\"notice\"}",
+            "s:msg_priority": "1",
+            "displayType": "0",
+            "PIGEON_BIZ_TYPE": "2",
+            "biz_ext": "{}",
+            "nickname": "神兔唯乐",
+            "s:client_message_id": "cd8fcf47-cbb3-4ab3-8651-08611dcbe222",
+            "receiver_id": "266072853",
+            "sender_os_type": "android",
+            "talk_id": "7700847809213367588",
+            "s:base_scene": "default",
+            "did": "3730007436561096",
+            "srcId": "2",
+            "flow_extra": "{\"direction\":1,\"msg_type\":1000,\"phase\":10,\"sponsor\":1,\"write_from\":\"callback\"}",
+            "shop_id": "266072853",
+            "uname": "神兔唯乐",
+            "eccs_tech_stack": "android_native",
+            "llm_intent_label": "common_LT_QT_biaodianfuhao",
+            "s:biz_aid": "1383",
+            "llm_intent_version": "v25_8",
+            "security_biz_conversation_id": "AQC_w0X3L8qy9M4sgyFU5rhjECX69Vv362a-WoFvwa_vPUvy-g4yTwIiv496xq-7oduS_0XiklyPUrpQ0_bs2sXc:266072853::2:1:pigeon",
+            "text_msg_sub_type": "default",
+            "s:cur_sub_conv_version": "1792993357236413",
+            "b_temp_track_message_id": "1880089803922528",
+            "security_receiver_id": "266072853",
+            "s:server_message_id": "1880089803922528",
+            "s:add_ext": "{\"switch_2_human_track\":\"{\\\"user_id\\\":2060931319468343,\\\"switch_2_human_time\\\":1792993359616,\\\"switch_2_human_type\\\":6000,\\\"switch_2_human_server_message_id\\\":1880089803922528,\\\"robot_req_id\\\":null,\\\"robot_reply_time\\\":1792993359616}\"}",
+            "s:notice_text": "",
+            "type": "text",
+            "os_version": "31",
+            "store_name": "",
+            "point_info": "{\"shop_order_id\":6952773035962471795,\"sku_order_id\":6952773035962471795,\"product_id\":3809245018825294754}",
+            "s:cur_sub_conv_status": "0",
+            "source": "3",
+            "shop_tag": ""
+          },
+          "property_list": {},
+          "user_profile": {},
+          "conversation_type": 11,
+          "server_message_id": {
+            "low": 210290742,
+            "high": 1792994274,
+            "unsigned": false
+          },
+          "index_in_conversation": {
+            "low": 0,
+            "high": 0,
+            "unsigned": false
+          },
+          "conversation_short_id": {
+            "low": -1509817082,
+            "high": 1772610766,
+            "unsigned": false
+          },
+          "message_type": 50002,
+          "content": "",
+          "create_time": {
+            "low": 1992911984,
+            "high": 417,
+            "unsigned": false
+          },
+          "version": {
+            "low": 1992911982,
+            "high": 417,
+            "unsigned": false
+          },
+          "status": 0,
+          "order_in_conversation": {
+            "low": 0,
+            "high": 0,
+            "unsigned": false
+          },
+          "sec_sender": "MS4wLjABAAAAQOxxT6H-9JZ6L8PAHuIL67EweKZsPjNYx8t2Jreay3EkLx6rd3R1BgfXwruAY0Kz",
+          "index_in_conversation_v2": {
+            "low": 0,
+            "high": 0,
+            "unsigned": false
+          },
+          "sub_conversation_short_id": {
+            "low": 427951396,
+            "high": 1792993352,
+            "unsigned": false
+          }
+        },
+        "previous_cursor": {
+          "low": 47334141,
+          "high": 417464,
+          "unsigned": false
+        },
+        "next_cursor": {
+          "low": 47564526,
+          "high": 417464,
+          "unsigned": false
+        },
+        "index_in_conversation": {
+          "low": 0,
+          "high": 0,
+          "unsigned": false
+        },
+        "index_in_conversation_v2": {
+          "low": 0,
+          "high": 0,
+          "unsigned": false
+        },
+        "cmd_message_index": {
+          "low": 2911,
+          "high": 0,
+          "unsigned": false
+        },
+        "trace": {
+          "metrics": {
+            "4": {
+              "low": 47525699,
+              "high": 417464,
+              "unsigned": false
+            },
+            "5": {
+              "low": 47540058,
+              "high": 417464,
+              "unsigned": false
+            },
+            "7": {
+              "low": 47581616,
+              "high": 417464,
+              "unsigned": false
+            }
+          },
+          "path": 0
+        },
+        "sub_conversation_short_id": {
+          "low": 427951396,
+          "high": 1792993352,
+          "unsigned": false
+        }
+      }
+    },
+    "log_id": "02179299427423200000000000000000000ffff0ac4124eeb9cf5",
+    "start_time_stamp": {
+      "low": 1992912407,
+      "high": 417,
+      "unsigned": false
+    },
+    "_is_first_buyer_message": false
+  }
+}

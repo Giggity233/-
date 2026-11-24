@@ -1,0 +1,52 @@
+2026-09-22 19:22:13 | 世炎的小店铺603 | SUCCESS | 已强制在线
+2026-09-22 19:22:14 | 世炎的小店铺603 | ERROR   | 测试客服子账号2 店铺世炎的小店铺603 74号机 分组号空 转接人为空，请检查人工账号是否在线（Agentname:河南开封）
+2026-09-22 19:22:14 | 世炎的小店铺603 | SUCCESS | 店铺世炎的小店铺603转接人None
+2026-09-22 19:29:46 | 世炎的小店铺603 | WARNING | 店铺世炎的小店铺603 未匹配到人工客服[测试客服子账号2]，转人工功能暂不可用（普通回复不受影响）；内部人工账号=[]，店铺可转接列表=[(181118665, '测试客服子账号2')]
+2026-09-22 19:47:53 | 世炎的小店铺603 | SUCCESS | 已强制在线
+2026-09-22 19:47:54 | 世炎的小店铺603 | SUCCESS | 店铺世炎的小店铺603转接人None
+2026-09-22 19:48:14 | 世炎的小店铺603 | ERROR   | 机器人异常:'NoneType' object has no attribute 'split'
+2026-09-22 19:58:18 | 世炎的小店铺603 | SUCCESS | 已强制在线
+2026-09-22 19:58:19 | 世炎的小店铺603 | SUCCESS | 店铺世炎的小店铺603转接人None
+2026-09-22 19:58:37 | 世炎的小店铺603 | ERROR   | 机器人异常:'NoneType' object has no attribute 'split'
+2026-09-22 20:01:38 | 世炎的小店铺603 | SUCCESS | 已强制在线
+2026-09-22 20:01:39 | 世炎的小店铺603 | SUCCESS | 店铺世炎的小店铺603转接人None
+2026-09-22 20:01:57 | 世炎的小店铺603 | ERROR   | 机器人异常:'NoneType' object has no attribute 'split'
+2026-09-22 20:15:23 | 世炎的小店铺603 | SUCCESS | 已强制在线
+2026-09-22 20:15:24 | 世炎的小店铺603 | SUCCESS | 店铺世炎的小店铺603转接人None
+2026-09-22 20:15:36 | 世炎的小店铺603 | ERROR   | 机器人异常:list index out of range
+2026-09-22 20:21:45 | 世炎的小店铺603 | SUCCESS | 已强制在线
+2026-09-22 20:21:46 | 世炎的小店铺603 | SUCCESS | 店铺世炎的小店铺603转接人None
+2026-09-22 20:21:56 | 世炎的小店铺603 | ERROR   | 机器人异常:list index out of range
+2026-09-22 20:33:00 | 世炎的小店铺603 | SUCCESS | 已强制在线
+2026-09-22 20:33:01 | 世炎的小店铺603 | SUCCESS | 店铺世炎的小店铺603转接人None
+2026-09-22 20:33:16 | 世炎的小店铺603 | ERROR   | 机器人异常:'NoneType' object has no attribute 'split'
+2026-09-22 20:42:52 | 世炎的小店铺603 | SUCCESS | 已强制在线
+2026-09-22 20:42:53 | 世炎的小店铺603 | SUCCESS | 店铺世炎的小店铺603转接人None
+2026-09-22 21:06:02 | 世炎的小店铺603 | SUCCESS | 已强制在线
+2026-09-22 21:06:03 | 世炎的小店铺603 | SUCCESS | 店铺世炎的小店铺603转接人None
+2026-09-22 21:07:38 | 世炎的小店铺603 | ERROR   | {'success': True, 'result': {'response': 'send_message', 'request_id': 1790082458137, 'result': 'fail', 'error_code': 40013, 'error': '请勿重复发送相同消息', 'failure_msg_id': '1790082456391', 'extra': {'sensitive_words_scene': 8, 'sensitive_words_sub_scene': 0, 'repeatInterceptorPopupType': 1, 'repeatCnt': 2}}}
+2026-09-22 21:10:34 | 世炎的小店铺603 | ERROR   | {'success': True, 'result': {'response': 'send_message', 'request_id': 1790082634699, 'result': 'fail', 'error_code': 40013, 'error': '请勿重复发送相同消息', 'failure_msg_id': '1790082632982', 'extra': {'sensitive_words_scene': 8, 'sensitive_words_sub_scene': 0, 'repeatInterceptorPopupType': 1, 'repeatCnt': 2}}}
+2026-09-22 21:15:06 | 世炎的小店铺603 | ERROR   | {'success': True, 'result': {'response': 'send_message', 'request_id': 1790082905920, 'result': 'fail', 'error_code': 40013, 'error': '请勿重复发送相同消息', 'failure_msg_id': '1790082904158', 'extra': {'sensitive_words_scene': 8, 'sensitive_words_sub_scene': 0, 'repeatInterceptorPopupType': 2, 'repeatCnt': 3}}}
+2026-09-23 11:44:15 | 世炎的小店铺603 | SUCCESS | 已强制在线
+2026-09-23 15:10:00 | 世炎的小店铺603 | ERROR   | 店铺世炎的小店铺603(468163277) 转接人预检：中控平台里没有专员账号，转人工不可用
+2026-09-23 15:10:02 | 世炎的小店铺603 | ERROR   | 店铺世炎的小店铺603转接人预检失败：中控平台接口异常 HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/v1/cookies/?platform=pdd (Caused by NewConnectionError("HTTPConnection(host='127.0.0.1', port=8000): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。"))
+2026-09-23 15:20:21 | 世炎的小店铺603 | ERROR   | 店铺世炎的小店铺603转接人为空，消息： 店铺世炎的小店铺603 转接人为空，检测人工账号是否在线
+2026-09-23 15:20:23 | 世炎的小店铺603 | ERROR   | 店铺世炎的小店铺603转接人为空，消息： 店铺世炎的小店铺603 转接人为空，检测人工账号是否在线
+2026-09-23 15:20:25 | 世炎的小店铺603 | ERROR   | 警示提醒发送失败:HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /api/v1/pending-tasks/create/ (Caused by NewConnectionError("HTTPConnection(host='127.0.0.1', port=8000): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。"))
+2026-09-23 15:23:27 | 世炎的小店铺603 | ERROR   | 店铺世炎的小店铺603转接人为空，消息： 店铺世炎的小店铺603 转接人为空，检测人工账号是否在线
+2026-09-23 15:31:37 | 世炎的小店铺603 | SUCCESS | 已强制在线
+2026-09-23 15:35:16 | 世炎的小店铺603 | SUCCESS | 已强制在线
+2026-09-23 15:35:16 | 世炎的小店铺603 | ERROR   | 店铺世炎的小店铺603转接人为空，消息： 店铺世炎的小店铺603 转接人为空，检测人工账号是否在线
+2026-09-23 15:35:16 | 世炎的小店铺603 | SUCCESS | 店铺世炎的小店铺603转接人None
+2026-09-23 16:09:56 | 世炎的小店铺603 | SUCCESS | 已强制在线
+2026-09-23 16:09:57 | 世炎的小店铺603 | ERROR   | 店铺世炎的小店铺603转接人为空，消息： 店铺世炎的小店铺603 转接人为空，检测人工账号是否在线
+2026-09-23 16:09:57 | 世炎的小店铺603 | SUCCESS | 店铺世炎的小店铺603转接人None
+2026-09-23 19:57:25 | 世炎的小店铺603 | SUCCESS | 已强制在线
+2026-09-23 19:57:25 | 世炎的小店铺603 | ERROR   | 店铺世炎的小店铺603转接人为空，消息： 店铺世炎的小店铺603 转接人为空，检测人工账号是否在线
+2026-09-23 19:57:26 | 世炎的小店铺603 | SUCCESS | 店铺世炎的小店铺603转接人None
+2026-09-24 10:41:08 | 世炎的小店铺603 | SUCCESS | 已强制在线
+2026-09-24 10:41:09 | 世炎的小店铺603 | ERROR   | 店铺世炎的小店铺603转接人为空，消息： 店铺世炎的小店铺603 转接人为空，检测人工账号是否在线
+2026-09-24 10:41:09 | 世炎的小店铺603 | SUCCESS | 店铺世炎的小店铺603转接人None
+2026-09-24 11:32:23 | 世炎的小店铺603 | SUCCESS | 已强制在线
+2026-09-24 11:32:23 | 世炎的小店铺603 | ERROR   | 店铺世炎的小店铺603转接人为空，消息： 店铺世炎的小店铺603 转接人为空，检测人工账号是否在线
+2026-09-24 11:32:24 | 世炎的小店铺603 | SUCCESS | 店铺世炎的小店铺603转接人None

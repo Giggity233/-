@@ -1,0 +1,7 @@
+2026-09-27 05:42:20 | 15224740638 | ERROR   | 店铺运行异常: Driver.__init__() missing 1 required positional argument: 'address'
+2026-09-27 05:47:24 | 15224740638 | ERROR   | 店铺运行异常: Driver.__init__() missing 1 required positional argument: 'address'
+2026-09-27 05:47:45 | 15224740638 | ERROR   | 店铺运行异常: Driver.__init__() missing 1 required positional argument: 'address'
+2026-09-27 05:52:47 | 15224740638 | ERROR   | 店铺运行异常: Driver.__init__() missing 1 required positional argument: 'address'
+2026-09-27 05:57:49 | 15224740638 | ERROR   | 店铺运行异常: Driver.__init__() missing 1 required positional argument: 'address'
+2026-09-27 05:58:58 | 15224740638 | ERROR   | 店铺运行异常: Driver.__init__() missing 1 required positional argument: 'address'
+2026-09-27 06:02:06 | 15224740638 | ERROR   | 店铺运行异常: Driver.__init__() missing 1 required positional argument: 'address'

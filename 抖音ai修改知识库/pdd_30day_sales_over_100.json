@@ -1,0 +1,55 @@
+[
+  {
+    "shop_name": "DOOXY母婴用品旗舰店",
+    "goods": [
+      {
+        "goods_id": "641843684195",
+        "sold_quantity_for_thirty_days": 1583
+      },
+      {
+        "goods_id": "640663751617",
+        "sold_quantity_for_thirty_days": 581
+      },
+      {
+        "goods_id": "655335563025",
+        "sold_quantity_for_thirty_days": 535
+      },
+      {
+        "goods_id": "642195195931",
+        "sold_quantity_for_thirty_days": 334
+      },
+      {
+        "goods_id": "709606163986",
+        "sold_quantity_for_thirty_days": 274
+      },
+      {
+        "goods_id": "640655863939",
+        "sold_quantity_for_thirty_days": 232
+      },
+      {
+        "goods_id": "642158046094",
+        "sold_quantity_for_thirty_days": 219
+      },
+      {
+        "goods_id": "642169833861",
+        "sold_quantity_for_thirty_days": 102
+      },
+      {
+        "goods_id": "647003343740",
+        "sold_quantity_for_thirty_days": 68
+      },
+      {
+        "goods_id": "799967358852",
+        "sold_quantity_for_thirty_days": 47
+      },
+      {
+        "goods_id": "642186284890",
+        "sold_quantity_for_thirty_days": 35
+      },
+      {
+        "goods_id": "640392492582",
+        "sold_quantity_for_thirty_days": 32
+      }
+    ]
+  }
+]

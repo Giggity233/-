@@ -1,0 +1,1899 @@
+﻿
+
+===== .reverse/v1_1_11_sync.pyc build_partition_bundle =====
+Name:              build_partition_bundle
+Filename:          sync_douyin_cookies.py
+Argument count:    3
+Positional-only arguments: 0
+Kw-only arguments: 0
+Number of locals:  22
+Stack size:        12
+Flags:             OPTIMIZED, NEWLOCALS, 0x1000000
+Constants:
+   0: 'Decode fxg cookies in one partition DB without pre-filtering shop ID.\n\nThe shop ID is taken from the live SHOP_ID cookie, so a partition whose\naccount was re-logged into another shop is still reported correctly.\n'
+   1: '['
+   2: '] 读取失败：'
+   3: ('file',)
+   4: None
+   5: b''
+   6: ''
+   7: '] '
+   8: ' / '
+   9: ' 解密失败：'
+  10: frozenset({'SHOP_ID', 'ecom_gray_shop_id'})
+  11: 0
+  12: '/'
+  13: ('domain', 'path')
+  14: '; '
+  15: <code object <genexpr> at 0x01056C58, file "sync_douyin_cookies.py", line 128>
+Names:
+   0: cookie_reader
+   1: snapshot_rows
+   2: Exception
+   3: print
+   4: sys
+   5: stderr
+   6: is_cookie_for
+   7: FXG_HOST
+   8: decrypt_cookie
+   9: append
+  10: RequestsCookieJar
+  11: set
+  12: join
+  13: str
+  14: parent
+  15: relative_to
+  16: ShopCookie
+Variable names:
+   0: app_dir
+   1: master_key
+   2: cookie_db
+   3: rows
+   4: exc
+   5: decoded
+   6: host
+   7: name
+   8: path
+   9: encrypted
+  10: plain
+  11: _expires
+  12: _secure
+  13: _httponly
+  14: value
+  15: _host
+  16: _path
+  17: shop_ids
+  18: shop_id
+  19: jar
+  20: cookie_header
+  21: partition
+  87            RESUME                   0
+
+  95            NOP
+
+  96    L1:     LOAD_GLOBAL              0 (cookie_reader)
+                LOAD_ATTR                2 (snapshot_rows)
+                PUSH_NULL
+                LOAD_FAST                2 (cookie_db)
+                CALL                     1
+                STORE_FAST               3 (rows)
+
+ 101    L2:     BUILD_LIST               0
+                STORE_FAST               5 (decoded)
+
+ 102            LOAD_FAST                3 (rows)
+                GET_ITER
+        L3:     FOR_ITER               104 (to L9)
+                UNPACK_SEQUENCE          8
+                STORE_FAST_STORE_FAST  103 (host, name)
+                STORE_FAST_STORE_FAST  137 (path, encrypted)
+                STORE_FAST_STORE_FAST  171 (plain, _expires)
+                STORE_FAST_STORE_FAST  205 (_secure, _httponly)
+
+ 103            LOAD_GLOBAL              0 (cookie_reader)
+                LOAD_ATTR               12 (is_cookie_for)
+                PUSH_NULL
+                LOAD_FAST                6 (host)
+                LOAD_GLOBAL             14 (FXG_HOST)
+                CALL                     2
+                TO_BOOL
+                POP_JUMP_IF_TRUE         2 (to L4)
+
+ 104            JUMP_BACKWARD           42 (to L3)
+
+ 105    L4:     NOP
+
+ 106    L5:     LOAD_GLOBAL              0 (cookie_reader)
+                LOAD_ATTR               16 (decrypt_cookie)
+                PUSH_NULL
+
+ 107            LOAD_FAST                9 (encrypted)
+                COPY                     1
+                TO_BOOL
+                POP_JUMP_IF_TRUE         2 (to L6)
+                POP_TOP
+                LOAD_CONST               5 (b'')
+        L6:     LOAD_FAST               10 (plain)
+                COPY                     1
+                TO_BOOL
+                POP_JUMP_IF_TRUE         2 (to L7)
+                POP_TOP
+                LOAD_CONST               6 ('')
+        L7:     LOAD_FAST_LOAD_FAST     97 (host, master_key)
+
+ 106            CALL                     4
+                STORE_FAST              14 (value)
+
+ 112    L8:     LOAD_FAST                5 (decoded)
+                LOAD_ATTR               19 (append + NULL|self)
+                LOAD_FAST_LOAD_FAST    103 (host, name)
+                LOAD_FAST_LOAD_FAST    142 (path, value)
+                BUILD_TUPLE              4
+                CALL                     1
+                POP_TOP
+                JUMP_BACKWARD          106 (to L3)
+
+ 102    L9:     END_FOR
+                POP_TOP
+
+ 114            LOAD_FAST                5 (decoded)
+                TO_BOOL
+                POP_JUMP_IF_TRUE         1 (to L10)
+
+ 115            RETURN_CONST             4 (None)
+
+ 119   L10:     LOAD_FAST                5 (decoded)
+                GET_ITER
+
+ 117            LOAD_FAST_AND_CLEAR     15 (_host)
+                LOAD_FAST_AND_CLEAR      7 (name)
+                LOAD_FAST_AND_CLEAR     16 (_path)
+                LOAD_FAST_AND_CLEAR     14 (value)
+                SWAP                     5
+       L11:     BUILD_LIST               0
+                SWAP                     2
+
+ 119            GET_ITER
+       L12:     FOR_ITER                17 (to L15)
+                UNPACK_SEQUENCE          4
+                STORE_FAST_STORE_FAST  247 (_host, name)
+                STORE_FAST              16 (_path)
+                STORE_FAST              14 (value)
+
+ 120            LOAD_FAST                7 (name)
+                LOAD_CONST              10 (frozenset({'SHOP_ID', 'ecom_gray_shop_id'}))
+                CONTAINS_OP              0
+
+ 118   L13:     POP_JUMP_IF_TRUE         2 (to L14)
+                JUMP_BACKWARD           15 (to L12)
+       L14:     LOAD_FAST               14 (value)
+                LIST_APPEND              2
+                JUMP_BACKWARD           19 (to L12)
+
+ 119   L15:     END_FOR
+                POP_TOP
+
+ 117   L16:     STORE_FAST              17 (shop_ids)
+                STORE_FAST              16 (_path)
+                STORE_FAST               7 (name)
+                STORE_FAST              15 (_host)
+                STORE_FAST              14 (value)
+
+ 122            LOAD_FAST               17 (shop_ids)
+                TO_BOOL
+                POP_JUMP_IF_FALSE        5 (to L17)
+                LOAD_FAST               17 (shop_ids)
+                LOAD_CONST              11 (0)
+                BINARY_SUBSCR
+                JUMP_FORWARD             1 (to L18)
+       L17:     LOAD_CONST               6 ('')
+       L18:     STORE_FAST              18 (shop_id)
+
+ 124            LOAD_GLOBAL             21 (RequestsCookieJar + NULL)
+                CALL                     0
+                STORE_FAST              19 (jar)
+
+ 125            LOAD_FAST                5 (decoded)
+                GET_ITER
+       L19:     FOR_ITER                31 (to L21)
+                UNPACK_SEQUENCE          4
+                STORE_FAST_STORE_FAST  103 (host, name)
+                STORE_FAST_STORE_FAST  142 (path, value)
+
+ 126            LOAD_FAST               19 (jar)
+                LOAD_ATTR               23 (set + NULL|self)
+                LOAD_FAST_LOAD_FAST    126 (name, value)
+                LOAD_FAST_LOAD_FAST    104 (host, path)
+                COPY                     1
+                TO_BOOL
+                POP_JUMP_IF_TRUE         2 (to L20)
+                POP_TOP
+                LOAD_CONST              12 ('/')
+       L20:     LOAD_CONST              13 (('domain', 'path'))
+                CALL_KW                  4
+                POP_TOP
+                JUMP_BACKWARD           33 (to L19)
+
+ 125   L21:     END_FOR
+                POP_TOP
+
+ 128            LOAD_CONST              14 ('; ')
+                LOAD_ATTR               25 (join + NULL|self)
+                LOAD_CONST              15 (<code object <genexpr> at 0x01056C58, file "sync_douyin_cookies.py", line 128>)
+                MAKE_FUNCTION
+
+ 129            LOAD_FAST                5 (decoded)
+                GET_ITER
+
+ 128            CALL                     0
+                CALL                     1
+                STORE_FAST              20 (cookie_header)
+
+ 131            LOAD_GLOBAL             27 (str + NULL)
+                LOAD_FAST                2 (cookie_db)
+                LOAD_ATTR               28 (parent)
+                LOAD_ATTR               28 (parent)
+                LOAD_ATTR               31 (relative_to + NULL|self)
+                LOAD_FAST                0 (app_dir)
+                CALL                     1
+                CALL                     1
+                STORE_FAST              21 (partition)
+
+ 132            LOAD_GLOBAL             33 (ShopCookie + NULL)
+                LOAD_FAST               18 (shop_id)
+                LOAD_FAST               21 (partition)
+                LOAD_FAST               20 (cookie_header)
+                LOAD_FAST               19 (jar)
+                CALL                     4
+                RETURN_VALUE
+
+  --   L22:     PUSH_EXC_INFO
+
+  97            LOAD_GLOBAL              4 (Exception)
+                CHECK_EXC_MATCH
+                POP_JUMP_IF_FALSE       40 (to L26)
+                STORE_FAST               4 (exc)
+
+  98   L23:     LOAD_GLOBAL              7 (print + NULL)
+                LOAD_CONST               1 ('[')
+                LOAD_FAST                2 (cookie_db)
+                FORMAT_SIMPLE
+                LOAD_CONST               2 ('] 读取失败：')
+                LOAD_FAST                4 (exc)
+                FORMAT_SIMPLE
+                BUILD_STRING             4
+                LOAD_GLOBAL              8 (sys)
+                LOAD_ATTR               10 (stderr)
+                LOAD_CONST               3 (('file',))
+                CALL_KW                  2
+                POP_TOP
+
+  99   L24:     POP_EXCEPT
+                LOAD_CONST               4 (None)
+                STORE_FAST               4 (exc)
+                DELETE_FAST              4 (exc)
+                RETURN_CONST             4 (None)
+
+  --   L25:     LOAD_CONST               4 (None)
+                STORE_FAST               4 (exc)
+                DELETE_FAST              4 (exc)
+                RERAISE                  1
+
+  97   L26:     RERAISE                  0
+
+  --   L27:     COPY                     3
+                POP_EXCEPT
+                RERAISE                  1
+       L28:     PUSH_EXC_INFO
+
+ 109            LOAD_GLOBAL              4 (Exception)
+                CHECK_EXC_MATCH
+                POP_JUMP_IF_FALSE       48 (to L32)
+                STORE_FAST               4 (exc)
+
+ 110   L29:     LOAD_GLOBAL              7 (print + NULL)
+                LOAD_CONST               1 ('[')
+                LOAD_FAST                2 (cookie_db)
+                FORMAT_SIMPLE
+                LOAD_CONST               7 ('] ')
+                LOAD_FAST                6 (host)
+                FORMAT_SIMPLE
+                LOAD_CONST               8 (' / ')
+                LOAD_FAST                7 (name)
+                FORMAT_SIMPLE
+                LOAD_CONST               9 (' 解密失败：')
+                LOAD_FAST                4 (exc)
+                FORMAT_SIMPLE
+                BUILD_STRING             8
+                LOAD_GLOBAL              8 (sys)
+                LOAD_ATTR               10 (stderr)
+                LOAD_CONST               3 (('file',))
+                CALL_KW                  2
+                POP_TOP
+
+ 111   L30:     POP_EXCEPT
+                LOAD_CONST               4 (None)
+                STORE_FAST               4 (exc)
+                DELETE_FAST              4 (exc)
+                EXTENDED_ARG             1
+                JUMP_BACKWARD          403 (to L3)
+
+  --   L31:     LOAD_CONST               4 (None)
+                STORE_FAST               4 (exc)
+                DELETE_FAST              4 (exc)
+                RERAISE                  1
+
+ 109   L32:     RERAISE                  0
+
+  --   L33:     COPY                     3
+                POP_EXCEPT
+                RERAISE                  1
+       L34:     SWAP                     2
+                POP_TOP
+
+ 117            SWAP                     5
+                STORE_FAST              14 (value)
+                STORE_FAST              16 (_path)
+                STORE_FAST               7 (name)
+                STORE_FAST              15 (_host)
+                RERAISE                  0
+ExceptionTable:
+  L1 to L2 -> L22 [0]
+  L5 to L8 -> L28 [1]
+  L11 to L13 -> L34 [5]
+  L14 to L16 -> L34 [5]
+  L22 to L23 -> L27 [1] lasti
+  L23 to L24 -> L25 [1] lasti
+  L25 to L27 -> L27 [1] lasti
+  L28 to L29 -> L33 [2] lasti
+  L29 to L30 -> L31 [2] lasti
+  L31 to L33 -> L33 [2] lasti
+
+Disassembly of <code object <genexpr> at 0x01056C58, file "sync_douyin_cookies.py", line 128>:
+ 128           RETURN_GENERATOR
+               POP_TOP
+       L1:     RESUME                   0
+               LOAD_FAST                0 (.0)
+
+ 129           GET_ITER
+       L2:     FOR_ITER                15 (to L3)
+               UNPACK_SEQUENCE          4
+               STORE_FAST_STORE_FAST   18 (_host, name)
+               STORE_FAST_STORE_FAST   52 (_path, value)
+               LOAD_FAST                2 (name)
+               FORMAT_SIMPLE
+               LOAD_CONST               0 ('=')
+               LOAD_FAST                4 (value)
+               FORMAT_SIMPLE
+               BUILD_STRING             3
+               YIELD_VALUE              0
+               RESUME                   5
+               POP_TOP
+               JUMP_BACKWARD           17 (to L2)
+       L3:     END_FOR
+               POP_TOP
+               RETURN_CONST             1 (None)
+
+  --   L4:     CALL_INTRINSIC_1         3 (INTRINSIC_STOPITERATION_ERROR)
+               RERAISE                  1
+ExceptionTable:
+  L1 to L4 -> L4 [0] lasti
+
+
+===== .reverse/v1_1_11_sync.pyc collect_account_bundle =====
+Name:              collect_account_bundle
+Filename:          sync_douyin_cookies.py
+Argument count:    3
+Positional-only arguments: 0
+Kw-only arguments: 0
+Number of locals:  7
+Stack size:        7
+Flags:             OPTIMIZED, NEWLOCALS, 0x1000000
+Constants:
+   0: 'Return the cookie bundle for one saved login account.\n\nEach account owns Partitions\\<account_id>; when that partition is missing\n(old 1.1.9 layout or moved data), fall back to scanning every DB for the\nconfigured shop ID.\n'
+   1: 'account_id'
+   2: ''
+   3: 'shop_id'
+   4: 'Partitions'
+   5: 'Network'
+   6: 'Cookies'
+   7: None
+Names:
+   0: get
+   1: is_file
+   2: build_partition_bundle
+   3: shop_id
+   4: cookie_reader
+   5: discover_cookie_dbs
+   6: build_cookie_bundle
+Variable names:
+   0: app_dir
+   1: master_key
+   2: record
+   3: account_id
+   4: expected_shop_id
+   5: cookie_db
+   6: bundle
+135           RESUME                   0
+
+144           LOAD_FAST                2 (record)
+              LOAD_ATTR                1 (get + NULL|self)
+              LOAD_CONST               1 ('account_id')
+              LOAD_CONST               2 ('')
+              CALL                     2
+              STORE_FAST               3 (account_id)
+
+145           LOAD_FAST                2 (record)
+              LOAD_ATTR                1 (get + NULL|self)
+              LOAD_CONST               3 ('shop_id')
+              LOAD_CONST               2 ('')
+              CALL                     2
+              STORE_FAST               4 (expected_shop_id)
+
+146           LOAD_FAST                3 (account_id)
+              TO_BOOL
+              POP_JUMP_IF_FALSE       69 (to L1)
+
+147           LOAD_FAST                0 (app_dir)
+              LOAD_CONST               4 ('Partitions')
+              BINARY_OP               11 (/)
+              LOAD_FAST                3 (account_id)
+              BINARY_OP               11 (/)
+              LOAD_CONST               5 ('Network')
+              BINARY_OP               11 (/)
+              LOAD_CONST               6 ('Cookies')
+              BINARY_OP               11 (/)
+              STORE_FAST               5 (cookie_db)
+
+148           LOAD_FAST                5 (cookie_db)
+              LOAD_ATTR                3 (is_file + NULL|self)
+              CALL                     0
+              TO_BOOL
+              POP_JUMP_IF_FALSE       34 (to L1)
+
+149           LOAD_GLOBAL              5 (build_partition_bundle + NULL)
+              LOAD_FAST_LOAD_FAST      1 (app_dir, master_key)
+              LOAD_FAST                5 (cookie_db)
+              CALL                     3
+              STORE_FAST               6 (bundle)
+
+150           LOAD_FAST                6 (bundle)
+              POP_JUMP_IF_NONE        19 (to L1)
+              LOAD_FAST                6 (bundle)
+              LOAD_ATTR                6 (shop_id)
+              TO_BOOL
+              POP_JUMP_IF_FALSE        2 (to L1)
+
+151           LOAD_FAST                6 (bundle)
+              RETURN_VALUE
+
+153   L1:     LOAD_GLOBAL              8 (cookie_reader)
+              LOAD_ATTR               10 (discover_cookie_dbs)
+              PUSH_NULL
+              LOAD_FAST                0 (app_dir)
+              CALL                     1
+              GET_ITER
+      L2:     FOR_ITER                26 (to L4)
+              STORE_FAST               5 (cookie_db)
+
+154           LOAD_GLOBAL             13 (build_cookie_bundle + NULL)
+
+155           LOAD_FAST_LOAD_FAST      1 (app_dir, master_key)
+              LOAD_FAST_LOAD_FAST     84 (cookie_db, expected_shop_id)
+
+154           CALL                     4
+              STORE_FAST               6 (bundle)
+
+157           LOAD_FAST                6 (bundle)
+              TO_BOOL
+              POP_JUMP_IF_TRUE         2 (to L3)
+              JUMP_BACKWARD           24 (to L2)
+
+158   L3:     LOAD_FAST                6 (bundle)
+              SWAP                     2
+              POP_TOP
+              RETURN_VALUE
+
+153   L4:     END_FOR
+              POP_TOP
+
+159           RETURN_CONST             7 (None)
+
+
+===== .reverse/v1_1_11_sync.pyc resolve_accounts =====
+Name:              resolve_accounts
+Filename:          sync_douyin_cookies.py
+Argument count:    2
+Positional-only arguments: 0
+Kw-only arguments: 0
+Number of locals:  7
+Stack size:        6
+Flags:             OPTIMIZED, NEWLOCALS, 0x1000000
+Constants:
+   0: 'Select login account records (one per saved staff login).'
+   1: '--all 不能和 --shop-id/--shop-name 同时使用'
+   2: 'config.json 中没有找到账号列表'
+   3: 'shop_id'
+   4: 'name'
+   5: <code object <genexpr> at 0x01033B10, file "sync_douyin_cookies.py", line 280>
+   6: '未在 config.json 中找到店铺 ID：'
+   7: <code object <genexpr> at 0x01033BD8, file "sync_douyin_cookies.py", line 283>
+   8: '未在 config.json 中找到店铺名称：'
+Names:
+   0: all
+   1: shop_id
+   2: shop_name
+   3: ValueError
+   4: str
+   5: strip
+   6: set
+   7: list
+   8: get
+   9: any
+Variable names:
+   0: args
+   1: accounts
+   2: value
+   3: wanted_ids
+   4: wanted_names
+   5: record
+   6: selected
+Cell variables:
+   0: wanted_id
+   1: wanted_name
+  --            MAKE_CELL                7 (wanted_id)
+                MAKE_CELL                8 (wanted_name)
+
+ 254            RESUME                   0
+
+ 258            LOAD_FAST                0 (args)
+                LOAD_ATTR                0 (all)
+                TO_BOOL
+                POP_JUMP_IF_FALSE       45 (to L2)
+                LOAD_FAST                0 (args)
+                LOAD_ATTR                2 (shop_id)
+                TO_BOOL
+                POP_JUMP_IF_TRUE        17 (to L1)
+                LOAD_FAST                0 (args)
+                LOAD_ATTR                4 (shop_name)
+                TO_BOOL
+                POP_JUMP_IF_FALSE       11 (to L2)
+
+ 259    L1:     LOAD_GLOBAL              7 (ValueError + NULL)
+                LOAD_CONST               1 ('--all 不能和 --shop-id/--shop-name 同时使用')
+                CALL                     1
+                RAISE_VARARGS            1
+
+ 262    L2:     LOAD_FAST                0 (args)
+                LOAD_ATTR                2 (shop_id)
+                COPY                     1
+                TO_BOOL
+                POP_JUMP_IF_TRUE         2 (to L3)
+                POP_TOP
+                BUILD_LIST               0
+        L3:     GET_ITER
+
+ 261            LOAD_FAST_AND_CLEAR      2 (value)
+                SWAP                     2
+        L4:     BUILD_SET                0
+                SWAP                     2
+
+ 262            GET_ITER
+        L5:     FOR_ITER                60 (to L8)
+                STORE_FAST               2 (value)
+                LOAD_GLOBAL              9 (str + NULL)
+                LOAD_FAST                2 (value)
+                CALL                     1
+                LOAD_ATTR               11 (strip + NULL|self)
+                CALL                     0
+                TO_BOOL
+        L6:     POP_JUMP_IF_TRUE         2 (to L7)
+                JUMP_BACKWARD           35 (to L5)
+        L7:     LOAD_GLOBAL              9 (str + NULL)
+                LOAD_FAST                2 (value)
+                CALL                     1
+                LOAD_ATTR               11 (strip + NULL|self)
+                CALL                     0
+                SET_ADD                  2
+                JUMP_BACKWARD           62 (to L5)
+        L8:     END_FOR
+                POP_TOP
+
+ 261    L9:     STORE_FAST               3 (wanted_ids)
+                STORE_FAST               2 (value)
+
+ 264            LOAD_GLOBAL             13 (set + NULL)
+                LOAD_FAST                0 (args)
+                LOAD_ATTR                4 (shop_name)
+                COPY                     1
+                TO_BOOL
+                POP_JUMP_IF_TRUE         2 (to L10)
+                POP_TOP
+                BUILD_LIST               0
+       L10:     CALL                     1
+                STORE_FAST               4 (wanted_names)
+
+ 268            LOAD_FAST                0 (args)
+                LOAD_ATTR                0 (all)
+                TO_BOOL
+                POP_JUMP_IF_TRUE        14 (to L11)
+                LOAD_FAST                3 (wanted_ids)
+                TO_BOOL
+                POP_JUMP_IF_TRUE        36 (to L13)
+                LOAD_FAST                4 (wanted_names)
+                TO_BOOL
+                POP_JUMP_IF_TRUE        29 (to L13)
+
+ 269   L11:     LOAD_FAST                1 (accounts)
+                TO_BOOL
+                POP_JUMP_IF_TRUE        11 (to L12)
+
+ 270            LOAD_GLOBAL              7 (ValueError + NULL)
+                LOAD_CONST               2 ('config.json 中没有找到账号列表')
+                CALL                     1
+                RAISE_VARARGS            1
+
+ 271   L12:     LOAD_GLOBAL             15 (list + NULL)
+                LOAD_FAST                1 (accounts)
+                CALL                     1
+                RETURN_VALUE
+
+ 275   L13:     LOAD_FAST                1 (accounts)
+                GET_ITER
+
+ 273            LOAD_FAST_AND_CLEAR      5 (record)
+                SWAP                     2
+       L14:     BUILD_LIST               0
+                SWAP                     2
+
+ 275            GET_ITER
+       L15:     FOR_ITER                49 (to L18)
+                STORE_FAST               5 (record)
+
+ 276            LOAD_FAST                5 (record)
+                LOAD_ATTR               17 (get + NULL|self)
+                LOAD_CONST               3 ('shop_id')
+                CALL                     1
+                LOAD_FAST                3 (wanted_ids)
+                CONTAINS_OP              0
+                POP_JUMP_IF_TRUE        23 (to L17)
+
+ 277            LOAD_FAST                5 (record)
+                LOAD_ATTR               17 (get + NULL|self)
+                LOAD_CONST               4 ('name')
+                CALL                     1
+                LOAD_FAST                4 (wanted_names)
+                CONTAINS_OP              0
+
+ 274   L16:     POP_JUMP_IF_TRUE         2 (to L17)
+                JUMP_BACKWARD           47 (to L15)
+       L17:     LOAD_FAST                5 (record)
+                LIST_APPEND              2
+                JUMP_BACKWARD           51 (to L15)
+
+ 275   L18:     END_FOR
+                POP_TOP
+
+ 273   L19:     STORE_FAST               6 (selected)
+                STORE_FAST               5 (record)
+
+ 279            LOAD_FAST                3 (wanted_ids)
+                GET_ITER
+       L20:     FOR_ITER                43 (to L22)
+                STORE_DEREF              7 (wanted_id)
+
+ 280            LOAD_GLOBAL             19 (any + NULL)
+                LOAD_FAST                7 (wanted_id)
+                BUILD_TUPLE              1
+                LOAD_CONST               5 (<code object <genexpr> at 0x01033B10, file "sync_douyin_cookies.py", line 280>)
+                MAKE_FUNCTION
+                SET_FUNCTION_ATTRIBUTE   8 (closure)
+                LOAD_FAST                6 (selected)
+                GET_ITER
+                CALL                     0
+                CALL                     1
+                TO_BOOL
+                POP_JUMP_IF_FALSE        2 (to L21)
+                JUMP_BACKWARD           31 (to L20)
+
+ 281   L21:     LOAD_GLOBAL              7 (ValueError + NULL)
+                LOAD_CONST               6 ('未在 config.json 中找到店铺 ID：')
+                LOAD_DEREF               7 (wanted_id)
+                FORMAT_SIMPLE
+                BUILD_STRING             2
+                CALL                     1
+                RAISE_VARARGS            1
+
+ 279   L22:     END_FOR
+                POP_TOP
+
+ 282            LOAD_FAST                4 (wanted_names)
+                GET_ITER
+       L23:     FOR_ITER                43 (to L25)
+                STORE_DEREF              8 (wanted_name)
+
+ 283            LOAD_GLOBAL             19 (any + NULL)
+                LOAD_FAST                8 (wanted_name)
+                BUILD_TUPLE              1
+                LOAD_CONST               7 (<code object <genexpr> at 0x01033BD8, file "sync_douyin_cookies.py", line 283>)
+                MAKE_FUNCTION
+                SET_FUNCTION_ATTRIBUTE   8 (closure)
+                LOAD_FAST                6 (selected)
+                GET_ITER
+                CALL                     0
+                CALL                     1
+                TO_BOOL
+                POP_JUMP_IF_FALSE        2 (to L24)
+                JUMP_BACKWARD           31 (to L23)
+
+ 284   L24:     LOAD_GLOBAL              7 (ValueError + NULL)
+                LOAD_CONST               8 ('未在 config.json 中找到店铺名称：')
+                LOAD_DEREF               8 (wanted_name)
+                FORMAT_SIMPLE
+                BUILD_STRING             2
+                CALL                     1
+                RAISE_VARARGS            1
+
+ 282   L25:     END_FOR
+                POP_TOP
+
+ 285            LOAD_FAST                6 (selected)
+                RETURN_VALUE
+
+  --   L26:     SWAP                     2
+                POP_TOP
+
+ 261            SWAP                     2
+                STORE_FAST               2 (value)
+                RERAISE                  0
+
+  --   L27:     SWAP                     2
+                POP_TOP
+
+ 273            SWAP                     2
+                STORE_FAST               5 (record)
+                RERAISE                  0
+ExceptionTable:
+  L4 to L6 -> L26 [2]
+  L7 to L9 -> L26 [2]
+  L14 to L16 -> L27 [2]
+  L17 to L19 -> L27 [2]
+
+Disassembly of <code object <genexpr> at 0x01033B10, file "sync_douyin_cookies.py", line 280>:
+  --           COPY_FREE_VARS           1
+
+ 280           RETURN_GENERATOR
+               POP_TOP
+       L1:     RESUME                   0
+               LOAD_FAST                0 (.0)
+               GET_ITER
+       L2:     FOR_ITER                24 (to L3)
+               STORE_FAST_LOAD_FAST    17 (record, record)
+               LOAD_ATTR                1 (get + NULL|self)
+               LOAD_CONST               0 ('shop_id')
+               CALL                     1
+               LOAD_DEREF               2 (wanted_id)
+               COMPARE_OP              72 (==)
+               YIELD_VALUE              0
+               RESUME                   5
+               POP_TOP
+               JUMP_BACKWARD           26 (to L2)
+       L3:     END_FOR
+               POP_TOP
+               RETURN_CONST             1 (None)
+
+  --   L4:     CALL_INTRINSIC_1         3 (INTRINSIC_STOPITERATION_ERROR)
+               RERAISE                  1
+ExceptionTable:
+  L1 to L4 -> L4 [0] lasti
+
+Disassembly of <code object <genexpr> at 0x01033BD8, file "sync_douyin_cookies.py", line 283>:
+  --           COPY_FREE_VARS           1
+
+ 283           RETURN_GENERATOR
+               POP_TOP
+       L1:     RESUME                   0
+               LOAD_FAST                0 (.0)
+               GET_ITER
+       L2:     FOR_ITER                24 (to L3)
+               STORE_FAST_LOAD_FAST    17 (record, record)
+               LOAD_ATTR                1 (get + NULL|self)
+               LOAD_CONST               0 ('name')
+               CALL                     1
+               LOAD_DEREF               2 (wanted_name)
+               COMPARE_OP              72 (==)
+               YIELD_VALUE              0
+               RESUME                   5
+               POP_TOP
+               JUMP_BACKWARD           26 (to L2)
+       L3:     END_FOR
+               POP_TOP
+               RETURN_CONST             1 (None)
+
+  --   L4:     CALL_INTRINSIC_1         3 (INTRINSIC_STOPITERATION_ERROR)
+               RERAISE                  1
+ExceptionTable:
+  L1 to L4 -> L4 [0] lasti
+
+
+===== .reverse/v1_1_11_sync.pyc process_account =====
+Name:              process_account
+Filename:          sync_douyin_cookies.py
+Argument count:    5
+Positional-only arguments: 0
+Kw-only arguments: 0
+Number of locals:  20
+Stack size:        10
+Flags:             OPTIMIZED, NEWLOCALS, 0x1000000
+Constants:
+   0: 'Process one login account; failures must not stop the next account.'
+   1: 'account_id'
+   2: ''
+   3: 'shop_id'
+   4: 'name'
+   5: '/'
+   6: False
+   7: 'Cookie 读取失败：'
+   8: None
+   9: '没有找到本地 Cookie'
+  10: 'shop_name'
+  11: '店铺 '
+  12: 'main_category'
+  13: 'notfind'
+  14: 'valid'
+  15: 'invalid'
+  16: '['
+  17: '] 分区='
+  18: ' 店铺='
+  19: ' Cookie状态='
+  20: '] '
+  21: ('file',)
+  22: '] Cookie 状态上传成功：'
+  23: 'Cookie 已失效，请重新登录后更新'
+  24: True
+Names:
+   0: get
+   1: collect_account_bundle
+   2: Exception
+   3: shop_id
+   4: validate_shop
+   5: str
+   6: print
+   7: partition
+   8: sys
+   9: stderr
+  10: upload_cookie
+  11: cookie_header
+Variable names:
+   0: app_dir
+   1: master_key
+   2: record
+   3: base_url
+   4: timeout
+   5: account_id
+   6: configured_shop_id
+   7: configured_name
+   8: tag
+   9: bundle
+  10: exc
+  11: shop_id
+  12: valid
+  13: data
+  14: validation_error
+  15: shop_name
+  16: main_category
+  17: status
+  18: uploaded
+  19: message
+ 288            RESUME                   0
+
+ 296            LOAD_FAST                2 (record)
+                LOAD_ATTR                1 (get + NULL|self)
+                LOAD_CONST               1 ('account_id')
+                LOAD_CONST               2 ('')
+                CALL                     2
+                STORE_FAST               5 (account_id)
+
+ 297            LOAD_FAST                2 (record)
+                LOAD_ATTR                1 (get + NULL|self)
+                LOAD_CONST               3 ('shop_id')
+                LOAD_CONST               2 ('')
+                CALL                     2
+                STORE_FAST               6 (configured_shop_id)
+
+ 298            LOAD_FAST                2 (record)
+                LOAD_ATTR                1 (get + NULL|self)
+                LOAD_CONST               4 ('name')
+                LOAD_CONST               2 ('')
+                CALL                     2
+                STORE_FAST               7 (configured_name)
+
+ 299            LOAD_FAST                5 (account_id)
+                TO_BOOL
+                POP_JUMP_IF_FALSE        7 (to L1)
+                LOAD_FAST                6 (configured_shop_id)
+                FORMAT_SIMPLE
+                LOAD_CONST               5 ('/')
+                LOAD_FAST                5 (account_id)
+                FORMAT_SIMPLE
+                BUILD_STRING             3
+                JUMP_FORWARD             1 (to L2)
+        L1:     LOAD_FAST                6 (configured_shop_id)
+        L2:     STORE_FAST               8 (tag)
+
+ 301            NOP
+
+ 302    L3:     LOAD_GLOBAL              3 (collect_account_bundle + NULL)
+                LOAD_FAST_LOAD_FAST      1 (app_dir, master_key)
+                LOAD_FAST                2 (record)
+                CALL                     3
+                STORE_FAST               9 (bundle)
+
+ 306    L4:     LOAD_FAST                9 (bundle)
+                TO_BOOL
+                POP_JUMP_IF_TRUE         5 (to L5)
+
+ 307            LOAD_FAST                6 (configured_shop_id)
+                LOAD_CONST               6 (False)
+                LOAD_CONST               9 ('没有找到本地 Cookie')
+                BUILD_TUPLE              3
+                RETURN_VALUE
+
+ 311    L5:     LOAD_FAST                9 (bundle)
+                LOAD_ATTR                6 (shop_id)
+                COPY                     1
+                TO_BOOL
+                POP_JUMP_IF_TRUE         2 (to L6)
+                POP_TOP
+                LOAD_FAST                6 (configured_shop_id)
+        L6:     STORE_FAST              11 (shop_id)
+
+ 312            LOAD_GLOBAL              9 (validate_shop + NULL)
+                LOAD_FAST_LOAD_FAST    148 (bundle, timeout)
+                CALL                     2
+                UNPACK_SEQUENCE          3
+                STORE_FAST_STORE_FAST  205 (valid, data)
+                STORE_FAST              14 (validation_error)
+
+ 313            LOAD_GLOBAL             11 (str + NULL)
+                LOAD_FAST               13 (data)
+                LOAD_ATTR                1 (get + NULL|self)
+                LOAD_CONST              10 ('shop_name')
+                CALL                     1
+                COPY                     1
+                TO_BOOL
+                POP_JUMP_IF_TRUE        14 (to L7)
+                POP_TOP
+                LOAD_FAST                7 (configured_name)
+                COPY                     1
+                TO_BOOL
+                POP_JUMP_IF_TRUE         5 (to L7)
+                POP_TOP
+                LOAD_CONST              11 ('店铺 ')
+                LOAD_FAST               11 (shop_id)
+                FORMAT_SIMPLE
+                BUILD_STRING             2
+        L7:     CALL                     1
+                STORE_FAST              15 (shop_name)
+
+ 314            LOAD_GLOBAL             11 (str + NULL)
+                LOAD_FAST               13 (data)
+                LOAD_ATTR                1 (get + NULL|self)
+                LOAD_CONST              12 ('main_category')
+                CALL                     1
+                COPY                     1
+                TO_BOOL
+                POP_JUMP_IF_TRUE         2 (to L8)
+                POP_TOP
+                LOAD_CONST              13 ('notfind')
+        L8:     CALL                     1
+                STORE_FAST              16 (main_category)
+
+ 315            LOAD_FAST               12 (valid)
+                TO_BOOL
+                POP_JUMP_IF_FALSE        2 (to L9)
+                LOAD_CONST              14 ('valid')
+                JUMP_FORWARD             1 (to L10)
+        L9:     LOAD_CONST              15 ('invalid')
+       L10:     STORE_FAST              17 (status)
+
+ 316            LOAD_GLOBAL             13 (print + NULL)
+
+ 317            LOAD_CONST              16 ('[')
+                LOAD_FAST                8 (tag)
+                FORMAT_SIMPLE
+                LOAD_CONST              17 ('] 分区=')
+                LOAD_FAST                9 (bundle)
+                LOAD_ATTR               14 (partition)
+                FORMAT_SIMPLE
+                LOAD_CONST              18 (' 店铺=')
+                LOAD_FAST               15 (shop_name)
+                FORMAT_SIMPLE
+                LOAD_CONST              19 (' Cookie状态=')
+                LOAD_FAST               17 (status)
+                FORMAT_SIMPLE
+                BUILD_STRING             8
+
+ 316            CALL                     1
+                POP_TOP
+
+ 319            LOAD_FAST               14 (validation_error)
+                TO_BOOL
+                POP_JUMP_IF_FALSE       30 (to L11)
+
+ 320            LOAD_GLOBAL             13 (print + NULL)
+                LOAD_CONST              16 ('[')
+                LOAD_FAST                8 (tag)
+                FORMAT_SIMPLE
+                LOAD_CONST              20 ('] ')
+                LOAD_FAST               14 (validation_error)
+                FORMAT_SIMPLE
+                BUILD_STRING             4
+                LOAD_GLOBAL             16 (sys)
+                LOAD_ATTR               18 (stderr)
+                LOAD_CONST              21 (('file',))
+                CALL_KW                  2
+                POP_TOP
+
+ 322   L11:     LOAD_GLOBAL             21 (upload_cookie + NULL)
+
+ 323            LOAD_FAST                3 (base_url)
+
+ 324            LOAD_FAST               11 (shop_id)
+
+ 325            LOAD_FAST               15 (shop_name)
+
+ 326            LOAD_FAST                9 (bundle)
+                LOAD_ATTR               22 (cookie_header)
+
+ 327            LOAD_FAST               16 (main_category)
+
+ 328            LOAD_FAST               17 (status)
+
+ 329            LOAD_FAST                4 (timeout)
+
+ 322            CALL                     7
+                UNPACK_SEQUENCE          2
+                STORE_FAST              18 (uploaded)
+                STORE_FAST              19 (message)
+
+ 331            LOAD_FAST               18 (uploaded)
+                TO_BOOL
+                POP_JUMP_IF_TRUE         5 (to L12)
+
+ 332            LOAD_FAST               11 (shop_id)
+                LOAD_CONST               6 (False)
+                LOAD_FAST               19 (message)
+                BUILD_TUPLE              3
+                RETURN_VALUE
+
+ 333   L12:     LOAD_GLOBAL             13 (print + NULL)
+                LOAD_CONST              16 ('[')
+                LOAD_FAST                8 (tag)
+                FORMAT_SIMPLE
+                LOAD_CONST              22 ('] Cookie 状态上传成功：')
+                LOAD_FAST               19 (message)
+                FORMAT_SIMPLE
+                BUILD_STRING             4
+                CALL                     1
+                POP_TOP
+
+ 335            LOAD_FAST               12 (valid)
+                TO_BOOL
+                POP_JUMP_IF_TRUE        14 (to L14)
+
+ 336            LOAD_FAST               11 (shop_id)
+                LOAD_CONST               6 (False)
+                LOAD_FAST               14 (validation_error)
+                COPY                     1
+                TO_BOOL
+                POP_JUMP_IF_TRUE         2 (to L13)
+                POP_TOP
+                LOAD_CONST              23 ('Cookie 已失效，请重新登录后更新')
+       L13:     BUILD_TUPLE              3
+                RETURN_VALUE
+
+ 337   L14:     LOAD_FAST               11 (shop_id)
+                LOAD_CONST              24 (True)
+                LOAD_CONST               2 ('')
+                BUILD_TUPLE              3
+                RETURN_VALUE
+
+  --   L15:     PUSH_EXC_INFO
+
+ 303            LOAD_GLOBAL              4 (Exception)
+                CHECK_EXC_MATCH
+                POP_JUMP_IF_FALSE       18 (to L20)
+                STORE_FAST              10 (exc)
+
+ 304   L16:     LOAD_FAST                6 (configured_shop_id)
+                LOAD_CONST               6 (False)
+                LOAD_CONST               7 ('Cookie 读取失败：')
+                LOAD_FAST               10 (exc)
+                FORMAT_SIMPLE
+                BUILD_STRING             2
+                BUILD_TUPLE              3
+       L17:     SWAP                     2
+       L18:     POP_EXCEPT
+                LOAD_CONST               8 (None)
+                STORE_FAST              10 (exc)
+                DELETE_FAST             10 (exc)
+                RETURN_VALUE
+
+  --   L19:     LOAD_CONST               8 (None)
+                STORE_FAST              10 (exc)
+                DELETE_FAST             10 (exc)
+                RERAISE                  1
+
+ 303   L20:     RERAISE                  0
+
+  --   L21:     COPY                     3
+                POP_EXCEPT
+                RERAISE                  1
+ExceptionTable:
+  L3 to L4 -> L15 [0]
+  L15 to L16 -> L21 [1] lasti
+  L16 to L17 -> L19 [1] lasti
+  L17 to L18 -> L21 [1] lasti
+  L19 to L21 -> L21 [1] lasti
+
+
+===== .reverse/v1_1_11_sync.pyc parse_args =====
+Name:              parse_args
+Filename:          sync_douyin_cookies.py
+Argument count:    0
+Positional-only arguments: 0
+Kw-only arguments: 0
+Number of locals:  1
+Stack size:        7
+Flags:             OPTIMIZED, NEWLOCALS, 0x1000000
+Constants:
+   0: None
+   1: '常驻验证并上传抖音店铺 Cookie'
+   2: ('description',)
+   3: '--shop-id'
+   4: 'append'
+   5: '店铺 ID，可重复指定'
+   6: ('action', 'help')
+   7: '--shop-name'
+   8: '店铺名称，可重复指定'
+   9: '--all'
+  10: 'store_true'
+  11: '同步全部已保存的登录账号（默认行为）'
+  12: '--base-url'
+  13: '中控平台地址（默认 '
+  14: '）'
+  15: ('default', 'help')
+  16: '--app-dir'
+  17: '抖店工作台数据目录；不指定时自动探测（1.1.11 便携版一般在安装盘根目录，如 D:\\抖店）'
+  18: ('type', 'default', 'help')
+  19: '--timeout'
+  20: 20.0
+  21: '单次请求超时时间（秒）'
+  22: '--interval'
+  23: 900.0
+  24: '执行间隔，默认 900 秒'
+  25: '--once'
+  26: '只执行一轮后退出，便于测试'
+Names:
+   0: argparse
+   1: ArgumentParser
+   2: add_argument
+   3: DEFAULT_BASE_URL
+   4: Path
+   5: float
+   6: parse_args
+Variable names:
+   0: parser
+384           RESUME                   0
+
+385           LOAD_GLOBAL              0 (argparse)
+              LOAD_ATTR                2 (ArgumentParser)
+              PUSH_NULL
+              LOAD_CONST               1 ('常驻验证并上传抖音店铺 Cookie')
+              LOAD_CONST               2 (('description',))
+              CALL_KW                  1
+              STORE_FAST               0 (parser)
+
+386           LOAD_FAST                0 (parser)
+              LOAD_ATTR                5 (add_argument + NULL|self)
+              LOAD_CONST               3 ('--shop-id')
+              LOAD_CONST               4 ('append')
+              LOAD_CONST               5 ('店铺 ID，可重复指定')
+              LOAD_CONST               6 (('action', 'help'))
+              CALL_KW                  3
+              POP_TOP
+
+387           LOAD_FAST                0 (parser)
+              LOAD_ATTR                5 (add_argument + NULL|self)
+              LOAD_CONST               7 ('--shop-name')
+              LOAD_CONST               4 ('append')
+              LOAD_CONST               8 ('店铺名称，可重复指定')
+              LOAD_CONST               6 (('action', 'help'))
+              CALL_KW                  3
+              POP_TOP
+
+388           LOAD_FAST                0 (parser)
+              LOAD_ATTR                5 (add_argument + NULL|self)
+
+389           LOAD_CONST               9 ('--all')
+              LOAD_CONST              10 ('store_true')
+              LOAD_CONST              11 ('同步全部已保存的登录账号（默认行为）')
+
+388           LOAD_CONST               6 (('action', 'help'))
+              CALL_KW                  3
+              POP_TOP
+
+391           LOAD_FAST                0 (parser)
+              LOAD_ATTR                5 (add_argument + NULL|self)
+
+392           LOAD_CONST              12 ('--base-url')
+
+393           LOAD_GLOBAL              6 (DEFAULT_BASE_URL)
+
+394           LOAD_CONST              13 ('中控平台地址（默认 ')
+              LOAD_GLOBAL              6 (DEFAULT_BASE_URL)
+              FORMAT_SIMPLE
+              LOAD_CONST              14 ('）')
+              BUILD_STRING             3
+
+391           LOAD_CONST              15 (('default', 'help'))
+              CALL_KW                  3
+              POP_TOP
+
+396           LOAD_FAST                0 (parser)
+              LOAD_ATTR                5 (add_argument + NULL|self)
+
+397           LOAD_CONST              16 ('--app-dir')
+
+398           LOAD_GLOBAL              8 (Path)
+
+399           LOAD_CONST               0 (None)
+
+401           LOAD_CONST              17 ('抖店工作台数据目录；不指定时自动探测（1.1.11 便携版一般在安装盘根目录，如 D:\\抖店）')
+
+396           LOAD_CONST              18 (('type', 'default', 'help'))
+              CALL_KW                  4
+              POP_TOP
+
+405           LOAD_FAST                0 (parser)
+              LOAD_ATTR                5 (add_argument + NULL|self)
+              LOAD_CONST              19 ('--timeout')
+              LOAD_GLOBAL             10 (float)
+              LOAD_CONST              20 (20.0)
+              LOAD_CONST              21 ('单次请求超时时间（秒）')
+              LOAD_CONST              18 (('type', 'default', 'help'))
+              CALL_KW                  4
+              POP_TOP
+
+406           LOAD_FAST                0 (parser)
+              LOAD_ATTR                5 (add_argument + NULL|self)
+              LOAD_CONST              22 ('--interval')
+              LOAD_GLOBAL             10 (float)
+              LOAD_CONST              23 (900.0)
+              LOAD_CONST              24 ('执行间隔，默认 900 秒')
+              LOAD_CONST              18 (('type', 'default', 'help'))
+              CALL_KW                  4
+              POP_TOP
+
+407           LOAD_FAST                0 (parser)
+              LOAD_ATTR                5 (add_argument + NULL|self)
+              LOAD_CONST              25 ('--once')
+              LOAD_CONST              10 ('store_true')
+              LOAD_CONST              26 ('只执行一轮后退出，便于测试')
+              LOAD_CONST               6 (('action', 'help'))
+              CALL_KW                  3
+              POP_TOP
+
+408           LOAD_FAST                0 (parser)
+              LOAD_ATTR               13 (parse_args + NULL|self)
+              CALL                     0
+              RETURN_VALUE
+
+
+===== .reverse/v1_1_11_get_doudian_cookies.pyc resolve_app_dir =====
+Name:              resolve_app_dir
+Filename:          get_doudian_cookies.py
+Argument count:    1
+Positional-only arguments: 0
+Kw-only arguments: 0
+Number of locals:  7
+Stack size:        5
+Flags:             OPTIMIZED, NEWLOCALS, 0x1000000
+Constants:
+   0: 'Locate the live user-data directory.\n\n1.1.9 keeps cookies together with config.json under\n%APPDATA%\\抖店工作台. The 1.1.11 portable install writes Local State and\nCookies under <drive>\\抖店 (e.g. D:\\抖店) while config.json stays in\nAPPDATA. When no directory is given explicitly, prefer the valid\ncandidate whose cookie databases were modified most recently, so stale\nleftover directories are never picked by mistake.\n'
+   1: 0
+   2: ('key',)
+Names:
+   0: Path
+   1: expanduser
+   2: resolve
+   3: DEFAULT_APP_DIR
+   4: _running_data_dirs
+   5: Exception
+   6: _own_dirs
+   7: set
+   8: OSError
+   9: str
+  10: lower
+  11: _is_data_dir
+  12: add
+  13: append
+  14: max
+  15: _cookie_db_mtime
+Variable names:
+   0: explicit
+   1: candidates
+   2: valid
+   3: seen
+   4: candidate
+   5: resolved
+   6: key
+ 308            RESUME                   0
+
+ 318            LOAD_FAST                0 (explicit)
+                POP_JUMP_IF_NONE        39 (to L1)
+
+ 319            LOAD_GLOBAL              1 (Path + NULL)
+                LOAD_FAST                0 (explicit)
+                CALL                     1
+                LOAD_ATTR                3 (expanduser + NULL|self)
+                CALL                     0
+                LOAD_ATTR                5 (resolve + NULL|self)
+                CALL                     0
+                RETURN_VALUE
+
+ 321    L1:     LOAD_GLOBAL              6 (DEFAULT_APP_DIR)
+                BUILD_LIST               1
+                STORE_FAST               1 (candidates)
+
+ 322            NOP
+
+ 323    L2:     LOAD_GLOBAL              9 (_running_data_dirs + NULL)
+                CALL                     0
+                LOAD_FAST                1 (candidates)
+                LOAD_CONST               1 (0)
+                LOAD_CONST               1 (0)
+                STORE_SLICE
+
+ 326    L3:     NOP
+
+ 327    L4:     LOAD_GLOBAL             13 (_own_dirs + NULL)
+                CALL                     0
+                LOAD_FAST                1 (candidates)
+                LOAD_CONST               1 (0)
+                LOAD_CONST               1 (0)
+                STORE_SLICE
+
+ 331    L5:     BUILD_LIST               0
+                STORE_FAST               2 (valid)
+
+ 332            LOAD_GLOBAL             15 (set + NULL)
+                CALL                     0
+                STORE_FAST               3 (seen)
+
+ 333            LOAD_FAST                1 (candidates)
+                GET_ITER
+        L6:     FOR_ITER               116 (to L11)
+                STORE_FAST               4 (candidate)
+
+ 334            NOP
+
+ 335    L7:     LOAD_FAST                4 (candidate)
+                LOAD_ATTR                3 (expanduser + NULL|self)
+                CALL                     0
+                LOAD_ATTR                5 (resolve + NULL|self)
+                CALL                     0
+                STORE_FAST               5 (resolved)
+
+ 338    L8:     LOAD_GLOBAL             19 (str + NULL)
+                LOAD_FAST                5 (resolved)
+                CALL                     1
+                LOAD_ATTR               21 (lower + NULL|self)
+                CALL                     0
+                STORE_FAST               6 (key)
+
+ 339            LOAD_FAST_LOAD_FAST     99 (key, seen)
+                CONTAINS_OP              0
+                POP_JUMP_IF_TRUE        16 (to L9)
+                LOAD_GLOBAL             23 (_is_data_dir + NULL)
+                LOAD_FAST                5 (resolved)
+                CALL                     1
+                TO_BOOL
+                POP_JUMP_IF_TRUE         2 (to L10)
+
+ 340    L9:     JUMP_BACKWARD           82 (to L6)
+
+ 341   L10:     LOAD_FAST                3 (seen)
+                LOAD_ATTR               25 (add + NULL|self)
+                LOAD_FAST                6 (key)
+                CALL                     1
+                POP_TOP
+
+ 342            LOAD_FAST                2 (valid)
+                LOAD_ATTR               27 (append + NULL|self)
+                LOAD_FAST                5 (resolved)
+                CALL                     1
+                POP_TOP
+                JUMP_BACKWARD          118 (to L6)
+
+ 333   L11:     END_FOR
+                POP_TOP
+
+ 344            LOAD_FAST                2 (valid)
+                TO_BOOL
+                POP_JUMP_IF_TRUE        34 (to L12)
+
+ 345            LOAD_GLOBAL              6 (DEFAULT_APP_DIR)
+                LOAD_ATTR                3 (expanduser + NULL|self)
+                CALL                     0
+                LOAD_ATTR                5 (resolve + NULL|self)
+                CALL                     0
+                RETURN_VALUE
+
+ 346   L12:     LOAD_GLOBAL             29 (max + NULL)
+                LOAD_FAST                2 (valid)
+                LOAD_GLOBAL             30 (_cookie_db_mtime)
+                LOAD_CONST               2 (('key',))
+                CALL_KW                  2
+                RETURN_VALUE
+
+  --   L13:     PUSH_EXC_INFO
+
+ 324            LOAD_GLOBAL             10 (Exception)
+                CHECK_EXC_MATCH
+                POP_JUMP_IF_FALSE        3 (to L15)
+                POP_TOP
+
+ 325   L14:     POP_EXCEPT
+                JUMP_BACKWARD_NO_INTERRUPT 215 (to L3)
+
+ 324   L15:     RERAISE                  0
+
+  --   L16:     COPY                     3
+                POP_EXCEPT
+                RERAISE                  1
+       L17:     PUSH_EXC_INFO
+
+ 328            LOAD_GLOBAL             10 (Exception)
+                CHECK_EXC_MATCH
+                POP_JUMP_IF_FALSE        3 (to L19)
+                POP_TOP
+
+ 329   L18:     POP_EXCEPT
+                JUMP_BACKWARD_NO_INTERRUPT 217 (to L5)
+
+ 328   L19:     RERAISE                  0
+
+  --   L20:     COPY                     3
+                POP_EXCEPT
+                RERAISE                  1
+       L21:     PUSH_EXC_INFO
+
+ 336            LOAD_GLOBAL             16 (OSError)
+                CHECK_EXC_MATCH
+                POP_JUMP_IF_FALSE        4 (to L23)
+                POP_TOP
+
+ 337   L22:     POP_EXCEPT
+                JUMP_BACKWARD          220 (to L6)
+
+ 336   L23:     RERAISE                  0
+
+  --   L24:     COPY                     3
+                POP_EXCEPT
+                RERAISE                  1
+ExceptionTable:
+  L2 to L3 -> L13 [0]
+  L4 to L5 -> L17 [0]
+  L7 to L8 -> L21 [1]
+  L13 to L14 -> L16 [1] lasti
+  L15 to L16 -> L16 [1] lasti
+  L17 to L18 -> L20 [1] lasti
+  L19 to L20 -> L20 [1] lasti
+  L21 to L22 -> L24 [2] lasti
+  L23 to L24 -> L24 [2] lasti
+
+
+===== .reverse/v1_1_11_get_doudian_cookies.pyc find_config_path =====
+Name:              find_config_path
+Filename:          get_doudian_cookies.py
+Argument count:    1
+Positional-only arguments: 0
+Kw-only arguments: 0
+Number of locals:  2
+Stack size:        5
+Flags:             OPTIMIZED, NEWLOCALS, 0x1000000
+Constants:
+   0: 'Find config.json in the data dir, falling back to the APPDATA copy.\n\n1.1.11 stores the account list in %APPDATA%\\抖店工作台\\config.json even\nthough the cookie databases live in the portable data directory.\n'
+   1: 'config.json'
+   2: None
+Names:
+   0: DEFAULT_APP_DIR
+   1: is_file
+   2: OSError
+Variable names:
+   0: app_dir
+   1: candidate
+ 349           RESUME                   0
+
+ 355           LOAD_FAST                0 (app_dir)
+               LOAD_CONST               1 ('config.json')
+               BINARY_OP               11 (/)
+               LOAD_GLOBAL              0 (DEFAULT_APP_DIR)
+               LOAD_CONST               1 ('config.json')
+               BINARY_OP               11 (/)
+               BUILD_TUPLE              2
+               GET_ITER
+       L1:     FOR_ITER                29 (to L5)
+               STORE_FAST               1 (candidate)
+
+ 356           NOP
+
+ 357   L2:     LOAD_FAST                1 (candidate)
+               LOAD_ATTR                3 (is_file + NULL|self)
+               CALL                     0
+               TO_BOOL
+               POP_JUMP_IF_FALSE        4 (to L4)
+
+ 358           LOAD_FAST                1 (candidate)
+       L3:     SWAP                     2
+               POP_TOP
+               RETURN_VALUE
+
+ 357   L4:     JUMP_BACKWARD           31 (to L1)
+
+ 355   L5:     END_FOR
+               POP_TOP
+
+ 361           RETURN_CONST             2 (None)
+
+  --   L6:     PUSH_EXC_INFO
+
+ 359           LOAD_GLOBAL              4 (OSError)
+               CHECK_EXC_MATCH
+               POP_JUMP_IF_FALSE        4 (to L8)
+               POP_TOP
+
+ 360   L7:     POP_EXCEPT
+               JUMP_BACKWARD           47 (to L1)
+
+ 359   L8:     RERAISE                  0
+
+  --   L9:     COPY                     3
+               POP_EXCEPT
+               RERAISE                  1
+ExceptionTable:
+  L2 to L3 -> L6 [1]
+  L6 to L7 -> L9 [2] lasti
+  L8 to L9 -> L9 [2] lasti
+
+
+===== .reverse/v1_1_11_get_doudian_cookies.pyc _account_records =====
+Name:              _account_records
+Filename:          get_doudian_cookies.py
+Argument count:    1
+Positional-only arguments: 0
+Kw-only arguments: 0
+Number of locals:  6
+Stack size:        10
+Flags:             OPTIMIZED, NEWLOCALS, 0x1000000
+Constants:
+   0: None
+   1: 'model__AccountModel'
+   2: 'accountList'
+   3: 'meta'
+   4: 'shopId'
+   5: 'id'
+   6: ''
+   7: 'shopName'
+   8: 'name'
+   9: ('account_id', 'shop_id', 'name')
+Names:
+   0: get
+   1: append
+   2: str
+Variable names:
+   0: config
+   1: records
+   2: accounts
+   3: account
+   4: meta
+   5: shop_id
+403           RESUME                   0
+
+404           BUILD_LIST               0
+              STORE_FAST               1 (records)
+
+405           LOAD_FAST                0 (config)
+              LOAD_ATTR                1 (get + NULL|self)
+              LOAD_CONST               1 ('model__AccountModel')
+              BUILD_MAP                0
+              CALL                     2
+              LOAD_ATTR                1 (get + NULL|self)
+              LOAD_CONST               2 ('accountList')
+              BUILD_LIST               0
+              CALL                     2
+              STORE_FAST               2 (accounts)
+
+406           LOAD_FAST                2 (accounts)
+              GET_ITER
+      L1:     FOR_ITER               171 (to L7)
+              STORE_FAST               3 (account)
+
+407           LOAD_FAST                3 (account)
+              LOAD_ATTR                1 (get + NULL|self)
+              LOAD_CONST               3 ('meta')
+              CALL                     1
+              COPY                     1
+              TO_BOOL
+              POP_JUMP_IF_TRUE         2 (to L2)
+              POP_TOP
+              BUILD_MAP                0
+      L2:     STORE_FAST               4 (meta)
+
+408           LOAD_FAST                4 (meta)
+              LOAD_ATTR                1 (get + NULL|self)
+              LOAD_CONST               4 ('shopId')
+              CALL                     1
+              STORE_FAST               5 (shop_id)
+
+409           LOAD_FAST                1 (records)
+              LOAD_ATTR                3 (append + NULL|self)
+
+411           LOAD_GLOBAL              5 (str + NULL)
+              LOAD_FAST                3 (account)
+              LOAD_ATTR                1 (get + NULL|self)
+              LOAD_CONST               5 ('id')
+              CALL                     1
+              COPY                     1
+              TO_BOOL
+              POP_JUMP_IF_TRUE         2 (to L3)
+              POP_TOP
+              LOAD_CONST               6 ('')
+      L3:     CALL                     1
+
+412           LOAD_FAST                5 (shop_id)
+              POP_JUMP_IF_NOT_NONE     2 (to L4)
+              LOAD_CONST               6 ('')
+              JUMP_FORWARD            10 (to L5)
+      L4:     LOAD_GLOBAL              5 (str + NULL)
+              LOAD_FAST                5 (shop_id)
+              CALL                     1
+
+413   L5:     LOAD_GLOBAL              5 (str + NULL)
+              LOAD_FAST                4 (meta)
+              LOAD_ATTR                1 (get + NULL|self)
+              LOAD_CONST               7 ('shopName')
+              CALL                     1
+              COPY                     1
+              TO_BOOL
+              POP_JUMP_IF_TRUE        26 (to L6)
+              POP_TOP
+              LOAD_FAST                4 (meta)
+              LOAD_ATTR                1 (get + NULL|self)
+              LOAD_CONST               8 ('name')
+              CALL                     1
+              COPY                     1
+              TO_BOOL
+              POP_JUMP_IF_TRUE         2 (to L6)
+              POP_TOP
+              LOAD_CONST               6 ('')
+      L6:     CALL                     1
+
+410           LOAD_CONST               9 (('account_id', 'shop_id', 'name'))
+              BUILD_CONST_KEY_MAP      3
+
+409           CALL                     1
+              POP_TOP
+              JUMP_BACKWARD          173 (to L1)
+
+406   L7:     END_FOR
+              POP_TOP
+
+416           LOAD_FAST                1 (records)
+              RETURN_VALUE
+
+
+===== .reverse/v1_1_11_get_doudian_cookies.pyc load_shop_info =====
+Name:              load_shop_info
+Filename:          get_doudian_cookies.py
+Argument count:    1
+Positional-only arguments: 0
+Kw-only arguments: 0
+Number of locals:  5
+Stack size:        6
+Flags:             OPTIMIZED, NEWLOCALS, 0x1000000
+Constants:
+   0: 'Read saved shop names and account partition IDs from config.json.'
+   1: 'utf-8'
+   2: ('encoding',)
+   3: 'shop_id'
+   4: 'name'
+   5: 'account_id'
+   6: ('name', 'account_id')
+Names:
+   0: find_config_path
+   1: json
+   2: loads
+   3: read_text
+   4: OSError
+   5: JSONDecodeError
+   6: _account_records
+Variable names:
+   0: app_dir
+   1: config_path
+   2: config
+   3: result
+   4: record
+ 364            RESUME                   0
+
+ 366            LOAD_GLOBAL              1 (find_config_path + NULL)
+                LOAD_FAST                0 (app_dir)
+                CALL                     1
+                STORE_FAST               1 (config_path)
+
+ 367            LOAD_FAST                1 (config_path)
+                POP_JUMP_IF_NOT_NONE     2 (to L1)
+
+ 368            BUILD_MAP                0
+                RETURN_VALUE
+
+ 370    L1:     NOP
+
+ 371    L2:     LOAD_GLOBAL              2 (json)
+                LOAD_ATTR                4 (loads)
+                PUSH_NULL
+                LOAD_FAST                1 (config_path)
+                LOAD_ATTR                7 (read_text + NULL|self)
+                LOAD_CONST               1 ('utf-8')
+                LOAD_CONST               2 (('encoding',))
+                CALL_KW                  1
+                CALL                     1
+                STORE_FAST               2 (config)
+
+ 375    L3:     BUILD_MAP                0
+                STORE_FAST               3 (result)
+
+ 376            LOAD_GLOBAL             13 (_account_records + NULL)
+                LOAD_FAST                2 (config)
+                CALL                     1
+                GET_ITER
+        L4:     FOR_ITER                31 (to L6)
+                STORE_FAST               4 (record)
+
+ 377            LOAD_FAST                4 (record)
+                LOAD_CONST               3 ('shop_id')
+                BINARY_SUBSCR
+                TO_BOOL
+                POP_JUMP_IF_TRUE         2 (to L5)
+                JUMP_BACKWARD           15 (to L4)
+
+ 380    L5:     LOAD_FAST                4 (record)
+                LOAD_CONST               4 ('name')
+                BINARY_SUBSCR
+
+ 381            LOAD_FAST                4 (record)
+                LOAD_CONST               5 ('account_id')
+                BINARY_SUBSCR
+
+ 379            LOAD_CONST               6 (('name', 'account_id'))
+                BUILD_CONST_KEY_MAP      2
+                LOAD_FAST_LOAD_FAST     52 (result, record)
+                LOAD_CONST               3 ('shop_id')
+                BINARY_SUBSCR
+                STORE_SUBSCR
+                JUMP_BACKWARD           33 (to L4)
+
+ 376    L6:     END_FOR
+                POP_TOP
+
+ 383            LOAD_FAST                3 (result)
+                RETURN_VALUE
+
+  --    L7:     PUSH_EXC_INFO
+
+ 372            LOAD_GLOBAL              8 (OSError)
+                LOAD_GLOBAL              2 (json)
+                LOAD_ATTR               10 (JSONDecodeError)
+                BUILD_TUPLE              2
+                CHECK_EXC_MATCH
+                POP_JUMP_IF_FALSE        5 (to L9)
+                POP_TOP
+
+ 373            BUILD_MAP                0
+                SWAP                     2
+        L8:     POP_EXCEPT
+                RETURN_VALUE
+
+ 372    L9:     RERAISE                  0
+
+  --   L10:     COPY                     3
+                POP_EXCEPT
+                RERAISE                  1
+ExceptionTable:
+  L2 to L3 -> L7 [0]
+  L7 to L8 -> L10 [1] lasti
+  L9 to L10 -> L10 [1] lasti
+
+
+===== .reverse/v1_1_11_get_doudian_cookies.pyc load_accounts =====
+Name:              load_accounts
+Filename:          get_doudian_cookies.py
+Argument count:    1
+Positional-only arguments: 0
+Kw-only arguments: 0
+Number of locals:  3
+Stack size:        6
+Flags:             OPTIMIZED, NEWLOCALS, 0x1000000
+Constants:
+   0: 'Return every saved login account as one record.\n\nSeveral staff accounts can be logged into the same shop, so the result is\na list keyed by account/partition rather than a dict keyed by shop ID.\nEach record: {"account_id", "shop_id", "name"}.\n'
+   1: 'utf-8'
+   2: ('encoding',)
+Names:
+   0: find_config_path
+   1: json
+   2: loads
+   3: read_text
+   4: OSError
+   5: JSONDecodeError
+   6: _account_records
+Variable names:
+   0: app_dir
+   1: config_path
+   2: config
+ 386           RESUME                   0
+
+ 393           LOAD_GLOBAL              1 (find_config_path + NULL)
+               LOAD_FAST                0 (app_dir)
+               CALL                     1
+               STORE_FAST               1 (config_path)
+
+ 394           LOAD_FAST                1 (config_path)
+               POP_JUMP_IF_NOT_NONE     2 (to L1)
+
+ 395           BUILD_LIST               0
+               RETURN_VALUE
+
+ 396   L1:     NOP
+
+ 397   L2:     LOAD_GLOBAL              2 (json)
+               LOAD_ATTR                4 (loads)
+               PUSH_NULL
+               LOAD_FAST                1 (config_path)
+               LOAD_ATTR                7 (read_text + NULL|self)
+               LOAD_CONST               1 ('utf-8')
+               LOAD_CONST               2 (('encoding',))
+               CALL_KW                  1
+               CALL                     1
+               STORE_FAST               2 (config)
+
+ 400   L3:     LOAD_GLOBAL             13 (_account_records + NULL)
+               LOAD_FAST                2 (config)
+               CALL                     1
+               RETURN_VALUE
+
+  --   L4:     PUSH_EXC_INFO
+
+ 398           LOAD_GLOBAL              8 (OSError)
+               LOAD_GLOBAL              2 (json)
+               LOAD_ATTR               10 (JSONDecodeError)
+               BUILD_TUPLE              2
+               CHECK_EXC_MATCH
+               POP_JUMP_IF_FALSE        5 (to L6)
+               POP_TOP
+
+ 399           BUILD_LIST               0
+               SWAP                     2
+       L5:     POP_EXCEPT
+               RETURN_VALUE
+
+ 398   L6:     RERAISE                  0
+
+  --   L7:     COPY                     3
+               POP_EXCEPT
+               RERAISE                  1
+ExceptionTable:
+  L2 to L3 -> L4 [0]
+  L4 to L5 -> L7 [1] lasti
+  L6 to L7 -> L7 [1] lasti

@@ -1,0 +1,15 @@
+[
+  {
+    "shop_name": "一加鲸采专卖店",
+    "goods": [
+      {
+        "goods_id": "1016942651021",
+        "sold_quantity_for_thirty_days": 64
+      },
+      {
+        "goods_id": "1016938024842",
+        "sold_quantity_for_thirty_days": 63
+      }
+    ]
+  }
+]
